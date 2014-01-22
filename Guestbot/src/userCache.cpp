@@ -18,9 +18,9 @@ void InitCache(unsigned int dictStringSize)
 	cacheBase = (char*) malloc(dictStringSize + userTopicStoreSize + userTableSize );
 	if (!cacheBase)
 	{
-		printf("Out of  memory space for dictionary w user cache %d %d %d %d\r\n",dictStringSize,userTopicStoreSize,userTableSize,MAX_ENTRIES);
-		ReportBug("Cannot allocate memory space for dictionary %ld\r\n",(long int)(dictStringSize + userTopicStoreSize))
-		myexit("out of memory space for dictionary to allocate");
+		printf("Out of space for dictionary w user cache %d %d %d %d\r\n",dictStringSize,userTopicStoreSize,userTableSize,MAX_ENTRIES);
+		ReportBug("Cannot allocate space for dictionary %ld\r\n",(long int)(dictStringSize + userTopicStoreSize))
+		myexit("out of space for dictionary to allocate");
 	}
 	cacheIndex = (unsigned int*) (cacheBase + userTopicStoreSize);
 	char* ptr = cacheBase;
@@ -50,7 +50,6 @@ bool WriteCache(unsigned int which,size_t size)
 		size = strlen(ptr) + 1; // login string
 		size += strlen(ptr+size);
 	}
-	if (size >= userCacheSize) ReportBug("request to write more cache than size %d\r\n",size);
 	FILE* out = FopenWrite(ptr,"wb");
 	if (!out) // see if we can create the directory (assuming its missing)
 	{

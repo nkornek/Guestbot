@@ -16,6 +16,7 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 
 #define ID_SIZE 500
 #define OUTPUT_BUFFER_SIZE 20000
+#define INPUT_BUFFER_SIZE   4000
 
 typedef struct RESPONSE
 {
@@ -27,6 +28,7 @@ typedef struct RESPONSE
 
 
 #define MAX_RESPONSE_SENTENCES 20
+#define MAX_BUFFER_SIZE 80000
 #define MAX_SENTENCE_LENGTH 254 // stay under char size boundary (including +1)
 
 #define BIG_WORD_SIZE   10000
@@ -56,14 +58,16 @@ extern unsigned int responseIndex;
 extern bool documentMode;
 extern unsigned int inputCount;
 extern FILE* sourceFile;
+extern unsigned int firstRealWord,lastRealWord;
 extern char* version;
 extern unsigned int tokenCount;
 
 extern int inputCounter,totalCounter;
+extern unsigned int baseBufferCount;
 extern unsigned int inputSentenceCount;  
 
 extern char* postProcessing;
-extern uint64 tokenControl;
+extern unsigned int tokenControl;
 extern bool moreToCome,moreToComeQuestion;
 extern unsigned int trace;
 extern bool regression;
@@ -81,7 +85,7 @@ extern bool showTopics;
 extern bool shortPos;
 
 // pending control
-extern int systemReset;
+extern bool systemReset;
 extern bool quitting;
 extern bool unusedRejoinder;
 
@@ -95,8 +99,8 @@ extern std::string interfaceKind;
 #endif
 
 // buffers
-extern char inBuffer[INPUT_BUFFER_SIZE];
-extern char outBuffer[MAX_BUFFER_SIZE];
+extern char* inBuffer;
+extern char* outBuffer;
 extern char currentInput[INPUT_BUFFER_SIZE];
 extern char revertBuffer[INPUT_BUFFER_SIZE];
 extern char* readBuffer;
@@ -104,15 +108,8 @@ extern char* nextInput;
 
 extern int always; 
 
-void ProcessInputFile();
-
 // startup
-#ifdef DLL
-extern "C" __declspec(dllexport) unsigned int InitSystem(int argc, char * argv[],char* unchangedPath = NULL,char* readonlyPath = NULL, char* writablePath = NULL);
-#else
 unsigned int InitSystem(int argc, char * argv[],char* unchangedPath = NULL,char* readonlyPath = NULL, char* writablePath = NULL);
-#endif
-
 void InitStandalone();
 void CreateSystem();
 void ReloadSystem();
@@ -122,20 +119,17 @@ int main(int argc, char * argv[]);
 
 // Input processing
 void MainLoop();
-void FinishVolley(char* input,char* output,char* summary);
-unsigned int ProcessInput(char* input,char* output);
+void SolidTrace(char* msg);
+void FinishVolley(char* input,char* output);
+unsigned int ProcessInput(char* input);
 void DoSentence(char* prepassTopic);
-#ifdef DLL
-extern "C" __declspec(dllexport) void PerformChat(char* user, char* usee, char* incoming,char* ip,char* output);
-#else
-void PerformChat(char* user, char* usee, char* incoming,char* ip,char* output);
-#endif
+void PerformChat(char* user, char* usee, char* incoming,char* ip,char* output,int fileID = -1);
 void ResetSentence();
 void ResetToPreUser();
 void PrepareSentence(char* input,bool mark = true,bool user=true);
 bool PrepassSentence(char* presspassTopic);
 int Reply();
-void OnceCode(const char* which,char* summary = NULL);
+void OnceCode(const char* which);
 void AddBotUsed(const char* reply,unsigned int len);
 void AddHumanUsed(const char* reply);
 bool HasAlreadySaid(char* msg);

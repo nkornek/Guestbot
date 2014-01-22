@@ -443,6 +443,8 @@ int evsrv_init(const string &interfaceKind, int port, char* arg) {
     interface_g = interfaceKind;
     port_g = port;
 
+    Log(SERVERLOG, "evserver: pid: %d, binding to %s:%d\n", getpid(), interface_g.c_str(), port_g);
+
     // uf, got socket, now do EV
     l_g = EV_DEFAULT;
 
@@ -484,7 +486,10 @@ int evsrv_init(const string &interfaceKind, int port, char* arg) {
     }
 	localAddr.sin_port = htons(port_g);
     
-	if (bind(srv_socket_g, (sockaddr *) &localAddr, sizeof(sockaddr_in)) < 0) return -1; // typical when server is already running and cron tries to start
+	if (bind(srv_socket_g, (sockaddr *) &localAddr, sizeof(sockaddr_in)) < 0) {
+        Log(SERVERLOG, "evsrv_init: bind failed, errno: %s\n", strerror(errno));
+        return -1;
+    }
 
 #ifdef EVSERVER_FORK
     int parent_after_fork = -1;
@@ -680,7 +685,8 @@ int evsrv_do_chat(Client_t *client)
         client->bot,
         client->message,
         (char*)client->ip.c_str(),
-        client->data_ptr());
+        client->data_ptr(),
+        -1);
 #else
     strcpy(client->data_ptr(), "ok");
 #endif

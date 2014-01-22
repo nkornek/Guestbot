@@ -21,7 +21,6 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 extern unsigned int currentOutputLimit;
 extern char* currentOutputBase;
 extern char* currentRuleOutputBase;
-extern unsigned int outputNest;
 
 // styles of output
 char* StdIntOutput(int n);

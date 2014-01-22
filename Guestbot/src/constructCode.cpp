@@ -1,7 +1,6 @@
 #include "common.h"
 
 int impliedIf = ALREADY_HANDLED;	// testing context of an if
-unsigned int withinLoop = 0;
 
 static char* TestIf(char* ptr,unsigned int& result)
 { //   word is a stream terminated by )
@@ -35,7 +34,7 @@ resume:
 		ptr -= strlen(word1) + 3; //   back up so output can see the fn name and space
 		ChangeDepth(1,"TestIf");
 		ptr = FreshOutput(ptr,word2,result,OUTPUT_ONCE|OUTPUT_KEEPSET); // word2 hold output value // skip past closing paren
-		if (trace & TRACE_OUTPUT) 
+		if (trace & OUTPUT_TRACE) 
 		{
 			if (result & ENDCODES) id = Log(STDUSERTABLOG,"If %c%s ",(invert) ? '!' : ' ',word1);
 			else if (*word1 == '1' && word1[1] == 0) id = Log(STDUSERTABLOG,"else ");
@@ -68,7 +67,7 @@ resume:
 			else if (*word1 == '_') found = wildcardCanonicalText[GetWildcardID(word1)];
 			else if (*word1 == '$') found = GetUserVariable(word1);
 			else found =  FACTSET_COUNT(GetSetID(word1)) ? (char*) "1" : (char*) "";
-			if (trace & TRACE_OUTPUT) 
+			if (trace & OUTPUT_TRACE) 
 			{
 				if (!*found) 
 				{
@@ -86,7 +85,7 @@ resume:
 		}
 		else  //  its a constant of some kind 
 		{
-			if (trace & TRACE_OUTPUT) 
+			if (trace & OUTPUT_TRACE) 
 			{
 				if (result & ENDCODES) id = Log(STDUSERTABLOG,"If %c%s ",(invert) ? '!' : ' ',word1);
 				else if (*word1 == '1' && word1[1] == 0) id = Log(STDUSERTABLOG,"else ");
@@ -102,13 +101,13 @@ resume:
 	{
 		if (!(result & ENDCODES)) 
 		{
-			if (trace & TRACE_OUTPUT) id = Log(STDUSERLOG," AND ");
+			if (trace & OUTPUT_TRACE) id = Log(STDUSERLOG," AND ");
 			goto resume;
 			//   If he fails (result is one of ENDCODES), we fail
 		}
 		else 
 		{
-			if (trace & TRACE_OUTPUT) id = Log(STDUSERLOG," ... ");
+			if (trace & OUTPUT_TRACE) id = Log(STDUSERLOG," ... ");
 			ptr = BalanceParen(ptr,true); //   find the end ) and skip over it to jump code, code is already fail
 		}
 	}
@@ -116,20 +115,20 @@ resume:
 	{
 		if (!(result & ENDCODES)) 
 		{
-			if (trace & TRACE_OUTPUT) id = Log(STDUSERLOG," ... ");
+			if (trace & OUTPUT_TRACE) id = Log(STDUSERLOG," ... ");
 			result = 0;
 			ptr = BalanceParen(ptr,true);
 		}
 		else 
 		{
-			if (trace & TRACE_OUTPUT) id = Log(STDUSERLOG," OR ");
+			if (trace & OUTPUT_TRACE) id = Log(STDUSERLOG," OR ");
 			goto resume;
 		}
 	}
 	blocked = false;
 	FreeBuffer();
 	FreeBuffer();
-	if (trace & TRACE_OUTPUT &&  (result & ENDCODES)) Log(id,"%s\r\n", "FAIL-if");
+	if (trace & OUTPUT_TRACE &&  (result & ENDCODES)) Log(id,"%s\r\n", "FAIL-if");
 	impliedIf = ALREADY_HANDLED;
 	return ptr;
 }
@@ -166,8 +165,6 @@ char* HandleIf(char* ptr, char* buffer,unsigned int& result)
 
 char* HandleLoop(char* ptr, char* buffer, unsigned int &result)
 {
-	unsigned int oldIterator = currentIterator;
-	currentIterator = 0;
 	char* word = AllocateBuffer();
 	blocked = true;
 	ptr = ReadCommandArg(ptr+2,word,result)+2; //   get the loop counter value and skip closing ) space 
@@ -177,15 +174,13 @@ char* HandleLoop(char* ptr, char* buffer, unsigned int &result)
 	FreeBuffer();
 	if (result & ENDCODES) return endofloop;
 
-	++withinLoop;
-
 	ptr += 5;	//   skip jump + space + { + space
 	if (counter > 1000 || counter < 0) counter = 1000; //   LIMITED
 	while (counter-- > 0)
 	{
 		ChangeDepth(2,"HandleLoop");
 		if (debugger) Debugger(ENTER_LOOP,0,ptr);
-		if (trace & TRACE_OUTPUT) Log(STDUSERTABLOG,"loop (%d)\r\n",counter+1);
+		if (trace & OUTPUT_TRACE) Log(STDUSERTABLOG,"loop (%d)\r\n",counter+1);
 		unsigned int result1;
 		Output(ptr,buffer,result1,OUTPUT_LOOP);
 		buffer += strlen(buffer);
@@ -197,10 +192,7 @@ char* HandleLoop(char* ptr, char* buffer, unsigned int &result)
 			break;//   potential failure if didnt add anything to buffer
 		}
 	}
-	if (trace & TRACE_OUTPUT) Log(STDUSERTABLOG,"end of loop\r\n");
-	--withinLoop;
-
-	currentIterator = oldIterator;
+	if (trace & OUTPUT_TRACE) Log(STDUSERTABLOG,"end of loop\r\n");
 	return endofloop;
 }  
 
@@ -287,10 +279,6 @@ unsigned int HandleRelation(char* word1,char* op, char* word2,bool output,unsign
 	}
 	else //   boolean tests
 	{
-		// convert null to numeric operator for < or >  -- but not for equality
-		if (!*val1 && IsDigit(*val2) && (*op == '<' || *op == '>')) strcpy(val1,"0");
-		else if (!*val2 && IsDigit(*val1) && (*op == '<' || *op == '>')) strcpy(val2,"0");
-
 		if (!IsNumberStarter(*val1) || !IsNumberStarter(*val2) ) //   non-numeric string compare - bug, can be confused if digit starts text string
 		{
 			char* arg1 = val1;
@@ -350,10 +338,8 @@ unsigned int HandleRelation(char* word1,char* op, char* word2,bool output,unsign
 			char* comma =  0; // pretty number?
 			while ((comma = strchr(val1,',')))  memmove(comma,comma+1,strlen(comma+1));
 			while ((comma = strchr(val2,',')))  memmove(comma,comma+1,strlen(comma+1));
-			int64 v1;
-			int64 v2;
-			ReadInt64(val1,v1);
-			ReadInt64(val2,v2);
+			int v1 = atoi(val1);
+			int v2 = atoi(val2);
 			if (*op == '?') //   internal
 			{
 				if (v1 > v2) result = 2;
@@ -386,7 +372,7 @@ unsigned int HandleRelation(char* word1,char* op, char* word2,bool output,unsign
 			else result =  FAILRULE_BIT;
 		}
 	}
-	if (trace & TRACE_OUTPUT && output) 
+	if (trace & OUTPUT_TRACE && output) 
 	{
 		if (!stricmp(word1,val1)) 
 		{
@@ -403,7 +389,7 @@ unsigned int HandleRelation(char* word1,char* op, char* word2,bool output,unsign
 		else if (!*val2)  id = Log(STDUSERLOG," %s (null) ",word2);
 		else  id = Log(STDUSERLOG," %s (%s) ",word2,val2);
 	}
-	else if (trace & TRACE_PATTERN && !output) 
+	else if (trace & PATTERN_TRACE && !output) 
 	{
 		if (!stricmp(word1,val1))
 		{

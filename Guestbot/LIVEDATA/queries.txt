@@ -1,5 +1,3 @@
-# OVERVIEW OF THE BYTE_CODE QUERY LANGUAGE
-
 # This defines byte-code query operators.
 # The first word is always the name of the query. The rest are byte-code commands to be carried out.
 # A query consists of a series of segments that perform specific kinds of actions.
@@ -35,7 +33,6 @@
 #				1ST char after < > is tag on verbs to propogate thru
 #					2nd char is t or q (for tag or tag/queue)
 #
-#		S/V/O	= use corresponding subject/verb/object as a fact index to q (must use f in segment 2)
 #		n = 	pay no attention to facts with a topic name as the object	
 #		f = use given facts in fromset as items to process -- f@n  means use this 1-digit set
 #			This is followed by 
@@ -62,157 +59,100 @@
 #
 # Facts that match will either become result facts OR, if this is a riccochet search, will stimulate further processing.
 
+
 # fourth segment( walk) how to take matching facts and migrate around the graph and save new queue entries using it instead of returning it as a result.
 #	s/o	 =  1st reference to one of these is which field of initial fact provides the riccochet value
 #   s/o  =  2nd reference to one of this is given riccochet value, should be it as subject or object of the fact. 
 #	S/V/O	= test riccochet fact for corresponding label immediately followed by id 0-9 of test value
 
-
-
 ##########
 # simple direct match queries
-# Eg given a sample fact exists (dog love cat)
+# Eg given fact (dog love cat)
 ##########
 
-# find facts given a subject
-QUERY: direct_s 1sq:queue_s							# (dog ? ?)
-# 1. tag subject with 1 and queue it
-# 2. walk thru q, looking at facts were q item is subject
-# 3. there are no constraints to match, so all facts are accepted
+direct_s 1sq:queue_s		# (dog ? ?)
+direct_v 1vq:queue_v		# (? love ?)
+direct_o 1oq:queue_o		# (? ? cat)
+direct_sv 1sq_2ve:queue_s:match_v2				# (dog love ?)
+direct_vo 1oq_2ve:queue_o:match_v2				# (? love cat)
+direct_so 1sq_2oe:queue_s:match_o2			# (dog ? cat)
+direct_svo 1oq_2ve_3se:queue_o:match_v2_s3			# (dog love cat)
 
-# find facts given a verb
-QUERY: direct_v 1vq:queue_v							# (? love ?)
-# 1. tag verb with 1 and queue it
-# 2. walk thru q, looking at facts were q item is verb
-# 3. there are no constraints to match, so all facts are accepted
+# find things OTHER than marked
+direct_sotherv 1sq_2vt:queue_s:match_!v2
+direct_ootherv 1oq_2vt:queue_o:match_!v2
 
-# find facts given an object
-QUERY: direct_o 1oq:queue_o							# (? ? cat)
-# 1. tag object with 1 and queue it
-# 2. walk thru q, looking at facts were q item is object
-# 3. there are no constraints to match, so all facts are accepted
+##########
+# up2set  ... walks upward via member/is until it intersects object set, returns fact at intersect.
+# up2seta ... like up2set but uses given up verb instead of member/is
+##########
 
-# find facts given subject and verb
-QUERY: direct_sv 1sq_2vt:queue_s:match_v2			# (dog love ?)
-# 1. tag subject with 1 and queue it
-# 2. mark verb with 2 (no queuing)
-# 3. walk thru q, looking at facts where q item is subject
-# 4. accept facts where verb is marked with 2
+# ^query(up2set _0 ? '~store_type 10 ) 
+# Find the fact that leads to ~store_type (the name of the kind of store carrying the item but isnt a store type)
 
-# find facts given verb and object
-QUERY: direct_vo 1oq_2vt:queue_o:match_v2			# (? love cat)
-# 1. tag object with 1 and queue it
-# 2. mark verb with 2 (no queuing)
-# 3. walk thru q, looking at facts where q item is object
-# 4. accept facts where verb is marked with 2
-
-# find facts given subject and object
-QUERY: direct_so 1sq_2ot:queue_s:match_o2			# (dog ? cat)
-# 1. tag subject with 1 and queue it
-# 2. mark object with 2 (no queuing)
-# 3. walk thru q, looking at facts where q item is subject
-# 4. accept facts where object is marked with 2
-
-# find facts given subject verb and object
-QUERY: direct_svo 1oq_2vt_3st:queue_o:match_v2_s3	# (dog love cat)
-# 1. tag object with 1 and queue it
-# 2. mark verb with 2 (no queuing)
-# 3. mark subject with 3 (no queuing)
-# 4. walk thru q, looking at facts where q item is object
-# 5. accept facts where verb is marked with 2 and subject is marked with 3
-
-# find facts of subject where verb is NOT that given - verb is often a concept naming a bunch of verbs
-# eg find all interesting facts about dog as a subject, but not things like concept membership
-QUERY: direct_sotherv 1sq_2ve:queue_s:match_!v2
-# 1. tag subject with 1 and queue it
-# 2. mark verb chain with 2 (no queuing)
-# 3. walk thru q, looking at facts where q item is subject
-# 4. accept facts where verb is NOT marked with 2
-
-# find facts of object where verb is NOT that given - verb is often a concept naming a bunch of verbs
-QUERY: direct_ootherv 1oq_2ve:queue_o:match_!v2
-# 1. tag object with 1 and queue it
-# 2. mark verb chain with 2 (no queuing) 
-# 3. walk thru q, looking at facts where q item is object
-# 4. accept facts where verb is NOT marked with 2
-
-# Find the fact that leads to object which is a concept - propogate upwards from subject until you get to a fact that leads to the object concept
-# given: (soap member ~hygiene_items) and (~hygiene_item member ~personal_items) and (~personal_items member ~drugstore) and (~drugstore member ~storetypes)
-# find (~drugstore member ~storetypes) given  ^query(up2set soap ? '~store_type 10 )   - ie, what kind of store sells soap
-QUERY: up2set 1sq_2'member.t_2'is.t_3ot:queue_s:match_v2_o3_<2  
-# 1. tag the subject with a 1 and q it 
-# 2. tag member and is with 2 
-# 3. tag top goal object (presumed concept which needed to be quoted) with 3
-# 4. walk thru q, looking at facts where q item is subject
-# 5. accept facts where verb is tagged 2 (member and is), and object is tagged 3 (destination concept)
+up2set 1sq_2'member.t_2'is.t_3ot:queue_s:match_v2_o3_<2
+# 1. tag the subject with a 1 and q it (1sq) 
+# 2. tag member with 2 and is with 2 (2'member.t_2'is.t)
+# 3. tag top goal object with 3
+# 4. Use the subject field of queued facts. (:s:)
+# 5. take facts where queued item is subject and verb is tagged 2 (member and is), test object tagged 3
 #	facts that match that are instant wins.
-# 6. propogate left to right on verbs with 2 tagged (scan from subject thru member and is verbs) - that is, follow objects to the concepts they belong to (walk up the hierarchy)
-# e.g.:  at paper:  paper member stationer,  stationer member ~store_type
+# 6. propogate left to right on verbs with 2 tagged (scan from subject thru member and is verbs)
+# e.g.:  paper member stationer,  stationer member ~store_type
 
-# Similar to up2set but you name a single verb instead of assuming member or is 
-# given: (sneaker up ~boys_shoes) and (~boys_shoes up ~shoes) and (~shoes up ~clothes) and (~clothes up ~all_items)
-# find: (~clothes up ~all_items) given  ^query(up2seta shoes verb '~all_items 10 ) 
-QUERY: up2seta 1sq_2vt_3ot:queue_s:match_v2_o3_<2	
+# ^query(up2seta _0 ? '~store_type 10 ) 
+# Find the fact that leads to ~store_type (the name of the kind of store carrying the item but isnt a store type)
 
-# find fact where subject is a member of some nested set (including itself) that has verb given
-# given (dog member ~canine) and (~canine member ~carnivores) and (~carivores eat meat)
-# find (~carnivores eat meat) given  ^query(indirect_s<v dog eat ?)
-QUERY: indirect_s<v  3'member.t_1s<3q_2ve:queue_s:match_v2  
-# 1: mark member as flow value
-# 2: tag and q all words up from subject with 1. 
-# 3: tag verb with 2
-# 4. walk thru q, looking at facts where q item is subject
-# 5. accept facts where verb is marked with 2
+up2seta 1sq_2vt_3ot:queue_s:match_v2_o3_<2 
 
-# find fact where object is a member of some set (including itself) that has verb given
-# given (15 speed ~fishes) 
-# find it given ^query(indirect_vo< ? speed tuna)
-QUERY: indirect_vo<  3'member.t_1o<3q_2ve:queue_o:match_v2
-# 1: mark member as flow value
-# 2: tag and q all words up from object with 1. 
-# 3: tag verb with 2
-# 4. walk thru q, looking at facts where q item is object
-# 5: accept facts that match verb
+# find fact where subject is a member of some set (including itself) that has verb given
+indirect_s<v  3'member.t_1s<3q_2ve:queue_s:match_v2
+#0: mark member as flow value
+#1: tag and q all words up from subject with 1. 
+#2: tag verb with 2
+#3: accept facts that match verb
+
+# find fact where object is a member of some set (including itself) that has verb given - like [10 speed ~animal] can be found given [? speed dog]
+indirect_vo<  3'member.t_1o<3q_2ve:queue_o:match_v2
+#0: mark member as flow value
+#1: tag and q all words up from object with 1. 
+#2: tag verb with 2
+#3: accept facts that match verb
 
 # find fact where subject is a member of some set (including itself) that has verb given and the object given
-# given (fur own ~dogs) 
-# find that (confirming) given ^query(indirect_s<vo< fur own collie)
-QUERY: indirect_s<vo<  3'member.t_1s<3q_2ve_4o<3t:queue_s:match_v2o4
-# 1: mark member as flow value
-# 2: tag and q all words up from subject with 1. 
-# 3: tag verb with 2
-# 4. walk thru q, looking at facts where q item is subject
-# 5: accept facts that match verb and object
+indirect_s<vo<  3'member.t_1s<3q_2ve_4o<3t:queue_s:match_v2o4
+#0: mark member as flow value
+#1: tag and q all words up from subject with 1. 
+#2: tag verb with 2
+#3: accept facts that match verb and object
 
 # find fact where subject is a member of some set (including itself) and so is object
-# given (~carnivores eat ~meat)
-# find that (confirming) given ^query(indirect_s<o< collie eat bacon)
-QUERY: indirect_s<o<  3'member.t_3'is.t_1s<3q_2o<2t:queue_s:match_o2
-# 1: mark member as flow value
-# 2: tag and q all words up from subject with 1. 
-# 3: tag all words up from object with 2
+indirect_s<o<  3'member.t_3'is.t_1s<3q_2o<2t:queue_s:match_o2
+#0: mark member as flow value
+#1: tag and q all words up from subject with 1. 
+#2: tag all words up from object with 2
 
 # simple one, hierarchy UP another
 
-QUERY: direct_v<o 1'is.t_1'member.t_2o<1e_3vq:queue_v:match_o2
-# 1: tag member/is as 1. tag all words up from object with 2. Queue the verb tagged 3.
-# 2: Use verb field facts from queued words.
-# 3: If the object field of fact is taged with 2, we have a winner.
+#1: tag member/is as 1. tag all words up from object with 2. Queue the verb tagged 3.
+#2: Use verb field facts from queued words.
+#3: If the object field of fact is taged with 2, we have a winner.
+direct_v<o 1'is.t_1'member.t_2o<1e_3vq:queue_v:match_o2
 
 #  What lives in a den ^query(direct_s<v den habitat ? ) 
 
-QUERY: direct_s<v 1'is.t_1'member.t_2s<1e_3vq:queue_v:match_s2
-# 1: tag member/is as 1. tag all words up from subject with 2. Queue the verb tagged 3.
-# 2: Use verb field facts from queued words.
-# 3: If the subject field of fact is taged with 2, we have a winner.
+#1: tag member/is as 1. tag all words up from subject with 2. Queue the verb tagged 3.
+#2: Use verb field facts from queued words.
+#3: If the subject field of fact is taged with 2, we have a winner.
+direct_s<v 1'is.t_1'member.t_2s<1e_3vq:queue_v:match_s2
 
 
 # similar to direct match, but resulting object field must ALSO be a member of match value
-QUERY: direct_sv_member 1sq_2ve_3me:queue_s:match_v2_o3
+direct_sv_member 1sq_2ve_3me:queue_s:match_v2_o3
 
 
 # given facts, get unique set of them whose verb matches
-QUERY: direct_v_unique_facts 1ff2ve:queue_:match_v2		# queue all facts in set uniquely, no tests required
+direct_v_unique_facts 1ff2ve:queue_:match_v2		# queue all facts in set uniquely, no tests required
 
 
 # is, member, 
@@ -230,27 +170,27 @@ QUERY: direct_v_unique_facts 1ff2ve:queue_:match_v2		# queue all facts in set un
 
 
 # similar to above, except object must match tag to get saved as a result
-QUERY: direct_unipropogate_match_s 1sq_2ve_3'member.e_4me:queue_s:match_v2_o4_<3 # unipropogate walks upwards to inherit from if it needs to 
+direct_unipropogate_match_s 1sq_2ve_3'member.e_4me:queue_s:match_v2_o4_<3 # unipropogate walks upwards to inherit from if it needs to 
 
 
-QUERY: unimember 1sq_2me_3'member.e:queue_s:match_o2<3
+unimember 1sq_2me_3'member.e:queue_s:match_o2<3
 
-QUERY: direct_findtopics 1sq_2ve_3'member.e:s:v3_<3e: # walks up inheritance and notes topic names we are members of (fails all other facts)
-# 1.  mark subject with 1 and q it 
-# 2. mark expanded verb with 2
-# 3. mark member with 3 and expand?
-# 4. use subject side of facts
-# 5. if verb marked with 3, expand up using verbs marked with 3
+direct_findtopics 1sq_2ve_3'member.e:s:v3_<3e: # walks up inheritance and notes topic names we are members of (fails all other facts)
+#1.  mark subject with 1 and q it 
+#2. mark expanded verb with 2
+#3. mark member with 3 and expand?
+#4. use subject side of facts
+#5. if verb marked with 3, expand up using verbs marked with 3
 
 direct_hierarchy 1~stopHierarchy.e_i1_n_2'member.t_3o<2e_4sq:queue_:match_<2_~3_i1 
 #e.g. ^query(direct_hierarchy _0 ? _1)   how are x and y similar.  we want the lowest intersection set.
-# 1. expand mark all elements of ~stophierarchy as ignore - dont q
-# 2. set ignore on all topic names
-# 3. mark member with 2
-# 4. mark object with 3 and propopgate using member but dont q 
-# 5 mark subject with 4 and queue
-# 6. fan out member (2) facts, win if you hit 3 mark
-# 7 stop if verb is 1 (die that path since not queued)
+#1. expand mark all elements of ~stophierarchy as ignore - dont q
+#2. set ignore on all topic names
+#3. mark member with 2
+#4. mark object with 3 and propopgate using member but dont q 
+#5 mark subject with 4 and queue
+#6. fan out member (2) facts, win if you hit 3 mark
+#7 stop if verb is 1 (die that path since not queued)
 
 
 #######
@@ -265,12 +205,12 @@ direct_hierarchy 1~stopHierarchy.e_i1_n_2'member.t_3o<2e_4sq:queue_:match_<2_~3_
 # field of the riccochet fact.
 ######
 
-QUERY: direct_vo_riccochet_smatch 1oq_2ve_3pe_4me:queue_o:match_v2:walk_so_V3_S4 # eg PRESIDENTINDEX ^query1(direct_vo_riccochet_smatch ? instance '~president 1 ? ? exemplar _0 )
+direct_vo_riccochet_smatch 1oq_2ve_3pe_4me:queue_o:match_v2:walk_so_V3_S4 # eg PRESIDENTINDEX ^query1(direct_vo_riccochet_smatch ? instance '~president 1 ? ? exemplar _0 )
 # given verb "instance" + object, use subject to find facts of form:  (subject "exemplar" _0)  _0 is the number of the presidency.
 # So-- asking for who is the 43rd president, it searches for facts:  someone instance ~president, and then riccochets on the someone to see if
 # it has a fact  (43 exemplar subject)
 	
-QUERY: riccochet_vo_vo 1oq_2ve_3pe_4me:queue_o:match_v2:walk_ss_V3_O4
+riccochet_vo_vo 1oq_2ve_3pe_4me:queue_o:match_v2:walk_ss_V3_O4
 # e.g. What is the capital of France (_0) given:  (Paris part France) and (Paris member ~capital)
 # ^query(riccochet_ov_ov ? part _0 1 ? ?  member '~capital)  The capital of _0 is @0subject . 
 #
@@ -280,49 +220,31 @@ QUERY: riccochet_vo_vo 1oq_2ve_3pe_4me:queue_o:match_v2:walk_ss_V3_O4
 #	^query(riccochet_ov_ov ? part _0 1 ? ?  member '~country)  @0subject . 
 # scan facts: (xxx part Europe) -> (xxx member ~country) to match
 
-QUERY: riccochet_ov_sv 1oq_2vt_3pe:queue_o:match_v2:walk_ss_V3
+riccochet_ov_sv 1oq_2vt_3pe:queue_o:match_v2:walk_s_V3
 #^query1(riccochet_ov_sv ? member $item   -1 ? ? details ? ) search for facts of member $item, for subject of those see what ones have verb details. return the objects
 # take object tag and queue it. tag verb. for each fact found in object position of queue, prove verb matches.
 # The found SUBJECT should have ITS facts scanned for ones with verb "details". the objects of those facts should be returned
 
-QUERY: riccochet_a_special 1sq_2vt_3pe:queue_s:match_v2:walk_os_V3
+riccochet_a_special 1sq_2vt_3pe:queue_s:match_v2:walk_o_V3
 #^query1(riccochet_sv_ov $item  member ?  -1 ? ? up ? ) search for facts of member $item, for object of those see what ones have verb up. return the subjects
 # take object tag and queue it. tag verb. for each fact found in object position of queue, prove verb matches.
-# The found OBJECT should have ITS subject facts scanned for ones with verb "up". the objects of those facts should be returned
+# The found OBJECT should have ITS facts scanned for ones with verb "up". the subjects of those facts should be returned
 
-
-QUERY: riccochet_s<v_S  4'member.t_1s<4q_2vt_3ot:queue_s:match_v2:walk_o_S3
+riccochet_s<v_S  4'member.t_1s<4q_2vt_3ot:queue_s:match_v2:walk_o_S3
 # e.g. How many arms (_0) does a person (_1) have? given: (person component (arm component 2)) and other such facts.
 # query(riccochet_s<v_S _1 component _0 1) -- _0 = arm  _1 = person  -- search for person component _arm 
 # This can also match how many paws does a cat have if fact is (~animals component (paw component 4))
-# 1. mark member as 4
-# 2. queue and mark the subject (person) and all member above it as 1
-# 3. mark the verb 2 (component)
-# 4. mark object as 3 (arm)
-# 5. use subject facts of queued subject person
-# 6. accept facts labeled from verb component
-# 7. treat object field as a fact to riccochet using directly --- (arm component 2) is the fact
-# 8. prove subject of fact matches object mark (verb has to match)
-# 9. keep this fact as found fact
+# 0. mark member as 4
+# 1. queue and mark the subject (person) and all member above it as 1
+# 2. mark the verb 2 (component)
+# 3. mark object as 3 (arm)
+# 4. use subject facts of queued subject person
+# 5. accept facts labeled from verb component
+# 6. treat object field as a fact to riccochet using directly --- (arm component 2) is the fact
+# 6. prove subject of fact matches object mark (verb has to match)
+# 7. keep this fact as found fact
 
-# given subject and verb, find facts whose object has object as verb (looking for subject)
-# eg. and (15 space ~carts) and (cart1 member ~carts)
-# find (15 space ~carts) using ^query(riccochet_sv-oo cart1 member space) - finds cart1 member carts, using Object ~carts to get subject with space
-QUERY: riccochet_sv-oo  1sq_2vt_3ot:queue_s:match_v2:walk_oo_V3
-# 1 mark and queue subject as 1
-# 2 mark verb as 2
-# 3 mark object as 3
-# 4 use subject facts of queue
-# 5 accept facts which have matching verb
-# 6 use the object field of the fact to generate new facts of which verb must be tagged 3
-
-
-QUERY: direct_ovfs 1fsq_2vt:queue_o:match_q1v2 # used by store 
-
-QUERY: direct_ovfo 1foq_2vt:queue_o:match_q1v2 # used by store on object facts
-
-QUERY: direct_svfo 1foq_2vt:queue_s:match_q1v2 # used by store - facts with object being instances, find classes of which those are subjects
-
-# find facts of which subject field is this fact and verb is given.
-QUERY: direct_s'v 1S_2vt:queue_fs:match_v2 
+direct_ovfs 1fsq_2vt:queue_o:match_q1v2 # used by store 
+direct_ovfo 1foq_2vt:queue_o:match_q1v2 # used by store on object facts
+direct_svfo 1foq_2vt:queue_s:match_q1v2 # used by store - facts with object being instances, find classes of which those are subjects
 

@@ -1,0 +1,130 @@
+ topic: ~HELLO Random ()
+ t: Welcome back.
+         a: (thank you) You're welcome 
+         a: ([hello hi ~yes]) Get ready for duty! 
+         a: ([ who name] ) Well, I'm Dave. If that wasn't clear. 
+         a: () 
+ t: The newest hero!
+         a: ([hello hi ~yes]) Get ready for duty! 
+         a: ([ first oldest] ) Superman, of course. 
+         a: ([ who name] ) Well, I'm Dave. If that wasn't clear. 
+         a: () 
+ t: There you are!too many  It's good to see you.
+         a: (why) Because you're an important part of the team. 
+         a: ([hello hi ~yes]) Get ready for duty! 
+         a: ([ who name] ) Well, I'm Dave. If that wasn't clear. 
+         a: () 
+ t: I'm very glad you came back.
+         a: (why) Because you're an important part of the team. 
+         a: ([ who name] ) Well, I'm Dave. If that wasn't clear. 
+         a: () 
+ t: I was just looking for you.
+         a: (why) Because you're an important part of the team. 
+         a: ([ who name] ) Well, I'm Dave. If that wasn't clear. 
+         a: () 
+ t: Hello, Avenger! Are you ready for action?
+         a: ([~yes yeah "i am" okay sure]) Excellent. We need your dedication.  
+         a: (["not really" ~no not "not think"]) Well you better get ready. 
+         a: ([ who name]) Well, I'm Dave. If that wasn't clear. 
+         a: () That was a trick question. A hero is always ready. 
+		 
+TOPIC: ~childhood (child childhood kid little memory young younger history )
+#!x  This topic is a sample of a simple topic, with good indentation style.
+#!x  It is well commented with annotations for :abstractt and :verify.
+
+t: Did you run away from home when you were little? 
+
+    #! sure
+    a: ( ~yes ) Was it fun? 
+
+    #! never
+    a: ( ~no ) You should try it some time. Travel broadens the mind. 
+
+t: RUNAWAY ( ) I ran away once, but my parents found me and dragged me back. 
+
+t: What scared you as a kid? 
+
+    #! I was scared of the dark
+    a: ( [ dark darkness ] ) Did you use a nightlite? 
+	ok
+    #! I like chicken
+    a: ( ~food ) Food? How weird. 
+
+    #! the boogie man
+    a: ( [ monster "boogie man"] ) There are no non-human monsters out there. 
+
+    #! I feared dragons
+    a: ( ~mythical_creatures ) I guess your parents didn't tell you such creatures didn't exist. 
+
+    #! spiders scared me
+    a: ( ~insects ) Are you afraid of all insects? 
+
+    #! tigers
+    a: ( ~animals ) Big animals are scary. Tiny ones are not, except to some girls. 
+
+    #! snakes
+    a: ( snakes ) You and Indiana Jones. Snakes would rather slither off than attack you. Just don't surprise them. 
+
+    #! I had nightmares
+    a: ( [ dream nightmare ] ) Do you still have bad dreams now? 
+
+        #! yes
+        b: ( ~yes ) That's too bad. Maybe you should give up sleeping. 
+
+        #! no 
+        b: ( ~no ) I guess you no longer go to horror movies. 
+
+t: SCARE ( ) I'm scared of machines. I have vivid dreams of the Terminator robots. 
+
+t: Did you have a happy childhood? 
+
+#! did you ever run away?
+u: ( run_away ) ^reuse ( RUNAWAY )
+
+#! how was your childhood
+u: HAPPY ( how * childhood ) I was happy as a kid. 
+
+#! how were you was a kid
+u: ( be you * as a kid ) ^reuse ( HAPPY )
+
+#! what scares you?
+u: ( [ scare afraid ] ) ^reuse ( SCARE )
+
+#! what is your earliest childhood memory?
+u: ( << you [ early childhood ] memory >> ) I remember playing with an HO railroad set. 
+
+#! tell me your history
+u: ( your history ) I was born. I survived childhood. I became an adult. 
+
+
+topic: ~INTRODUCTIONS (~emogoodbye ~emohello ~emohowzit name here )
+
+ #!x matches every time on startup of a new conversation
+ t: ( %input<%userfirstline )
+     ^keep()
+     ^gambit(~HELLO)
+
+ #!x will match on every return start of a conversation
+ t: ( %input<%userfirstline %input>0 )
+     ^keep()
+     ^gambit(~HELLO)
+
+
+#!x will match on every return start of a conversation 
+t: ( %input<%userfirstline %input>0 ) 
+	^keep()  
+	[Welcome back] [Hello, again.][Glad you came back.][Hi.][Hi, again.]
+
+#!x matches every time on startup of a new conversation
+t: ( %input<%userfirstline ) 
+	^keep()   
+	Welcome to ChatScript.
+
+#!x issued only once, then erased
+t: Have you been here before?
+
+#! What is your name $bot = georgia 
+u: ( $bot=georgia what is your name ) My name is Georgia.
+
+#! what is your name $bot = harry
+u: ( $bot=harry what is your name ) My name is Harry.

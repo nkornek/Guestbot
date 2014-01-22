@@ -1,1 +1,1 @@
-﻿^harry O 0 A$token = 2048 | 127 | 256 | 512 | 1024 | 12288 ^addtopic ( ~introductions ) $control_main = ~control $userprompt = ^"$login: >" $botprompt = ^"HARRY: " 
+﻿^snowwhite O 0 $token = 2048 | 256 | 512 | 1024 | 4096 | 8192 ^addtopic ( ~justify_identity ) $control_main = ~control $userprompt = ^"$login: >" $botprompt = ^"SNOWWHITE: " 

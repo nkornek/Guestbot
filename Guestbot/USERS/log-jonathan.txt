@@ -1,0 +1,214 @@
+﻿Start: user:jonathan bot:snowwhite ip: rand:3218 (~justify_identity) 0 ==> Yes, what can I do for you?  When:Thu Oct 10 14:54:02 2013 Version:3.53 Build0:1379951602 Build1:1380908472 Why: ~justify_identity.0.0 
+Respond: user:jonathan bot:snowwhite ip: (~sell_apple) 1  Here's an apple for you ==> Who are you to be offering apples to strangers?  When:Thu Oct 10 14:54:10 2013 Why: ~sell_apple.2.0 
+Respond: user:jonathan bot:snowwhite ip: (~sell_apple) 2  Just a good samaritan ==> I can't accept anything from you.  When:Thu Oct 10 14:54:21 2013 Why: ~sell_apple.1.0 
+Command: :up samaritan
+Command: :up help
+
+For help:
+ Set hierarchy:
+ Wordnet hierarchy:
+  help~1: the activity of contributing to the fulfillment of a need or furtherance of an effort or purpose 
+    is activity~1  any specific behavior 
+       is act~1z something that people do or cause to happen 
+          is event~1z something that happens at a given place and time 
+             is psychological_feature~1z a feature of the mental life of a living organism 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  help~2: a means of serving 
+    is helpfulness~2  the property of providing useful assistance 
+       is utility~1z the quality of being of practical use 
+          is quality~1z an essential and distinguishing attribute of something or someone 
+             is attribute~1z an abstraction belonging to or characteristic of an entity 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  help~3: a resource 
+    is resource~1  a source of aid or support that may be drawn upon when needed 
+       is plus~1z a useful or valuable quality 
+          is quality~1z an essential and distinguishing attribute of something or someone 
+             is attribute~1z an abstraction belonging to or characteristic of an entity 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  help~4: a person who contributes to the fulfillment of a need or furtherance of an effort or purpose 
+    is worker~2  a person who works at a specific occupation 
+       is somebody~1z a human being 
+          is organism~1z a living thing that has the ability to act or function independently 
+             is living_thing~1z a living entity 
+                is unit~1z an assemblage of parts that is regarded as a single entity 
+                   is physical_object~1z a tangible and visible entity 
+                      is physical_entity~1z an entity that has physical existence 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+          is causal_agent~1z any entity that produces an effect or is responsible for events or results 
+             is physical_entity~1z an entity that has physical existence 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  help~5: improve the condition of 
+  help~6: improve 
+  help~7: help to some food 
+  help~8: take or use 
+  help~9: give help or assistance 
+  help~10: contribute to the furtherance of 
+  help~11: abstain from doing 
+  help~12: be of use 
+Respond: user:jonathan bot:snowwhite ip: (~assassination_plot) 3  Do you like living here? ==> I can't be too cautious with my stepmother wanting to kill me!  When:Thu Oct 10 15:18:36 2013 Why: ~assassination_plot.0.0 
+Command: :up house
+
+For house:
+ Set hierarchy:
+ Wordnet hierarchy:
+  house~1: play in which children take the roles of father or mother or children and pretend to interact like adults 
+    is play~3  activity by children that is guided more by imagination than by fixed rules 
+       is refreshment~1z an activity that diverts or amuses or stimulates 
+          is activity~1z any specific behavior 
+             is act~1z something that people do or cause to happen 
+                is event~1z something that happens at a given place and time 
+                   is psychological_feature~1z a feature of the mental life of a living organism 
+                      is abstraction~1z a general concept formed by extracting common features from specific examples 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~2: a dwelling that serves as living quarters for one or more families 
+    is edifice~1  a structure that has a roof and walls and stands more or less permanently in one place 
+       is construction~4z a thing constructed 
+          is artefact~1z a man-made object taken as a whole 
+             is unit~1z an assemblage of parts that is regarded as a single entity 
+                is physical_object~1z a tangible and visible entity 
+                   is physical_entity~1z an entity that has physical existence 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+    is home~1  housing that someone is living in 
+       is lodging~1z structures collectively in which people are housed 
+          is construction~4z a thing constructed 
+             is artefact~1z a man-made object taken as a whole 
+                is unit~1z an assemblage of parts that is regarded as a single entity 
+                   is physical_object~1z a tangible and visible entity 
+                      is physical_entity~1z an entity that has physical existence 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~3: a building in which something is sheltered or located 
+    is edifice~1  a structure that has a roof and walls and stands more or less permanently in one place 
+       is construction~4z a thing constructed 
+          is artefact~1z a man-made object taken as a whole 
+             is unit~1z an assemblage of parts that is regarded as a single entity 
+                is physical_object~1z a tangible and visible entity 
+                   is physical_entity~1z an entity that has physical existence 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~4: a building where theatrical performances or motion-picture shows can be presented 
+    is edifice~1  a structure that has a roof and walls and stands more or less permanently in one place 
+       is construction~4z a thing constructed 
+          is artefact~1z a man-made object taken as a whole 
+             is unit~1z an assemblage of parts that is regarded as a single entity 
+                is physical_object~1z a tangible and visible entity 
+                   is physical_entity~1z an entity that has physical existence 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~5: aristocratic family line 
+    is folk~3  people descended from a common ancestor 
+       is blood~1z the descendants of one individual 
+          is genealogy~1z successive generations of kin 
+             is clan~1z group of people related by blood or marriage 
+                is social_group~1z people sharing some social relation 
+                   is group~1z any number of entities considered as a unit 
+                      is abstraction~1z a general concept formed by extracting common features from specific examples 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~6: the members of a business organization that owns or operates one or more establishments 
+    is business~8  a commercial or industrial enterprise and the people who constitute it 
+       is endeavour~2z an organization created for business ventures 
+          is constitution~1z a group of people who work together 
+             is social_group~1z people sharing some social relation 
+                is group~1z any number of entities considered as a unit 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~7: a social unit living together 
+    is unit~3  an organization regarded as part of a larger social group 
+       is constitution~1z a group of people who work together 
+          is social_group~1z people sharing some social relation 
+             is group~1z any number of entities considered as a unit 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~8: an official assembly having legislative powers 
+    is legislative_body~1  persons who make or amend or repeal laws 
+       is fabrication~2z a group of persons who are gathered together for a common purpose 
+          is assembly~2 a group of persons together in one place 
+             is social_group~1z people sharing some social relation 
+                is group~1z any number of entities considered as a unit 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~9: the audience gathered together in a theatre or cinema 
+    is audience~2  a gathering of spectators or listeners at a performance 
+       is assembly~2 a group of persons together in one place 
+          is social_group~1z people sharing some social relation 
+             is group~1z any number of entities considered as a unit 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~10: the members of a religious community living together 
+    is community~2  a group of people living in a particular local area 
+       is assembly~2 a group of persons together in one place 
+          is social_group~1z people sharing some social relation 
+             is group~1z any number of entities considered as a unit 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~11: the management of a gambling house or casino 
+    is management~2  those in charge of running a business 
+       is constitution~1z the persons who make up a body for the purpose of administering something 
+          is body~1z a group of persons associated by some common tie or occupation and regarded as an entity 
+             is social_group~1z people sharing some social relation 
+                is group~1z any number of entities considered as a unit 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~12: one of 12 equal areas into which the zodiac is divided 
+    is part~9  the extended spatial location of something 
+       is location~1z a point or extent in space 
+          is physical_object~1z a tangible and visible entity 
+             is physical_entity~1z an entity that has physical existence 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  house~13: provide housing for 
+  house~14: contain or cover 
+Respond: user:jonathan bot:snowwhite ip: (~chicken) 4  up:living ==> Chicken chicken chicken, and beef  When:Thu Oct 10 15:21:35 2013 Why: ~chicken.0.0 
+Command: :up living
+
+For living:
+ Set hierarchy:
+ Wordnet hierarchy:
+  living~1: the experience of being alive 
+    is experience~2  the content of direct observation or participation in an event 
+       is depicted_object~1z the sum or range of what has been perceived, discovered, or learned 
+          is knowledge~1z the psychological result of perception and learning and reasoning 
+             is psychological_feature~1z a feature of the mental life of a living organism 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  living~2: people who are still living 
+    is people~1  any group of human beings (men or women or children) collectively 
+       is group~1z any number of entities considered as a unit 
+          is abstraction~1z a general concept formed by extracting common features from specific examples 
+             is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  living~3: the financial means whereby one lives 
+    is resource~3  available source of wealth 
+       is assets~1z anything of material value or usefulness that is owned by a person or company 
+          is possession~1z anything owned or possessed 
+             is relation~1z an abstraction belonging to or characteristic of two entities or parts together 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  living~4: the condition of living or the state of being alive 
+    is being~2  the state or fact of existing 
+       is state~1z the way something is with respect to its main attributes 
+          is attribute~1z an abstraction belonging to or characteristic of an entity 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  living~5: absolute 
+  living~6: in its natural state and place 
+  living~7: still in active use 
+  living~8: still in existence 
+  living~9: true to life 
+  living~10: pertaining to living persons 
+Respond: user:jonathan bot:snowwhite ip: (~sell_apple) 5  Why won't you accept my apple? ==> Shouldn't you be selling those rather than giving them away?  When:Thu Oct 10 15:22:42 2013 Why: ~sell_apple.3.0 
+Command: :up accept
+
+For accept:
+ Set hierarchy:
+ Wordnet hierarchy:
+  accept~1: tolerate or accommodate oneself to 
+  accept~2: consider or hold as true 
+  accept~3: be sexually responsive to, used of a female domesticated mammal 
+  accept~4: react favorably to 
+  accept~5: give an affirmative reply to 
+  accept~6: make use of or accept for some purpose 
+  accept~7: receive officially, as from a committee 
+  accept~8: receive willingly something given or offered 
+  accept~9: admit into a group or community 
+  accept~10: take on as one's own the expenses or debts of another person 
+  accept~11: be designed to hold or take 
+Command: :build 1

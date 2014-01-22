@@ -315,13 +315,6 @@ static char* Sregression(char* value)
 	return (regression != 0) ? (char*)"1" : (char*)"";
 }
 
-static char* Sdocument(char* value)
-{
-	static char hold[50];
-	if (value) return strcpy(hold,value); // may not legall set on one's own
-	if (*hold != '.') return hold;
-	return (documentMode != 0) ? (char*)"1" : (char*)"";
-}
 static char* Srule(char* value) 
 {
 	static char hold[50];
@@ -420,44 +413,12 @@ static char* Sparsed(char* value)
     return tokenFlags & FAULTY_PARSE ? (char*)"" : (char*)"1";
 }  
 
-static char* Ssentence(char* value) 
-{
-	static char hold[50];
-	if (value) return AssignValue(hold,value);
-	if (*hold != '.') return hold;
-    return tokenFlags & NOT_SENTENCE ? (char*)"" : (char*)"1";
-}  
-
 static char* Squestion(char* value) 
 {
 	static char hold[50];
 	if (value) return AssignValue(hold,value);
 	if (*hold != '.') return hold;
     return tokenFlags & QUESTIONMARK ? (char*)"1" : (char*)"";
-}  
-
-static char* Scommand(char* value) 
-{
-	static char hold[50];
-	if (value) return AssignValue(hold,value);
-	if (*hold != '.') return hold;
-    return tokenFlags & COMMANDMARK ? (char*)"1" : (char*)"";
-}  
-
-static char* Squotation(char* value) 
-{
-	static char hold[50];
-	if (value) return AssignValue(hold,value);
-	if (*hold != '.') return hold;
-    return tokenFlags & QUOTATION ? (char*)"1" : (char*)"";
-}  
-
-static char* Simpliedyou(char* value) 
-{
-	static char hold[50];
-	if (value) return AssignValue(hold,value);
-	if (*hold != '.') return hold;
-    return tokenFlags & IMPLIED_YOU ? (char*)"1" : (char*)"";
 }  
 
 static char* Stense(char* value) 
@@ -475,12 +436,7 @@ static char* StokenFlags(char* value)
 	static char hold[50];
 	if (value) return AssignValue(hold,value);
 	if (*hold != '.') return hold;
-#ifdef WIN32
-	sprintf(systemValue,"%I64d",(long long int) tokenFlags); 
-#else
-	sprintf(systemValue,"%lld",(long long int) tokenFlags); 
-#endif	
-
+	sprintf(systemValue,"%lld",tokenFlags); 
 	return systemValue;
 }
 
@@ -584,7 +540,6 @@ SYSTEMVARIABLE sysvars[] =
 	
 	{"\r\n---- System variables",0,""},
 	{"%all",Sall,"Boolean - is all flag on"}, 
-	{"%document",Sdocument,"Boolean - is :document flag on"}, 
 	{"%fact",Sfact,"Most recent fact id"}, 
 	{"%regression",Sregression,"Boolean - is regression flag on"}, 
 	{"%rule",Srule,"Get a tag to current executing rule or null"}, 
@@ -593,17 +548,13 @@ SYSTEMVARIABLE sysvars[] =
 	{"%trace",STrace,"Numeric value of trace flag"}, 
 
 	{"\r\n---- Input variables",0,""},
-	{"%command",Scommand,"Boolean - is the current input a command"},
 	{"%foreign",Sforeign,"Boolean - is the bulk of current input foreign words"},
-	{"%impliedyou",Simpliedyou,"Boolean - is the current input have you as an implied subject"},
 	{"%input",Sinput,"Numeric volley id of the current input"}, 
 	{"%length",Slength,"Numeric count of words of current input"}, 
 	{"%more",Smore,"Boolean - is there more input pending"}, 
 	{"%morequestion",SmoreQuestion,"Boolean - is there a ? in pending input"}, 
 	{"%parsed",Sparsed,"Boolean - was current input successfully parsed"}, 
 	{"%question",Squestion,"Boolean - is the current input a question"},
-	{"%quotation",Squotation,"Boolean - is the current input a quotation"},
-	{"%sentence",Ssentence,"Boolean - does it seem like a sentence - has subject and verb or is command"}, 
 	{"%tense",Stense,"Tense of current input (present, past, future)"}, 
 	{"%tokenflags",StokenFlags,"Numeric value of all tokenflags"}, 
 	{"%userfirstline",SuserFirstLine,"Numeric volley count at start of session"}, 

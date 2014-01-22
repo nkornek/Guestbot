@@ -9,7 +9,7 @@ if (! ^pos(NOUN ^title lowercaseexist))
 	createfact(^title star ^actor)
 	if (! ^pos(NOUN ^title lowercaseexist))
 	{
-		^addproperty(^title NOUN_TITLE)
+		^addproperty(^title NOUN_TITLE_OF_WORK NOUN NOUN_PROPER_SINGULAR)
 	}
 }
 DATA:
@@ -5186,6 +5186,7 @@ Billy_Dee_Williams Alien_Intruder
 Jeff_Conaway Alien_Intruder
 Maxwell_Caulfield Alien_Intruder
 Tracy_Scoggins Alien_Intruder
+Jason_Priestley Eye_Of_The_Beholder
 Michael_Williams_Actor A_Fine_Romance
 Juhi_Chawla Paheli
 Simon_Yam Bullet_In_The_Head
@@ -5716,7 +5717,7 @@ Giancarlo_Giannini A_Walk_In_The_Clouds
 Royal_Dano Moby_Dick
 Esha_Deol Dus
 Carrie_Clark_Ward The_Eagle
-Stephanie_Edwards A_M_America
+Stephanie_Edwards_TV_Personality A_M_America
 Kelly_Chen Whatever_Will_Be_Will_Be
 Daphne_Oxenford Fresh_Fields
 Bill_Wolff Tucker_Television_Program
@@ -5767,7 +5768,7 @@ Craig_Sheffer Flying_Virus
 Tracy_Scoggins A_Crack_In_The_Floor
 Linda_Kash Urban_Safari
 Clint_Howard Ice_Cream_Man
-Robert_Carradine Body_Bags
+Robert_Carradine Body_Bags_TV_Movie
 Hameed_Sheikh Khuda_Ke_Liye
 Rosamund_Pike The_Libertine
 George_J_Lewis Zorro1957
@@ -6724,8 +6725,8 @@ Deepak_Tijori Kabhi_Haan_Kabhi_Naa
 Gillian_Anderson The_Last_King_Of_Scotland
 Ginger_Rogers Flying_Down_To_Rio
 Scarlett_Johansson Just_Cause
-Chow_Yun_Fat The_Bund
-Ray_Lui The_Bund
+Chow_Yun_Fat The_Bund_TV_B
+Ray_Lui The_Bund_TV_B
 Olaf_Fonss Verdens_Undergang
 Ebba_Thomsen Verdens_Undergang
 Glynnis_O_Connor Ode_To_Billy_Joe
@@ -7565,7 +7566,7 @@ Lindsey_Mc_Keon Opposite_Sex
 Helga_Anders The_White_Horses
 Kate_Vernon School_Of_Life
 Pamela_Anderson Naked_Souls
-Kenneth_Ma Into_Thin_Air
+Kenneth_Ma Into_Thin_Air_TV_B
 Quentin_Tarantino Baad_Asssss_Cinema
 Takashi_Shimura I_Live_In_Fear
 Spike_Milligan Ghost_In_The_Noonday_Sun
@@ -7755,6 +7756,9 @@ Johanna_Sallstrom Making_Babies
 Shanti_Roney Making_Babies
 James_Earl_Jones The_Man
 Madonna_Entertainer Im_Going_To_Tell_You_A_Secret
+Stuart_Graham Egypt
+Matthew_Kelly Egypt
+Elliot_Cowan Egypt
 Christina_Pickles Masters_Of_The_Universe
 Jimmy_Boyd Bachelor_Father_U_S
 John_Agar Hold_Back_Tomorrow
@@ -8905,7 +8909,7 @@ Fernando_Rey The_Price_Of_Power
 John_Lithgow Memphis_Belle
 Janis_Carter Night_Editor
 Dorothy_Malone Colorado_Territory
-Charmaine_Sheh Perish_In_The_Name_Of_Love
+Charmaine_Sheh Perish_In_The_Name_Of_Love_TV_B
 Kirstie_Allsopp Location_Location_Location
 Vineeth Perumazhakkalam
 Karl_Malden Murderers_Row
@@ -9114,6 +9118,7 @@ Tanika_Ray Wheel2000
 John_Laurie The_Ghost_Of_St_Michaels
 W_Morgan_Sheppard Hawk_The_Slayer
 Glyn_Houston Keep_It_In_The_Family
+D_B_Sweeney The_Darwin_Awards
 Alfre_Woodard K_P_A_X
 Park_Yeong_Gyu Happy_Ero_Christmas
 Ryan_Fitzgerald Friday_Night_Games
@@ -11260,7 +11265,7 @@ Juan_Pablo_Di_Pace Survival_Island
 Ella_Koon Revolving_Doors_Of_Vengeance
 Bosco_Wong Wars_Of_In_Laws
 Ha_Yu When_Rules_Turn_Loose
-Sonija_Kwok Family_Man
+Sonija_Kwok Family_Man_TV_B
 Leonard_Nimoy The_Halloween_Tree
 Ray_Bradbury The_Halloween_Tree
 Kim_Coles The_Geena_Davis_Show
@@ -12775,7 +12780,7 @@ Judy_Davis Where_Angels_Fear_To_Tread
 Shobana_Chandrakumar Mitr_My_Friend
 Lau_Ching_Wan Running_Out_Of_Time
 Luis_Manzano Crazy_For_You
-Angie_Chiu Point_Of_No_Return
+Angie_Chiu Point_Of_No_Return_TV_B
 David_Schneider_Actor Uncle_Max
 Stephen_Mc_Hattie Life_Under_Water
 Smita_Jaykar Astitva
@@ -14988,7 +14993,7 @@ Will_Patton Deadly_Desire
 Dana_Carvey Opportunity_Knocks
 Gerardo_Romano Open_From18_To24
 Michael_Mc_Kean The_Year_Without_A_Santa_Claus
-Yoyo_Mung Split_Second
+Yoyo_Mung Split_Second_TV_B
 Salmah_Ismail Ahmad_Albab
 Ajay_Devgan Shikhar
 Amrita_Rao Shikhar
@@ -15510,7 +15515,7 @@ Sonny_Chiba The_Fall_Of_Ako_Castle
 Tetsuro_Tamba The_Fall_Of_Ako_Castle
 Anthony_Perkins The_Actress
 Nastassja_Kinski The_Wrong_Move
-David_Ogden_Stiers Justice_League_Of_America
+David_Ogden_Stiers Justice_League_Of_America_TV_Movie
 Peggy_Ashcroft When_The_Wind_Blows
 George_Siegmann The_Man_Who_Laughs
 Jeanmarie_Simpson A_Single_Woman
@@ -15610,7 +15615,7 @@ Bill_Cosby Lets_Do_It_Again
 John_Garfield The_Sea_Wolf
 Jean_Harlow The_Beast_Of_The_City
 Dustin_Farnum The_Virginian
-Seth_Adkins Geppetto
+Seth_Adkins Geppetto_TV_Musical
 Brian_Donlevy The_Virginian
 Juliette_Lewis Meet_The_Hollowheads
 Kenneth_Harlan The_Virginian
@@ -16419,6 +16424,7 @@ Devon_Odessa The_Omega_Code
 Leo_Laporte The_Tech_Guy
 Karen_Sillas Reach_The_Rock
 M_S_Baskar Machakaaran
+Ellen_Geer Our_House_TV_Movie
 Tom_Courtenay One_Day_In_The_Life_Of_Ivan_Denisovich
 James_Maxwell_Actor One_Day_In_The_Life_Of_Ivan_Denisovich
 Hanns_Zischler Summer_In_The_City
@@ -16514,7 +16520,7 @@ Graham_Norton The_Graham_Norton_Show
 Lowell_Thomas The_Chicken_Of_Tomorrow
 Kim_Delaney Body_Parts
 Supriya_Pathak The_Bengali_Night
-Selena_Li The_Master_Of_Tai_Chi
+Selena_Li The_Master_Of_Tai_Chi_TV_B
 Sarath_Kumar Vinnukum_Mannukum
 Shaam A_B_C_D
 Sneha A_B_C_D
@@ -16898,12 +16904,14 @@ Miguel_Ferrer Project_A_L_F
 Enrico_Lo_Verso The_Way_We_Laughed
 Kent_Williams_Actor The_New_Mike_Hammer
 Graciela_Borges Monobloc
-Kenix_Kwok Ten_Brothers
+Kenix_Kwok Ten_Brothers_TV_B
 Anthony_Hopkins The_Bunker
 Christopher_Fairbank The_Bunker
 Sunshine_Dizon Impostora
 Gene_Simmons Wish_You_Were_Dead
 Lucy_Brown Sharpes_Challenge
+Charles_Dance Fallen_Angel2007
+Emilia_Fox Fallen_Angel2007
 Om_Puri Chor_Machaaye_Shor
 Bill_Nunn Firehouse_Dog
 Jim_Carrey Finders_Keepers
@@ -18791,6 +18799,7 @@ Lewis_Stone The_Ice_Follies_Of_1939
 Peter_Lorre Strange_Cargo
 Osa_Massen A_Womans_Face
 Giada_De_Laurentiis Giada_In_Paradise
+Jacob_Kogan Joshua
 Yasuaki_Kurata Samourais
 Ken_Ogata Shadow_Warriors_TV_Show
 Audrey_Landers The_Huggabug_Club
@@ -18984,7 +18993,7 @@ Ib_Schonberg Kobenhavnere
 Huang_Shengyi Call_For_Love
 Christa_Campbell Hellbilly58
 Shriya_Saran Indiralohathil_Na_Azhagappan
-Michael_Miu The_Academy
+Michael_Miu The_Academy_TV_B
 Lam_Ching_Ying Enter_The_Fat_Dragon
 Carolina_Peleritti X_X_Y
 Emma_Lung The_Jammed
@@ -20144,7 +20153,7 @@ Steven_Franken The_Lieutenant
 Benz_Hui Wars_Of_In_Laws_II
 Ross_Shafer Love_Me_Love_Me_Not
 Ajay_Naidu Loins_Of_Punjab_Presents
-Wayne_Lai Steps
+Wayne_Lai Steps_TV_B
 Rachel_Weisz I_Want_You
 Heather_Graham Alien_Love_Triangle
 Peter_Haber Hamndens_Pris
@@ -20254,7 +20263,7 @@ Gerard_Joling So_You_Wanna_Be_A_Popstar_Netherlands
 Nancy_Coolen So_You_Wanna_Be_A_Popstar_Netherlands
 Oliver_Hardy Long_Fliv_The_King
 Oliver_Hardy Say_It_With_Babies
-Anne_Heung Love_Is_Beautiful
+Anne_Heung Love_Is_Beautiful_TV_B
 Glenn_Tryon The_Cows_Kimona
 Dominique_Pinon Dante01
 Charley_Chase Thundering_Fleas
@@ -20285,7 +20294,7 @@ Danny_Dyer The_Great_Ecstasy_Of_Robert_Carmichael
 James_Gregory_Actor The_Million_Dollar_Duck
 Kate_Tsui Eye_In_The_Sky
 Eugene_Pallette Fluttering_Hearts
-Dicky_Cheung Journey_To_The_West
+Dicky_Cheung Journey_To_The_West_TV_B
 James_Villiers The_Amazing_Mr_Blunden
 Parthiban Ammuvagiya_Naan
 Sundar_C Veerappu
@@ -20681,7 +20690,7 @@ Dick_Jones Buffalo_Bill_Jr
 Stephen_Rea The_Last_Of_The_High_Kings
 Javed_Jaffrey Singh_Is_Kinng
 Adam_Godley Son_Of_Rambow
-Michael_Tucker_Actor Growing_Up_Brady
+Michael_Tucker_Actor Growing_Up_Brady_TV_Movie
 Jason_Weaver Brewster_Place
 Harry_Carey A_Knight_Of_The_Range
 Harry_Carey The_Committee_On_Credentials
@@ -21169,7 +21178,7 @@ Louise_Fletcher Shadowzone
 David_Beecroft Shadowzone
 James_Hong Shadowzone
 Ken_Davitian South_Of_Pico
-Shirley_Yeung My_Family
+Shirley_Yeung My_Family_TV_B
 Pat_Kelly_Comedian Crimes_Of_Fashion
 Selma_Blair Coast_To_Coast
 Darren_Whackhead_Simpson Kfm_Breakfast
@@ -23264,7 +23273,7 @@ Kitu_Gidwani Dance_Of_The_Wind
 Ian_Wright Gladiators2008
 Gary_Busey The_Bear_Feature
 Jon_Erik_Hexum The_Bear_Feature
-Gabrielle_Anwar Try_To_Remember
+Gabrielle_Anwar Try_To_Remember_TV_Movie
 Ruth_Roland White_Eagle1922_Serial
 Veena_Malik Darinda
 Sofia_Rotaru Caravan_Of_Love
@@ -23977,7 +23986,7 @@ Constance_Cummings The_Guilty_Generation
 Jena_Malone The_Book_Of_Stars
 Uhm_Tae_Woong Forever_The_Moment
 Alice_Faye On_The_Avenue
-Barnard_Hughes The_Incident
+Barnard_Hughes The_Incident_TV_Movie
 Anu_Prabhakar Mussanjemaatu
 Maud_Forget La_Vie_Promise
 Aldo_Sambrell Gunfighters_Of_Casa_Grande
@@ -24410,7 +24419,7 @@ Peter_Bogdanovich The_Dukes
 Lateef_Crowder Tekken
 Joanne_Woodward Women_For_America_For_The_World
 David_Mc_Cullough The_Johnstown_Flood
-Anne_Baxter Nero_Wolfe1977
+Anne_Baxter Nero_Wolfe1977_TV_Movie
 Justine_Waddell The_Fall
 Jasper_Carrott Carrotts_Lib
 Belinda_Lee Long_Night_In1943
@@ -24918,7 +24927,7 @@ Treach Book_Of_Love
 Ryu_Seung_Beom Conduct_Zero
 Betty_Field The_Great_Moment
 Rupert_Grint Cherrybomb
-Natasha_Gregson_Wagner The_Substitute
+Natasha_Gregson_Wagner The_Substitute_TV_Movie
 Robyn_Lively Not_Quite_Human_II
 Gary_Stretch Freebird
 Barry_Prima The_Devils_Sword
@@ -25250,7 +25259,7 @@ table: ~movie(^title)
 if (! ^pos(NOUN ^title lowercaseexist))
 {
 	createfact(^title member ~movie)
-	^addproperty(^title NOUN_TITLE)
+	^addproperty(^title NOUN_TITLE_OF_WORK NOUN NOUN_PROPER_SINGULAR)
 }
 DATA:
 "The Good, the Bad and the Ugly"
@@ -26714,6 +26723,7 @@ Surf_Ninjas
 Cold_Creek_Manor
 Dude_Wheres_My_Car
 The_Missing
+Seeing_Other_People
 The_Brothers_Grimm
 100_Girls
 Pushing_Tin
@@ -27009,6 +27019,7 @@ Cannibal_Women_In_The_Avocado_Jungle_Of_Death
 On_The_Line
 Outrageous_Fortune
 Nothing_Sacred
+The_War
 The_Fat_Spy
 Mesa_Of_Lost_Women
 Teenage_Zombies
@@ -29992,7 +30003,7 @@ Cellar_Dweller
 Fear_Of_Girls
 The_Bridge2006_Drama
 A_Slice_Of_Life
-The_archaeologist
+The_Archeologist
 The_Beggar_Child
 When_A_Woman_Waits
 I_Died_A_Thousand_Times
@@ -31719,6 +31730,7 @@ A_Womans_Secret
 The_Ice_Follies_Of_1939
 Strange_Cargo
 A_Womans_Face
+Joshua
 Saint_Robert_Quebec
 Crazy_Love
 When_Ladies_Meet
@@ -39217,6 +39229,7 @@ DATA:
 "Steve Strait"
 "Steve Valentine"
 "Steve Wilder"
+"Steve Wozniak"
 "Steve Zahn"
 "Steve-o"
 "Steven Anthony Lawrence"

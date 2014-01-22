@@ -35,6 +35,6 @@ void ProcessCompositeName();
 
 unsigned int TransformCount(char* dictword, unsigned int inputLen, char* inputSet, uint64 min);
 void ResetTokenSystem();
-void DumpTokenControls(uint64 val);
+void DumpTokenControls(unsigned int val);
 void DumpTokenFlags();
 #endif

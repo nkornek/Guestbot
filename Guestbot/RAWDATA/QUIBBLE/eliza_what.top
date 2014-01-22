@@ -1,4 +1,4 @@
-topic: ~QUIBBLE_WHAT system random () 
+topic: ~QUIBBLE_WHAT system random erase() 
 # WHAT
 ?: (what do you know about) [Not much I'm afraid.][Very little, actually.][What SHOULD I know about that?]
 ?: (do you know [anything something] about) [Not really.][I'm afraid my ignorance is showing.]

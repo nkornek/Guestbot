@@ -6,8 +6,8 @@ concept: ~directionpreposition (~DIRECTIONPLACEPREPOSITION abaft ahead_of all_ov
 concept: ~placepreposition (~DIRECTIONPLACEPREPOSITION about against along_the_side_of alongside amid amidst among amongst aside aside_of aslant astraddle astride at at_a_range_of at_the_back_of 
           at_the_bottom_of at_the_top_of atwix beside besides between betwixt by chez far fornent in in_sight_of in_the_corner in_the_middle_of in_view_of mid midst near nearby next 
           next_door_to next_to on_the_corner_of opposite over_against right_after touching upon upside within within_sight_of )
-concept: ~spacepreposition LOCATIONWORD (~DIRECTIONPREPOSITION ~PLACEPREPOSITION )
-concept: ~relationpreposition HOWWORD (a_cut_above a_la about absent according_to after_the_fashion_of against all_for along_with anent anti apart_from apropos as as_for as_from as_long_as 
+concept: ~prepositionroot (~RELATIONPREPOSITION ~SPACEPREPOSITION ~TIMEPREPOSITION )
+concept: ~relationpreposition (a_cut_above a_la about absent according_to after_the_fashion_of against all_for along_with anent anti apart_from apropos as as_for as_from as_long_as 
           as_per as_regards as_to as_well aside_from at_the_hand_of at_the_hands_of athwart bar bare_of barring because_of behalf but but_for by by_courtesy_of by_dint_of by_force_of 
           by_means_of by_reason_of by_the_hand_of by_the_hands_of by_the_name_of by_virtue_of complete_with concerning considering contra contrary contrary_to counting courtesy_of cum 
           dehors despite due due_to ex except except_for excepting excluding exclusive_of failing following for_all for_the_benefit_of forasmuch_as forby forbye give_or_take given granted 
@@ -22,6 +22,6 @@ concept: ~relationpreposition HOWWORD (a_cut_above a_la about absent according_t
           preparatory_to previous_to pro pursuant_to qua re regarding regardless_of relative_to respecting sans save saving short_for than thanks_to thwart to_the_accompaniment_of to_the_tune_of 
           together_with under_cover_of under_pain_of under_sentence_of under_the_heel_of unlike unto up_for upward_of upwards_of versus vice vis-a-vis with with_reference_to with_regard_to 
           with_respect_to with_the_exception_of withal without )
-concept: ~timepreposition TIMEWORD (after around as_of as_soon_as at before between by circa close_to come depending_on during ere for from_now_on from_then_on in in_conjunction_with on once 
+concept: ~spacepreposition (~DIRECTIONPREPOSITION ~PLACEPREPOSITION )
+concept: ~timepreposition (after around as_of as_soon_as at before between by circa close_to come depending_on during ere for from_now_on from_then_on in in_conjunction_with on once 
           outwith past prior_to right_after since subsequent_to the_moment_that through throughout til till toward until up_before up_to up_until upon when while within )
-concept: ~prepositionroot (~RELATIONPREPOSITION ~SPACEPREPOSITION ~TIMEPREPOSITION )

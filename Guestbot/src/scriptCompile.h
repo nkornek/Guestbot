@@ -24,13 +24,13 @@ extern bool patternContext;
 extern char* newBuffer;
 
 void ScriptError();
-void EraseTopicFiles(uint64 build);
+void EraseTopicFiles(uint64 zone);
 void InitScriptSystem();
 
 #ifndef DISCARDSCRIPTCOMPILER
 
   
-bool ReadTopicFiles(char* name,uint64 build, int spell);
+bool ReadTopicFiles(char* name,uint64 zone, int spell);
 char* ReadPattern(char* ptr, FILE* in, char* &data,bool macro);
 char* ReadOutput(char* ptr, FILE* in,char* &data,char* rejoinders,WORDP call = NULL);
 char* CompileString(char* ptr);

@@ -7,14 +7,13 @@ an a
 anybody someone
 anyone someone
 are be # avoids problems with noun form
-arts art
 b B
 be be
 become be
 became be
 been be
 being be
-better good
+better better
 born bear
 c C
 can can
@@ -31,14 +30,12 @@ does do
 doing do
 drunk  drink	# even if a noun, use verb canonical
 e E
-eats eat
 eggs egg 
 f F
 fallen fall
 farther far # as a preposition
 farthest far # as a preposition
 fell fall
-felt feel
 found find  # found is also a present tense verb, confusing find
 g G
 get get
@@ -90,11 +87,9 @@ our we
 ours we
 ourselves we 
 p P
-pass pass	# not as plural of pas
 q Q
 r R
 s S
-saving save
 saw see	# two verbs cannot normally find see
 shall shall
 she she
@@ -118,8 +113,6 @@ u U
 u you
 us we
 v V
-v. versus
-vs. versus
 w W
 was be
 we we

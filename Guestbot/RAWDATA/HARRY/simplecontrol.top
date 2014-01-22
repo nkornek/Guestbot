@@ -1,11 +1,18 @@
 # this function is executed once for every new user chatting with harry
 outputmacro: harry()  # you get harry by default
-$token = #DO_INTERJECTION_SPLITTING  | #DO_SUBSTITUTE_SYSTEM   | #DO_NUMBER_MERGE   | #DO_PROPERNAME_MERGE  | #DO_SPELLCHECK  | #DO_PARSE
+$token = #DO_INTERJECTION_SPLITTING  | #DO_SUBSTITUTE_SYSTEM   | #DO_NUMBER_MERGE   | #DO_PROPERNAME_MERGE  | #DO_SPELLCHECK | #DO_POSTAG  | #DO_PARSE
 
 ^addtopic(~introductions)
 $control_main = ~control
 $userprompt = ^"$login: >"
 $botprompt = ^"HARRY: "
+
+# this function is executed once for every new user chatting with georgia
+outputmacro: georgia()	# you can request georgia by giving  name:georgia   as your login
+$token = #DO_INTERJECTION_SPLITTING  | #DO_SUBSTITUTE_SYSTEM   | #DO_NUMBER_MERGE   | #DO_PROPERNAME_MERGE  | #DO_SPELLCHECK | #DO_POSTAG  | #DO_PARSE
+^addtopic(~introductions)
+$control_main = ~control
+$botprompt = ^"GEORGIA: "
 
 table: defaultbot (^name)
 ^createfact(^name defaultbot defaultbot)
@@ -44,12 +51,6 @@ u: () # main per-sentence processing
 			}
 		}
 	}	
-
-	# if no topic reacts, go to the last ditch keywordless topic
-	if (%response == 0) 
-	{
-		nofail(TOPIC ^respond(~keywordless))
-	}
 
 	# having no good response we know, now generate quibbles
 

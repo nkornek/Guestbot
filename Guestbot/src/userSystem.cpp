@@ -26,10 +26,6 @@ char loginID[ID_SIZE];    //   user FILE name (lower case)
 char loginName[ID_SIZE];    //   user typed name
 char callerIP[ID_SIZE];
 
-char timeturn15[100];
-char timeturn0[20];
-char timePrior[20];
-
 void StartConversation(char* buffer)
 {
 	*readBuffer = 0;
@@ -39,6 +35,7 @@ void StartConversation(char* buffer)
     *currentInput = 0;
 	responseIndex = 0;
 	ResetSentence();
+	ClearWhereInSentence();
 	Reply();
 }
 
@@ -78,7 +75,7 @@ void Login(char* caller,char* usee,char* ip) //   select the participants
 	MakeLowerCopy(computerIDwSpace+1,computerID);
 	strcat(computerIDwSpace," ");
 
-	if (ip && *ip) // maybe use ip in generating unique login
+	if (ip) // maybe use ip in generating unique login
 	{
 		if (!stricmp(caller,"guest")) sprintf(caller,"guest%s",ip);
 		else if (*caller == '.') sprintf(caller,"%s",ip);
@@ -165,7 +162,7 @@ static char* WriteUserFacts(char* ptr)
 	// most recent facts, in order
 	FACT* F = factFree+1;
 	count = userFactCount;
-	while (count && --F > factLocked) // backwards down to base system facts
+	while (count && --F > topicFacts) // backwards down to base system facts
 	{
 		if (!(F->flags & (FACTDEAD|FACTTRANSIENT))) --count; // we will write this
 	}
@@ -179,7 +176,7 @@ static char* WriteUserFacts(char* ptr)
 			ptr += strlen(ptr);
 		}
 	}
-	//ClearUserFacts();
+	ClearUserFacts();
 	strcpy(ptr,"#`end user facts\r\n");
 	ptr += strlen(ptr);
 
@@ -200,14 +197,14 @@ static bool ReadUserFacts()
         unsigned int setid;
         ptr = ReadInt(ptr,setid); 
 		SET_FACTSET_COUNT(setid,0);
-		if (trace & TRACE_USER) Log(STDUSERLOG,"Facts[%d]\r\n",setid);
+		if (trace & USER_TRACE) Log(STDUSERLOG,"Facts[%d]\r\n",setid);
 	    while (ReadALine(readBuffer, 0)) 
 		{
 			if (*readBuffer == '#') break;
 			char* ptr = readBuffer;
 			FACT* F = ReadFact(ptr);
 			if (F) AddFact(setid,F);
-			if (trace & TRACE_USER) TraceFact(F);
+			if (trace & USER_TRACE) TraceFact(F);
         }
 		if (*readBuffer == '#' && readBuffer[1] == '`') break;
 	}
@@ -319,7 +316,7 @@ char* WriteVariables(char* ptr)
 			ptr += strlen(ptr);
 		}
         D->w.userValue = NULL;
-		RemoveInternalFlag(D,VAR_CHANGED);
+		D->internalBits &= -1 ^ VAR_CHANGED;
     }
 	strcpy(ptr,"#`end variables\r\n");
 	ptr += strlen(ptr);
@@ -345,10 +342,9 @@ static bool ReadVariables()
 	return true;
 }
 
-static char* GatherUserData(char* ptr,time_t curr)
+static char* GatherUserData(char* ptr)
 {
-	if (!timeturn15[1] && inputCount >= 15 && responseIndex) sprintf(timeturn15,"%lu-%d%s",(unsigned long)curr,responseData[0].topic,responseData[0].id); // delimit time of turn 15 and location...
-	sprintf(ptr,"%s %s %s %s |\n",saveVersion,timeturn0,timePrior,timeturn15); 
+	sprintf(ptr,"%s\n",saveVersion); 
 	ptr += strlen(ptr);
 	ptr = WriteTopicData(ptr);
 	ptr = WriteVariables(ptr);
@@ -361,7 +357,7 @@ static char* GatherUserData(char* ptr,time_t curr)
 	return ptr;
 }
 
-void WriteUserData(time_t curr)
+void WriteUserData()
 { 
 	if (!numberOfTopics)  return; //   no topics ever loaded or we are not responding
 	if (!userCacheCount) return;	// never save users - no history
@@ -371,10 +367,10 @@ void WriteUserData(time_t curr)
 	sprintf(buffer,"USERS/%stopic_%s_%s.txt",GetUserPath(loginID),loginID,computerID);
 
 #ifndef DISCARDTESTING
-	if (!server && !documentMode) CopyFile2File("TMP/backup.txt",buffer,false);	// backup for debugging
+	if (!server) CopyFile2File("TMP/backup.txt",buffer,false);	// backup for debugging
 #endif
 
-	char* ptr = GatherUserData(base+strlen(base)+1,curr);
+	char* ptr = GatherUserData(base+strlen(base)+1);
 	Cache(base,ptr-base);
 }
 
@@ -382,13 +378,9 @@ void ReadUserData(char* ptr) // passed  buffer with file content (where feasible
 {	
 	tokenControl = 0;
 	ResetUser();
+    chatbotFacts = factFree; 
 	char* buffer = ptr;
 	size_t len = 0;
-	char junk[MAX_WORD_SIZE];
-	*junk = 0;
-	strcpy(timePrior,"0");
-	strcpy(timeturn15,"0");
-	strcpy(timeturn0,"0");
 	if (buffer && *buffer != 0) // readable data
 	{ 
 		len = strlen(buffer);
@@ -400,17 +392,9 @@ void ReadUserData(char* ptr) // passed  buffer with file content (where feasible
 		}
 		userRecordSourceBuffer = buffer + len + 1;
 		ReadALine(readBuffer,0);
-		char* x = ReadCompiledWord(readBuffer,junk);
-		x = ReadCompiledWord(x,timeturn0); // the start stamp id if there
-		x = ReadCompiledWord(x,timePrior); // the prior stamp id if there
-		ReadCompiledWord(x,timeturn15); // the timeturn id if there
-		if (stricmp(junk,saveVersion)) *buffer = 0;// obsolete format
+		if (stricmp(readBuffer,saveVersion)) *buffer = 0;// obsolete format
 	}
-    if (!buffer || !*buffer) 
-	{
-		ReadNewUser();
-		strcpy(timeturn0,GetMyTime(time(0))); // startup time
-	}
+    if (!buffer || !*buffer) ReadNewUser();
 	else
 	{
 		if (!ReadTopicData()) return;
@@ -432,13 +416,15 @@ void ReadNewUser()
 	inputCount = 0;
 
 	//   set his random seed
-	unsigned int rand = (unsigned int) Hashit((unsigned char *) loginID,strlen(loginID));
+	bool hasUpperCharacters;
+	bool hasUTF8Characters;
+	unsigned int rand = (unsigned int) Hashit((unsigned char *) loginID,strlen(loginID),hasUpperCharacters,hasUTF8Characters);
 	char word[MAX_WORD_SIZE];
 	randIndex = rand & 4095;
     sprintf(word,"%d",randIndex);
 	SetUserVariable("$randindex",word ); 
 	strcpy(word,computerID);
-	*word = GetUppercaseData(*word);
+	*word = toUppercaseData[(unsigned char)*word];
 	SetUserVariable("$bot",word ); 
 	SetUserVariable("$login",loginName);
 
@@ -458,8 +444,7 @@ void ReadNewUser()
 	FreeBuffer();
 
 	char* value = GetUserVariable("$token");
-	int64 v;
-	ReadInt64(value,v);
-	tokenControl = (*value) ? v : (DO_SUBSTITUTE_SYSTEM | DO_INTERJECTION_SPLITTING | DO_PROPERNAME_MERGE | DO_NUMBER_MERGE | DO_SPELLCHECK | DO_PARSE );
+	tokenControl = (*value) ? atoi(value) : (DO_SUBSTITUTE_SYSTEM | DO_INTERJECTION_SPLITTING | DO_PROPERNAME_MERGE | DO_NUMBER_MERGE | DO_SPELLCHECK);
+
 	inputRejoinderTopic = inputRejoinderRuleID = NO_REJOINDER; 
 }

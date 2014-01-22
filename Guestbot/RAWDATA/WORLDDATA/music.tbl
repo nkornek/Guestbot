@@ -276,7 +276,7 @@ Zoe_Kravitz
 table: ~men (^role ^male ^kind ^item)
 ^createfact(^male member ^role)
 if (^kind != *) {^createfact(^item member ^kind)}
-if (^item != *) {^createfact(^item sing ^male)}
+if (^item != *) {^createfact(^item exemplar ^male)}
 ^addproperty(^male NOUN_MALEHUMAN )
 
 DATA:
@@ -310,7 +310,7 @@ DATA:
 table: ~women (^role ^female ^kind ^item)
 ^createfact(^female member ^role)
 ^createfact(^item member ^kind)
-^createfact(^item sing ^female)
+^createfact(^item exemplar ^female)
 ^addproperty(^female NOUN_FEMALEHUMAN )
 DATA:
 ~musician "Britney Spears"  ~song "Oops I did it again"

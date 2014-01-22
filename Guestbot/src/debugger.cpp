@@ -101,7 +101,7 @@ char* ReadOutput(char* ptr,char* buffer) // locate next output fragment to displ
 	char* hold;
 	*buffer = 0;
 	char* out = buffer;
-	while (*ptr != ENDUNIT) // not end of data
+	while (*ptr != '`') // not end of data
 	{
 		ptr = ReadCompiledWord(ptr,out); // move token 
 		char* copied = out;
@@ -116,7 +116,7 @@ char* ReadOutput(char* ptr,char* buffer) // locate next output fragment to displ
 		}
 		else if (*buffer == ':' && buffer[1]) // testing command occupies the rest always
 		{
-			char* end = strchr(ptr,ENDUNIT);
+			char* end = strchr(ptr,'`');
 			if (end)
 			{
 				strncpy(out,ptr,end-ptr);
@@ -160,7 +160,7 @@ char* ReadOutput(char* ptr,char* buffer) // locate next output fragment to displ
 
 				strcpy(out," ");
 				++out;
-				if (*ptr != ENDUNIT) // more to rule
+				if (*ptr != '`') // more to rule
 				{
 					hold = ReadCompiledWord(ptr,next); // is there more to assign
 					if (IsArithmeticOperator(next)) continue; // need to swallow op and value pair
@@ -255,7 +255,7 @@ static unsigned int GetDebuggerResumeCommand() // returns what to do to resume t
 		if (x == '\r' || x == '\n') // end of normal input
 		{
 			char* line = SkipWhitespace(input);
-			if (*input == ':') Command(line,NULL); // command
+			if (*input == ':') Command(line); // command
 			else if ((*input == 'b' || *input == 'g') && (input[1] == ' ' || !input[1])) // topic or rule breakpoint or transient breakpoint
 			{
 				line = input + 1;
@@ -832,7 +832,7 @@ void Debugger(int code,unsigned int result,char* at)
 		
 		lastRuleTopic = currentTopicID;	// this level started a rule we cared about
 		doing = RULE_LEVEL;
-		if (output && *output == ENDUNIT && doing == OUTPUT_LEVEL) // was doing a prior output, which ended, close it out
+		if (output && *output == '`' && doing == OUTPUT_LEVEL) // was doing a prior output, which ended, close it out
 		{
 			output = NULL;
 		}

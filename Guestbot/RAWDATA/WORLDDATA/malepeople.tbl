@@ -507,8 +507,9 @@ if (^item != *) {^createfact(^item exemplar ^male)}
 ^addproperty(^male NOUN_MALEHUMAN )
 
 DATA:
+~economist John_Keynes  ~book Economic_Consequences_of_Peace
+~economist "Adam Smith" ~book "Inquiry into the Nature and Causes of the Wealth of Nations"
 
 ~religious_leader "Dalai Lama"  ~religious_sect "Buddhist"
 ~religious_leader "Billy Graham" ~religious_sect "Evangelist"
-~economist John_Keynes ...
-~economist "Adam Smith"  ...
+

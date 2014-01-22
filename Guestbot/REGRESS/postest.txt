@@ -1,135 +1,5 @@
 ﻿# please me, would you?
 
-# appositives
-
-The popular US president John Kennedy was known for his eloquent and inspirational speeches.
-Parsed POS 13 words: the/a (Determiner)  popular (Adjective_basic)  US (Adjective_noun)  president (MAINSUBJECT Noun_singular)  John_Kennedy (APPOSITIVE Noun_proper_singular)  was/be (Aux_be_past)  known/know (MAINVERB Verb_past_participle)  for (<Phrase ADVERBIAL HOWUNIT Preposition)  his/he (Pronoun_possessive)  eloquent (Adjective_basic)  and (CONJUNCT_ADJECTIVE Conjunction_coordinate)  inspirational (Adjective_basic)  speeches/speech (OBJECT2 Noun_plural Phrase>)
-     
-#exit
-#end
-
-John Kennedy, the popular US president, was known for his eloquent and inspirational speeches.
-Parsed POS 15 words: John_Kennedy (MAINSUBJECT Noun_proper_singular)  , (Comma)  the/a (Determiner)  popular (Adjective_basic)  US (Adjective_noun)  president (APPOSITIVE Noun_singular)  , (Comma)  was/be (Aux_be_past)  known/know (MAINVERB Verb_past_participle)  for (<Phrase ADVERBIAL HOWUNIT Preposition)  his/he (Pronoun_possessive)  eloquent (Adjective_basic)  and (CONJUNCT_ADJECTIVE Conjunction_coordinate)  inspirational (Adjective_basic)  speeches/speech (OBJECT2 Noun_plural Phrase>)
-
-John Kennedy the popular US president was quite different from John Kennedy the unfaithful husband.
-Parsed POS 13 words: John_Kennedy (MAINSUBJECT Noun_proper_singular)  the/a (Determiner)  popular (Adjective_basic)  US (Adjective_noun)  president (APPOSITIVE Noun_singular)  was/be (MAINVERB Verb_past)  quite (Adverb_basic)  different (SUBJECT_COMPLEMENT Adjective_basic)  from (<Phrase ADJECTIVE_COMPLEMENT Preposition)  John_Kennedy (OBJECT2 Noun_proper_singular)  the/a (Determiner)  unfaithful (Adjective_basic)  husband (APPOSITIVE Noun_singular Phrase>)
-
-A bold innovator, Wassily Kandinsky is known for his colorful abstract paintings.
-Parsed POS 12 words: a (Determiner)  bold (Adjective_basic)  innovator (APPOSITIVE Noun_singular)  , (Comma)  Wassily_Kandinsky (MAINSUBJECT Noun_proper_singular)  is/be (Aux_be_present_3ps)  known/know (MAINVERB Verb_past_participle)  for (<Phrase ADVERBIAL HOWUNIT Preposition)  his/he (Pronoun_possessive)  colorful (Adjective_basic)  abstract (Adjective_basic)  paintings/painting (OBJECT2 Noun_plural Phrase>)
-
-The first state to ratify the U.S. Constitution, Delaware is rich in history.
-Parsed POS 13 words: the/a (Determiner)  first/1 (Adjective_ordinal)  state (APPOSITIVE Noun_singular)  to (<Verbal POSTNOMINAL_ADJECTIVE To_infinitive)  ratify (VERB2 Noun_infinitive)  the/a (Determiner)  U.S._Constitution (OBJECT2 Noun_proper_singular Verbal>)  , (Comma)  Delaware (MAINSUBJECT Noun_proper_singular)  is/be (MAINVERB Verb_present_3ps)  rich (SUBJECT_COMPLEMENT Adjective_basic)  in (<Phrase ADJECTIVE_COMPLEMENT Preposition)  history (OBJECT2 Noun_singular Phrase>)
-
-A beautiful collie, Skip was my favorite dog.
-Parsed POS 9 words: a (Determiner)  beautiful (Adjective_basic)  collie (APPOSITIVE Noun_singular)  , (Comma)  Skip (MAINSUBJECT Noun_proper_singular)  was/be (MAINVERB Verb_past)  my/I (Pronoun_possessive)  favorite (Adjective_basic)  dog (MAINOBJECT Noun_singular)
-
-Your friend Bill is in trouble.
-Parsed POS 6 words: your/you (Pronoun_possessive)  friend (MAINSUBJECT Noun_singular)  Bill (APPOSITIVE Noun_proper_singular)  is/be (MAINVERB Verb_present_3ps)  in (<Phrase ADVERBIAL HOWUNIT Preposition)  trouble (OBJECT2 Noun_singular Phrase>)
-
-My brother's car, a sporty red convertible with bucket seats, is the envy of my friends.
-Parsed POS 19 words: my/I (Pronoun_possessive)  brother (Adjective_noun)  's (Possessive)  car (MAINSUBJECT Noun_singular)  , (Comma)  a (Determiner)  sporty (Adjective_basic)  red (Adjective_basic)  convertible (APPOSITIVE Noun_singular)  with (<Phrase ADJECTIVAL Preposition)  bucket (Adjective_noun)  seats/seat (OBJECT2 Noun_plural Phrase>)  , (Comma)  is/be (MAINVERB Verb_present_3ps)  the/a (Determiner)  envy (MAINOBJECT Noun_singular)  of (<Phrase ADJECTIVAL Preposition)  my/I (Pronoun_possessive)  friends/friend (OBJECT2 Noun_plural Phrase>)
-
-The chief surgeon, an expert in organ transplant procedures, took her nephew on a hospital tour.
-Parsed POS 18 words: the/a (Determiner)  chief (Adjective_basic)  surgeon (MAINSUBJECT Noun_singular)  , (Comma)  an/a (Determiner)  expert (APPOSITIVE Noun_singular)  in (<Phrase ADJECTIVAL Preposition)  organ (Adjective_noun)  transplant (Adjective_noun)  procedures/procedure (OBJECT2 Noun_plural Phrase>)  , (Comma)  took/take (MAINVERB Verb_past)  her/she (Pronoun_possessive)  nephew (MAINOBJECT Noun_singular)  on (<Phrase Preposition)  a (Determiner)  hospital (Adjective_noun)  tour (OBJECT2 Noun_singular Phrase>)
-
-We went through Lincoln, the capital of Nebraska.
-Parsed POS 9 words: we (MAINSUBJECT Pronoun_subject)  went/go (MAINVERB Verb_past)  through (<Phrase Preposition)  Lincoln (OBJECT2 Noun_proper_singular)  , (Comma)  the/a (Determiner)  capital (APPOSITIVE Noun_singular Phrase>)  of (<Phrase ADJECTIVAL Preposition)  Nebraska (OBJECT2 Noun_proper_singular Phrase>)
-
-My mom, whose name is Jan, likes to go to the mall.
-Parsed POS 14 words: my/I (Pronoun_possessive)  mom (MAINSUBJECT Noun_singular)  , (Comma)  whose/who (<Clause Pronoun_possessive)  name (APPOSITIVE SUBJECT2 Noun_singular)  is/be (VERB2 Verb_present_3ps)  Jan (OBJECT2 Noun_proper_singular Clause>)  , (Comma)  likes/like (MAINVERB Verb_present_3ps)  to (<Verbal MAINOBJECT To_infinitive)  go (VERB2 Noun_infinitive Verbal>)  to (<Phrase Preposition)  the/a (Determiner)  mall (OBJECT2 Noun_singular Phrase>)
-
-George Washington, a great leader, was born in Virginia.
-Parsed POS 10 words: George_Washington (MAINSUBJECT Noun_proper_singular)  , (Comma)  a (Determiner)  great (Adjective_basic)  leader (APPOSITIVE Noun_singular)  , (Comma)  was/be (Aux_be_past)  born/bear (MAINVERB Verb_past_participle)  in (<Phrase Preposition)  Virginia (OBJECT2 Noun_proper_singular Phrase>)
-      
-His worst trait, his temper, caused some of his assistants to quit.
-Parsed POS 14 words: his/he (Pronoun_possessive)  worst (Adjective_most)  trait (MAINSUBJECT Noun_singular)  , (Comma)  his/he (Pronoun_possessive)  temper (APPOSITIVE Noun_singular)  , (Comma)  caused/cause (MAINVERB Verb_past)  some/a (MAINOBJECT Pronoun_object)  of (<Phrase Preposition)  his/he (Pronoun_possessive)  assistants/assistant (OBJECT2 Noun_plural)  to (<Verbal To_infinitive)  quit (VERB2 Noun_infinitive Phrase> Verbal>)
-
-Say hello to your new teacher, Mrs. Welch.
-Parsed POS 9 words: say (MAINVERB Verb_infinitive)  hello (MAINOBJECT Noun_singular)  to (<Phrase ADJECTIVAL Preposition)  your/you (Pronoun_possessive)  new (Adjective_basic)  teacher (OBJECT2 Noun_singular)  , (Comma)  Mrs. (Adjective_noun)  Welch (APPOSITIVE Noun_proper_singular Phrase>)
-
-The guy who has to decide, Hamlet, decides to stick it out for a while.
-Parsed POS 15 words: the/a (Determiner)  guy (MAINSUBJECT Noun_singular)  who (<Clause SUBJECT2 Pronoun_subject)  has/have (VERB2 Verb_present_3ps)  to (<Verbal OBJECT2 To_infinitive)  decide (VERB2 Noun_infinitive Verbal> Clause>)  , (Comma)  Hamlet (APPOSITIVE Noun_proper_singular)  , (Comma)  decides/decide (MAINVERB Verb_present_3ps)  to (<Verbal MAINOBJECT To_infinitive)  stick (VERB2 Noun_infinitive)  it (OBJECT2 Pronoun_object)  out (Particle)  for_a_while (Adverb_basic Verbal>)
-
-Hamlet, the guy who has to decide, decides to stick it out for a while.
-Parsed POS 15 words: Hamlet (MAINSUBJECT Noun_proper_singular)  , (Comma)  the/a (Determiner)  guy (APPOSITIVE Noun_singular)  who (<Clause SUBJECT2 Pronoun_subject)  has/have (VERB2 Verb_present_3ps)  to (<Verbal OBJECT2 To_infinitive)  decide (VERB2 Noun_infinitive Verbal> Clause>)  , (Comma)  decides/decide (MAINVERB Verb_present_3ps)  to (<Verbal MAINOBJECT To_infinitive)  stick (VERB2 Noun_infinitive)  it (OBJECT2 Pronoun_object)  out (Particle)  for_a_while (Adverb_basic Verbal>)
-
-My favorite teacher, a fine chess player in her own right, has won several state-level tournaments.
-Parsed POS 14 words: my/I (Pronoun_possessive)  favorite (Adjective_basic)  teacher (MAINSUBJECT Noun_singular)  , (Comma)  a (Determiner)  fine (Adjective_basic)  chess_player (APPOSITIVE Noun_singular)  in_her_own_right (Adverb_basic)  , (Comma)  has/have (Aux_have_present_3ps)  won/win (MAINVERB Verb_past_participle)  several/3 (Adjective_cardinal)  state-level (Adjective_basic)  tournaments/tournament (MAINOBJECT Noun_plural)
-
-The best exercise, walking briskly, is also the least expensive.
-Parsed POS 12 words: the/a (Determiner)  best (Adjective_most)  exercise (MAINSUBJECT Noun_singular)  , (Comma)  walking/walk (<Verbal APPOSITIVE VERB2 Noun_gerund)  briskly (Adverb_basic Verbal>)  , (Comma)  is/be (MAINVERB Verb_present_3ps)  also (Adverb_basic)  the/a (Determiner)  least/less (Adverb_most)  expensive (SUBJECT_COMPLEMENT Adjective_basic)
-
-Tashonda's goal in life, to become an occupational therapist, is within her grasp this year, at last. 
-Parsed POS 21 words: Tashonda/unknown-word (Adjective_noun)  's (Possessive)  goal (MAINSUBJECT Noun_singular)  in (<Phrase ADJECTIVAL Preposition)  life (OBJECT2 Noun_singular)  , (Comma)  to (<Verbal APPOSITIVE To_infinitive)  become/be (VERB2 Noun_infinitive)  an/a (Determiner)  occupational (Adjective_basic)  therapist (OBJECT2 Noun_singular Phrase> Verbal>)  , (Comma)  is/be (MAINVERB Verb_present_3ps)  within (<Phrase Preposition)  her/she (Pronoun_possessive)  grasp (OBJECT2 Noun_singular Phrase>)  this/a (<Phrase OMITTED_TIME_PREP Determiner)  year (OBJECT2 Noun_singular Phrase>)  , (Comma)  at (<Phrase Preposition)  last (OBJECT2 Noun_singular Phrase>)
-
-
-# ommitted shared subject in clause using gerund verb
-
-While walking home, Jack saw a skunk
-Parsed POS 8 words: while (<Clause Conjunction_subordinate)  walking/walk (VERB2 Noun_gerund)  home (Adverb_basic Clause>)  , (Comma)  Jack (MAINSUBJECT Noun_proper_singular)  saw/see (MAINVERB Verb_past)  a (Determiner)  skunk (MAINOBJECT Noun_singular)
-      
-Jack saw a skunk while walking home.
-Parsed POS 7 words: Jack (MAINSUBJECT Noun_proper_singular)  saw/see (MAINVERB Verb_past)  a (Determiner)  skunk (MAINOBJECT Noun_singular)  while (<Clause Conjunction_subordinate)  walking/walk (VERB2 Noun_gerund)  home (Adverb_basic Clause>)
-
-Jack stopped when spotting it
-Parsed POS 5 words: Jack (MAINSUBJECT Noun_proper_singular)  stopped/stop (MAINVERB Verb_past)  when (<Clause ADVERBIAL WHENUNIT Conjunction_subordinate)  spotting/spot (VERB2 Noun_gerund)  it (OBJECT2 Pronoun_object Clause>)
-
-Jack waited a while before continuing on.
-Parsed POS 7 words: Jack (MAINSUBJECT Noun_proper_singular)  waited/wait (MAINVERB Verb_past)  a (Determiner)  while (MAINOBJECT Noun_singular)  before (<Clause ADVERBIAL WHENUNIT Conjunction_subordinate)  continuing/continue (VERB2 Noun_gerund)  on (Particle Clause>)
-
-Jack could still smell the skunk after passing through the area.
-Parsed POS 11 words: Jack (MAINSUBJECT Noun_proper_singular)  could/can (Aux_verb_future)  still (Adverb_basic)  smell (MAINVERB Verb_infinitive)  the/a (Determiner)  skunk (MAINOBJECT Noun_singular)  after (<Clause ADVERBIAL WHENUNIT Conjunction_subordinate)  passing/pass (VERB2 Noun_gerund Clause>)  through (<Phrase Preposition)  the/a (Determiner)  area (OBJECT2 Noun_singular Phrase>)
-
-Jack has been taking a different way home since seeing a skunk there.
-Parsed POS 13 words: Jack (MAINSUBJECT Noun_proper_singular)  has/have (Aux_have_present_3ps)  been/be (Aux_be_pastparticiple)  taking/take (MAINVERB Verb_present_participle)  a (Determiner)  different (Adjective_basic)  way (MAINOBJECT Noun_singular)  home (Adverb_basic)  since (<Clause Conjunction_subordinate)  seeing (VERB2 Noun_gerund)  a (Determiner)  skunk (OBJECT2 Noun_singular Clause>)  there (Adverb_basic)
-
-# adjective complements (nouns (seemingly only infinitives) or phrases or clauses describing the adjective immediately after it)
-
-She was hesitant to tell her parents.
-Parsed POS 7 words: she (MAINSUBJECT Pronoun_subject)  was/be (MAINVERB Verb_past)  hesitant (SUBJECT_COMPLEMENT Adjective_basic)  to (<Verbal ADJECTIVE_COMPLEMENT To_infinitive)  tell (VERB2 Noun_infinitive)  her/she (Pronoun_possessive)  parents/parent (OBJECT2 Noun_plural Verbal>)
-
-The boss was anxious to promote sales.
-Parsed POS 7 words: the/a (Determiner)  boss (MAINSUBJECT Noun_singular)  was/be (MAINVERB Verb_past)  anxious (SUBJECT_COMPLEMENT Adjective_basic)  to (<Verbal ADJECTIVE_COMPLEMENT To_infinitive)  promote (VERB2 Noun_infinitive)  sales/sale (OBJECT2 Noun_plural Verbal>)
-
-Are you afraid of spiders?
-Parsed POS 5 words: are/be (MAINVERB Verb_present)  you (MAINSUBJECT Pronoun_subject)  afraid (SUBJECT_COMPLEMENT Adjective_basic)  of (<Phrase ADJECTIVE_COMPLEMENT Preposition)  spiders/spider (OBJECT2 Noun_plural Phrase>)
-
-We were shocked by the news.
-Parsed POS 6 words: we (MAINSUBJECT Pronoun_subject)  were/be (MAINVERB Verb_past)  shocked/shock (<Verbal SUBJECT_COMPLEMENT Adjective_participle Verbal>)  by (<Phrase ADJECTIVE_COMPLEMENT Preposition)  the/a (Determiner)  news (OBJECT2 Noun_singular Phrase>)
-
-I was delighted that she was chosen.
-Parsed POS 7 words: I (MAINSUBJECT Pronoun_subject)  was/be (MAINVERB Verb_past)  delighted/delight (<Verbal SUBJECT_COMPLEMENT Adjective_participle Verbal>)  that/a (<Clause ADJECTIVE_COMPLEMENT Conjunction_subordinate)  she (SUBJECT2 Pronoun_subject)  was/be (Aux_be_past)  chosen/choose (VERB2 Verb_past_participle Clause>)
-
-He is likely to be nominated.
-Parsed POS 6 words: he (MAINSUBJECT Pronoun_subject)  is/be (Aux_be_present_3ps)  likely (Adjective_basic)  to (<Verbal SUBJECT_COMPLEMENT To_infintie)  be (VERB2 Verb_infinitive)  nominated/nominate (? Verb_past_participle)
-
-The child was eager for Christmas to arrive.
-Parsed POS 8 words: the/a (Determiner)  child (MAINSUBJECT Noun_singular)  was/be (MAINVERB Verb_past)  eager (SUBJECT_COMPLEMENT Adjective_basic)  for (<Phrase ADJECTIVE_COMPLEMENT Preposition)  Christmas (OBJECT2 Noun_proper_singular)  to (<Verbal To_infinitive)  arrive (VERB2 Noun_infinitive Phrase> Verbal>)
-
-I am curious what color it is.
-Parsed POS 7 words: I (MAINSUBJECT Pronoun_subject)  am/be (MAINVERB Verb_present)  curious (SUBJECT_COMPLEMENT Adjective_basic)  what (<Clause ADJECTIVE_COMPLEMENT Pronoun_object)  color (OBJECT2 Noun_singular)  it (SUBJECT2 Pronoun_subject)  is/be (VERB2 Verb_present_3ps Clause>)
-
-It was wrong of her to go.
-Parsed POS 7 words: it (MAINSUBJECT Pronoun_subject)  was/be (MAINVERB Verb_past)  wrong (SUBJECT_COMPLEMENT Adjective_basic)  of (<Phrase ADJECTIVE_COMPLEMENT Preposition)  her/she (OBJECT2 Pronoun_object)  to (<Verbal OBJECT2 To_infinitive)  go (VERB2 Noun_infinitive Phrase> Verbal>)
-
-I am happy they got married.
-Parsed POS 6 words: I (MAINSUBJECT Pronoun_subject)  am/be (MAINVERB Verb_present)  happy (SUBJECT_COMPLEMENT Adjective_basic)  they (<Clause ADJECTIVE_COMPLEMENT SUBJECT2 Pronoun_subject)  got/get (VERB2 Verb_past Clause>)  married/marry (<Verbal SUBJECT_COMPLEMENT Adjective_participle Verbal>)
-
-We are all afraid that the storm will be severe.
-Parsed POS 10 words: we (MAINSUBJECT Pronoun_subject)  are/be (Aux_be_present)  all (Adverb_basic)  afraid (SUBJECT_COMPLEMENT Adjective_basic)  that/a (<Clause ADJECTIVE_COMPLEMENT ?)  the/a (Determiner)  storm (SUBJECT2 Noun_singular)  will (Aux_verb_future)  be (VERB2 Verb_infinitive)  severe (SUBJECT_COMPLEMENT Adjective_basic Clause>)
-
-#exit
-#end
-
-
-Parsed POS 5 words: 
-
-Rarely do you see Kim
-Parsed POS 5 words: rarely (Adverb_basic)  do (Aux_do_present)  you (MAINSUBJECT Pronoun_subject)  see (MAINVERB Verb_infinitive)  Kim (MAINOBJECT Noun_proper_singular)
-
-Never have I seen this dog. 
-Parsed POS 6 words: never (Adverb_basic)  have (Aux_have_present)  I (MAINSUBJECT Pronoun_subject)  seen/see (MAINVERB Verb_past)  this/a (Determiner)  dog (MAINOBJECT Noun_singular)
-
 to never fish rapidly can be sorrowful.
 Parsed POS 7 words: to (<Verbal MAINSUBJECT To_infinitive)  never (Adverb_basic)  fish (VERB2 Noun_infinitive)  rapidly (Adverb_basic Verbal>)  can (Aux_verb_present)  be (MAINVERB Verb_infinitive)  sorrowful (SUBJECT_COMPLEMENT Adjective_basic)
 
@@ -138,8 +8,8 @@ To avoid burning another bag of popcorn, Brendan pressed his nose against the mi
 Parsed POS 19 words: to (<Verbal To_infinitive)  avoid (VERB2 Noun_infinitive)  burning/burn (OBJECT2 VERB2 Noun_gerund)  another (Determiner)  bag (OBJECT2 Noun_singular Verbal>)  of (<Phrase Preposition)  popcorn (OBJECT2 Noun_singular Phrase>)  , (Comma)  Brendan (MAINSUBJECT Noun_proper_singular)  pressed/press (MAINVERB Verb_past)  his/he (Pronoun_possessive)  nose (MAINOBJECT Noun_singular)  against (<Phrase Preposition)  the/a (Determiner)  microwave (Adjective_noun)  door (OBJECT2 Noun_singular Phrase>)  , (Comma)  sniffing/sniff (<Verbal OBJECT2 VERB2 Noun_gerund)  suspiciously (Adverb_basic Verbal>)
 
 # Infinitive as adjective after noun
-# The best way to survive Dr. Peterson's boring history lectures is a sharp pencil to stab in your thigh if you catch yourself drifting off.
-# Parsed POS 26 words: the/a (Determiner)  best (Adjective_most)  way (MAINSUBJECT Noun_singular)  to (<Verbal POSTNOMINAL_ADJECTIVE To_infinitive)  survive (VERB2 Noun_infinitive)  Dr. (Adjective_noun)  Peterson (Adjective_noun)  's (Possessive)  boring/bore (Adjective_participle)  history (Adjective_noun)  lectures/lecture (OBJECT2 Noun_plural Verbal>)  is/be (MAINVERB Verb_present_3ps)  a (Determiner)  sharp (Adjective_basic)  pencil (MAINOBJECT Noun_singular)  to (<Verbal POSTNOMINAL_ADJECTIVE To_infinitive)  stab (VERB2 Noun_infinitive Verbal>)  in (<Phrase Preposition)  your/you (Pronoun_possessive)  thigh (OBJECT2 Noun_singular Phrase>)  if (<Clause Conjunction_subordinate)  you (SUBJECT2 Pronoun_subject)  catch (VERB2 Verb_present)  yourself/you (INDIRECTOBJECT2 Pronoun_object)  drifting/drift (<Verbal OBJECT2 VERB2 Noun_gerund)  off (Adverb_basic Verbal> Clause>)
+The best way to survive Dr. Peterson's boring history lectures is a sharp pencil to stab in your thigh if you catch yourself drifting off.
+Parsed POS 26 words: the/a (Determiner)  best (Adjective_most)  way (MAINSUBJECT Noun_singular)  to (<Verbal POSTNOMINAL_ADJECTIVE To_infinitive)  survive (VERB2 Noun_infinitive)  Dr. (Adjective_noun)  Peterson (Adjective_noun)  's (Possessive)  boring/bore (Adjective_participle)  history (Adjective_noun)  lectures/lecture (OBJECT2 Noun_plural Verbal>)  is/be (MAINVERB Verb_present_3ps)  a (Determiner)  sharp (Adjective_basic)  pencil (MAINOBJECT Noun_singular)  to (<Verbal POSTNOMINAL_ADJECTIVE To_infinitive)  stab (VERB2 Noun_infinitive Verbal>)  in (<Phrase Preposition)  your/you (Pronoun_possessive)  thigh (OBJECT2 Noun_singular Phrase>)  if (<Clause Conjunction_subordinate)  you (SUBJECT2 Pronoun_subject)  catch (VERB2 Verb_present)  yourself/you (INDIRECTOBJECT2 Pronoun_object)  drifting/drift (<Verbal OBJECT2 VERB2 Noun_gerund)  off (Adverb_basic Verbal> Clause>)
 
 They found the way to disturb.
 Parsed POS 6 words: they (MAINSUBJECT Pronoun_subject)  found/find (MAINVERB Verb_past)  the/a (Determiner)  way (MAINOBJECT Noun_singular)  to (<Verbal OBJECT_COMPLEMENT To_infinitive)  disturb (VERB2 Noun_infinitive Verbal>)
@@ -233,13 +103,13 @@ He bade me come.
 Parsed POS 4 words: he (MAINSUBJECT Pronoun_subject)  bade/bid (MAINVERB Verb_past)  me/I (MAININDIRECTOBJECT Pronoun_object)  come (<Verbal MAINOBJECT VERB2 Noun_infinitive Verbal>)
 
 I saw her light.
-Parsed POS 4 words: I (MAINSUBJECT Pronoun_subject)  saw/see (MAINVERB Verb_past)  her/she (Pronoun_possessive)  light (MAINOBJECT Noun_singular)
+Parsed POS 4 words: I (MAINSUBJECT Pronoun_subject)  saw (MAINVERB Verb_past)  her/she (Pronoun_possessive)  light (MAINOBJECT Noun_singular)
 
 I saw her light shining.
-Parsed POS 5 words: I (MAINSUBJECT Pronoun_subject)  saw/see (MAINVERB Verb_past)  her/she (Pronoun_possessive)  light (MAINOBJECT Noun_singular)  shining/shine (<Verbal POSTNOMINAL_ADJECTIVE Adjective_participle Verbal>)
+Parsed POS 5 words: I (MAINSUBJECT Pronoun_subject)  saw (MAINVERB Verb_past)  her/she (Pronoun_possessive)  light (MAINOBJECT Noun_singular)  shining/shine (<Verbal POSTNOMINAL_ADJECTIVE Adjective_participle Verbal>)
 
 I saw her light the lamp.
-Parsed POS 6 words: I (MAINSUBJECT Pronoun_subject)  saw/see (MAINVERB Verb_past)  her/she (MAININDIRECTOBJECT Pronoun_object)  light (<Verbal MAINOBJECT VERB2 Noun_infinitive)  the/a (Determiner)  lamp (OBJECT2 Noun_singular Verbal>)
+Parsed POS 6 words: I (MAINSUBJECT Pronoun_subject)  saw (MAINVERB Verb_past)  her/she (MAINOBJECT Pronoun_object)  light (<Verbal POSTNOMINAL_ADJECTIVE VERB2 Noun_infinitive)  the/a (Determiner)  lamp (OBJECT2 Noun_singular Verbal>)
 
 We heard her sing a song. 
 Parsed POS 6 words: we (MAINSUBJECT Pronoun_subject)  heard/hear (MAINVERB Verb_past)  her/she (MAININDIRECTOBJECT Pronoun_object)  sing (<Verbal MAINOBJECT VERB2 Noun_infinitive)  a (Determiner)  song (OBJECT2 Noun_singular Verbal>)
@@ -250,107 +120,133 @@ Parsed POS 4 words: we (MAINSUBJECT Pronoun_subject)  watched/watch (MAINVERB Ve
 Let him go. 
 Parsed POS 3 words: let (MAINVERB Verb_infinitive)  him/he (MAININDIRECTOBJECT Pronoun_object)  go (<Verbal MAINOBJECT VERB2 Noun_infinitive Verbal>)
 
+#end  ****
+#exit
+
 She helped the child to lift the box.
-Parsed POS 8 words: she (MAINSUBJECT Pronoun_subject)  helped/help (MAINVERB Verb_past)  the/a (Determiner)  child (MAININDIRECTOBJECT Noun_singular)  to (<Verbal MAINOBJECT To_infinitive)  lift (VERB2 Noun_infinitive)  the/a (Determiner)  box (OBJECT2 Noun_singular Verbal>)
+Parsed POS 1 words
 
 She helped the child lift the box.
-Parsed POS 7 words: she (MAINSUBJECT Pronoun_subject)  helped/help (MAINVERB Verb_past)  the/a (Determiner)  child (MAININDIRECTOBJECT Noun_singular)  lift (<Verbal MAINOBJECT VERB2 Noun_infinitive)  the/a (Determiner)  box (OBJECT2 Noun_singular Verbal>)
+Parsed POS 1 words
 
 She was heard to sing a song. 
-Parsed POS 7 words: she (MAINSUBJECT Pronoun_subject)  was/be (Aux_be_past)  heard/hear (MAINVERB Verb_past_participle)  to (<Verbal MAINOBJECT To_infinitive)  sing (VERB2 Noun_infinitive)  a (Determiner)  song (OBJECT2 Noun_singular Verbal>)
+Parsed POS 1 words
 
 She was made to pay back the money. 
-Parsed POS 8 words: she (MAINSUBJECT Pronoun_subject)  was/be (Aux_be_past)  made/make (MAINVERB Verb_past_participle)  to (<Verbal MAINOBJECT To_infinitive)  pay (VERB2 Noun_infinitive)  back (Particle)  the/a (Determiner)  money (OBJECT2 Noun_singular Verbal>)
-   
+Parsed POS 1 words
+
 # after rather better and had better
 You had better consult a doctor.
-Parsed POS 5 words: you (MAINSUBJECT Pronoun_subject)  had_better (Aux_verb_present)  consult (MAINVERB Verb_infinitive)  a (Determiner)  doctor (MAINOBJECT Noun_singular)
+Parsed POS 1 words
 
 I would rather go alone
-Parsed POS 5 words: I (MAINSUBJECT Pronoun_subject)  would/will (Aux_verb_future)  rather (Adverb_basic)  go (MAINVERB Verb_infinitive)  alone (Adverb_basic)
+Parsed POS 1 words
 
 # after and or except but than as like (2nd infintiive w/o to)
-# It is as easy to smile as frown. 
-# Parsed POS 8 words: it (MAINSUBJECT Pronoun_subject)  is/be (MAINVERB Verb_present_3ps)  as (Adverb_basic)  easy (SUBJECT_COMPLEMENT Adjective_basic)  to (<Verbal ADJECTIVE_COMPLEMENT To_infinitive)  smile (VERB2 Noun_infinitive)  as (Conjunction_subordinate)  frown (VERB2 Noun_infinitive Verbal>)
+It is as easy to smile as frown. 
+Parsed POS 1 words
 
-# Do you want to have lunch now or wait till later?
-# Parsed POS 11 words: do (Aux_do_present)  you (MAINSUBJECT Pronoun_subject)  want (MAINVERB Verb_infinitive)  to (<Verbal MAINOBJECT To_infinitive)  have (VERB2 Noun_infinitive)  lunch (OBJECT2 Noun_singular)  now (Adverb_basic Verbal>)  or (CONJUNCT_VERB Conjunction_coordinate)  wait (<Verbal Verb_infinitive)  till (?)  later/late (Adverb_more Verbal>)
+Do you want to have lunch now or wait till later?
+Parsed POS 1 words
 
 We had nothing to do except look at the cinema posters. 
-Parsed POS 11 words: we (MAINSUBJECT Pronoun_subject)  had/have (MAINVERB Verb_past)  nothing (Adverb_basic)  to (<Verbal MAINOBJECT To_infinitive)  do (VERB2 Noun_infinitive Verbal>)  except (<Phrase Preposition)  look (<Verbal OBJECT2 VERB2 Noun_infinitive Phrase> Verbal>)  at (<Phrase Preposition)  the/a (Determiner)  cinema (Adjective_noun)  posters/poster (OBJECT2 Noun_plural Phrase>)
+Parsed POS 1 words
 
 # why not + infinitive no to -- no noun or pronoun after < why (not)
 
-# Why stand up if you can sit down? 
-# Parsed POS 8 words: why (Adverb_basic)  stand (MAINVERB Verb_infinitive)  up (Particle)  if (<Clause OBJECT2 Conjunction_subordinate)  you (SUBJECT2 Pronoun_subject)  can (Aux_verb_present)  sit (VERB2 Verb_infinitive)  down (OBJECT2 Noun_singular Verbal> Clause>)
+Why stand up if you can sit down? 
+Parsed POS 1 words
 
-Why pay more at other shops? 
-Parsed POS 6 words: why (Adverb_basic)  pay (MAINVERB Verb_infinitive)  more/much (Adverb_more)  at (<Phrase Preposition)  other (Determiner)  shops/shop (OBJECT2 Noun_plural Phrase>)
+Why pay more at other shops? We have the lowest prices. 
+Parsed POS 1 words
 
 Why not make it up with him? 
-Parsed POS 7 words: why (Adverb_basic)  not (NOT Adverb_basic)  make (MAINVERB Verb_infinitive)  it (MAINOBJECT Pronoun_object)  up (Particle)  with (<Phrase Preposition)  him/he (OBJECT2 Pronoun_object Phrase>)
+Parsed POS 1 words
 
 Why not arrange a party in his honour? 
-Parsed POS 8 words: why (Adverb_basic)  not (NOT Adverb_basic)  arrange (MAINVERB Verb_infinitive)  a (Determiner)  party (MAINOBJECT Noun_singular)  in (<Phrase Preposition)  his/he (Pronoun_possessive)  honor (OBJECT2 Noun_singular Phrase>)
+Parsed POS 1 words
 
 To wait seemed foolish when decisive action was required.
-Parsed POS 9 words: to (<Verbal MAINSUBJECT To_infinitive)  wait (VERB2 Noun_infinitive Verbal>)  seemed/seem (MAINVERB Verb_past)  foolish (SUBJECT_COMPLEMENT Adjective_basic)  when (<Clause ADVERB_CLAUSE Conjunction_subordinate)  decisive (Adjective_basic)  action (SUBJECT2 Noun_singular)  was/be (Aux_be_past)  required/require (VERB2 Verb_past_participle Clause>)
+Parsed POS 1 words
 
 Everyone wanted to go.
-Parsed POS 4 words: everyone (MAINSUBJECT Noun_singular)  wanted/want (MAINVERB Verb_past)  to (<Verbal MAINOBJECT To_infinitive)  go (VERB2 Noun_infinitive Verbal>)
+Parsed POS 1 words
 
 His ambition is to fly.
-Parsed POS 5 words: his/he (Pronoun_possessive)  ambition (MAINSUBJECT Noun_singular)  is/be (MAINVERB Verb_present_3ps)  to (<Verbal MAINOBJECT To_infinitive)  fly (VERB2 Noun_infinitive Verbal>)
+Parsed POS 1 words
 
 He lacked the strength to resist.
-Parsed POS 6 words: he (MAINSUBJECT Pronoun_subject)  lacked/lack (MAINVERB Verb_past)  the/a (Determiner)  strength (MAINOBJECT Noun_singular)  to (<Verbal POSTNOMINAL_ADJECTIVE To_infinitive)  resist (VERB2 Noun_infinitive Verbal>)
+Parsed POS 1 words
 
 We must study to learn.
-Parsed POS 5 words: we (MAINSUBJECT Pronoun_subject)  must (Aux_verb_future)  study (MAINVERB Verb_infinitive)  to (<Verbal MAINOBJECT To_infinitive)  learn (VERB2 Noun_infinitive Verbal>)
-      
+Parsed POS 1 words
+
 I have a paper to write before class.
-Parsed POS 8 words: I (MAINSUBJECT Pronoun_subject)  have (MAINVERB Verb_present)  a (Determiner)  paper (MAINOBJECT Noun_singular)  to (<Verbal OBJECT_COMPLEMENT To_infinitive)  write (VERB2 Noun_infinitive Verbal>)  before (<Phrase Preposition)  class (OBJECT2 Noun_singular Phrase>)
-     
+Parsed POS 1 words
+
+I have a paper to write before class.
+Parsed POS 1 words
+
 Phil agreed to give me a ride.
-Parsed POS 7 words: Phil (MAINSUBJECT Noun_proper_singular)  agreed/agree (MAINVERB Verb_past)  to (<Verbal MAINOBJECT To_infinitive)  give (VERB2 Noun_infinitive)  me/I (INDIRECTOBJECT2 Pronoun_object)  a (Determiner)  ride (OBJECT2 Noun_singular Verbal>)
+Parsed POS 1 words
 
 They asked me to bring some food.
-Parsed POS 7 words: they (MAINSUBJECT Pronoun_subject)  asked/ask (MAINVERB Verb_past)  me/I (MAININDIRECTOBJECT Pronoun_object)  to (<Verbal MAINOBJECT To_infinitive)  bring (VERB2 Noun_infinitive)  some/a (Determiner)  food (OBJECT2 Noun_singular Verbal>)
+Parsed POS 1 words
 
 # IO + inf
 Everyone wanted Carol to be the captain of the team.
-Parsed POS 10 words: everyone (MAINSUBJECT Noun_singular)  wanted/want (MAINVERB Verb_past)  Carol (MAININDIRECTOBJECT Noun_proper_singular)  to (<Verbal MAINOBJECT To_infinitive)  be (VERB2 Noun_infinitive)  the/a (Determiner)  captain (OBJECT2 Noun_singular Verbal>)  of (<Phrase Preposition)  the/a (Determiner)  team (OBJECT2 Noun_singular Phrase>)
+Parsed POS 1 words
 
 Most students plan to study.
-Parsed POS 5 words: most (Determiner)  students/student (MAINSUBJECT Noun_plural)  plan (MAINVERB Verb_present)  to (<Verbal MAINOBJECT To_infinitive)  study (VERB2 Noun_infinitive Verbal>)
+Parsed POS 1 words
 
 We began to learn.
-Parsed POS 4 words: we (MAINSUBJECT Pronoun_subject)  began/begin (MAINVERB Verb_past)  to (<Verbal MAINOBJECT To_infinitive)  learn (VERB2 Noun_infinitive Verbal>)
+Parsed POS 1 words
 
 They offered to pay.
-Parsed POS 4 words: they (MAINSUBJECT Pronoun_subject)  offered/offer (MAINVERB Verb_past)  to (<Verbal MAINOBJECT To_infinitive)  pay (VERB2 Noun_infinitive Verbal>)
+Parsed POS 1 words
 
 They neglected to pay.
-Parsed POS 4 words: they (MAINSUBJECT Pronoun_subject)  neglected/neglect (MAINVERB Verb_past)  to (<Verbal MAINOBJECT To_infinitive)  pay (VERB2 Noun_infinitive Verbal>)
+Parsed POS 1 words
 
 She promised to return.
-Parsed POS 4 words: she (MAINSUBJECT Pronoun_subject)  promised/promise (MAINVERB Verb_past)  to (<Verbal MAINOBJECT To_infinitive)  return (VERB2 Noun_infinitive Verbal>)
+Parsed POS 1 words
 
 # with io 
 He reminded me to buy milk.
-Parsed POS 6 words: he (MAINSUBJECT Pronoun_subject)  reminded/remind (MAINVERB Verb_past)  me/I (MAININDIRECTOBJECT Pronoun_object)  to (<Verbal MAINOBJECT To_infinitive)  buy (VERB2 Noun_infinitive)  milk (OBJECT2 Noun_singular Verbal>)
+Parsed POS 1 words
 
-Their fathers advise them to study.
-Parsed POS 6 words: their/they (Pronoun_possessive)  fathers/father (MAINSUBJECT Noun_plural)  advise (MAINVERB Verb_present)  them/they (MAININDIRECTOBJECT Pronoun_object)  to (<Verbal MAINOBJECT To_infinitive)  study (VERB2 Noun_infinitive Verbal>)
-      
+Their fathers advise them to study.Parsed POS 1 words
+Parsed POS 1 words
+
 She forced the defendant to admit the truth
-Parsed POS 8 words: she (MAINSUBJECT Pronoun_subject)  forced/force (MAINVERB Verb_past)  the/a (Determiner)  defendant (MAINOBJECT Noun_singular)  to (<Verbal OBJECT_COMPLEMENT To_infinitive)  admit (VERB2 Noun_infinitive)  the/a (Determiner)  truth (OBJECT2 Noun_singular Verbal>)
+Parsed POS 1 words
 
 You've convinced the director of the program to change her position.
-Parsed POS 12 words: you (MAINSUBJECT Pronoun_subject)  have (Aux_have_present)  convinced/convince (MAINVERB Verb_past_participle)  the/a (Determiner)  director (MAININDIRECTOBJECT Noun_singular)  of (<Phrase Preposition)  the/a (Determiner)  program (OBJECT2 Noun_singular Phrase>)  to (<Verbal MAINOBJECT To_infinitive)  change (VERB2 Noun_infinitive)  her/she (Pronoun_possessive)  position (OBJECT2 Noun_singular Verbal>)
+Parsed POS 1 words
 
 I invite you to consider the evidence.
-Parsed POS 7 words: I (MAINSUBJECT Pronoun_subject)  invite (MAINVERB Verb_present)  you (MAININDIRECTOBJECT Pronoun_object)  to (<Verbal MAINOBJECT To_infinitive)  consider (VERB2 Noun_infinitive)  the/a (Determiner)  evidence (OBJECT2 Noun_singular Verbal>)
+Parsed POS 1 words
+
+Parsed POS 1 words
+
+Parsed POS 1 words
+s
+
+
+
+
+
+
+
+
+
+
+
+
+
+#exit
+#end
 
 # basic sentence types/patterns
 
@@ -412,8 +308,8 @@ Mrs. Doubtfire gave the children homework
 Parsed POS 6 words: Mrs. (Adjective_noun)  Doubtfire/unknown-word (MAINSUBJECT Noun_proper_singular)  gave/give (MAINVERB Verb_past)  the/a (Determiner)  children/child (MAININDIRECTOBJECT Noun_plural)  homework (MAINOBJECT Noun_singular)
 
 # compound indirect objects
-# Mrs. Doubtfire gave Tabitha and Samantha quizzes.
-# Parsed POS 7 words: Mrs. (Adjective_noun)  Doubtfire/unknown-word (MAINSUBJECT Noun_proper_singular)  gave/give (MAINVERB Verb_past)  Tabitha (MAININDIRECTOBJECT Noun_proper_singular)  and (CONJUNCT_NOUN Conjunction_coordinate)  Samantha (MAININDIRECTOBJECT Noun_proper_singular)  quizzes/quiz (MAINOBJECT Noun_plural)
+Mrs. Doubtfire gave Tabitha and Samantha quizzes.
+Parsed POS 7 words: Mrs. (Adjective_noun)  Doubtfire/unknown-word (MAINSUBJECT Noun_proper_singular)  gave/give (MAINVERB Verb_past)  Tabitha (MAININDIRECTOBJECT Noun_proper_singular)  and (CONJUNCT_NOUN Conjunction_coordinate)  Samantha (MAININDIRECTOBJECT Noun_proper_singular)  quizzes/quiz (MAINOBJECT Noun_plural)
 
 # predicate noun
 John Calhoun is a coach.
@@ -434,7 +330,7 @@ Parsed POS 3 words: Jose (MAINSUBJECT Noun_proper_singular)  cut (MAINVERB Verb_
 
 	# indirect object
 	Mr Edwards gave himself a raise
-Parsed POS 6 words: Mr (Adjective_noun)  Edwards (MAINSUBJECT Noun_proper_singular)  gave/give (MAINVERB Verb_past)  himself/he (MAININDIRECTOBJECT Pronoun_object)  a (Determiner)  raise (MAINOBJECT Noun_singular)
+Parsed POS 6 words: Mr. (Adjective_noun)  Edwards (MAINSUBJECT Noun_proper_singular)  gave/give (MAINVERB Verb_past)  himself/he (MAININDIRECTOBJECT Pronoun_object)  a (Determiner)  raise (MAINOBJECT Noun_singular)
 
 	# object of prep
 	She cared only for herself
@@ -513,7 +409,7 @@ Parsed POS 10 words: the/a (Determiner)  thought (MAINSUBJECT Noun_singular)  of
 
 # prep modifying an adverb
 Tashonda does her best work early during the semester
-Parsed POS 9 words: Tashonda/unknown-word (MAINSUBJECT Noun_proper_singular)  does/do (MAINVERB Verb_present_3ps)  her/she (Pronoun_possessive)  best (Adjective_most)  work (MAINOBJECT Noun_singular)  early (Adverb_basic)  during (<Phrase Preposition)  the/a (Determiner)  semester (OBJECT2 Noun_singular Phrase>)
+Parsed POS 9 words: Tashonda/unknown-word (MAINSUBJECT Noun_proper_singular)  does/do (MAINVERB Verb_present_3ps)  her/she (Pronoun_possessive)  best (Adjective_most)  work (MAINOBJECT Noun_singular)  early (Adverb_more)  during (<Phrase Preposition)  the/a (Determiner)  semester (OBJECT2 Noun_singular Phrase>)
   
 # prep phrase as subject complement
 She felt under the weather
@@ -525,15 +421,15 @@ Parsed POS 6 words: the/a (Determiner)  crumbling/crumble (Adjective_participle)
 
 # participle phrase
 The screaming crowd watched the bridge falling into the river
-Parsed POS 10 words: the/a (Determiner)  screaming/scream (Adjective_participle)  crowd (MAINSUBJECT Noun_singular)  watched/watch (MAINVERB Verb_past)  the/a (Determiner)  bridge (MAINOBJECT Noun_singular)  falling/fall (<Verbal POSTNOMINAL_ADJECTIVE Adjective_participle Verbal>)  into (<Phrase Preposition)  the/a (Determiner)  river (OBJECT2 Noun_singular Phrase>)
+Parsed POS 10 words: the/a (Determiner)  screaming/scream (Adjective_participle)  crowd (MAINSUBJECT Noun_singular)  watched/watch (MAINVERB Verb_past)  the/a (Determiner)  bridge (MAINOBJECT Noun_singular)  falling/fall (<Verbal Adjective_participle Verbal>)  into (<Phrase Preposition)  the/a (Determiner)  river (OBJECT2 Noun_singular Phrase>)
 
 # gerund
 Working hard can be profitable
-Parsed POS 5 words: working/work (<Verbal MAINSUBJECT VERB2 Noun_gerund)  hard (Adverb_basic Verbal>)  can (Aux_verb_present)  be (MAINVERB Verb_infinitive)  profitable (SUBJECT_COMPLEMENT Adjective_basic)
+Parsed POS 5 words: working/work (<Verbal MAINSUBJECT Noun_gerund)  hard (Adverb_basic Verbal>)  can (Aux_verb_present)  be (MAINVERB Verb_infinitive)  profitable (SUBJECT_COMPLEMENT Adjective_basic)
 
 # gerun phrase as object
 Terminata hates eating broccoli
-Parsed POS 4 words: Terminata/unknown-word (MAINSUBJECT Noun_proper_singular)  hates/hate (MAINVERB Verb_present_3ps)  eating/eat (<Verbal MAINOBJECT VERB2 Noun_gerund)  broccoli (OBJECT2 Noun_singular Verbal>)
+Parsed POS 4 words: Terminata/unknown-word (MAINSUBJECT Noun_proper_singular)  hates/hate (MAINVERB Verb_present_3ps)  eating/eat (<Verbal MAINOBJECT Noun_gerund)  broccoli (OBJECT2 Noun_singular Verbal>)
 
 # gerund phrase as object of prep
 Wolfson wrote a book about playing basketball
@@ -545,7 +441,7 @@ Parsed POS 7 words: to (<Verbal MAINSUBJECT To_infinitive)  know (VERB2 Noun_inf
 
 # infintive acting as adjective
 His decision to leave early was unfortunate
-Parsed POS 7 words: his/he (Pronoun_possessive)  decision (MAINSUBJECT Noun_singular)  to (<Verbal POSTNOMINAL_ADJECTIVE To_infinitive)  leave (VERB2 Noun_infinitive Verbal>)  early (Adverb_basic)  was/be (MAINVERB Verb_past)  unfortunate (SUBJECT_COMPLEMENT Adjective_basic)
+Parsed POS 7 words: his/he (Pronoun_possessive)  decision (MAINSUBJECT Noun_singular)  to (<Verbal To_infinitive)  leave (VERB2 Noun_infinitive Verbal>)  early (Adverb_more)  was/be (MAINVERB Verb_past)  unfortunate (SUBJECT_COMPLEMENT Adjective_basic)
     
 # infintive as adverb
 He is determined to work hard

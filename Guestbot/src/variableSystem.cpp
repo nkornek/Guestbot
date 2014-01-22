@@ -74,7 +74,7 @@ void SetWildCard(unsigned int start, unsigned int end)
 		for (unsigned int i = start; i <= end; ++i)
 		{
 			char* word = wordStarts[i];
-			// if (*word == ',') continue; // DONT IGNORE COMMAS, needthem
+			if (*word == ',') continue; // ignore commas
 			if (started) 
 			{
 				strcat(wildcardOriginalText[wildcardIndex]," ");
@@ -84,7 +84,7 @@ void SetWildCard(unsigned int start, unsigned int end)
 			strcat(wildcardOriginalText[wildcardIndex],word);
 			strcat(wildcardCanonicalText[wildcardIndex],wordCanonical[i]);
 		}
- 		if (trace & TRACE_OUTPUT) Log(STDUSERLOG,"_%d=%s/%s ",wildcardIndex,wildcardOriginalText[wildcardIndex],wildcardCanonicalText[wildcardIndex]);
+ 		if (trace & OUTPUT_TRACE) Log(STDUSERLOG,"_%d=%s/%s ",wildcardIndex,wildcardOriginalText[wildcardIndex],wildcardCanonicalText[wildcardIndex]);
 		CompleteWildcard();
 	}
 }
@@ -139,7 +139,7 @@ char* GetUserVariable(const char* word)
 
 void ClearUserVariableSetFlags()
 {
-	for (unsigned int i = 0; i < userVariableIndex; ++i) RemoveInternalFlag(userVariableList[i],VAR_CHANGED);
+	for (unsigned int i = 0; i < userVariableIndex; ++i) userVariableList[i]->internalBits &= -1 ^ VAR_CHANGED;
 }
 
 void ShowChangedVariables()
@@ -160,7 +160,6 @@ static WORDP CreateUserVariable(const char* var, char* value)
 	char word[MAX_WORD_SIZE];
 	MakeLowerCopy(word,(char*)var);
     WORDP D = StoreWord(word);				// find or create the var.
-	if (!D) return NULL; // ran out of memory
     if (!(D->internalBits & VAR_CHANGED))	// not changed already this volley
     {
         userVariableList[userVariableIndex++] = D;
@@ -170,12 +169,7 @@ static WORDP CreateUserVariable(const char* var, char* value)
             ReportBug("too many user vars");
         }
 		D->w.userValue = NULL; 
-		AddInternalFlag(D,VAR_CHANGED);
-	}
-	if (planning) // handle undoable assignment
-	{
-		if (D->w.userValue == NULL) SpecialFact(MakeMeaning(D),(MEANING)1,0);
-		else SpecialFact(MakeMeaning(D),(MEANING) (D->w.userValue - stringBase ),0);
+		D->internalBits |= VAR_CHANGED;
 	}
 	D->w.userValue = value; 
 	return D;
@@ -191,23 +185,16 @@ void SetUserVariable(const char* var, char* word)
 		{
 			while (*word == ' ') ++word; // skip leading blanks
 			word = AllocateString(word);
-			if (!word) return;
 			size_t len = strlen(word);
 			if (len > MAX_USERVAR_SIZE) word[MAX_USERVAR_SIZE + 1] = 0; // limit on user vars same as match vars
 		}
 	}
  
 	WORDP D = CreateUserVariable(var,word);
-	if (!D) return;
 	// tokencontrol changes are noticed by the engine
 	if (!strcmp(var,"$token")) 
-	{
-		int64 val = 0;
-		if (word && *word) ReadInt64(word,val);
-		else val = (DO_INTERJECTION_SPLITTING|DO_SUBSTITUTE_SYSTEM|DO_NUMBER_MERGE|DO_PROPERNAME_MERGE|DO_SPELLCHECK);
-		tokenControl = val;
-	}
-	if (trace == TRACE_VARIABLESET) Log(STDUSERLOG,"Var: %s -> %s\r\n",D->word,word);
+		tokenControl = (word && *word) ? atoi(word) : (DO_INTERJECTION_SPLITTING|DO_SUBSTITUTE_SYSTEM|DO_NUMBER_MERGE|DO_PROPERNAME_MERGE|DO_SPELLCHECK);
+	if (trace == VARIABLESET_TRACE) Log(STDUSERLOG,"Var: %s -> %s\r\n",D->word,word);
 }
 
 void Add2UserVariable(char* var, char* moreValue,char minusflag)
@@ -228,7 +215,7 @@ void Add2UserVariable(char* var, char* moreValue,char minusflag)
 	bool floating = false;
 	if (strchr(oldValue,'.') || strchr(moreValue,'.') ) floating = true; 
 	char result[MAX_WORD_SIZE];
-	if (trace & TRACE_OUTPUT) Log(STDUSERLOG,"%s %c %s ",var,minusflag,moreValue);
+	if (trace & OUTPUT_TRACE) Log(STDUSERLOG,"%s %c %s ",var,minusflag,moreValue);
 
     if (floating)
     {
@@ -237,14 +224,8 @@ void Add2UserVariable(char* var, char* moreValue,char minusflag)
         if (minusflag == '-') newval -= more;
         else if (minusflag == '*') newval *= more;
         else if (minusflag == '/') newval /= more;
-		else if (minusflag == '%') 
-		{
-			int64 ivalue = (int64) newval;
-			int64 morval = (int64) more;
-			newval = (float) (ivalue % morval);
-		}
         else newval += more;
-        sprintf(result,"%1.2f",newval);
+        sprintf(result,"%.2f",newval);
     }
     else
     {
@@ -264,9 +245,7 @@ void Add2UserVariable(char* var, char* moreValue,char minusflag)
         else if (minusflag == '|') newval |= more;
         else if (minusflag == '&') newval &= more;
         else if (minusflag == '^') newval ^= more;
-        else if (minusflag == '<') newval <<= more;
-        else if (minusflag == '>') newval >>= more;
-       else newval += more;
+        else newval += more;
 #ifdef WIN32
 		 sprintf(result,"%I64d",newval); 
 #else
@@ -278,7 +257,7 @@ void Add2UserVariable(char* var, char* moreValue,char minusflag)
 	if (*var == '_')  SetWildCard(result,result,var,0); 
 	else if (*var == '$') SetUserVariable(var,result);
 	else if (*var == '^') strcpy(callArgumentList[atoi(var+1)+fnVarBase],result); 
-	if (trace & TRACE_OUTPUT) Log(STDUSERLOG,"=> %s ",result);
+	if (trace & OUTPUT_TRACE) Log(STDUSERLOG,"=> %s ",result);
 }
 
 void ReestablishBotVariables() // refresh bot variables
@@ -309,7 +288,7 @@ void ClearUserVariables()
 	{
 		WORDP D = userVariableList[--userVariableIndex];
 		D->w.userValue = NULL;
-		RemoveInternalFlag(D,VAR_CHANGED);
+		D->internalBits &= -1 ^ VAR_CHANGED;
  	}
 }
 
@@ -328,11 +307,10 @@ void DumpVariables()
 		value = D->w.userValue;
 		if (value && *value)  
 		{
+			unsigned int val = atoi(value);
 			if (!stricmp(D->word,"$token"))
 			{
 				Log(STDUSERLOG,"  variable: decoded %s = ",D->word);
-				int64 val;
-				ReadInt64(value,val);
 				DumpTokenControls(val);
 				Log(STDUSERLOG,"\r\n");
 			}
@@ -343,6 +321,7 @@ void DumpVariables()
 
 char* PerformAssignment(char* word,char* ptr,unsigned int &result)
 {// assign to and from  $var, _var, ^var, @set, and %sysvar
+	unsigned int id;
     char op[MAX_WORD_SIZE];
 	ChangeDepth(2,"PerformAssignment");
 	char* word1 = AllocateBuffer();
@@ -366,7 +345,7 @@ char* PerformAssignment(char* word,char* ptr,unsigned int &result)
 
 	// Get assignment operator
     ptr = ReadCompiledWord(ptr,op); // assignment operator = += -= /= *= %= 
-	if (trace & TRACE_OUTPUT) Log(STDUSERTABLOG,"%s %s ",word,op);
+	if (trace & OUTPUT_TRACE) id = Log(STDUSERTABLOG,"%s %s ",word,op);
  
 	// get the from value
 	assignFromWild =  (*ptr == '_' && IsDigit(ptr[1])) ? GetWildcardID(ptr)  : -1;
@@ -378,14 +357,7 @@ char* PerformAssignment(char* word,char* ptr,unsigned int &result)
 		{
 			uint64 n = FindValueByName(word1+1);
 			if (!n) n = FindValue2ByName(word1+1);
-			if (n) 
-			{
-#ifdef WIN32
-				sprintf(word1,"%I64d",(long long int) n); 
-#else
-				sprintf(word1,"%lld",(long long int) n); 
-#endif	
-			}
+			if (n) sprintf(word1,"%lld",n);
 		}
 		if (result & ENDCODES) goto exit;
 		// A fact was created but not used up by retrieving some field of it. Convert to a reference to fact.
@@ -482,16 +454,15 @@ char* PerformAssignment(char* word,char* ptr,unsigned int &result)
 		}
 	}
 	else if (*word == '$') SetUserVariable(word,word1);
-	else if (*word == '\'' && word[1] == '$') SetUserVariable(word+1,word1); // '$xx = value  -- like passed thru as argument
 	else if (*word == '%') SystemVariable(word,word1); 
-	else // if (*word == '^') // cannot touch a function argument, word, or number
+	else if (*word == '^') // cannot touch a function argument
 	{
 		result = FAILRULE_BIT;
 		goto exit;
 	}
 
 	//  followup arithmetic operators?
-	while (ptr && IsArithmeticOperator(ptr))
+	while (ptr && ptr[1] == ' ' && IsArithmeticOperator(ptr))
 	{
 		ptr = ReadCompiledWord(ptr,op);
 		ptr = ReadCommandArg(ptr,word1,result); 
@@ -500,7 +471,7 @@ char* PerformAssignment(char* word,char* ptr,unsigned int &result)
 	}
 
 	// debug
-	if (trace & TRACE_OUTPUT)
+	if (trace & OUTPUT_TRACE)
 	{
 		char* answer = AllocateBuffer();
 		unsigned int result;

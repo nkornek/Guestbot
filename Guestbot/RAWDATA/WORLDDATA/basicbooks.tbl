@@ -26,6 +26,9 @@ DATA:
 ~poet "William Butler Yeats"  ~poem "Brown Penny"
 ~poet "Langston Hughes" ~poem "Dream Deferred"
 
+
+
+
 table: ~malebooks(^author ^title ^copyright ^genre)
 ^addproperty(^author NOUN_MALEHUMAN )
 ^createfact(^author member ~author ) 

@@ -55,30 +55,29 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 
 #define NOMORERULES 0x0fffffff		// finished walking a rule index map
 
+// transient bits on TopicFlagsMap
+#define ACCESS_FLAGS ( TOPIC_GAMBITTED | TOPIC_RESPONDED | TOPIC_REJOINDERED ) 
+#define TRANSIENT_FLAGS ( TOPIC_BLOCKED | TOPIC_USED | ACCESS_FLAGS ) 
+
 #define MAX_TOPIC_STACK 50
 
-extern bool stats;
+extern bool ruleStats;
 extern unsigned int ruleCount;
 
-extern char timeStamp0[20];
-extern char timeStamp1[20];
-extern char buildStamp0[150];
-extern char buildStamp1[150];
+extern char timeStamp0[50];
+extern char timeStamp1[50];
 
 extern bool ruleErased;
 extern unsigned int* topicDebugMap;
 
 extern unsigned int numberOfTopics; 
-extern unsigned int lastTopic;		
 extern unsigned int duplicateCount;
-extern unsigned int xrefCount;
 
 extern unsigned int currentTopicID;
 extern char* currentRule;	
 extern int currentRuleID;
 extern int currentReuseID;
 extern int currentRuleTopic;
-extern bool debugTopic;
 
 extern int outputRejoinderRuleID;
 extern int outputRejoinderTopic;
@@ -109,8 +108,6 @@ void AddKeep(char* ptr);
 
 int PushTopic(unsigned int topic);
 void PopTopic();
-
-unsigned int DoOutput(char* buffer,char* rule, unsigned int id);
 
 // encoding
 void DummyEncode(char* &data);

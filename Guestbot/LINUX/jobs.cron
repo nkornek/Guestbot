@@ -1,1 +1,1 @@
-0,5,10,15,20,25,30,35,40,45,50,55 * * * * ChatScript/ChatScript > cronserver.log
+0,5,10,15,20,25,30,35,40,45,50,55 * * * * /home/bwilcox/ChatScript/LinuxChatScript32 dict=300000 fact=250000 text=12100  2>/home/bwilcox/ChatScript/cronserver.log

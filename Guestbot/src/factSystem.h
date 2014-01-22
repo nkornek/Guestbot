@@ -37,7 +37,9 @@ extern FACT* factBase;		//   start of fact space
 extern FACT* factEnd;		//   end of fact space
 extern FACT* currentFact;	//   most recent fact found or created
 extern FACT* wordnetFacts;	//   end of wordnet facts (before topic facts)
+extern FACT* topicFacts;	//   end of topic facts (start of chatbot facts)
 extern FACT* build0Facts;	//   end of build0 facts (start of build1 facts)
+extern FACT* chatbotFacts;	//   end of chatbot facts (before USER)
 extern FACT* factFree;		//   end of facts - most recent fact allocated (ready for next allocation)
 
 // pre-reserved verb types
@@ -66,12 +68,11 @@ FACT* FindFact(MEANING subject, MEANING verb, MEANING object, unsigned int prope
 FACT* CreateFact(MEANING subject,MEANING verb, MEANING object,unsigned int properties = 0);
 FACT* CreateFastFact(MEANING subject, MEANING verb, MEANING object, unsigned int properties);
 void KillFact(FACT* F);
-FACT* SpecialFact(MEANING verb, MEANING object,unsigned int flags);
 void FreeFact(FACT* F);
 
 // fact reading and writing
 char* ReadField(char* ptr,char* field,char fieldkind,unsigned int& flags);
-char* EatFact(char* ptr,unsigned int flags = 0,bool attribute = false);
+char* EatFact(char* ptr,unsigned int flags = 0);
 FACT* ReadFact(char* &ptr);
 void ReadFacts(const char* name,uint64 zone,bool user = false);
 char* WriteFact(FACT* F,bool comments,char* buffer,bool ignoreDead = false,bool eol = false);
@@ -90,7 +91,7 @@ bool ExportFacts(char* name, int set,char* append);
 bool ImportFacts(char* name, char* store, char* erase, char* transient);
 
 // debugging
-void TraceFact(FACT* F,bool ignoreDead = true);
+void TraceFact(FACT* F,bool ignoreDead = false);
 
 // field access
 

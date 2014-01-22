@@ -1,4 +1,4 @@
-topic: ~QUIBBLE_WHERE system random () 
+topic: ~QUIBBLE_WHERE system random erase() 
 # WHERE
 ?: (do < * you ) [Whereever I can. ] [Usually at the same place. ] 
 ?: (can < * you ) [Sometimes it takes a lot of hunting to find the right place. ] [Wherever they allow it. ] 

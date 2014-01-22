@@ -2,6 +2,7 @@
 table: ~colorof (^color ^object)
 ^createfact(^object color ^color)
 ^addproperty(^color NOUN NOUN_SINGULAR)
+^addproperty(^object NOUN NOUN_SINGULAR)
 
  DATA:
  green [grass leaf plant emerald ~plants turtle parsley topaz]
@@ -13,7 +14,7 @@ table: ~colorof (^color ^object)
  
  orange [orange marigold goldfish pumpkin 	carrot tangerine cantaloupe mango  opal ]
  
- blue [sky water bluebell "blue screen of death" blue_jeans jeans	blueberry ocean sea lake ink blue_jay  eye]
+ blue [sky water bluebells "blue screen of death" blue_jeans jeans	blueberry ocean sea lake ink blue_jay  eye]
  
  purple [lollipop grape violet plum lilacs 	"black currant" blackberry eggplant  prune  ]
 
@@ -32,11 +33,11 @@ table: ~colorof (^color ^object)
 
  black [night darkness death dead corpse computer speaker "electronic equipment" Tivo TV	 pavement magnet tire smoke panther opal zebra charcoal ]
  
- white [snow snowman sheet pillowcase cloud	lamb cotton_ball cotton milk cream polar_bear tooth bride zebra egg]
+ white [snow snowman sheet pillowcase cloud	lamb cotton_ball cotton milk cream polar_bear teeth bride zebra egg]
  white [chicken pigeon dove ginger cauliflower garlic jicama kohlrabi onion parsnip potato onion shallot turnip "white corn"]
  
  grey [raincloud building ~building elephant ash turkey computer]
 
- pink [peony skin flesh cheek cream_soda flamingo cotton_candy shrimp grapefruit piglet rose tongue]
+ pink [peony skin flesh cheeks cream_soda flamingo cotton_candy shrimp grapefruit piglet rose tongue]
  
  transparent [glass window air]

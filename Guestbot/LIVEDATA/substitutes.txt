@@ -16,76 +16,9 @@
  # we use + because we dont want the resulting phrase recognized by the idiom processor and thus cause the processor to delete the phrase
  # xxx> means sentence then end stop
  # if you want to have the result NOT tokenized, put it in quotes
- a.i. artificial+intelligence
- Apr April
- Apr. April
- ariz. Arizona
- Aug August
- Aug. August
- colo. Colorado
- Corp Corporation
- Corp. Corporation
- Dec December
- Dec. December
- e.g. for+example
- ex. for+example
- FB Facebook
- Feb February
- Feb. February
- fla. Florida
- ft feet
- ft. feet
- i.e. for+example
- Inc Incorporated
- Inc. Incorporated
- Jan January 
- Jan. January
- Jul. July
- Jun June
- Jun. June
- kg kilogram
- kg. kilogram
- kgs. kilograms
- lb pound
- lb. pound
- lbs pounds
- lbs. pounds
- Ltd Limited
- Ltd. Limited
- Mar. March
- mich. Michigan
- minn. Minnesota
- Mr Mr.
- Mrs Mrs.
- Mt. Mount
- nev. Nevada
- Nov November
- Nov. November
- Oct October
- Oct. October
- okla. Oklahoma
- oz ounce
- oz. ounce
- PLC. PLC
- Sep September
- sep. September
- Sept September
- Sept. September
- u_s_a U.S.A.
- USA U.S.A.
- v. versus
- vs. versus
- w/ with
- yr year
- yr. year
 
  Loebners Loebner
  Loebner_'s Loebner
- <got_it> OK
-Dr Doctor
-Dr. Doctor
-<explain> why
-prof. professor
 
  <I_see> OK
 
@@ -152,6 +85,9 @@ prof. professor
  <I_presume %QUESTIONMARK
  <I_presume_that %QUESTIONMARK
  <I_suppose
+ <I_think
+ <I_think_that
+ <I_think_you you
  <I_would_like_to_ask_if_it_is is+it
  <I_would_like_to_ask_you_if_it_is is+it
  <I_would_like_to_ask_you_is_it is+it
@@ -349,7 +285,9 @@ prof. professor
  active_weather weather
  actually
  add_together combine
+ additinally
  additionally
+ aditionally
  advance_forward forward
  advance_scouting scouting
  advance_warning warning
@@ -379,6 +317,7 @@ prof. professor
  along_time a+long+time
  alot a+lot
  alot_of a+lot+of
+ already
  also
  altho although
  am_in_the_morning am
@@ -398,15 +337,15 @@ prof. professor
  any_more anymore
  anyway
  anyways
+ appear_to_be are
  appeared_to_be was
+ appeares is
+ appears is
+ appears_to_be is
  apple_iphone iPhone
  Apple_iPhone iPhone
- are_lead_by are+led+by
- archeological archaeological
- archeologically archaeologically
- archeologist archaeologist
- archeologists archaeologists
  archeology archaeology
+ are_lead_by are+led+by
  arent are+not
  armed_assault_and_holdup holdup holdup
  as_a_matter_of_fact
@@ -576,6 +515,7 @@ prof. professor
  current_incumbent incumbent
  current_passing current
  cyberattack cyber+attack
+ daily_show The_Daily_Show
  dammit damn+it
  damnit damn+it
  darn_tootin correct
@@ -605,9 +545,10 @@ prof. professor
  didnot did+not
  didnt did+not
  different_tact different+tack
- diningroom dining+room
+ diningroom dining_room
  dinning_room dining+room
  disc_breaks disc+brakes
+ discuss discuss
  DMZ_zone DMZ
  do'nt don't
  do_not_you_feel_you are+not+you
@@ -683,6 +624,7 @@ prof. professor
  egg_yoke egg+yolk
  eh
  eighties 80
+ either>
  electrical_current electric+current
  eliminate_altogether eliminate
  elucidate_for tell
@@ -855,7 +797,7 @@ prof. professor
  hold_the_reigns hold+the+reins
  holds_the_reigns holds+the+reins
  homerun home+run
- hone_in_on home+in+on
+ hone_in_on home_in+on
  hot_water_heater water+heater
  how_'s_tricks how+are+you+doing
  how_are_you_liking do+you+like
@@ -1066,7 +1008,7 @@ prof. professor
  lite light
  literate_readers readers
  little_baby baby
- livingroom living+room
+ livingroom living_room
  longer_in_length longer
  loose_to lose+to
  loosing_streak losing+streak
@@ -1314,6 +1256,10 @@ prof. professor
  sayeth say
  scifi science+fiction
  seedling_plant seedling
+ seem_to_be are
+ seemed_to_be was
+ seems is
+ seems_to_be is
  serious_danger danger
  seventies 70
  severely
@@ -1399,6 +1345,7 @@ prof. professor
  the_asian_continent Asia
  the_central_american_continent Central+America
  the_crack_of_dawn dawn
+ the_daily_show The_Daily_Show
  the_eighties 1980s
  the_european_continent Europe
  the_fact_is

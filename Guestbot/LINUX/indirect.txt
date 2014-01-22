@@ -1,0 +1,3 @@
+cd ChatScript
+nohup LinuxChatScript32 dict=150000 fact=170000 text=7000 serverlog userlog 2>nohup.log &
+

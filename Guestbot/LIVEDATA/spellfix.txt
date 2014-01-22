@@ -1,5 +1,3 @@
-additinally additionally
-aditionally additionally
 Celcious Celcius
 abanden abandon
 abandonned abandoned
@@ -319,6 +317,7 @@ agressively aggressively
 agriculturalists agriculturists
 agrieved aggrieved
 ahmond almond
+Ai_Miyazato Ai_Miyazato
 aiports airports
 airator aerator
 airbourne airborne
@@ -380,7 +379,7 @@ along_side alongside
 alotted allotted
 althetic athletic 
 alway always
-am_no not+am 
+am_no not_am 
 ambadexterous ambidextrous
 amealearate ameliorate
 ameba amoeba
@@ -1393,7 +1392,7 @@ dockson dachshund
 docsund dachshund
 documnets documents 
 doens does 
-doenst does+not 
+doenst does_not 
 doese does 
 doign doing
 doimg doing
@@ -1679,7 +1678,7 @@ fistfulls fistfuls
 five-letter 5-letter
 fizeek physique
 flag_ship flagship 
-flatrate flat+rate 
+flatrate flat_rate 
 flem phlegm 
 Flemmish Flemish
 floatation flotation
@@ -2210,7 +2209,7 @@ lazer laser
 lazers lasers
 leaneant lenient
 leeg league 
-leetspeek leet+speak
+leetspeek leet_speak
 legionair legionnaire
 leisurly leisurely
 leprecan leprechaun
@@ -2406,7 +2405,7 @@ myu my
 Napoleonian Napoleonic
 narled gnarled
 nastershum nasturtium
-native_american Native+American
+native_american Native_American
 nawshus nauseous
 naybor neighbor
 Nazereth Nazareth
@@ -2594,6 +2593,7 @@ odoer odor
 odouriferous odoriferous
 odourous odorous
 oeprator operator
+ofc of_course 
 ofering offering
 oferings offerings
 offen often
@@ -4021,7 +4021,7 @@ sweeped swept
 sweept swept
 swein swine
 swiming swimming
-swimtrunk swim+trunk
+swimtrunk swim_trunk
 Switerland Switzerland
 syas says
 syle style

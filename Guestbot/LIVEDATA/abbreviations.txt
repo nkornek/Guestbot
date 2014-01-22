@@ -1,4 +1,3 @@
-# used by tokenizer and burst
 A.G. 
 Adm. 
 Apr. 
@@ -58,3 +57,5 @@ Sr.
 St. 
 Ste. 
 V.P. 
+v. versus
+vs. versus

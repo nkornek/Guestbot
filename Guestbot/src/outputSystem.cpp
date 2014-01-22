@@ -9,7 +9,7 @@ static char* oldOutputBase[MAX_OUTPUT_NEST];
 static char* oldOutputRuleBase[MAX_OUTPUT_NEST];
 static unsigned int oldOutputLimit[MAX_OUTPUT_NEST];
 static int oldOutputIndex = 0;
-unsigned int outputNest = 0;
+static unsigned int outputNest = 0;
 
 #ifdef JUNK
 Special strings:
@@ -19,7 +19,7 @@ It will be treated...
 
 When you use it as an argument to a function (top level), it is compiled.
 
-When you put ^"xxxx" as a string in a table, it will be compiled and be either a pattern compile or an output compile.   
+When you put ^"xxxx" as a string in a table, it will be compiled and be either a pattern compile ^"(xxx)  or an output compile.   
 Internally that becomes "^xxx" which is fully executable.
 
 
@@ -69,7 +69,6 @@ static int CountParens(char* start)
 
 static bool IsAssignmentOperator(char* word)
 {
-	if ((*word == '<' || *word == '>') && word[1] == *word && word[2] == '=') return true;	 // shift operators
 	return ((*word == '=' && word[1] != '=' && word[1] != '>') || (*word && *word != '!' && *word != '\\' && *word != '=' && word[1] == '='   )); // x = y, x *= y
 }
 
@@ -90,8 +89,7 @@ char* ReadShortCommandArg(char* ptr, char* buffer,unsigned int& result,unsigned 
 static char* AddFormatOutput(char* what, char* output)
 {
 	size_t len = strlen(what);
-	if ((output - currentOutputBase + len) > (currentOutputLimit - 50)) 
-		ReportBug("format string revision too big %s\r\n",output) // buffer overflow
+	if ((output - currentOutputBase + len) > MAX_WORD_SIZE - 200) ReportBug("format string revision too big %s\r\n",output) // buffer overflow
 	else
 	{
 		strcpy(output,what);
@@ -102,15 +100,14 @@ static char* AddFormatOutput(char* what, char* output)
 
 void ReformatString(char* output, char* input,unsigned int controls) // take ^"xxx" format string and perform substitutions on variables within it
 {
-	size_t len = strlen(input) - 1;
-	char c = input[len];
-	input[len] = 0;	// remove closing "
+	bool compiled = false;
 	if (*input == ':') // has been compiled by script compiler. safe to execute fully. actual string is "^:xxxxx" 
 	{
+		compiled = true;
 		++input;
+		input[strlen(input)-1] = 0;	// remove closing "
 		unsigned int result;
- 		Output(input,output,result,controls|OUTPUT_EVALCODE); // directly execute the content
-		input[len] = c;
+ 		Output(output,input,result,controls|OUTPUT_EVALCODE); // directly execute the content
 		return;
 	}
 
@@ -118,6 +115,7 @@ void ReformatString(char* output, char* input,unsigned int controls) // take ^"x
 	*output = 0;
 	char mainValue[3];
 	mainValue[1] = 0;
+	char c;
 	while (*input)
 	{
 		if (*input == '$' && !IsDigit(input[1])) // user variable
@@ -223,10 +221,7 @@ void ReformatString(char* output, char* input,unsigned int controls) // take ^"x
 		}
 		else if (*input == '\\')
 		{
-			if (*++input == 'n') *output++ = '\n';
-			else if (*input == 't') *output++ = '\t';
-			else if (*input == 'r') *output++ = '\r';
-			else *output++ = *input;
+			*output++ = *++input;
 			++input;
 		}
 		else // ordinary character
@@ -235,7 +230,7 @@ void ReformatString(char* output, char* input,unsigned int controls) // take ^"x
 			output = AddFormatOutput(mainValue, output);
 		}
 	}
-	*output = 0; // when failures, return the null string
+	*--output = 0; // delete end quote mark or when failures, return the null string
 }
 
 static void StdNumber(char* word,char* buffer,int controls) // text numbers may have sign and decimal
@@ -288,12 +283,7 @@ char* StdIntOutput(int n)
 	char buffer[50];
 	static char answer[50];
 	*answer = 0;
-#ifdef WIN32
-	sprintf(buffer,"%I64d",(long long int) n); 
-#else
-	sprintf(buffer,"%lld",(long long int) n); 
-#endif
-
+	sprintf(buffer,"%lld",(long long int) n);
 	StdNumber(buffer,answer,0);
 	return answer;
 }
@@ -303,7 +293,7 @@ char* StdFloatOutput(float n)
 	char buffer[50];
 	static char answer[50];
 	*answer = 0;
-	sprintf(buffer,"%1.2f",n);
+	sprintf(buffer,"%.2f",n);
 	StdNumber(buffer,answer,0);
 	return answer;
 }
@@ -409,13 +399,13 @@ and return a ptr to the rest. If a general stream hits an error, it has to flush
 tokens and return a ptr to the end.
 #endif
 
-char* Output_Percent(char* ptr, char* word, bool space,char* buffer, unsigned int controls,unsigned int& result,bool once)
+char* Output_Percent(char* ptr, char* word, bool space,char* buffer, unsigned int controls,unsigned int& result)
 {			
 	// Handles system variables:  %date
 	// Handles any other % item - %
 	if (IsAlpha(word[1])) // must be a system variable
     {
-		if (!once && IsAssignmentOperator(ptr)) return PerformAssignment(word,ptr,result); //   =  or *= kind of construction
+		if (IsAssignmentOperator(ptr)) return PerformAssignment(word,ptr,result); //   =  or *= kind of construction
 		strcpy(word,SystemVariable(word,NULL));
 	}
 	if (*word) 
@@ -450,16 +440,16 @@ char* Output_Backslash(char* ptr, char* word, bool space,char* buffer, unsigned 
 	return ptr;
 }
 
-char* Output_Function(char* ptr, char* word, bool space,char* buffer, unsigned int controls,unsigned int& result,bool once)
+char* Output_Function(char* ptr, char* word, bool space,char* buffer, unsigned int controls,unsigned int& result)
 {
 	if (IsDigit(word[1]))  //   function variable
 	{
-		if (!once && IsAssignmentOperator(ptr))  ptr = PerformAssignment(word,ptr,result); //   =  or *= kind of construction
+		if (IsAssignmentOperator(ptr))  ptr = PerformAssignment(word,ptr,result); //   =  or *= kind of construction
 		else //  replace function variable with its content, treating it as though the original content had been supplied
 		{
 			size_t len = strlen(callArgumentList[atoi(word+1)+fnVarBase]);
 			size_t size = (buffer - currentOutputBase);
-			if ((size + len) >= (currentOutputLimit-50) ) 
+			if ((size + len) >= (currentOutputLimit-200) ) 
 			{
 				result = FAILRULE_BIT;
 				return ptr;
@@ -478,12 +468,6 @@ char* Output_Function(char* ptr, char* word, bool space,char* buffer, unsigned i
 	else  if (word[1] == '$' || word[1] == '_' || word[1] == '\'') // ^$$1 = null or ^_1 = null or ^'_1 = null is indirect user assignment
 	{
 		Output(word+1,buffer,result,controls|OUTPUT_NOTREALBUFFER); // no leading space
-		if (!once && IsAssignmentOperator(ptr)) 
-		{
-			strcpy(word,buffer);
-			*buffer = 0;
-			return PerformAssignment(word,ptr,result); //   =  or *= kind of construction
-		}
 		*word = '`';	// marker for retry
 	}
 	else if (word[1] == '^') // if and loop
@@ -537,7 +521,7 @@ char* Output_Text(char* ptr, char* word, bool space,char* buffer, unsigned int c
 	{
 		memmove(word+1,word,strlen(word)+1);
 		*word = '^';  // supply ^
-		ptr = Output_Function(ptr,word,space,buffer, controls,result,false);
+		ptr = Output_Function(ptr,word,space,buffer, controls,result);
 		if (result == UNDEFINED_FUNCTION) // wasnt a function after all.
 		{
 			CONDITIONAL_SPACE();
@@ -547,11 +531,11 @@ char* Output_Text(char* ptr, char* word, bool space,char* buffer, unsigned int c
 	return ptr;
 }
 
-char* Output_AtSign(char* ptr, char* word, bool space,char* buffer, unsigned int controls,unsigned int& result,bool once)
+char* Output_AtSign(char* ptr, char* word, bool space,char* buffer, unsigned int controls,unsigned int& result)
 {
 	// handles factset assignement: @3 = @2
 	// handles factset field: @3object
-	if (!once && IsAssignmentOperator(ptr)) ptr = PerformAssignment(word,ptr,result);
+	if (IsAssignmentOperator(ptr)) ptr = PerformAssignment(word,ptr,result);
 	else if (impliedSet != ALREADY_HANDLED)
 	{
 		CONDITIONAL_SPACE();
@@ -636,7 +620,7 @@ char* Output_Quote(char* ptr, char* word, bool space,char* buffer, unsigned int 
 	{
 		size_t len = strlen(callArgumentList[atoi(word+2)+fnVarBase]);
 		size_t size = (buffer - currentOutputBase);
-		if ((size + len) >= (currentOutputLimit-50) ) 
+		if ((size + len) >= (currentOutputLimit-200) ) 
 		{
 			result = FAILRULE_BIT;
 			return ptr;
@@ -674,12 +658,12 @@ char* Output_String(char* ptr, char* word, bool space,char* buffer, unsigned int
 	return ptr;
 }
 	
-char* Output_Underscore(char* ptr, char* word, bool space,char* buffer, unsigned int controls,unsigned int& result,bool once)
+char* Output_Underscore(char* ptr, char* word, bool space,char* buffer, unsigned int controls,unsigned int& result)
 {
 	// handles wildcard assigment: _10 = hello
 	// handles wildcard: _19
 	// handles simple _ or _xxxx 
-	if (!once && IsAssignmentOperator(ptr)) ptr = PerformAssignment(word,ptr,result); 
+	if (IsAssignmentOperator(ptr)) ptr = PerformAssignment(word,ptr,result); 
 	else if (IsDigit(word[1])) // wildcard 
 	{
 		int id = GetWildcardID(word);
@@ -697,7 +681,7 @@ char* Output_Underscore(char* ptr, char* word, bool space,char* buffer, unsigned
 	return ptr;
 }
 
-char* Output_Dollar(char* ptr, char* word, bool space,char* buffer, unsigned int controls,unsigned int& result,bool once)
+char* Output_Dollar(char* ptr, char* word, bool space,char* buffer, unsigned int controls,unsigned int& result)
 {
 	// handles user variable assignment: $myvar = 4
 	// handles user variables:  $myvar
@@ -710,7 +694,7 @@ char* Output_Dollar(char* ptr, char* word, bool space,char* buffer, unsigned int
 			if (*answer == '$') strcpy(word,answer); // force nested indirect on var of a var value
 		}
 
-		if (!once && IsAssignmentOperator(ptr)) ptr = PerformAssignment(word,ptr,result); 
+		if (IsAssignmentOperator(ptr)) ptr = PerformAssignment(word,ptr,result); 
 		else
 		{
 			char* value = GetUserVariable(word);
@@ -737,12 +721,6 @@ char* Output(char* ptr,char* buffer,unsigned int &result,int controls)
 	{
 		once = true;
 		controls ^= OUTPUT_ONCE;
-	}
-	if (buffer < currentOutputBase || (size_t)(buffer - currentOutputBase) >= (size_t)(currentOutputLimit-200)) // output is wrong or in danger already?
-	{
-		result =  (unsigned int) (buffer - currentOutputBase); // debug info
-		result = FAILRULE_BIT;
-		return ptr;
 	}
 
 	char* start = buffer;
@@ -797,16 +775,16 @@ retry:
 
 		// variables of various flavors
         case '$': //   user variable or money
-			ptr = Output_Dollar(ptr, word, space, buffer, controls,result,once);
+			ptr = Output_Dollar(ptr, word, space, buffer, controls,result);
             break;
  		case '_': //   wildcard or standalone _ OR just an ordinary token
-			ptr = Output_Underscore(ptr, word, space, buffer, controls,result,once);
+			ptr = Output_Underscore(ptr, word, space, buffer, controls,result);
 			break;
         case '%':  //   system variable
-	 		ptr = Output_Percent(ptr, word, space, buffer, (quoted) ? (controls | OUTPUT_DQUOTE_FLIP)  : controls,result,once);
+	 		ptr = Output_Percent(ptr, word, space, buffer, (quoted) ? (controls | OUTPUT_DQUOTE_FLIP)  : controls,result);
 			break;
 		case '@': //   a fact set reference like @9 @1subject @2object or something else
-			ptr = Output_AtSign(ptr, word, space, buffer, controls,result,once);
+			ptr = Output_AtSign(ptr, word, space, buffer, controls,result);
 			break;
 
 		// sets, functions, strings
@@ -822,7 +800,7 @@ retry:
 				*buffer = 0;
 			}
 
-			ptr = Output_Function(ptr, word, space, buffer, controls,result,once);
+			ptr = Output_Function(ptr, word, space, buffer, controls,result);
 			if (*word == '`') // retry marker from ^$var substitution loop back and handle it
 			{
 				if (!*buffer) result = FAILRULE_BIT;
@@ -856,13 +834,13 @@ retry:
 		{
 #ifndef DISCARDTESTING
 			WORDP D = FindWord(word);
-			if (D && D->x.debugIndex) 
+			if (D && D->x.codeIndex) 
 			{
 				unsigned int oldtopicid = currentTopicID;
 				char* oldrule = currentRule;
 				int oldruleid = currentRuleID;
 				int oldruletopic = currentRuleTopic;
-				Command(ptr - strlen(word) - 1,NULL);
+				Command(ptr - strlen(word) - 1);
 				currentTopicID = oldtopicid;
 				currentRule = oldrule;
 				currentRuleID = oldruleid;
@@ -880,23 +858,15 @@ retry:
 			ptr = Output_Text(ptr, word, space, buffer, controls,result);
         }
 
-		if (!outputNest && *buffer) // generated top level output
-		{
-			if (buffer == start) // this is our FIRST output
-			{
-				buffer = start;  // debug stop
-			}
-			if (trace & (TRACE_OUTPUT|TRACE_MATCH) &&  !(controls &OUTPUT_SILENT)) Log(STDUSERLOG," =:: %s ",buffer);
-		}
+		if (trace & (OUTPUT_TRACE|MATCH_TRACE) &&  !outputNest && *buffer &&  !(controls &OUTPUT_SILENT)) 
+			Log(STDUSERLOG," =:: %s ",buffer);
+
 		//   update location and check for overflow
 		buffer += strlen(buffer);
 		unsigned int size = (buffer - currentOutputBase);
-        if (size >= (currentOutputLimit-200) && !(result  & FAILCODES)) 
-		{
-			result = FAILRULE_BIT;
-		}
+        if (size >= (currentOutputLimit-200) && !(result  & FAILCODES)) result = FAILRULE_BIT;
 
-		if (result & (RETRYRULE_BIT|RETRYTOPRULE_BIT|ENDCODES))
+		if (result & (RETRYRULE_BIT|ENDCODES))
 		{
 			if (result & FAILCODES && !(controls & OUTPUT_LOOP)) *start = 0; //  kill output
 			if (!once) ptr = BalanceParen(ptr,true); // swallow excess input BUG - does anyone actually care

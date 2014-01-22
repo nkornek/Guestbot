@@ -80,20 +80,15 @@ extern unsigned char bitCounts[MAX_SENTENCE_LENGTH];
 void ReadPosPatterns(char* file,uint64 junk);
 void MarkTags(unsigned int i);
 char* GetNounPhrase(int i,const char* avoid);
+
+#ifndef DISCARDARSER
 extern unsigned int clauses[MAX_SENTENCE_LENGTH];
 extern unsigned int phrases[MAX_SENTENCE_LENGTH];
 extern unsigned int verbals[MAX_SENTENCE_LENGTH];
-extern unsigned char ignoreWord[MAX_SENTENCE_LENGTH];
 extern unsigned char coordinates[MAX_SENTENCE_LENGTH];
-extern unsigned char crossReference[MAX_SENTENCE_LENGTH];
-extern uint64 roles[MAX_SENTENCE_LENGTH];
+extern unsigned int roles[MAX_SENTENCE_LENGTH];
 extern unsigned int parseFlags[MAX_SENTENCE_LENGTH];
 extern unsigned char tried[MAX_SENTENCE_LENGTH];
-extern unsigned char objectRef[MAX_SENTENCE_LENGTH+1];  // link from verb to any main object
-extern unsigned char indirectObjectRef[MAX_SENTENCE_LENGTH];  // link from verb to any indirect object
-extern unsigned char complementRef[MAX_SENTENCE_LENGTH+1];  // link from verb to any main object
-
-#ifndef DISCARDPARSER
 
 void MarkRoles(unsigned int i);
 #endif
@@ -101,7 +96,7 @@ void MarkRoles(unsigned int i);
 void SetParserMarks(WORDP D,bool enable);
 void English_TagIt();
 void English_ParseSentence(bool &resolved,bool &changed);
-void DumpSentence(unsigned int start, unsigned int end);
+void DumpSentence(unsigned int from);
 char* GetRole(unsigned int i);
 
 #define TagIt() (*P_TagIt)()

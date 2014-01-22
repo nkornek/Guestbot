@@ -38,7 +38,7 @@ static unsigned char letterIndexData[256] =
 	0,0,0,0,0,0
 };
 
-static MEANING lengthLists[100];		// lists of valid words by length
+static unsigned int lengthLists[100];		// lists of valid words by length
 
 typedef struct SUFFIX
 {
@@ -59,15 +59,15 @@ static SUFFIX stems[] =
 
 void InitSpellCheck()
 {
-	memset(lengthLists,0,sizeof(MEANING) * 100);
+	memset(lengthLists,0,sizeof(unsigned int) * 100);
 	WORDP D = dictionaryBase - 1;
 	while (++D <= dictionaryFree)
 	{
-		if (!D->word || !IsAlpha(*D->word) || D->length >= 100 || D->internalBits & UTF8 || strchr(D->word,'_')) continue;
+		if (!D->word || !IsAlpha(*D->word) || D->y.length >= 100 || D->internalBits & UTF8 || strchr(D->word,'_')) continue;
 		if (D->properties & PART_OF_SPEECH || D->systemFlags & PATTERN_WORD)
 		{
-			D->spellNode = lengthLists[D->length];
-			lengthLists[D->length] = MakeMeaning(D);
+			D->spellNode = lengthLists[D->y.length];
+			lengthLists[D->y.length] = Word2Index(D);
 		}
 	}
 }
@@ -85,13 +85,13 @@ static int SplitWord(char* word)
 			D2 = FindWord(word+breakAt,0,PRIMARY_CASE_ALLOWED);
 			if (D2)
 			{
-				good = (D2->properties & (PART_OF_SPEECH|FOREIGN_WORD)) != 0 || (D2->internalBits & HAS_SUBSTITUTE) != 0; 
+				good = (D2->properties & (PART_OF_SPEECH|FOREIGN_WORD)) != 0 || (D2->systemFlags & SUBSTITUTE) != 0; 
 				if (good && (D2->systemFlags & AGE_LEARNED))// must be common words we find
 				{
 					char number[MAX_WORD_SIZE];
 					strncpy(number,word,breakAt);
 					number[breakAt] = 0;
-					StoreWord(number,ADJECTIVE|NOUN|ADJECTIVE_NUMBER|NOUN_NUMBER); 
+					StoreWord(number,ADJECTIVE|NOUN|ADJECTIVE_CARDINAL|NOUN_CARDINAL|NOUN_ORDINAL); 
 					return breakAt; // split here
 				}
 			}
@@ -106,12 +106,12 @@ static int SplitWord(char* word)
         if (k == 1 &&*word != 'a' &&*word != 'A' &&*word != 'i' &&*word != 'I') continue; //   only a and i are allowed single-letter words
 		WORDP D1 = FindWord(word,k,PRIMARY_CASE_ALLOWED);
         if (!D1) continue;
-		good = (D1->properties & (PART_OF_SPEECH|FOREIGN_WORD)) != 0 || (D1->internalBits & HAS_SUBSTITUTE) != 0; 
+		good = (D1->properties & (PART_OF_SPEECH|FOREIGN_WORD)) != 0 || (D1->systemFlags & SUBSTITUTE) != 0; 
 		if (!good || !(D1->systemFlags & AGE_LEARNED)) continue; // must be normal common words we find
 
         D2 = FindWord(word+k,len-k,PRIMARY_CASE_ALLOWED);
         if (!D2) continue;
-        good = (D2->properties & (PART_OF_SPEECH|FOREIGN_WORD)) != 0 || (D2->internalBits & HAS_SUBSTITUTE) != 0;
+        good = (D2->properties & (PART_OF_SPEECH|FOREIGN_WORD)) != 0 || (D2->systemFlags & SUBSTITUTE) != 0;
 		if (!good || !(D2->systemFlags & AGE_LEARNED) ) continue; // must be normal common words we find
 
         if (!breakAt) breakAt = k; // found a split
@@ -131,9 +131,6 @@ static char* SpellCheck(unsigned int i)
     char* word = wordStarts[i];
 	if (!*word) return NULL;
 	if (!stricmp(word,loginID) || !stricmp(word,computerID)) return word; //   dont change his/our name ever
-
-	size_t len = strlen(word);
-	if (len > 2 && word[len-2] == '\'') return word;	// dont do anything with ' words
 
     //   test for run togetherness like "talkabout fingers"
     int breakAt = SplitWord(word);
@@ -159,14 +156,14 @@ static char* SpellCheck(unsigned int i)
 		}
 	}
 
-    //   remove any nondigit characters repeated more than once. Dont do this earlier, we want substitutions to have a chance at it first.  ammmmmmazing
+    //   remove any nondigit characters repeated. Dont do this earlier, we want substitutions to have a chance at it first.  ammmmmmazing
 	char word1[MAX_WORD_SIZE];
     char* ptr = word-1; 
 	char* ptr1 = word1;
     while (*++ptr)
     {
 	   *ptr1 = *ptr;
-	   while (ptr[1] == *ptr1 && ptr[2] == *ptr1 && (*ptr1 < '0' || *ptr1 > '9')) ++ptr; // skip double repeats
+	   while (ptr[1] == *ptr1 && (*ptr1 < '0' || *ptr1 > '9')) ++ptr; // skip repeats
 	   ++ptr1;
     }
 	*ptr1 = 0;
@@ -180,15 +177,7 @@ static char* SpellCheck(unsigned int i)
 bool SpellCheckSentence()
 {
 	bool fixedSpell = false;
-	unsigned int start = 1;
-	// dont spell check  out of band data
-	if (*wordStarts[start] == '[')
-	{
-		while (++start <= wordCount && *wordStarts[start] != ']'); // find a close
-		start =  (*wordStarts[start] != ']') ? 1 : (start + 1);
-	}
-
-	for (unsigned int i = start; i <= wordCount; ++i)
+	for (unsigned int i = 1; i <= wordCount; ++i)
 	{
 		char* word = wordStarts[i];
 		if (!word || !word[1] || *word == '"' ) continue; // illegal or single char or quoted thingy 
@@ -198,11 +187,7 @@ bool SpellCheckSentence()
 		// do we know the word as is?
 		WORDP D = FindWord(word,0,PRIMARY_CASE_ALLOWED);
 		if (D && D->systemFlags & PATTERN_WORD ) continue;
-		if (D && (D->properties & FOREIGN_WORD || *D->word == '~')) continue;	// we know this word clearly or its a concept set ref emotion
-		if (D && D->properties & PART_OF_SPEECH)
-		{
-			continue;
-		}
+		if (D && (D->properties & (PART_OF_SPEECH|FOREIGN_WORD) || *D->word == '~')) continue;	// we know this word clearly or its a concept set ref emotion
 
 		char* p = word -1;
 		unsigned char c;
@@ -211,24 +196,22 @@ bool SpellCheckSentence()
 		while ((c = *++p) != 0)
 		{ 
 			++len;
-			if (!legalWordCharacter[(unsigned char)c]) break; // not a character of an english word
+			if (!legalWordCharacter[c]) break; // not a character of an english word
 			if (c == '-') hyphen = p; // note is hyphenated
 			else if (c == '_') under = p; // note is underscored
 		}
 		if (len == 0 || under ||  GetTemperatureLetter(word)) continue;	// bad ignore utf word or llegal length - also no composite words
 		if (c) // illegal word character
 		{
-			if (IsDigit(word[0]) || len == 1){;} // probable numeric?
-			// accidental junk on end of word we do know immedately?
+			if (IsDigit(word[0])){;} // probable numeric?
+			// accidental junk on end of word we do know immediately?
 			else if (i > 1 && !IsAlphaOrDigit(wordStarts[i][len-1]))
 			{
 				WORDP entry,canonical;
 				char word[MAX_WORD_SIZE];
 				strcpy(word,wordStarts[i]);
 				word[len-1] = 0;
-				uint64 sysflags = 0;
-				uint64 cansysflags = 0;
-				GetPosData(0,word,entry,canonical,sysflags,cansysflags,true,true); // dont create a non-existent word
+				GetPosData(word,entry,canonical,true,true); // dont create a non-existent word
 				if (entry && entry->properties & PART_OF_SPEECH)
 				{
 					wordStarts[i] = entry->word;
@@ -239,7 +222,7 @@ bool SpellCheckSentence()
 		}
 
 		// see if we know the other case
-		if (!(tokenControl & (ONLY_LOWERCASE|STRICT_CASING)) || i == startSentence)
+		if (!(tokenControl & (ONLY_LOWERCASE|STRICT_CASING)) || IsSentenceStart(i))
 		{
 			WORDP E = FindWord(word,0,SECONDARY_CASE_ALLOWED);
 			bool useAlternateCase = false;
@@ -272,7 +255,7 @@ bool SpellCheckSentence()
 			strcat(join,"_");
 			strcat(join,wordStarts[i+1]);
 			D = FindWord(join);
-			if (D && D->properties & PART_OF_SPEECH && !(D->properties & AUX_VERB)) // merge these two, except "going to" or wordnet composites of normal words
+			if (D && D->properties & PART_OF_SPEECH && !(D->properties & AUX_VERB_BITS)) // merge these two, except "going to" or wordnet composites of normal words
 			{
 				WORDP P1 = FindWord(word,0,LOWERCASE_LOOKUP);
 				WORDP P2 = FindWord(wordStarts[i+1],0,LOWERCASE_LOOKUP);
@@ -299,7 +282,6 @@ bool SpellCheckSentence()
 			if (*word == 0) wordStarts[i] = wordStarts[i] + 1; // -pieces  want to lose the leading hypen  (2-pieces)
 			else if (D && E) //   1st word gets replaced, we added another word after
 			{
-				if ((wordCount +1 ) >= MAX_SENTENCE_LENGTH) continue;	// no room
 				++wordCount;
 				for (unsigned int k = wordCount; k > i; --k) wordStarts[k] = wordStarts[k-1]; // make room for new word
 				wordStarts[i] = D->word;
@@ -560,7 +542,6 @@ static char* StemSpell(char* word,unsigned int i)
         if (best)
         {
 			char* past = GetPastTense(best);
-			if (!past) return NULL;
 			size_t len = strlen(past);
 			if (past[len-1] == 'd') return past;
 			ending = "ed";
@@ -625,7 +606,7 @@ char* SpellFix(char* originalWord,unsigned int start,uint64 posflags)
     while ((c = *++ptr) && position < 255)
     {
         if (c == '_') return NULL;    // its a phrase, not a word
-        base[position++ + 1] = GetLowercaseData(c);
+        base[position++ + 1] = toLowercaseData[(unsigned char) c];
    }
 
 	//   Priority is to a word that looks like what the user typed, because the user probably would have noticed if it didnt and changed it. So add/delete  has priority over tranform
@@ -636,40 +617,40 @@ char* SpellFix(char* originalWord,unsigned int start,uint64 posflags)
     unsigned int min = 30;
 	unsigned char realWordLetterCounts[LETTERMAX];
 	memset(realWordLetterCounts,0,LETTERMAX); 
-	for (unsigned int  i = 0; i < len; ++i)  ++realWordLetterCounts[(unsigned char)letterIndexData[(unsigned char)word[i]]]; // compute number of each kind of character
+	for (unsigned int  i = 0; i < len; ++i)  ++realWordLetterCounts[(unsigned char)letterIndexData[word[i]]]; // compute number of each kind of character
 	
 	uint64  pos = PART_OF_SPEECH;  // all pos allowed
     WORDP D;
+    NextMatchStamp();
     if (posflags == PART_OF_SPEECH && start < wordCount) // see if we can restrict word based on next word
     {
         D = FindWord(wordStarts[start+1],0,PRIMARY_CASE_ALLOWED);
         uint64 flags = (D) ? D->properties : (-1); //   if we dont know the word, it could be anything
         if (flags & PREPOSITION) pos &= -1 ^ (PREPOSITION|NOUN);   //   prep cannot be preceeded by noun or prep
-        if (!(flags & (PREPOSITION|VERB|CONJUNCTION|ADVERB)) && flags & DETERMINER) pos &= -1 ^ (DETERMINER|ADJECTIVE|NOUN|ADJECTIVE_NUMBER|NOUN_NUMBER); //   determiner cannot be preceeded by noun determiner adjective
-        if (!(flags & (PREPOSITION|VERB|CONJUNCTION|DETERMINER|ADVERB)) && flags & ADJECTIVE) pos &= -1 ^ (NOUN); 
-        if (!(flags & (PREPOSITION|NOUN|CONJUNCTION|DETERMINER|ADVERB|ADJECTIVE)) && flags & VERB) pos &= -1 ^ (VERB); //   we know all helper verbs we might be
+        if (!(flags & (PREPOSITION|VERB|CONJUNCTION_BITS|ADVERB)) && flags & DETERMINER) pos &= -1 ^ (DETERMINER|ADJECTIVE|NOUN|ADJECTIVE_CARDINAL|ADJECTIVE_ORDINAL|NOUN_CARDINAL|NOUN_ORDINAL); //   determiner cannot be preceeded by noun determiner adjective
+        if (!(flags & (PREPOSITION|VERB|CONJUNCTION_BITS|DETERMINER|ADVERB)) && flags & ADJECTIVE) pos &= -1 ^ (NOUN); 
+        if (!(flags & (PREPOSITION|NOUN|CONJUNCTION_BITS|DETERMINER|ADVERB|ADJECTIVE)) && flags & VERB) pos &= -1 ^ (VERB); //   we know all helper verbs we might be
         if (D && *D->word == '\'' && D->word[1] == 's' ) pos &= NOUN;    //   we can only be a noun if possessive - contracted 's should already be removed by now
     }
     if (posflags == PART_OF_SPEECH && start > 1)
     {
         D = FindWord(wordStarts[start-1],0,PRIMARY_CASE_ALLOWED);
         uint64 flags = (D) ? D->properties : (-1); // if we dont know the word, it could be anything
-        if (flags & DETERMINER) pos &= -1 ^ (VERB|CONJUNCTION|PREPOSITION|DETERMINER);  
+        if (flags & DETERMINER) pos &= -1 ^ (VERB|CONJUNCTION_BITS|PREPOSITION|DETERMINER);  
     }
     posflags &= pos; //   if pos types are known and restricted and dont match
-	unsigned int bestFound = 10000;
-	WORDP bestD = NULL;
+
 	static int range[] = {0,-1,1};
 	for (unsigned int i = 0; i < 3; ++i)
 	{
-		MEANING offset = lengthLists[len + range[i]];
+		unsigned int offset = lengthLists[len + range[i]];
 		while (offset)
 		{
-			D = Meaning2Word(offset);
+			D = Index2Word(offset);
 			offset = D->spellNode;
 			if (!(D->properties & posflags)) continue; // wrong kind of word
 			if (isUpper && !(D->systemFlags & UPPERCASE_HASH)) continue;	// dont spell check to lower a word in upper
-			unsigned int val = EditDistance(D->word, D->length, len, base+1,min,realWordLetterCounts);
+			unsigned int val = EditDistance(D->word, D->y.length, len, base+1,min,realWordLetterCounts);
 			if (val <= min) // as good or better
 			{
 				if (val < min)
@@ -677,17 +658,12 @@ char* SpellFix(char* originalWord,unsigned int start,uint64 posflags)
 					index = 0;
 					min = val;
 				}
-				if (!(D->internalBits & BEEN_HERE)) 
+				if (D->v.patternStamp != matchStamp) 
 				{
 					choices[index++] = D;
 					if (index > 3998) break; 
-					AddInternalFlag(D,BEEN_HERE);
+					SetPatternStamp(D);
 				}
-			}
-			else if (val < bestFound) // its what we would HAVE to consider if we cant find something close
-			{
-				bestFound = val;
-				bestD = D;
 			}
 		}
 	}
@@ -713,12 +689,11 @@ char* SpellFix(char* originalWord,unsigned int start,uint64 posflags)
 		}
 	}
 
-    if (!index) return (bestD) ? bestD->word : NULL; // no whole found take CLOSEST!
+    if (!index) return NULL; // no whole found
 
 	// take our guesses, and pick the most common (earliest learned) word
     uint64 agemin = 0;
     bestGuess[0] = NULL;
-	for (unsigned int j = 0; j < index; ++j) RemoveInternalFlag(choices[j],BEEN_HERE);
     if (index == 1) return choices[0]->word;	// pick the one
     for (unsigned int j = 0; j < index; ++j) 
     {

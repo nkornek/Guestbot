@@ -1,0 +1,10 @@
+ ~build_friendship.0.0 #! Possible related pronouns 
+ ~build_friendship.1.0 #! ----------------------------------------------------------------
+ ~build_friendship.1.0 #! Loneliness
+ ~build_friendship.1.0 #! ----------------------------------------------------------------
+ ~build_friendship.2.0 #! ----------------------------------------------------------------
+ ~build_friendship.2.0 #! Friend activities
+ ~build_friendship.2.0 #! ----------------------------------------------------------------
+ ~build_friendship.3.0 #! ----------------------------------------------------------------
+ ~build_friendship.3.0 #! Cement friendship
+ ~build_friendship.3.0 #! ----------------------------------------------------------------

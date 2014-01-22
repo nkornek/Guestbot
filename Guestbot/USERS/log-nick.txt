@@ -1,0 +1,909 @@
+﻿Start: user:nick bot:snowwhite ip: rand:2581 (~justify_identity) 0 ==> Hi, what brings you to this part of the woods?  When:Wed Nov 06 11:13:23 2013 Version:3.53 Build0:1383270700 Build1:1383441561 Why: ~justify_identity.1.0 
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 1  I'm just a traveller ==> That's odd, we rarely get visitors this deep in the woods.  When:Wed Nov 06 11:13:53 2013 Why: ~justify_identity.18.0 
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 2  I like to visit secluded places ==> I can certainly understand that. These woods are so peaceful!  When:Wed Nov 06 11:14:02 2013 Why: ~justify_identity.18.1 
+Respond: user:nick bot:snowwhite ip: (~praise_nature) 3  The animals here seem very nice ==> Aren't they! Sometimes I sing with them!  When:Wed Nov 06 11:14:12 2013 Why: ~praise_nature.1.0 
+Respond: user:nick bot:snowwhite ip: (~praise_nature) 4  Would you care to join me for a snack? I have apples ==> I love it here in the woods!  When:Wed Nov 06 11:14:29 2013 Why: ~praise_nature.4.0 
+Command: :reset
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 0  :reset ==> Hi, what brings you to this part of the woods?  When:Wed Nov 06 11:15:45 2013 Why: ~justify_identity.1.0 
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 1  the animals are anice ==> Who are you again?  When:Wed Nov 06 11:15:54 2013 Why: ~justify_identity.32.0 
+Respond: user:nick bot:snowwhite ip: (~praise_nature) 2  the animals are nice ==> Aren't they! Sometimes I sing with them!  When:Wed Nov 06 11:16:00 2013 Why: ~praise_nature.1.0 
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 3  take this apple ==> Who are you to be offering apples to strangers?  When:Wed Nov 06 11:16:11 2013 Why: ~sell_apple.19.0 
+Command: :reset
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 0  :reset ==> Hi, what brings you to this part of the woods?  When:Wed Nov 06 11:16:32 2013 Why: ~justify_identity.1.0 
+Respond: user:nick bot:snowwhite ip: (~praise_nature) 1  animals are nice ==> Aren't they! Sometimes I sing with them!  When:Wed Nov 06 11:17:08 2013 Why: ~praise_nature.1.0 
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 2  take this apple? ==> Who are you to be offering apples to strangers?  When:Wed Nov 06 11:17:16 2013 Why: ~sell_apple.19.0 
+Command: :reset
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 0  :reset ==> Hi, what brings you to this part of the woods?  When:Wed Nov 06 11:17:21 2013 Why: ~justify_identity.1.0 
+Respond: user:nick bot:snowwhite ip: (~sell_apple) 1  TAke this snack ==> No thanks, I don't trust you enough.  When:Wed Nov 06 11:17:25 2013 Why: ~sell_apple.21.0 
+Command: :reset
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 0  :reset ==> Hi, what brings you to this part of the woods?  When:Wed Nov 06 11:17:51 2013 Why: ~justify_identity.1.0 
+Respond: user:nick bot:snowwhite ip: (~praise_nature) 1  the animals are nice ==> Aren't they! Sometimes I sing with them!  When:Wed Nov 06 11:18:01 2013 Why: ~praise_nature.1.0 
+Respond: user:nick bot:snowwhite ip: (~praise_nature) 2  would you care to join me for a snack? ==> I love it here in the woods!  When:Wed Nov 06 11:18:22 2013 Why: ~praise_nature.4.0 
+Command: :reset
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 0  :reset ==> Hi, what brings you to this part of the woods?  When:Wed Nov 06 11:18:36 2013 Why: ~justify_identity.1.0 
+Respond: user:nick bot:snowwhite ip: (~praise_nature) 1  the animals are nice ==> Aren't they! Sometimes I sing with them!  When:Wed Nov 06 11:18:44 2013 Why: ~praise_nature.1.0 
+Respond: user:nick bot:snowwhite ip: (~praise_nature) 2  would you like a snack? ==> I love it here in the woods!  When:Wed Nov 06 11:18:52 2013 Why: ~praise_nature.4.0 
+Command: :up snack
+
+For snack:
+ Set hierarchy:
+ Wordnet hierarchy:
+  snack~1: a light informal meal 
+    is meal~2  the food served and eaten at one time 
+       is upkeep~2 a source of materials to nourish the body 
+          is nutrient~1z any substance that can be metabolized by an animal to give energy and build tissue 
+             is substance~1z a particular kind or species of matter with uniform properties 
+                is matter~1z that which has mass and occupies space 
+                   is physical_entity~1z an entity that has physical existence 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  snack~2: eat a snack 
+Command: :build 1
+Start: user:nick bot:anonymous ip: rand:2581 () 0 ==>   When:Wed Nov 06 11:50:02 2013 Version:3.53 Build0:1383270700 Build1: 
+Respond: user:nick bot:anonymous ip: () 1    ==>   When:Wed Nov 06 11:50:05 2013 
+Command: :build 1
+Start: user:nick bot:anonymous ip: rand:2581 () 0 ==>   When:Wed Nov 06 12:40:45 2013 Version:3.53 Build0:1383270700 Build1: 
+Command: :build 1
+Start: user:nick bot:anonymous ip: rand:2581 () 0 ==>   When:Wed Nov 06 12:41:07 2013 Version:3.53 Build0:1383270700 Build1:1383759648 
+Command: :build 1
+Command: :build 1
+Command: :build 0
+Start: user:nick bot:snowwhite ip: rand:2583 (~justify_identity) 2 ==> Who are you again?  When:Wed Nov 06 12:56:03 2013 Version:3.53 Build0:1383759876 Build1:1383760297 Why: ~justify_identity.31.0 
+Command: :build 1
+Start: user:nick bot:snowwhite ip: rand:2583 (~justify_identity) 2 ==> Sorry but I was told not to trust any strangers.  When:Thu Nov 07 11:49:42 2013 Version:3.53 Build0:1383759876 Build1:1383765278 Why: ~justify_identity.31.0 
+Command: :up apple picking
+
+For apple:
+ Set hierarchy:
+ Wordnet hierarchy:
+  apple~1: fruit with red or yellow or green skin and sweet to tart crisp whitish flesh 
+    is edible_fruit~1  edible reproductive body of a seed plant especially one having sweet flesh 
+       is green_groceries~1z fresh fruits and vegetable grown for the market 
+          is nutrient~1z any solid substance that is used as a source of nourishment 
+             is solid~1z matter that is solid at room temperature and pressure 
+                is matter~1z that which has mass and occupies space 
+                   is physical_entity~1z an entity that has physical existence 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+       is yield~2 the ripened reproductive body of a seed plant 
+          is reproductive_structure~1z the parts of a plant involved in its reproduction 
+             is plant_organ~1z a functional and structural unit of a plant or fungus 
+                is plant_structure~1z any part of a plant or fungus 
+                   is natural_object~1z an object occurring naturally 
+                      is unit~1z an assemblage of parts that is regarded as a single entity 
+                         is physical_object~1z a tangible and visible entity 
+                            is physical_entity~1z an entity that has physical existence 
+                               is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+    is pome~1  a fleshy fruit having seed chambers and an outer fleshy part 
+       is yield~2 the ripened reproductive body of a seed plant 
+          is reproductive_structure~1z the parts of a plant involved in its reproduction 
+             is plant_organ~1z a functional and structural unit of a plant or fungus 
+                is plant_structure~1z any part of a plant or fungus 
+                   is natural_object~1z an object occurring naturally 
+                      is unit~1z an assemblage of parts that is regarded as a single entity 
+                         is physical_object~1z a tangible and visible entity 
+                            is physical_entity~1z an entity that has physical existence 
+                               is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  apple~2: native Eurasian tree widely cultivated in many varieties for its firm rounded edible fruits 
+    is apple_tree~1  any tree of the genus Malus especially those bearing firm rounded edible fruits 
+       is fruit_tree~1z tree bearing edible fruit 
+          is flowering_tree~1z any tree having seeds and ovules contained in the ovary 
+             is tree~1z a tall perennial woody plant having a main trunk and branches forming a distinct elevated crown 
+                is ligneous_plant~1z a plant having hard lignified tissues or woody parts especially stems 
+                   is tracheophyte~1z green plant having a vascular system: ferns, gymnosperms, angiosperms 
+                      is flora~1z a living organism lacking the power of locomotion 
+                         is organism~1z a living thing that has the ability to act or function independently 
+                            is living_thing~1z a living entity 
+                               is unit~1z an assemblage of parts that is regarded as a single entity 
+                                  is physical_object~1z a tangible and visible entity 
+                                     is physical_entity~1z an entity that has physical existence 
+                                        is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+Command: :up verb
+
+For verb:
+ Set hierarchy:
+ Wordnet hierarchy:
+  verb~1: the word class that serves as the predicate of a sentence 
+    is major_form_class~1  any of the major parts of speech of traditional grammar 
+       is form_class~1z one of the traditional categories of words intended to reflect their functions in a grammatical context 
+          is syntactic_category~1z a category of words having the same grammatical properties 
+             is course_of_instruction~1z a collection of things sharing a common attribute 
+                is assembly~2 several things grouped together or considered as a whole 
+                   is group~1z any number of entities considered as a unit 
+                      is abstraction~1z a general concept formed by extracting common features from specific examples 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  verb~2: a content word that denotes an action, occurrence, or state of existence 
+    is content_word~1  a word to which an independent meaning can be assigned 
+       is word~1z a unit of language that native speakers can identify 
+          is linguistic_unit~1z one of the natural units into which linguistic messages can be analyzed 
+             is share~2z something determined in relation to something that includes it 
+                is relation~1z an abstraction belonging to or characteristic of two entities or parts together 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+Command: :build 1
+Start: user:nick bot:snowwhite ip: rand:2585 (~dwarves) 2 ==> The dwarves told me not to let anyone in.  When:Thu Nov 07 11:55:55 2013 Version:3.53 Build0:1383759876 Build1:1383843107 Why: ~dwarves.16.0 
+Command: :up old
+
+For old:
+ Set hierarchy:
+ Wordnet hierarchy:
+  old~1: past times 
+    is past~3  the time that has elapsed 
+       is time~1z the continuum of experience in which events pass from the future through the present to the past 
+          is attribute~1z an abstraction belonging to or characteristic of an entity 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  old~2: just preceding something else in time or order 
+  old~3: skilled through long experience 
+  old~4: very familiar 
+  old~5:
+  old~6: of long duration 
+  old~7: having lived for a relatively long time or attained a specific age 
+  old~8: belonging to some prior time 
+Command: :build
+Command: :build 1
+Start: user:nick bot:snowwhite ip: rand:2586 (~sell_apple) 2 ==> I can't accept anything from you.  When:Thu Nov 07 12:05:50 2013 Version:3.53 Build0:1383759876 Build1:1383843861 Why: ~sell_apple.30.0 
+Command: :up help
+
+For help:
+ Set hierarchy:
+ Wordnet hierarchy:
+  help~1: the activity of contributing to the fulfillment of a need or furtherance of an effort or purpose 
+    is activity~1  any specific behavior 
+       is act~1z something that people do or cause to happen 
+          is event~1z something that happens at a given place and time 
+             is psychological_feature~1z a feature of the mental life of a living organism 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  help~2: a means of serving 
+    is helpfulness~2  the property of providing useful assistance 
+       is utility~1z the quality of being of practical use 
+          is quality~1z an essential and distinguishing attribute of something or someone 
+             is attribute~1z an abstraction belonging to or characteristic of an entity 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  help~3: a resource 
+    is resource~1  a source of aid or support that may be drawn upon when needed 
+       is plus~1z a useful or valuable quality 
+          is quality~1z an essential and distinguishing attribute of something or someone 
+             is attribute~1z an abstraction belonging to or characteristic of an entity 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  help~4: a person who contributes to the fulfillment of a need or furtherance of an effort or purpose 
+    is worker~2  a person who works at a specific occupation 
+       is somebody~1z a human being 
+          is organism~1z a living thing that has the ability to act or function independently 
+             is living_thing~1z a living entity 
+                is unit~1z an assemblage of parts that is regarded as a single entity 
+                   is physical_object~1z a tangible and visible entity 
+                      is physical_entity~1z an entity that has physical existence 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+          is causal_agent~1z any entity that produces an effect or is responsible for events or results 
+             is physical_entity~1z an entity that has physical existence 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  help~5: improve the condition of 
+  help~6: improve 
+  help~7: help to some food 
+  help~8: take or use 
+  help~9: give help or assistance 
+  help~10: contribute to the furtherance of 
+  help~11: abstain from doing 
+  help~12: be of use 
+Command: :down help
+     2. lift~5z the act of giving temporary assistance
+     2. hand~1z physical assistance
+     2. facilitation~1z act of assisting or making easier the progress or improvement of something
+     2. self-help~1z the act of helping or improving yourself without relying on anyone else
+     2. accommodation~2z the act of providing something to meet a need
+     2. succour~1z assistance in time of difficulty
+     2. support~4z aiding the cause or policy or interests of
+     2. service~10z an act of help or assistance
+     2. encouragement~1z the act of giving hope or support to someone
+     2. comfort~1z assistance, such as that provided to an enemy or to a known criminal
+     2. resort~1z act of turning to for assistance
+     2. thanks~1z with the help of or owing to
+     2. water_boy~1z an assistant who supplies drinking water
+     2. subordinate~2z an assistant subject to the authority or control of another
+     2. man_Friday~1z the most helpful assistant
+     2. prompter~2z someone who assists a performer by providing the next words of a forgotten speech
+     2. powder_monkey~1z someone who carries explosives
+     2. paraprofessional~1z a trained worker who is not a member of a profession but who assists a professional
+     2. mannequin~2z a woman who wears clothes to display fashions
+     2. underboss~1z an assistant or second-in-command to a chief
+     2. labor_coach~1z an assistant who provides support for a woman in labor by encouraging her to use techniques learned in childbirth-preparation classes
+     2. pawn~3z a person used by another to gain an end
+     2. hatchet_man~1z one whose job it is to execute unpleasant tasks for a superior
+     2. girl_Friday~1z a female assistant who has a range of duties
+     2. facilitator~1z someone who makes progress easier
+     2. dresser~4z a wardrobe assistant for an actor
+     2. dental_assistant~1z an assistant to a dentist
+     2. model~8z a person who poses for a photographer or painter or sculptor
+     2. auxiliary~1z someone who acts as assistant
+     2. accomplice~1z a person who joins with another in carrying out some plan
+     2. tender~5z someone who waits on or tends to or attends to the needs of another
+     2. coadjutor~1z an assistant to a bishop
+     2. flower_girl~1z a young girl who carries flowers in a procession
+     2. sidesman~1z an assistant to the churchwarden
+     2. bat_boy~1z a boy who takes care of bats and other baseball equipment
+     2. secretary~3z an assistant who handles correspondence and clerical work for a boss or an organization
+     2. whipper-in~1z huntsman's assistant in managing the hounds
+     2. deputy~1z an assistant with power to act when his superior is absent
+     2. event_planner~1z someone who plans social events as a profession
+
+Command: :build 1
+Start: user:nick bot:snowwhite ip: rand:2587 (~justify_identity) 2 ==> Why are you not leaving me alone?  When:Thu Nov 07 12:36:54 2013 Version:3.53 Build0:1383759876 Build1:1383845745 Why: ~catchall.17.0 
+Command: :up need
+
+For need:
+ Set hierarchy:
+ Wordnet hierarchy:
+  need~1: the psychological feature that arouses an organism to action toward a desired goal 
+    is psychological_feature~1  a feature of the mental life of a living organism 
+       is abstraction~1z a general concept formed by extracting common features from specific examples 
+          is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  need~2: anything that is necessary but lacking 
+    is requirement~3  anything indispensable 
+       is thing~1z a separate and self-contained entity 
+          is physical_entity~1z an entity that has physical existence 
+             is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  need~3: a condition requiring relief 
+    is status~1  a state at a particular time 
+       is state~1z the way something is with respect to its main attributes 
+          is attribute~1z an abstraction belonging to or characteristic of an entity 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  need~4: a state of extreme poverty or destitution 
+    is poorness~4  the state of having little or no money and few or no material possessions 
+       is financial_condition~1z the condition of finances 
+          is condition~6z a state at a particular time 
+             is state~1z the way something is with respect to its main attributes 
+                is attribute~1z an abstraction belonging to or characteristic of an entity 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  need~5: have need of 
+  need~6: have or feel a need for 
+  need~7: require as useful, just, or proper 
+Command: :build 1
+Start: user:nick bot:snowwhite ip: rand:2583 (~justify_identity) 2 ==> What was it that you wanted again?  When:Tue Nov 26 12:22:48 2013 Version:3.53 Build0:1385484691 Build1:1385486385 Why: ~justify_identity.46.0 
+Command: :reset
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 0  :reset ==> Hi, what brings you to this part of the woods?  When:Tue Nov 26 12:22:51 2013 Why: ~justify_identity.1.0 
+Start: user:nick bot:snowwhite ip: rand:2581 (~justify_identity) 0 ==> Who are you again?  When:Tue Nov 26 13:21:45 2013 Version:3.53 Build0:1385484691 Build1:1385486385 Why: ~justify_identity.45.0 
+Command: :up force
+
+For force:
+ Set hierarchy:
+ Wordnet hierarchy:
+  force~1: a putout of a base runner who is required to run 
+    is putout~1  an out resulting from a fielding play  
+       is out~1z a failure by a batter or runner to reach a base safely in baseball 
+          is failure~1z an act that fails 
+             is nonaccomplishment~1z an act that does not achieve its intended goal 
+                is act~1z something that people do or cause to happen 
+                   is event~1z something that happens at a given place and time 
+                      is psychological_feature~1z a feature of the mental life of a living organism 
+                         is abstraction~1z a general concept formed by extracting common features from specific examples 
+                            is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  force~2: an act of aggression  
+    is hostility~1  violent action that is hostile and usually unprovoked 
+       is action~1z something done  
+          is act~1z something that people do or cause to happen 
+             is event~1z something that happens at a given place and time 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  force~3: having legal validity 
+    is validity~2  the quality of having legal force or effectiveness 
+       is legality~1z lawfulness by virtue of conformity to a legal statute 
+          is lawfulness~1z the quality of conforming to law 
+             is quality~1z an essential and distinguishing attribute of something or someone 
+                is attribute~1z an abstraction belonging to or characteristic of an entity 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  force~4: physical energy or intensity 
+    is intensiveness~1  high level or degree 
+       is grade~1z a position on a scale of intensity or amount or quality 
+          is prop~3z a basic or essential attribute shared by all members of a class 
+             is attribute~1z an abstraction belonging to or characteristic of an entity 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  force~5: a powerful effect or influence 
+    is influence~2  a power to affect persons or events especially power based on prestige etc 
+       is mightiness~1z possession of controlling influence 
+          is quality~1z an essential and distinguishing attribute of something or someone 
+             is attribute~1z an abstraction belonging to or characteristic of an entity 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  force~6: a unit that is part of some military service 
+    is unit~3  an organization regarded as part of a larger social group 
+       is constitution~1z a group of people who work together 
+          is social_group~1z people sharing some social relation 
+             is group~1z any number of entities considered as a unit 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  force~7: a group of people having the power of effective action 
+    is social_group~1  people sharing some social relation 
+       is group~1z any number of entities considered as a unit 
+          is abstraction~1z a general concept formed by extracting common features from specific examples 
+             is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  force~8: group of people willing to obey orders 
+    is organization~6  a group of people who work together 
+       is social_group~1z people sharing some social relation 
+          is group~1z any number of entities considered as a unit 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  force~9: one possessing or exercising power or influence or authority 
+    is causal_agency~1  any entity that produces an effect or is responsible for events or results 
+       is physical_entity~1z an entity that has physical existence 
+          is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  force~10: the influence that produces a change in a physical quantity 
+    is physical_phenomenon~1  a natural phenomenon involving the physical properties of matter and energy 
+       is natural_phenomenon~1z all phenomena that are not artificial 
+          is phenomenon~1z any state or process known through the senses rather than by intuition or reasoning 
+             is process~1z a sustained phenomenon or one marked by gradual changes through a series of states 
+                is physical_entity~1z an entity that has physical existence 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  force~11: impose urgently, importunately, or inexorably 
+  force~12: do forcibly 
+  force~13: cause to move by pulling 
+  force~14: force into or from an action or state, either physically or metaphorically 
+  force~15: squeeze like a wedge into a tight space 
+  force~16: take by force 
+  force~17: urge or force to an action 
+  force~18: move with force, 
+  force~19: to cause to do through pressure or necessity, by physical, moral or intellectual means : 
+Command: :up kill
+
+For kill:
+ Set hierarchy:
+ Wordnet hierarchy:
+  kill~1: the destruction of an enemy plane or ship or tank or missile 
+    is destruction~1  the termination of something by causing so much damage to it that it cannot be repaired or no longer exists 
+       is decision~1 the act of ending something 
+          is change_of_state~1z the act of changing something into something different in essential characteristics 
+             is change~1z the action of changing something 
+                is action~1z something done  
+                   is act~1z something that people do or cause to happen 
+                      is event~1z something that happens at a given place and time 
+                         is psychological_feature~1z a feature of the mental life of a living organism 
+                            is abstraction~1z a general concept formed by extracting common features from specific examples 
+                               is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  kill~2: the act of terminating a life 
+    is conclusion~2  the act of ending something 
+       is change_of_state~1z the act of changing something into something different in essential characteristics 
+          is change~1z the action of changing something 
+             is action~1z something done  
+                is act~1z something that people do or cause to happen 
+                   is event~1z something that happens at a given place and time 
+                      is psychological_feature~1z a feature of the mental life of a living organism 
+                         is abstraction~1z a general concept formed by extracting common features from specific examples 
+                            is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  kill~3: end or extinguish by forceful means 
+  kill~4: destroy a vitally essential quality of or in 
+  kill~5: cause to cease operating 
+  kill~6: tire out completely 
+  kill~7: mark for deletion, rub off, or erase 
+  kill~8: drink down entirely 
+  kill~9: cause to die 
+  kill~10: cause the death of, without intention 
+  kill~11: deprive of life 
+  kill~12: hit with great force 
+  kill~13: hit with so much force as to make a return impossible, in racket games 
+  kill~14: overwhelm with hilarity, pleasure, or admiration 
+  kill~15: be the source of great pain for 
+  kill~16: thwart the passage of 
+  kill~17: be fatal 
+Command: :build 1
+Missing topic index for ~justify_identity
+
+Missing topic index for ~justify_identity
+
+Command: :build 1
+Start: user:nick bot:snowwhite ip: rand:2581 (~justify_identity) 0 ==> What was it that you wanted again?  When:Tue Nov 26 13:43:26 2013 Version:3.53 Build0:1385484691 Build1:1385490697 Why: ~justify_identity.48.0 
+Command: :up agreement
+
+For agreement:
+ Set hierarchy:
+ Wordnet hierarchy:
+  agreement~1: compatibility of observations 
+    is compatibility~1  capability of existing or performing in harmonious or congenial combination 
+       is characteristic~1z a distinguishing quality 
+          is quality~1z an essential and distinguishing attribute of something or someone 
+             is attribute~1z an abstraction belonging to or characteristic of an entity 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  agreement~2: the thing arranged or agreed to 
+    is preparation~5  the cognitive process of thinking about what you will do in the event of something happening 
+       is mentation~1z the process of using your mind to consider something carefully 
+          is higher_cognitive_process~1z cognitive processes that presuppose the availability of knowledge and put it to use 
+             is mental_process~1z the performance of some composite cognitive activity 
+                is knowledge~1z the psychological result of perception and learning and reasoning 
+                   is psychological_feature~1z a feature of the mental life of a living organism 
+                      is abstraction~1z a general concept formed by extracting common features from specific examples 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  agreement~3: the statement of an exchange of promises 
+    is statement~4  a message that is stated or declared 
+       is message~2z what a communication that is about something is about 
+          is communication~1z something that is communicated by or to or between people or groups 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  agreement~4: the verbal act of agreeing 
+    is speech_act~1  the use of language to perform some act 
+       is act~1z something that people do or cause to happen 
+          is event~1z something that happens at a given place and time 
+             is psychological_feature~1z a feature of the mental life of a living organism 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  agreement~5: the determination of grammatical inflection on the basis of word relations 
+    is grammatical_relation~1  a linguistic relation established by grammar 
+       is linguistic_relation~1z a relation between linguistic forms or constituents 
+          is relation~1z an abstraction belonging to or characteristic of two entities or parts together 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  agreement~6: harmony of people's opinions or actions or characters 
+    is harmony~5  a harmonious state of things in general and of their properties  
+       is ordering~1z established customary state  
+          is state~1z the way something is with respect to its main attributes 
+             is attribute~1z an abstraction belonging to or characteristic of an entity 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+Command: :up enjoy
+
+For enjoy:
+ Set hierarchy:
+ Wordnet hierarchy:
+  enjoy~1: take delight in 
+  enjoy~2: have benefit from 
+  enjoy~3: derive or receive pleasure from 
+  enjoy~4: get pleasure from 
+  enjoy~5: have for one's benefit 
+Command: :up talking
+
+For talking:
+ Set hierarchy:
+ Wordnet hierarchy:
+  talking~1: an exchange of ideas via conversation 
+    is conversation~1  the use of speech for informal exchange of views or ideas or information etc. 
+       is oral_communication~1z communication by word of mouth 
+          is auditory_communication~1z communication that relies on hearing 
+             is communication~1z something that is communicated by or to or between people or groups 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+Command: :up speaking
+
+For speaking:
+ Set hierarchy:
+ Wordnet hierarchy:
+  speaking~1: the utterance of intelligible speech 
+    is vocalization~1  the use of uttered sounds for auditory communication 
+       is auditory_communication~1z communication that relies on hearing 
+          is communication~1z something that is communicated by or to or between people or groups 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  speaking~2: delivering an address to a public audience 
+    is speech~8  the act of delivering a formal spoken communication to an audience 
+       is speech_act~1z the use of language to perform some act 
+          is act~1z something that people do or cause to happen 
+             is event~1z something that happens at a given place and time 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  speaking~3: capable of or involving speech or speaking 
+Command: :build 1
+Start: user:nick bot:snowwhite ip: rand:2581 (~justify_identity) 0 ==> Sorry but I was told not to trust any strangers.  When:Wed Nov 27 16:08:24 2013 Version:3.53 Build0:1385484691 Build1:1385582879 Why: ~justify_identity.50.0 
+Command: :build 1
+Start: user:nick bot:snowwhite ip: rand:2586 (~assassination_plot) 0 ==> I can't be too cautious with my stepmother wanting to kill me.  When:Thu Nov 28 11:52:21 2013 Version:3.53 Build0:1385587290 Build1:1385608203 Why: ~assassination_plot.20.0 
+Command: :up know
+
+For know:
+ Set hierarchy:
+ Wordnet hierarchy:
+  know~1: the fact of being aware of information that is known to few people 
+    is knowing~1  a clear and certain mental apprehension 
+       is higher_cognitive_process~1z cognitive processes that presuppose the availability of knowledge and put it to use 
+          is mental_process~1z the performance of some composite cognitive activity 
+             is knowledge~1z the psychological result of perception and learning and reasoning 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  know~2: accept to be what is claimed or accept his power and authority 
+  know~3: be familiar or acquainted with a person or an object 
+  know~4: be cognizant or aware of a fact or a specific piece of information 
+  know~5: be aware of the truth of something 
+  know~6: know how to do or perform something 
+  know~7: have fixed in the mind 
+  know~8: have firsthand knowledge of states, situations, emotions, or sensations 
+  know~9: perceive as familiar 
+  know~10: be able to distinguish, recognize as being different 
+  know~11: know the nature or character of 
+Command: :down ~remember
+apprentice ascertain glean know learn memorize practice recall recite recognize 
+  recollect rehearse remember 
+Command: :up magical
+
+For magical:
+ Set hierarchy:
+ Wordnet hierarchy:
+  magical~1: possessing or using or characteristic of or appropriate to supernatural powers 
+Command: :up magic
+
+For magic:
+ Set hierarchy:
+ Wordnet hierarchy:
+  magic~1: an illusory feat 
+    is performance~3  the act of presenting a play or a piece of music or other entertainment 
+       is demonstration~1z a show or display 
+          is show~1z the act of publicly exhibiting or entertaining 
+             is amusement~1z an activity that is diverting and that holds the attention 
+                is refreshment~1z an activity that diverts or amuses or stimulates 
+                   is activity~1z any specific behavior 
+                      is act~1z something that people do or cause to happen 
+                         is event~1z something that happens at a given place and time 
+                            is psychological_feature~1z a feature of the mental life of a living organism 
+                               is abstraction~1z a general concept formed by extracting common features from specific examples 
+                                  is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  magic~2: any art that invokes supernatural powers 
+    is supernaturalism~2  a belief in forces beyond ordinary human understanding 
+       is notion~3 any cognitive content held as true 
+          is depicted_object~1z the sum or range of what has been perceived, discovered, or learned 
+             is knowledge~1z the psychological result of perception and learning and reasoning 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  magic~3: possessing or using or characteristic of or appropriate to supernatural powers 
+Command: :down ~magic force
+
+Command: :down :~magic_force
+
+Command: :down ~magic_force
+abracadabra bewitching bewitchment charm curse enchantment glamour hex hexing incantation 
+  jinx magic mana mojo sorcery spell trance witchery 
+Command: :up protect
+
+For protect:
+ Set hierarchy:
+ Wordnet hierarchy:
+  protect~1: shield from danger, injury, destruction, or damage 
+  protect~2: use tariffs to favor domestic industry 
+Command: :up ok
+
+For ok:
+ Set hierarchy:
+ Wordnet hierarchy:
+  ok~1: being satisfactory or in satisfactory condition 
+Command: :down ~goodness
+~emohappy ability above absolutely absolve absorb absorbent abundance abundant accelerate 
+  accept acceptable accessible acclaim acclimate accommodate accomplish accomplishment accountable accurate 
+  ace achieve achievement acknowledge active actualize adamant adaptable adept adequate 
+  admirable admiration admire adorable adore adroit advance adventure adventurous advice 
+  advocate affable affection affectionate affirm affirmative affluent affordable agape ageless 
+  agile agility aglow agree agreeable agreement ahead aid aim airy 
+  alert alive all-natural all-new Allah allure alluring almighty alright alter 
+  altruism altruistic amaze amazing ambassador ambition ambitious amenable amiable amicable 
+  amorous amuse amused amusing ancient animate animated answer anticipate anticipation 
+  appeal appealing applaud appreciate appreciative approachable appropriate approval approve aquiver 
+  ardent aroma arouse art artful articulate artisan artistic aspiration aspire 
+  assertive assertiveness assistance associate association assure astonish astonishing astound astounding 
+  astute at_ease athletic attach attentive attract attraction attractive audacious auspices 
+  authentic authenticity authoritative autonomous autonomy avenge avid award aware awe 
+  awe-struck awed awesome awestruck balance balance_out balanced balm balmy banter 
+  bargain barter beaming beatific beautiful beauty beckon bedazzle befriend beguile 
+  believable belong belonging beloved bemuse benefactor beneficent benevolent benign bequest 
+  besot best better bewitch big big-hearted bigger bits bless blessed 
+  blessing bliss blissful blithe bloom blossom bodacious boisterous bold bon_vivant 
+  boost botanical bounce bouncy boundless brainy brand-new brave bravery breakthrough 
+  breathless breathtaking breezy brief bright brilliant brim brisk broad-minded brother 
+  bubbly build bullish buoyant buy buzz cajole cake calm candid 
+  canny capable captivate captivating care carefree careful caress caring casual 
+  cautious celebration center central cerebral certain champion change charismatic charitable 
+  charity charm charmed charming chaste chatty cheer cheerful cheery cherish 
+  chic chipper chivalrous choice chosen chuffed church circumspect civil classic 
+  classy clean cleanliness cleanse clear clearheaded clever cleverness close co-creation 
+  coach cognizant coherent collaborate colleague color colorful colourful comedic comely 
+  comfort comfortable comfy commend commendable commit commitment communicate communicative community 
+  compact companionable compassionate compatible compelling competent competitive complementary complete complex 
+  compliant compliment compose concentrate conciliatory concise concordance conducive conduct confidence 
+  confident confirm conform congenial congregation connoisseur conscientious conscious consider considerate 
+  consideration consistent console consonance constant constructive consummate contemplative content contented 
+  continual continually continuity contribute contribution contrite convenient convince convincing convivial 
+  convulsive cool cooperate cooperation cooperative coordinate coordination copasetic cope cordial 
+  correct cost-effective counsel courage courageous courteous courtly coy cozy crafty 
+  creamy create creation creative creativity credential credible credit crisp cuddle 
+  cuddly cultivate culture cultured cunning curiosity curious cute dainty dance 
+  dare daring dashing daughter dauntless dazzle dazzling dear debonair debut 
+  decent decide decisive decorous dedicate dedicated deep defined definite delectable 
+  deliberate delicate delicious delight delighted delightful deliver deluxe democratic democratically 
+  demure dependable depth deserve deserving design desirable desire desirous detailed 
+  determination determine determined develop devote devoted devout diamond dicker difference 
+  dignified dignify dignity diligence diligent dimple diplomacy diplomatic direct disarming 
+  discern discerning discipline discount discreet discrete discriminating disentangle dispassionate display 
+  distinctive distinguish diverse diversification divine doctor donate done donor dote 
+  dramatic dream dreamy drool durable dutiful dynamic eager early earnest 
+  earthy ease easiest easy easy-going easy-on-the-eyes easygoing eater ebullient eccentric 
+  eclectic eco-friendly economical economy ecstatic edify educate education educational efface 
+  effective effervescent efficacious efficient effusive elastic elate elated electrify electronic 
+  elegance elegant elevate elite eloquent emancipate embed embrace emerge eminent 
+  empathetic empathic empathy emphatic empower enable enamor enchant enchanted enchanting 
+  encompass encourage encouraging endless endorse endow endurable endurance endure energetic 
+  energize energy engage engaging engross engrossed enhance enjoy enjoyable enjoyment 
+  enlighten enlightened enliven ennoble enormous enrapture enrich ensure enterprising entertain 
+  entertaining enthrall enthusiastic entice entitle entrance entrepreneurial entrust equal equality 
+  equanimous equip equitable eros erudite escape essence essential establish established 
+  esteem eternal eternally ethereal ethical euphoric even-tempered evolution evolve exact 
+  exactly excellent exceptional excite excited exciting exclusive exculpate exempt exhilarate 
+  exhilarated exhilaration exonerate exotic expand expandable expansive expectant expensive experience 
+  expert express expression expressive exquisite extensive extol extra extraordinary extricate 
+  extrovert extroverted exuberant exultant eye-catching fab fable fabulous fain fair 
+  fair-minded fairy faith faithful fame family famous fantabulous fantasize fantastic 
+  farewell fascinate fascinating fascination fashionable fast fastidious father favor favorite 
+  favourite fearless feast feat feature-packed fecund feisty felicitous feminine ferment 
+  fertile fervent fervor festive fetch find fine finesse finest finish 
+  firm first first-class first-rate fit five-star five_star fizz flair flatter 
+  flattering flavorful fledgling flexibility flexible flirt flirtatious flourish flourishing flow 
+  fluid focus focused foil fond fondle foolproof forbear forbearance forbearing 
+  forceful foresight forever forgive forgiven forgiving form formidable forte forthright 
+  fortify fortitude fortunate fortune forward foster fragrance fragrant frank free 
+  freedom fresh freshness friend friendly frisky frolicsome frontier frugal fruitful 
+  fulfill full fun fun_loving functional funky funny furnish future gallant 
+  galore galvanize game gather gaze generous genial genius gentile gentle 
+  genuine giddy gift giggle gild give giving glad glamorous glamour 
+  glamourous glee gleeful glitter global glorious glow glowing go-ahead goal 
+  God godly golden good good-looking good-natured goodhearted goodness gorgeous graceful 
+  gracious grand grant grateful gratify gratifying gravitas great green greet 
+  gregarious grin groovy ground grounded grown guarantee guide guilt-free guiltless 
+  gutsy haggle half-price hallow handy happy happy-go-lucky hard-working hardworking hardy 
+  harmless harmonious harmoniousness harmony harness heady heal health health-conscious healthy 
+  heart-to-heart hearten heartfelt heartily heartwarming hearty heavenly heed heedful help 
+  helpful heroic high high-quality high-spirited hilarious hire hold_dear home_cooked honest 
+  honesty honor honorable honourable hope hopeful horny hospitable hospitality hot 
+  hug human-centered humane humanitarian humanity humble humility humor humorous hunky_dory 
+  hypnosis hypnotic hypnotize ideal idealism idealistic idolize illuminate imagination imaginative 
+  imbue immaculate immortal immune impact impartial impassion impassive impeccable imperturbable 
+  impervious impish implacable important impress impressive incentive incisive incomparable incontrovertible 
+  incredible inculcate indebted independent indescribable indestructible indispensable individual individuality indulge 
+  indulgent industrious inexpensive infallible influence influential inform informative infuse ingenious 
+  inner innocent innovate innovation innovative inoculate inquire inquisitive insatiable inside 
+  inspirational inspire inspired inspiring instant instill instinctive instruct instructive instrumental 
+  intact intellectual intelligent intense intent interact interaction interest interesting internal 
+  interrelate intimate intrepid intrigue introspection introspective introvert intuitive invaluable inventive 
+  invigorate invigorating invincible invite involve invulnerable irreproachable irresistible jaunty jazzed 
+  jest jewel jocular join joke jolly josh jovial joy joyful 
+  joyous jubilant judicious juggle juiced juicy just justice K.O. karma 
+  keen keenest kid kind kind-hearted kindhearted kindly kindness kingly kiss 
+  kissable knack knightly knockout know-how knowing knowledge knowledgeable known labile 
+  laconic languid large-hearted lascivious laud laudable laugh laughing lavish law-abiding 
+  lead leadership leading-edge learn learned legend legitimate leisure lenient level 
+  level-headed liberal liberate lifelike lift light lighthearted likable like likeable 
+  linger lionhearted listen listener lively local logical longest looking lovable 
+  love lovely lovestruck loving low-cost low-priced loyal loyalty lubricious lucid 
+  lucky luminary luminescent luminous luscious lush lustful lusty luxe luxurious 
+  macho magic magical magnanimous magnetic magnificent magnify majestic make malleable 
+  manage manageable management managerial manifest manly mannered manners marriage marry 
+  marshall marvellous marvelous masculine massage masterful masterly mastermind mastery matchless 
+  maternal mature maxi meaningful mediation meditative meld mellow melodious melodiousness 
+  memorable memory mentor mentorship merciful meritorious merry mesmerize methodical meticulous 
+  mighty mild mile-marker milepost milestone mindful miracle miraculous mirthful mischievous 
+  mission mobilize moderate modern modest modify mold mollify money-making moral 
+  more mother motherly motivate mouthwatering move moved movement multi multidimensional 
+  munchy muse music musical mysterious mystic mystical myth naked natural 
+  naturalness nature near neat neatness necessary need negotiate neighborhood neighborly 
+  nestle new next-generation nice nifty nimble ninja noble nonchalant normal 
+  normality nostalgic notice nourish nourishing novel nude nudge nurse nurture 
+  nutritious nuzzle O.K. obedient obey objective objectivity observant observe occasion 
+  ogle OK okay oligarch omnipotent one-of-a-kind open open-minded open-mindedness open-source 
+  openhanded openheartedness opportunistic opportunity optimist optimistic optional opulent order orderliness 
+  orderly organic organize original originality originate outgoing outgoingness outlast outside 
+  outspoken outstanding overcome overjoyed painstaking palate palatial pamper paradise pardon 
+  participate partner partnership party passionate pastoral patience patient patriotism patronage 
+  peace peaceful peacemaking peachy peak pearl peerless peppy perceptive perfect 
+  perfection perform performance perky permanent perseverance persistent personable perspicuous persuade 
+  persuasive pert pertinent pet philanthropic philosophical philosophy pick-me-up pilgrimage pioneer 
+  pioneering pious placid plan plausible play playful pleasant please pleased 
+  pleasing pleasure plenitude plenty plethora plucky plum plump plus plush 
+  poem poetic poise polish polished polite popular popularity portable portentous 
+  positive potent power powerful practical pragmatic praise praiseworthy pray precious 
+  precise precision precocious prefer premier premium prepare preppy president prestige 
+  pretty priceless pride prim primal primary prime pristine privilege privileged 
+  prize prize-winning pro-active proactive prodigal prodigious productive professional professionalism proficient 
+  profitable profound progress progressive prolific promise promising promote promotion promotional 
+  prompt propel proper proprietary prosper prosperity prosperous protect protection protective 
+  proud provident provocative prudent psyched psychedelic public-spirited pumped_up punctual pure 
+  purify purity purposeful qualify quality quantity quench quest quick quick-witted 
+  quiescent quiet quirky quivery quixotic rad radiant rainbow raise rapid-action 
+  rapt rapture rapturous rare rational ravishing raw re-energize reachable ready 
+  real realistic reap reason reasonable reassure rebate reborn rebound reception 
+  receptive receptivity recognize recommend recommendation reconcile recoup recover recruit recycle 
+  redeem redesign refine refined refinement reflective reform refresh refreshing refuel 
+  regain regular regularity rehabilitate reinforce reinvented rejoice rejoicing rejuvenate relationship 
+  relax relaxed release relevance relevant reliable reliant relief relieve relieved 
+  remarkable remedy remember remind remorseful renew renown repentant replenish reposed 
+  reputation request rescue reserved resilient resolute resolve resourceful respect respectable 
+  respectful resplendent responsible responsive rest restful restive restrained restructure reunite 
+  reuse reveal revelation revere reverent revisit revitalize revive revolutionary reward 
+  rewarding rhetorical rich right righteous rigorous riveted robust rock romance 
+  romantic romp rosy royal safe safety sagacious sage saintly salute 
+  samurai sanctify sane sanguine sapient sardonic sassy sate satiate satisfaction 
+  satisfied satisfy saucy save savor savvy scalable scholarly scientific scintillate 
+  scores scrutinize search searching secret secure security sedate seduce seductive 
+  seemly select selective self-assured self-confident self-denying self-determination self-disciplined self-expression self-motivated 
+  self-reliance self-reliant self-satisfied selfless sensational sensible sensitive sensitivity sensual sensuous 
+  sentient sentimental serenade serendipitous serene serenity serious serve service set 
+  settle sexually sexy shapely share sharp sheer shelter shield shrewd 
+  shy significant silent silly silver simple simplify sincere sing singular 
+  sister sizzle skilful skill skillful slick slug sly smart smashing 
+  smile smiling smitten smooth snuggle soar sociable social soft soft-spoken 
+  solar sole solicit solid son soon sooth soothe sophisticated soulful 
+  sound soundness spacious spaciousness spare sparkle sparkling special spectacular speed 
+  speedy spellbind spellbound spice spicy spirit spirited spiritual splendid splendiferous 
+  sponsorship spontaneity spontaneous spotless sprightly sprite spruce spry spunky stable 
+  staggering stalwart star state-of-the-art steadfast steady stimulate stimulating stimulation stout 
+  stout_hearted straightforward strategic strategy strength strengthen strive stroke strong strong-willed 
+  studious stunning stupendous stylish suave sublime substantial subtle succeed success 
+  successful succinct succulent sugar suggest suitable sumptuous sumptuousness sun sunny 
+  sunshine super superb superior superlative supersede supersonic supervise supervisory support 
+  supportive supreme sure surpass surprise surreal sweet swell symmetrical sympathetic 
+  sympathize sympathy symphony systematic tactful talent talented tan tangible tangy 
+  tasteful tasty teach tease technology tempting tenacious tender tender_hearted tenderhearted 
+  terrific thank thankful the_yoke_of theme thin thorough thoroughbred thoughtful thoughtfulness 
+  thrifty thrill thrilled thrive tickle tidy timeless tingle tiny toast 
+  tolerance tolerant top totally touch touched tough toward tradition traditional 
+  train tranquil transcend transformation travel treasure treat treaty tremendous trendy 
+  tribute triumph triumphant true truly trust trusting trustworthy truth truthful 
+  turned_on tutor ubiquitous ubiquity ultimate ultra unafraid unassuming unbeatable unbiased 
+  unblemished unbreakable undeniable undeniably understand understanding understood undoubtedly uninterrupted unique 
+  unite unity universal unlock unparalleled unquestionably unrivaled unrivalled unshackled unshakable 
+  unsparing unsurpassed unusual up upbeat upgrade uplifted upright usability usable 
+  use useful V.I.P. valiant valid valuable value vanish vary venture 
+  versatile versatility vest vibrant victor victory vigorous vindicate vintage virile 
+  virtue virtuous vision visionary visit vital vivacious vivid voluntarily voluntary 
+  volunteer warm warm-hearted warmhearted warrior waterproof wealth welcome well well-being 
+  well-deserved well-rounded well-trained wellness whimsical whisper white whiz whole wholesale 
+  wholesome whopper will willing win wink winner winsome wise wish 
+  wishful wistful witty wonder wonderful wondrous worldly worth worthy wow 
+  write yearn yes yield young youthful Yule zany zeal zealous 
+  zest zestful 
+Command: :up accept
+
+For accept:
+ Set hierarchy:
+ Wordnet hierarchy:
+  accept~1: tolerate or accommodate oneself to 
+  accept~2: consider or hold as true 
+  accept~3: be sexually responsive to, used of a female domesticated mammal 
+  accept~4: react favorably to 
+  accept~5: give an affirmative reply to 
+  accept~6: make use of or accept for some purpose 
+  accept~7: receive officially, as from a committee 
+  accept~8: receive willingly something given or offered 
+  accept~9: admit into a group or community 
+  accept~10: take on as one's own the expenses or debts of another person 
+  accept~11: be designed to hold or take 
+Command: :up acceptable
+
+For acceptable:
+ Set hierarchy:
+ Wordnet hierarchy:
+  acceptable~1: worthy of acceptance or satisfactory 
+  acceptable~2: adequate for the purpose 
+  acceptable~3: meeting requirements 
+  acceptable~4: judged to be in conformity with approved usage 
+Command: :up order
+
+For order:
+ Set hierarchy:
+ Wordnet hierarchy:
+  order~1: the act of putting things in a sequential arrangement 
+    is organization~2  the activity or result of distributing or disposing persons or things properly or methodically 
+       is activity~1z any specific behavior 
+          is act~1z something that people do or cause to happen 
+             is event~1z something that happens at a given place and time 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~2: one of original three styles of Greek architecture distinguished by the type of column and entablature used or a style developed from the original three by the Romans 
+    is artistic_style~1  the style of a particular artist or school or movement 
+       is personal_manner~1z how something is done or how it happens 
+          is prop~3z a basic or essential attribute shared by all members of a class 
+             is attribute~1z an abstraction belonging to or characteristic of an entity 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~3: a degree in a continuum of size or quantity 
+    is magnitude~1  the property of relative size or extent  
+       is prop~3z a basic or essential attribute shared by all members of a class 
+          is attribute~1z an abstraction belonging to or characteristic of an entity 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~4: a commercial document used to request someone to supply something in return for payment and providing specifications and quantities 
+    is commercial_document~1  a document of or relating to commerce 
+       is document~1z writing that provides information 
+          is committal_to_writing~1z the work of a writer 
+             is written_communication~1z communication by means of written symbols 
+                is communication~1z something that is communicated by or to or between people or groups 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~5: a legally binding command or decision entered on the court record  
+    is enactment~3  a legal document codifying the result of deliberations of a committee or society or legislative body 
+       is tool~1z a document that states some contractual relationship or grants some right 
+          is document~1z writing that provides information 
+             is committal_to_writing~1z the work of a writer 
+                is written_communication~1z communication by means of written symbols 
+                   is communication~1z something that is communicated by or to or between people or groups 
+                      is abstraction~1z a general concept formed by extracting common features from specific examples 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~6: a body of rules followed by an assembly 
+    is rule~8  prescribed guide for conduct or action 
+       is steering~2 a message describing how something is to be done 
+          is message~2z what a communication that is about something is about 
+             is communication~1z something that is communicated by or to or between people or groups 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~7: a command given by a superior (e.g., a military or law enforcement officer) that must be obeyed 
+    is bid~4  an authoritative direction or instruction to do something 
+       is speech_act~1z the use of language to perform some act 
+          is act~1z something that people do or cause to happen 
+             is event~1z something that happens at a given place and time 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~8: a request for something to be made, supplied, or served 
+    is asking~1  the verbal act of requesting 
+       is speech_act~1z the use of language to perform some act 
+          is act~1z something that people do or cause to happen 
+             is event~1z something that happens at a given place and time 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~9: taxonomic group containing one or more families 
+    is taxonomic_group~1  animal or plant group having natural relations 
+       is biological_group~1z a group of plants or animals 
+          is group~1z any number of entities considered as a unit 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~10: a group of person living under a religious rule 
+    is religious_sect~1  a subdivision of a larger religious group 
+       is faith~1z an institution to express belief in a divine power 
+          is organization~1 an organization founded and united for a specific purpose 
+             is constitution~1z a group of people who work together 
+                is social_group~1z people sharing some social relation 
+                   is group~1z any number of entities considered as a unit 
+                      is abstraction~1z a general concept formed by extracting common features from specific examples 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~11: a formal association of people with similar interests 
+    is association~4  a formal organization of people or groups of people 
+       is constitution~1z a group of people who work together 
+          is social_group~1z people sharing some social relation 
+             is group~1z any number of entities considered as a unit 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~12: logical or comprehensible arrangement of separate elements 
+    is arrangement~6  an orderly grouping considered as a unit 
+       is group~1z any number of entities considered as a unit 
+          is abstraction~1z a general concept formed by extracting common features from specific examples 
+             is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~13: established customary state  
+    is state~1  the way something is with respect to its main attributes 
+       is attribute~1z an abstraction belonging to or characteristic of an entity 
+          is abstraction~1z a general concept formed by extracting common features from specific examples 
+             is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~14: a condition of regular or proper arrangement 
+    is status~1  a state at a particular time 
+       is state~1z the way something is with respect to its main attributes 
+          is attribute~1z an abstraction belonging to or characteristic of an entity 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  order~15: place in a certain order 
+  order~16: bring order to or into 
+  order~17: assign a rank or rating to 
+  order~18: arrange thoughts, ideas, temporal events 
+  order~19: make a request for something 
+  order~20: give instructions to or direct somebody to do something with authority 
+  order~21: issue commands or orders for 
+  order~22: appoint to a clerical posts 
+  order~23: bring into conformity with rules or principles or usage 
+Command: :down ~buy
+buy misspend order overpay overspend pay prepay purchase reimburse shop 
+  underpay underspend 
+Command: :build 1
+Start: user:nick bot:snowwhite ip: rand:2586 (~assassination_plot) 0 ==> I can't think straight with all this stress.  When:Wed Dec 18 12:26:49 2013 Version:3.53 Build0:1385587290 Build1:1385664343 Why: ~assassination_plot.21.0 
+Command: :reset
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 0  :reset ==> Hi, what brings you to this part of the woods?  When:Wed Dec 18 12:26:56 2013 Why: ~justify_identity.1.0 
+Start: user:nick bot:snowwhite ip: rand:2581 (~justify_identity) 0 ==> Who are you again?  When:Wed Dec 18 12:27:53 2013 Version:3.53 Build0:1385587290 Build1:1385664343 Why: ~justify_identity.52.0 
+Command: :reset
+Respond: user:nick bot:snowwhite ip: (~justify_identity) 0  :reset ==> Hi, what brings you to this part of the woods?  When:Wed Dec 18 12:28:01 2013 Why: ~justify_identity.1.0 

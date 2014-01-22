@@ -14,10 +14,6 @@ if (^genre != *) { ^createfact(^genre genre ^title) }
 if (^copyright != *){ ^createfact(^copyright birth  ^title ) }
 
 DATA:
-John_Keynes  Economic_Consequences_of_Peace ...
-"Adam Smith" "Inquiry into the Nature and Causes of the Wealth of Nations" ...
-
-
 "Malcolm GladStone" "Tipping Point Trilogy" * science_fiction 
 "Robert A Heinlein" "Starship Troopers" 1959     science_fiction
 "Philip K Dick" "Do Androids Dream of Electric Sheep?" 1968     science_fiction
@@ -292,6 +288,7 @@ John_Keynes  Economic_Consequences_of_Peace ...
 "Christopher Isherwood" "Goodbye to Berlin" * * 
 "Christopher Isherwood" "The Last of Mr. Norris" * * 
 "Chuck Palahniuk" "Choke" * * 
+"Colin MacInnes" "Absolute Beginners" * * 
 "Colm Toibin" "The Heather Blazing" * * 
 "Colm Toibin" "The Master" * * 
 "Comte de Lautreaumont" "Maldoror" * * 
@@ -303,6 +300,7 @@ John_Keynes  Economic_Consequences_of_Peace ...
 "D.H. Lawrence" "The Rainbow" * * 
 "D.H. Lawrence" "Women in Love" * * 
 "D.H._Laurence" Lady_Chatterley's_Lover * * 
+"Dan Sleigh" "Islands" * * 
 "Daniel Defoe" "Moll Flanders" * * 
 "Daniel Defoe" "Robinson Crusoe" * * 
 "Daniel Defoe" "Roxana" * * 
@@ -1238,7 +1236,7 @@ DATA:
 table: ~malebooks(^author ^title )
 if (! ^pos(NOUN ^title lowercaseexist))
 {
-	^addproperty(^title NOUN_TITLE)
+	^addproperty(^title NOUN_TITLE_OF_WORK )
 	^createfact(^author member ~author ) 
 	^createfact(^title member ~book) 
 	^createfact(^title write ^author)  
@@ -1541,6 +1539,7 @@ Iain_Banks Against_A_Dark_Background
 Iain_Banks Feersum_Endjinn
 Lily_Brett Just_Like_That
 Harriet_Beecher_Stowe Uncle_Toms_Cabin
+Alex_Garland The_Beach
 Dorothy_L_Sayers Murder_Must_Advertise
 Snorri_Sturluson Prose_Edda
 Rudyard_Kipling The_Man_Who_Would_Be_King
@@ -1664,6 +1663,7 @@ Anne_Rice The_Vampire_Lestat
 Daniel_Defoe The_Farther_Adventures_Of_Robinson_Crusoe
 Marquis_De_Sade Entity120_Days_Of_Sodom
 Dionysios_Solomos Hymn_To_Liberty
+Nevil_Shute On_The_Beach
 Thomas_Pynchon The_Crying_Of_Lot49
 Roger_Zelazny Jack_Of_Shadows
 Dorothy_L_Sayers Busmans_Honeymoon

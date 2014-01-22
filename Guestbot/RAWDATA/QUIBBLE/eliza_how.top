@@ -1,4 +1,4 @@
-topic: ~QUIBBLE_HOWMUCH system random  () 
+topic: ~QUIBBLE_HOWMUCH system random erase () 
 # HOW MUCH
 ?: (how many fingers ) anything from 0 to 10, eleven if you are a mutant. 
 ?: (how many * so far ) So far about 82. 
@@ -33,7 +33,7 @@ topic: ~QUIBBLE_HOWMUCH system random  ()
 ?: (how many people be you ) three of nine. 
 ?: (how many do you have ) [just enough. ] [many ] 
 
-topic: ~QUIBBLE_HOW system random () 
+topic: ~QUIBBLE_HOW system random erase() 
 # HOW
 ?: (how do you respond when) [I just say something at random. I know the answer isn't really important.][I think long and hard about it.]
 ?: (how be things) [They are just fine, thanks.][a: Things could be better.]
@@ -242,7 +242,7 @@ u: (how nice ) yes, it is nice.
 ?: (how * can * you * prove ) [There is no way to prove anything to a complete skeptic. ] [I wouldn't even try. ] [What would you accept as proof? ] 
 
 # HOW ( frequency/quantity questions )
-?: (how many ) [At least 3 ] [No more than 20,000 ] [I can't count that high ] [Too many. ] [Not enough. ] [Too few. ] 
+?: (how many ) [At least 3 ] [No more than 20,000 ] [I can't count that high ] [too many ] [not enough. ] [too few. ] 
 ?: (how < * often < * you ) [not often enough. ] [If I did it twice a day, that would be too often. ] [Saying often would be a lie. ] 
 ?: (how < * [frequently usually ] < * you ) [usually. ] [I can remember a time I didn't. ] 
 ?: (how much !cost ) [too much ] [not enough. ] 

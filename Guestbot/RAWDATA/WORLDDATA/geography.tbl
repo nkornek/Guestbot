@@ -3,7 +3,6 @@
 table: ~geofact  (^relation ^area ^value ) 
 
 ^createfact(^value ^relation ^area)
-^addproperty(^area   NOUN_PROPER_SINGULAR NOUN LOCATIONWORD ALWAYS_PROPER_NAME_MERGE)
 
 DATA:
 # size in square km

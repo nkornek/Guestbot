@@ -28,7 +28,9 @@ size_t maxFacts = MAX_FACT_NODES;	// how many facts we can create at max
 FACT* factBase = NULL;			// start of all facts
 FACT* factEnd = NULL;			// end of all facts
 FACT* wordnetFacts = NULL;		// end of facts after dictionary load
+FACT* topicFacts = NULL;		// end of topic facts, start of user facts
 FACT* build0Facts = NULL;		// end of build0 facts, start of build1 facts
+FACT* chatbotFacts = NULL;		// end of build1 facts, start of user facts
 FACT* factFree = NULL;			// currently next fact we can reuse for allocation
 FACT* currentFact = NULL;		// current fact
 
@@ -41,7 +43,7 @@ static float floatValues[MAX_FIND+1];
 
 FACT* Index2Fact(FACTOID e)
 { 
-	FACT* F = NULL;
+	FACT* F = 0;
 	if (e)
 	{
 		F =  e + factBase;
@@ -94,7 +96,7 @@ void TraceFact(FACT* F,bool ignoreDead)
 
 void ClearUserFacts()
 {
-	while (factFree > factLocked)  FreeFact(factFree--); //   erase new facts
+	while (factFree > topicFacts)  FreeFact(factFree--); //   erase new facts
 }
 
 void InitFacts()
@@ -105,6 +107,7 @@ void InitFacts()
 		if ( factBase == 0)
 		{
 			printf("failed to allocate fact space\r\n");
+			ReportBug("Failed to allcoate fact space\r\n")
 			myexit("failed to get fact space");
 		}
 	}
@@ -129,32 +132,14 @@ void CloseFacts()
 
 void FreeFact(FACT* F)
 { //   most recent facts are always at the top of any xref list. Can only free facts sequentially backwards.
-	if (!F->subject) // unindexed fact recording a fact delete that must be undeleted
-	{
-		if (!F->object) // death of fact fact (verb but no object)
-		{
-			F = Index2Fact(F->verb);
-			F->flags &= -1 ^ FACTDEAD;
-		}
-		else if (F->flags & ITERATOR_FACT) {;} // holds iterator backtrack
-		else // undo a variable assignment fact (verb and object)
-		{
-			WORDP D = Meaning2Word(F->verb); // the variable
-			unsigned int offset = (unsigned int) F->object;
-			D->w.userValue =  (offset == 1) ? NULL : (stringBase + offset);
-		}
-	}
-    else // normal indexed fact
-	{
-		if (!(F->flags & FACTSUBJECT)) SetSubjectHead(F->subject,GetSubjectNext(F));
-		else SetSubjectHead(Index2Fact(F->subject),GetSubjectNext(F));
+    if (!(F->flags & FACTSUBJECT)) SetSubjectHead(F->subject,GetSubjectNext(F));
+	else SetSubjectHead(Index2Fact(F->subject),GetSubjectNext(F));
 
-		if (!(F->flags & FACTVERB)) SetVerbHead(F->verb,GetVerbNext(F));
-		else  SetVerbHead(Index2Fact(F->verb),GetVerbNext(F));
+	if (!(F->flags & FACTVERB)) SetVerbHead(F->verb,GetVerbNext(F));
+	else  SetVerbHead(Index2Fact(F->verb),GetVerbNext(F));
 
-		if (!(F->flags & FACTOBJECT)) SetObjectHead(F->object,GetObjectNext(F));
-		else SetObjectHead(Index2Fact(F->object),GetObjectNext(F));
-	}
+    if (!(F->flags & FACTOBJECT)) SetObjectHead(F->object,GetObjectNext(F));
+	else SetObjectHead(Index2Fact(F->object),GetObjectNext(F));
  }
 
 unsigned int AddFact(unsigned int set, FACT* F) // fact added to factset
@@ -167,60 +152,15 @@ unsigned int AddFact(unsigned int set, FACT* F) // fact added to factset
 	return count;
 }
 
-FACT* SpecialFact(MEANING verb, MEANING object,unsigned int flags)
-{
-	//   allocate a fact
-	if (++factFree == factEnd) 
-	{
-		--factFree;
-		ReportBug("out of fact space at %d",Fact2Index(factFree))
-		printf("out of fact space");
-		return factFree; // dont return null because we dont want to crash anywhere
-	}
-	//   init the basics
-	memset(factFree,0,sizeof(FACT));
-	factFree->verb = verb;
-	factFree->object = object;
-	factFree->flags = FACTTRANSIENT | FACTDEAD | flags;	// cannot be written or kept
-	return factFree;
-}
-
 void KillFact(FACT* F)
 {
-	if (F->flags & FACTDEAD) return; // already dead
-
-	if (trace & TRACE_INFER) 
-	{
-		Log(STDUSERLOG,"Kill: ");
-		TraceFact(F);
-	}
 	F->flags |= FACTDEAD;
-	if (planning) SpecialFact(Fact2Index(F),0,0); // save to restore
-
-	// if this fact has facts depending on it, they too must die
-	FACT* G = GetSubjectHead(F);
-	while (G)
-	{
-		KillFact(G);
-		G = GetSubjectNext(G);
-	}
-	G = GetVerbHead(F);
-	while (G)
-	{
-		KillFact(G);
-		G = GetVerbNext(G);
-	}
-	G = GetObjectHead(F);
-	while (G)
-	{
-		KillFact(G);
-		G = GetObjectNext(G);
-	}
 }
 
 void ResetFactSystem()
 {
-	while (factFree > factLocked) FreeFact(factFree--); // restore to end of basic facts
+	while (factFree > topicFacts) FreeFact(factFree--); // restore to end of basic facts
+    chatbotFacts = factFree;
 	for (unsigned int i = 1; i < MAX_FIND_SETS; ++i) SET_FACTSET_COUNT(i, 0); // empty all facts sets
 }
 
@@ -229,8 +169,6 @@ FACT* FindFact(MEANING subject, MEANING verb, MEANING object, unsigned int prope
     FACT* F;
 	FACT* G;
 	if (!subject || !verb || !object) return NULL;
-	if (properties & FACTDUPLICATE) 
-		return NULL;	// can never find this since we are allowed to duplicate and we do NOT want to share any existing fact
 
     //   see if  fact already exists. if so, just return it 
 	if (properties & FACTSUBJECT)
@@ -281,7 +219,7 @@ FACT* CreateFact(MEANING subject, MEANING verb, MEANING object, unsigned int pro
 	currentFact = NULL; 
 	if (!subject || !object || !verb)
 	{
-		ReportBug("Missing field in fact create at line %d of %s",currentFileLine,currentFilename)
+		ReportBug("Missing field in fact create")
 		return NULL;
 	}
 
@@ -305,28 +243,15 @@ FACT* CreateFact(MEANING subject, MEANING verb, MEANING object, unsigned int pro
 		return NULL;
 	}
 
-	// convert any restricted meaning
-	MEANING other;
-	char* word;
-	if (s && (word = s->word) && *word != '"' && strchr(word+1,'~')) // has number or word after it? convert notation
-	{
-		other = ReadMeaning(word,true,true);
-		if (Meaning2Index(other) || other & TYPE_RESTRICTION) subject = other;
-	}
-	if (v && (word = v->word) && strchr(word+1,'~')) // has number or word after it? convert notation
-	{
-		other = ReadMeaning(word,true,true);
-		if (Meaning2Index(other) || other & TYPE_RESTRICTION) verb = other;
-	}
-	if (o && (word = o->word) &&  strchr(word+1,'~')) // has number or word after it? convert notation
-	{
-		other = ReadMeaning(word,true,true);
-		if (Meaning2Index(other) || other & TYPE_RESTRICTION) object = other;
-	}
-
 	//   insure fact is unique if requested
-	currentFact =  (properties & FACTDUPLICATE) ? NULL : FindFact(subject,verb,object,properties); 
-	return  (currentFact) ? currentFact : CreateFastFact(subject,verb,object,properties);
+	if (properties & FACTDUPLICATE) 
+	{
+		currentFact = NULL;
+		properties ^= FACTDUPLICATE;
+	}
+	else currentFact = FindFact(subject,verb,object,properties); 
+	if (currentFact) return currentFact; 
+	return CreateFastFact(subject,verb,object,properties);
 }
 
 bool ExportFacts(char* name, int set,char* append)
@@ -359,7 +284,7 @@ bool ExportFacts(char* name, int set,char* append)
 	return true;
 }
 
-char* EatFact(char* ptr,unsigned int flags,bool attribute)
+char* EatFact(char* ptr,unsigned int flags)
 {
 	char word[MAX_WORD_SIZE];
 	char word1[MAX_WORD_SIZE];
@@ -442,38 +367,8 @@ char* EatFact(char* ptr,unsigned int flags,bool attribute)
 	}
 	else object =  MakeMeaning(StoreWord(word2,AS_IS),0);
 
-	if (trace & TRACE_OUTPUT) Log(STDUSERLOG,"%s %s %s %x) = ",word,word1,word2,flags);
-
-	FACT* F = FindFact(subject,verb,object,flags);
-	if (!attribute || (F && object == F->object)) {;}  // not making an attribute or already made
-	else // remove any facts with same subject and verb, UNlESS part of some other fact
-	{
-		F = GetSubjectHead(subject);
-		while (F)
-		{
-			if (!(F->flags & FACTDEAD) && F->subject == subject && F->verb == verb) 
-			{
-				if (F->flags & (FACTSUBJECT|FACTVERB|FACTOBJECT)) return (*ptr) ? (ptr + 2) : ptr; //   FACT NOT MADE! // refuse to kill this fact
-				else 
-				{
-					if (!(F->flags & FACTATTRIBUTE)) // this is a script failure. Should ONLY be an attribute
-					{
-						char word[MAX_WORD_SIZE];
-						WriteFact(F,false,word,false,true);
-						Log(STDUSERLOG,"Fact created is not an attribute. There already exists %s",word); 
-						printf("Fact created is not an attribute. There already exists %s",word); 
-						currentFact = F;
-						return (*ptr) ? (ptr + 2) : ptr; 
-					}
-					KillFact(F); 
-				}
-			}
-			F = GetSubjectNext(F);
-		}
-	}
-
-	F = CreateFact(subject,verb,object,flags);
-	if (attribute) 	F->flags |= FACTATTRIBUTE;
+	if (trace & OUTPUT_TRACE) Log(STDUSERLOG,"%s %s %s %x) = ",word,word1,word2,flags);
+	CreateFact(subject,verb,object,flags);
 	return (*ptr) ? (ptr + 2) : ptr; //   returns after the closing ) if there is one
 }
 
@@ -502,7 +397,7 @@ bool ImportFacts(char* name, char* set, char* erase, char* transient)
 	}
 	fclose(in);
 	if (!stricmp(erase,"erase") || !stricmp(transient,"erase")) remove(name); // erase file after reading
-	if (trace & TRACE_OUTPUT) Log(STDUSERLOG,"[%d] => ",FACTSET_COUNT(store));
+	if (trace & OUTPUT_TRACE) Log(STDUSERLOG,"[%d] => ",FACTSET_COUNT(store));
 	return true;
 }
 
@@ -540,20 +435,6 @@ FACT* CreateFastFact(MEANING subject, MEANING verb, MEANING object, unsigned int
 	WORDP s = (properties & FACTSUBJECT) ? NULL : Meaning2Word(subject);
 	WORDP v = (properties & FACTVERB) ? NULL : Meaning2Word(verb);
 	WORDP o = (properties & FACTOBJECT) ? NULL : Meaning2Word(object);
-	if (properties & FACTDEAD) // except for special internal system facts, this shouldnt happen - unless user intends it
-	{
-		int xx = 0;
-	}
-	// DICTIONARY should never be build with any but simple meanings and Mis
-	// No fact meaning should ever have a synset marker on it. And member facts may have type restrictions on them
-	if (s && ((subject & (-1 ^ SIMPLEMEANING) && verb == Mis) || subject&SYNSET_MARKER))
-	{
-		int xx = 0;
-	}
-	if (o && ((object & (-1 ^ SIMPLEMEANING) && verb == Mis)|| subject&SYNSET_MARKER))
-	{
-		int xx = 0;
-	}
 
 	//   allocate a fact
 	FACT* F;
@@ -584,7 +465,7 @@ FACT* CreateFastFact(MEANING subject, MEANING verb, MEANING object, unsigned int
 		F = Index2Fact(currentFact->subject);
 		if (F)
 		{	
-			SetSubjectNext(currentFact,GetSubjectHead(F)); 
+			SetSubjectNext(currentFact,F); 
 			SetSubjectHead(F,currentFact);
 		}
 		else
@@ -631,13 +512,11 @@ FACT* CreateFastFact(MEANING subject, MEANING verb, MEANING object, unsigned int
 			return NULL;
 		}
 	}
-
-	if (planning) currentFact->flags |= FACTTRANSIENT;
-
-	if (trace & TRACE_FACTCREATE)
+	
+	if (trace & FACTCREATE_TRACE)
 	{
 		char* buffer = AllocateBuffer(); // fact might be big, cant use mere WORD_SIZE
-		buffer = WriteFact(currentFact,false,buffer,true,true);
+		buffer = WriteFact(currentFact,false,buffer,false,true);
 		Log(STDUSERLOG,"create %s",buffer);
 		FreeBuffer();
 	}	
@@ -666,7 +545,7 @@ static char* WriteField(MEANING T, uint64 flags,char* buffer,bool ignoreDead)
     if (flags ) //   fact reference
     {
 		FACT* G = Index2Fact(T);
-		if (!*WriteFact(G,false,buffer,ignoreDead)) 
+		if (!*WriteFact(G,false,buffer)) 
 		{
 			*buffer = 0;
 			return buffer;
@@ -681,7 +560,7 @@ static char* WriteField(MEANING T, uint64 flags,char* buffer,bool ignoreDead)
     else 
 	{
 		WORDP D = Meaning2Word(T);
-		if (D->internalBits & (INTERNAL_MARK|DELETED_MARK) && !ignoreDead) // a deleted field
+		if (D->internalBits & INTERNAL_MARK && !ignoreDead) // a deleted field
 		{
 			*buffer = 0;
 			return buffer; //   cancels print
@@ -702,16 +581,11 @@ char* WriteFact(FACT* F,bool comments,char* buffer,bool ignoreDead,bool eol)
 { //   if fact is junk, return the null string
 	char* start = buffer;
 	*buffer = 0;
-	if (!F || !F->subject) return start; // never write special facts out
-	if (F->flags & FACTDEAD) // except for user display THIS shouldnt happen to real fact writes
+	if (!F) return start;
+	if (F->flags & FACTDEAD) 
 	{
-		if (ignoreDead)
-		{
-			strcpy(buffer,"DEAD ");
-			buffer += strlen(buffer);
-		}
-		else 
-			return ""; // illegal - only happens with facts (nondead) that refer to dead facts?
+		strcpy(buffer,"DEAD ");
+		buffer += strlen(buffer);
 	}
 
 	//   fact opener
@@ -777,7 +651,7 @@ char* ReadField(char* ptr,char* field,char fieldkind, unsigned int& flags)
 		char* end = strchr(ptr+1,'`'); // find corresponding end
 		*end = 0;
 		strcpy(field,ptr+1);
-		return end+2; // point AFTER the space after the `
+		return end+1;
 	}
     else 
 	{
@@ -809,7 +683,7 @@ FACT* ReadFact(char* &ptr)
 	
     //   handle the flags on the fact
     uint64 properties = 0;
-    if (!*ptr || *ptr == ')' ); // end of fact
+    if (!*ptr || *ptr == ')'); // end of fact
 	else ptr = ReadFlags(ptr,properties);
 	flags |= (unsigned int) properties;
 
@@ -843,11 +717,17 @@ void ReadFacts(const char* name,uint64 zone,bool user) //   a facts file may hav
 			char* at = ReadCompiledWord(readBuffer+2,word); //   start at valid token past space
 			WORDP D = StoreWord(word);
 			ReadDictionaryFlags(D,at);
-			AddInternalFlag(D,zone);
+			AddSystemFlag(D,zone);
 		}
 		else if (*word == '$') // variable
 		{
-			ReportBug("Bad fact file user var assignment")
+			 char* ptr = strchr(readBuffer,'=');
+			 if (*ptr)
+			 {
+				*ptr = 0;
+				SetUserVariable(readBuffer,ptr+1);
+			 }
+			 else ReportBug("Bad fact file user var assignment")
 		}
         else 
 		{
@@ -862,7 +742,7 @@ void SortFacts(char* set) //   sort low to high ^sort(@1subject) which field we 
 {
 	if (*set != '@') return;	 // do nothing
     unsigned int n = GetSetID(set);
-	char kind = GetLowercaseData(*GetSetType(set));
+	char kind = toLowercaseData[*GetSetType(set)];
 	if (!kind) kind = 's';
     bool swap = true;
     unsigned int i;

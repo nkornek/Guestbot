@@ -45,15 +45,12 @@ issuing a FAILRULE or such has no effect there.
 
 #define MAX_TOPIC_KEYS 5000
 
-#define PLANMARK -1
-#define RULEMARK -2
-
-bool planning = false;
+// potential statistical use
+CharIntMap mapint0;
+CharFloatMap mapfloat0;	
+CharFloatMap mapfloat1;
 
 int globalDepth = 0;
-char* stringPlanBase = 0;
-char* backtrackPoint = 0;		// plan code backtrace data
-unsigned int currentIterator = 0;		// next value of iterator
 
 //   spot callArgumentList are stored for  function calls
 #define MAX_ARG_BYTES MAX_WORD_SIZE * 2
@@ -61,14 +58,12 @@ char callArgumentList[MAX_ARGUMENT_COUNT+1][MAX_ARG_BYTES];    // arguments to f
 unsigned int callArgumentIndex;
 unsigned int callArgumentBase;
 unsigned int fnVarBase;
-bool backtrackable = false;
 
 char lastInputSubstitution[INPUT_BUFFER_SIZE];
 int wasCommand; // special result passed back from some commands to control chatscript
 
 static char oldunmarked[MAX_SENTENCE_LENGTH];
 static unsigned int spellSet;			// place to store word-facts on words spelled per a pattern
-char* currentPlanBuffer;
 
 //////////////////////////////////////////////////////////
 /// BASIC FUNCTION CODE
@@ -83,6 +78,7 @@ void InitFunctionSystem() // register all functions
 		if (*fn->word == '^' ) // not a header
 		{
 			WORDP D = StoreWord((char*) fn->word,0,FUNCTION_NAME);
+			D->v.argumentCount = fn->argumentCount;
 			D->x.codeIndex = (unsigned short)k;
 		}
 	}
@@ -96,220 +92,7 @@ void ResetFunctionSystem()
 	fnVarBase = callArgumentBase = callArgumentIndex = 0;
 }
 
-char* SaveBacktrack(int id)
-{
-	// save: id, oldbacktrack point, currentfact, current dict,   
-	char* mark = AllocateString(NULL,(4 * sizeof(int)),false,false); 
-	if (!mark) return NULL;
-	int* i = (int*) mark;
-	i[0] = id;										// 1st int is a backtrack label - plan (-1) or rule (other)
-	i[1] = (int)(stringPlanBase - backtrackPoint);	// 2nd is old backtrack point value
-	i[2] = Fact2Index(factFree);					// 4th is fact base 
-	i[3] = Word2Index(dictionaryFree);				// 5th is word base (this entry is NOT used)
-	return backtrackPoint = mark;
-}
-
-static char* FlushMark() // throw away this backtrack point, maybe reclaim its string space
-{
-	if (!backtrackPoint) return NULL;
-	// we are keeping facts and variable changes, so we cannot reassign the string free space back because it may be in use.
-	if (backtrackPoint == stringFree) stringFree = backtrackPoint + (4 * sizeof(int));
-	int* i = (int*) backtrackPoint;
-	return backtrackPoint = stringPlanBase - i[1];
-}
-
-static void RestoreMark()
-{	// undo all changes
-	if (!backtrackPoint) return;
-	stringFree = backtrackPoint;
-	int* i = ((int*) backtrackPoint); // skip id
-
-	// revert facts
-	FACT* oldF = Index2Fact(i[2]);
-	while (factFree > oldF) FreeFact(factFree--); // undo facts to start
-	// revert dict entries
-	WORDP oldD = Index2Word(i[3]);
-	while (dictionaryFree > oldD) DeleteDictionaryEntry(--dictionaryFree); // remove entry from buckets
-	
-	// trim dead facts at ends of sets
-	for (unsigned int store = 0; store < MAX_FIND_SETS; ++store)
-	{
-		unsigned int count = FACTSET_COUNT(store) + 1;
-		while (--count >= 1)
-		{
-			if (!(factSet[store][count]->flags & FACTDEAD)) break; // stop having found a live fact
-		}
-		if (count) SET_FACTSET_COUNT(store,count); // new end
-	}
-	backtrackPoint = stringPlanBase - i[1];
-}
-
-void RefreshMark()
-{	// undo all changes but leave rule mark in place
-	if (!backtrackPoint) return;
-	int* i = (int*) backtrackPoint; // point past id, backtrack 
-	
-	// revert facts
-	FACT* oldF = Index2Fact(i[2]);
-	while (factFree > oldF) FreeFact(factFree--); // undo facts to start
-	// revert dict entries
-	WORDP oldD = Index2Word(i[3]);
-	while (dictionaryFree > oldD) DeleteDictionaryEntry(--dictionaryFree); // remove entry from buckets
-	
-	// trim dead facts at ends of sets
-	for (unsigned int store = 0; store < MAX_FIND_SETS; ++store)
-	{
-		unsigned int count = FACTSET_COUNT(store) + 1;
-		while (--count >= 1)
-		{
-			if (!(factSet[store][count]->flags & FACTDEAD)) break; // stop having found a live fact
-		}
-		if (count) SET_FACTSET_COUNT(store,count); // new end
-	}
-	stringFree = backtrackPoint;
-}
-
-static void UpdatePlanBuffer()
-{
-	size_t len = strlen(currentPlanBuffer);
-	if (len) // we have output, prep next output
-	{
-		currentPlanBuffer += len;	// cumulative output into buffer
-		*++currentPlanBuffer = ' '; // add a space
-		currentPlanBuffer[1] = 0;
-	}
-}
-
-static unsigned int PlanCode(WORDP plan, char* buffer)
-{  // failing to find a responder is not failure.
-#ifdef INFORMATION
-
-	A plan sets a recover point for backtracking and clears it one way or another when it exits.
-	A rule sets a backpoint only if it finds some place to backtrack. The rule will clear that point one way or another when it finishes.
-
-	Undoable changes to variables are handled by creating special facts. 
-#endif
-
-	if (trace & (TRACE_MATCH|TRACE_PATTERN)) Log(STDUSERLOG,"\r\n\r\nPlan: %s ",plan->word);
-	bool oldplan = planning;
-	bool oldbacktrackable = backtrackable;
-	char* oldbacktrackPoint = backtrackPoint;
-	char* oldStringPlanBase = stringPlanBase;
-	stringPlanBase = stringFree;
-	backtrackPoint = stringFree;
-	backtrackable = false;
-	unsigned int oldWithinLoop = withinLoop;
-	withinLoop = 0;
-	planning = true;
-	int holdd = globalDepth;
-	ChangeDepth(1,"PlanCode");
-	char* oldCurrentPlanBuffer = currentPlanBuffer;
-	
-	unsigned int tindex = topicIndex;
-    unsigned int result = 0;
-	if (debugger) Debugger(ENTER_TOPIC);
-
-	SAVEOLDCONTEXT()
-
-	// where future plans will increment naming
-	char name[MAX_WORD_SIZE];
-	strcpy(name,plan->word);
-	char* end = name + plan->length;
-	*end = '.';
-	*++end = 0;
-
-	unsigned int n = 0;
-	while (!result) // loop on plans to use
-	{
-		*buffer = 0;
-		currentPlanBuffer = buffer;	  // where we are in buffer writing across rules of a plan
-		unsigned int topic = plan->x.topicIndex;
-		if (!topic)  
-		{
-			result = FAILRULE_BIT; 
-			break;
-		}
-		int pushed =  PushTopic(topic);  // sets currentTopicID
-		if (pushed < 0) 
-		{
-			result = FAILRULE_BIT; 
-			break;
-		}
-		char* xxplanMark = SaveBacktrack(PLANMARK); // base of changes the plan has made
-		char* base = GetTopicData(topic); 
-		int ruleID = 0;
-		currentRuleTopic = currentTopicID;
-		currentRule = base;
-		currentRuleID = ruleID;
-		char* ruleMark = NULL;
-		while (base && *base ) //   loop on rules of topic
-		{
-			currentRule = base;
-			ruleMark = SaveBacktrack(RULEMARK); // allows rule to be completely undone if it fails
-			backtrackable = false;
-			result = TestRule(ruleID,base,currentPlanBuffer); // do rule at base
-			if (!result || (result & ENDTOPIC_BIT)) // rule didnt fail
-			{
-				UpdatePlanBuffer();	// keep any results
-				if (result & ENDTOPIC_BIT) break; // no more rules are needed
-			}
-			else if (backtrackable)  // rule failed 
-			{
-				while (backtrackable)
-				{
-					if (trace & (TRACE_MATCH|TRACE_PATTERN)) Log(STDUSERTABLOG,"Backtrack \r\n");
-					*currentPlanBuffer = 0;
-					RefreshMark(); // undo all of rule, but leave undo marker in place
-					backtrackable = false;
-					result = DoOutput(currentPlanBuffer,currentRule,currentRuleID); // redo the rule per normal
-					if (!result || result & ENDTOPIC_BIT) break; // rule didnt fail
-				}
-				if (result & ENDTOPIC_BIT) break; // rule succeeded eventually
-			}
-			FlushMark();  // cannot revert changes after this
-			base = FindNextRule(NEXTTOPLEVEL,base,ruleID);
-		}
-		if (backtrackPoint == ruleMark) FlushMark(); // discard rule undo
-		if (trace & (TRACE_MATCH|TRACE_PATTERN)) 
-		{
-			char* name = GetTopicName(currentTopicID);
-			if (*name == '^') Log(STDUSERTABLOG,"Result: %s Plan: %s \r\n",ResultCode(result),name);
-			else Log(STDUSERTABLOG,"Result: %s Topic: %s \r\n",ResultCode(result),name);
-		}
-		if (pushed) PopTopic();
-		if (result & ENDTOPIC_BIT) 
-		{
-			FlushMark(); // drop our access to this space, we are as done as we can get on this rule
-			break;	// we SUCCEEDED, the plan is done
-		}
-		//   flush any deeper stack back to spot we started
-		if (result & FAILCODES) topicIndex = tindex; 
-		//   or remove topics we matched on so we become the new master path
-		RestoreMark(); // undo failed plan
-		sprintf(end,"%d",++n);
-		plan = FindWord(name);
-		result =  (!plan) ? FAILRULE_BIT : 0;
-		if (!result && trace & (TRACE_MATCH|TRACE_PATTERN)) Log(STDUSERTABLOG,"NextPlan %s\r\n",name);
-	}
-	RESTOREOLDCONTEXT()
-
-	if (debugger) Debugger(EXIT_TOPIC,result);
-	ChangeDepth(-1,"PlanCode");
-	if (globalDepth != holdd) ReportBug("PlanCode didn't balance");
-	
-	if (*currentPlanBuffer == ' ') *currentPlanBuffer = 0; // remove trailing space
-
-	// revert to callers environment
-	planning = oldplan;
-	currentPlanBuffer = oldCurrentPlanBuffer;
-	withinLoop = oldWithinLoop;
-	backtrackable = oldbacktrackable;
-	stringPlanBase = oldStringPlanBase;
-	backtrackPoint = oldbacktrackPoint;
-	return result & (-1 ^ (ENDTOPIC_BIT|ENDRULE_BIT)); // these are swallowed
-}
-
-char* DoFunction(char* name,char* ptr,char* buffer,unsigned int &result) // DoCall(
+char* DoFunction(char* name,char* ptr,char* buffer,unsigned int &result)
 {
 	WORDP D = FindWord(name,0,LOWERCASE_LOOKUP);
 	if (!D || !(D->systemFlags & FUNCTION_NAME))
@@ -321,14 +104,15 @@ char* DoFunction(char* name,char* ptr,char* buffer,unsigned int &result) // DoCa
 	char word[MAX_WORD_SIZE];
     ptr = ReadCompiledWord(ptr,word); // swallow ( of argument list
 	bool oldecho = echo;
-	if (D->internalBits & TRACE_MACRO) echo = true;
+	if (D->systemFlags & TRACE_MACRO) echo = true;
 	SystemFunctionInfo* info = NULL;
+	unsigned int id;
 	unsigned int oldArgumentBase = callArgumentBase;
 	unsigned int oldArgumentIndex = callArgumentIndex;
-	if (D->x.codeIndex && !(D->systemFlags & (IS_PLAN_MACRO|IS_TABLE_MACRO))) // system function --  macroFlags are also on codeindex, but IS_TABLE_MACRO distinguishes  but PLAN also has a topicindex which is a codeindex
+	if (D->x.codeIndex && !(D->systemFlags & IS_TABLE_MACRO)) // system function --  macroFlags are also on codeindex, but IS_TABLE_MACRO distinguishes
 	{
 		callArgumentBase = callArgumentIndex - 1;
-		if (trace & TRACE_OUTPUT) Log(STDUSERTABLOG, "System Call %s(",name);
+		if (trace & OUTPUT_TRACE) Log(STDUSERTABLOG, "System Call %s(",name);
 		info = &systemFunctionSet[D->x.codeIndex];
 		char* start = ptr;
 		while (ptr && *ptr != ')' && *ptr != ENDUNIT) // read arguments
@@ -350,7 +134,7 @@ char* DoFunction(char* name,char* ptr,char* buffer,unsigned int &result) // DoCa
 				*tail = 0;
 				if (len && *(tail-1) == ' ')  *(tail-1) = 0; // remove any trailing blank
 			}
-			if (trace & TRACE_OUTPUT || D->internalBits & TRACE_MACRO) Log(STDUSERLOG,"%s, ",callArgumentList[callArgumentIndex]);
+			if (trace & OUTPUT_TRACE || D->systemFlags & TRACE_MACRO) Log(STDUSERLOG,"%s, ",callArgumentList[callArgumentIndex]);
 			if (++callArgumentIndex >= MAX_ARG_LIST) // too many arguments
 			{
 				result = FAILRULE_BIT;
@@ -360,15 +144,15 @@ char* DoFunction(char* name,char* ptr,char* buffer,unsigned int &result) // DoCa
 			if (info->argumentCount == STREAM_ARG) break; // end of arguments
 		}
 		*callArgumentList[callArgumentIndex] = 0; //  mark end of arg list
-		if (trace & TRACE_OUTPUT  || D->internalBits & TRACE_MACRO) Log(STDUSERLOG,") = ");
+		if (trace & OUTPUT_TRACE  || D->systemFlags & TRACE_MACRO) id = Log(STDUSERLOG,") = ");
 		if (result & ENDCODES); // failed during argument processing
 		else result = (*info->fn)(buffer);
 	} 
-	else //   user function (plan macro, inputmacro, outputmacro, tablemacro)) , eg  ^call (_10 ^2 it ^call2 (3 ) )  spot each token has 1 space separator 
+	else //   user function, eg  ^call (_10 ^2 it ^call2 (3 ) )  spot each token has 1 space separator
 	{
 		unsigned int oldFnVarBase = fnVarBase;
-		if (trace & TRACE_OUTPUT || D->internalBits & TRACE_MACRO) Log(STDUSERTABLOG, "Execute %s(",name);
-		unsigned char* definition = D->w.fndefinition + 1;
+		if (trace & OUTPUT_TRACE || D->systemFlags & TRACE_MACRO) Log(STDUSERTABLOG, "Execute %s(",name);
+		char* definition = D->w.fndefinition;
         while (*ptr && *ptr != ')') //   ptr is after opening (and before an arg but may have white space
         {
 			char* arg = callArgumentList[callArgumentIndex++];
@@ -384,40 +168,30 @@ char* DoFunction(char* name,char* ptr,char* buffer,unsigned int &result) // DoCa
 			//   within a function, seeing function argument as an argument (limit 9 calling Arguments)
 			//   switch to incoming arg now, later callArgumentBase will be wrong
 			if (*arg == '^' && IsDigit(arg[1]) ) strcpy(arg,callArgumentList[atoi(arg+1) + fnVarBase]); 
-			if (*arg == '"' && arg[1] == '`') // internal special quoted item, remove markers.
-			{
-				size_t len = strlen(arg);
-				if (arg[len-2] == '`')
-				{
-					arg[len-2] = 0;
-					memmove(arg,arg+2,len-1);
-				}
-			}
-			if (trace & TRACE_OUTPUT || D->internalBits & TRACE_MACRO) 
+			if (trace & OUTPUT_TRACE || D->systemFlags & TRACE_MACRO) 
 			{
 				Log(STDUSERLOG, "%s",arg);
 				if (*arg == '$') Log(STDUSERLOG,"(%s)",GetUserVariable(arg));
 				Log(STDUSERLOG, ", ");
 			}
 		}
-		if (trace & TRACE_OUTPUT || D->internalBits & TRACE_MACRO) Log(STDUSERLOG, ")\n");
+		if (trace & OUTPUT_TRACE || D->systemFlags & TRACE_MACRO) id = Log(STDUSERLOG, ")\n");
 		fnVarBase = callArgumentBase = oldArgumentIndex; 
 	
 		//   run the definition
-		unsigned int oldtrace = trace;
-		if (D->internalBits & TRACE_MACRO) trace = (unsigned int) -1;
-		ChangeDepth(1,"HandleCall");
-		if (debugger) Debugger(ENTER_CALL,0,(char*)definition);
-		if ((D->systemFlags & FUNCTION_BITS) == IS_PLAN_MACRO) result = PlanCode(D,buffer); // run a plan
-		else if (definition)
+		if (definition)
 		{
+			unsigned int oldtrace = trace;
+			if (D->systemFlags & TRACE_MACRO) trace = (unsigned int) -1;
+			ChangeDepth(1,"HandleCall");
+			if (debugger) Debugger(ENTER_CALL,0,definition);
 			ChangeDepth(1,"DoFunction");
-			Output((char*)definition,buffer,result,OUTPUT_NOTREALBUFFER);
+			Output(definition,buffer,result,OUTPUT_NOTREALBUFFER);
 			ChangeDepth(-1,"DoFunction");
+			if (debugger) Debugger(EXIT_CALL,0,0);
+			ChangeDepth(-1,"HandleCall");
+			trace = oldtrace;
 		}
-		if (debugger) Debugger(EXIT_CALL,0,0);
-		ChangeDepth(-1,"HandleCall");
-		trace = oldtrace;
 		fnVarBase = oldFnVarBase;
 	}
 
@@ -430,7 +204,7 @@ char* DoFunction(char* name,char* ptr,char* buffer,unsigned int &result) // DoCa
 	callArgumentIndex = oldArgumentIndex;	 
 	callArgumentBase = oldArgumentBase;
 
-	if (trace & TRACE_OUTPUT || D->internalBits & TRACE_MACRO) 
+	if (trace & OUTPUT_TRACE || D->systemFlags & TRACE_MACRO) 
 	{
 		if (info && info->properties & SAMELINE) Log(STDUSERLOG,"%s (%s)\r\n",ResultCode(result),name);	// stay on same line to save visual space in log
 		else Log(STDUSERTABLOG,"%s (%s)\r\n",ResultCode(result),name);
@@ -465,7 +239,6 @@ char* ResultCode(unsigned int result)
 	if (result & ENDRULE_BIT) ans = "ENDRULE";
 	else if (result & FAILRULE_BIT) ans = "FAILRULE";
 	else if (result & RETRYRULE_BIT) ans = "RETRYRULE";
-	else if (result & RETRYTOPRULE_BIT) ans = "RETRYTOPRULE";
 
 	else if (result & ENDTOPIC_BIT) ans = "ENDTOPIC";
 	else if (result & FAILTOPIC_BIT) ans = "FAILTOPIC";
@@ -477,7 +250,6 @@ char* ResultCode(unsigned int result)
 
 	else if (result & ENDINPUT_BIT) ans = "ENDINPUT";
 	else if (result & FAILINPUT_BIT) ans = "FAILINPUT";
-	else if (result & FAIL_MATCH) ans = "FAILMATCH";
 	return ans;
 }
 
@@ -561,6 +333,19 @@ loop:
 	//   pick one at random
     D = members[random(index)];
     answer = D->word;
+	static char adjust[MAX_WORD_SIZE];
+	if (D->properties & SUBSTITUTE) //   they may have < or > markers -- is this even possible BUG
+	{
+		if (*D->word == '<') answer += 1;
+		size_t len = strlen(answer);
+		if (answer[len-1] == '>')
+		{
+			strcpy(adjust,answer);
+			adjust[len-1] = 0;
+			strcpy(buffer,answer);
+			return 0;
+		}
+	}
     if (*answer == '~') goto loop; //   member is a subset or class, get from it
     if (*answer == '<') ++answer; //   interjections have < in front
 	strcpy(buffer,answer);
@@ -594,9 +379,7 @@ unsigned int FLR(char* buffer,char which)
 		return ENDRULE_BIT; //   terminates but does not cancel output
 	}
 	
-	if (trace & TRACE_OUTPUT) Log(STDUSERLOG,"[%d] => ",count);
-
-	if (!withinLoop && planning && (which != 'n') && *GetTopicName(currentTopicID) == '^' && !backtrackable) backtrackable = true;
+	if (trace & OUTPUT_TRACE) Log(STDUSERLOG,"[%d] => ",count);
 	
 	// pick fact
 	unsigned int item;
@@ -708,7 +491,7 @@ unsigned int FLR(char* buffer,char which)
 		}
 		impliedSet = impliedWild = ALREADY_HANDLED; // we spread the values out
 	}
-	if (trace & TRACE_OUTPUT && *buffer) Log(STDUSERLOG," %s  ",buffer);
+	if (trace & OUTPUT_TRACE && *buffer) Log(STDUSERLOG," %s  ",buffer);
 	return 0;
 }
 
@@ -804,8 +587,6 @@ static unsigned int CountTopicCode(char* buffer)
 
 static unsigned int GambitCode(char* buffer) 
 { 
-	if (planning) return FAILRULE_BIT;	// cannot call from planner
-
 	// gambit(PENDING) means from interesting stack  
 	// gambit(~name) means use named topic 
 	// gambit(~) means current topic we are within now
@@ -869,7 +650,7 @@ static unsigned int GambitCode(char* buffer)
 			if (F->verb == Mmember)
 			{
 				WORDP E = Meaning2Word(F->object);
-				if (E->systemFlags & TOPIC)
+				if (E->systemFlags & TOPIC_NAME)
 				{
 					unsigned int topic = FindTopicIDByName(E->word);
 					if (topic && !(GetTopicFlags(topic) & (TOPIC_BLOCKED|TOPIC_SYSTEM)))
@@ -922,12 +703,12 @@ static unsigned int GetRuleCode(char* buffer)
 	else // output
 	{
 		 rule = GetPattern(rule,NULL,NULL);
-		 char* end = strchr(rule,ENDUNIT);  // will not be a useful output as blanks will become underscores, but can do ^reuse() to execute it
+		 char* end = strchr(rule,'`');  // will not be a useful output as blanks will become underscores, but can do ^reuse() to execute it
 		 *end = 0;
 		 strcpy(buffer,rule);
-		 *end = ENDUNIT;
+		 *end = '`';
 	}
-	if (trace & TRACE_OUTPUT)
+	if (trace & OUTPUT_TRACE)
 	{
 		char word[MAX_WORD_SIZE];
 		strncpy(word,buffer,50);
@@ -956,8 +737,6 @@ static unsigned int HasGambitCode(char* buffer)
 
 static unsigned int KeepCode(char* buffer)
 {
-	if (planning) return FAILRULE_BIT;
-
 	AddKeep(currentRule);
 	return 0;
 }
@@ -1002,6 +781,7 @@ static unsigned int RefineCode(char* buffer)
 	char* arg1 = ARGUMENT(1); // nothing or FAIL or label of rule or topic.label
 	char* arg2 = ARGUMENT(2); 
 	bool fail = false;
+	if (!stricmp(arg2,"FAIL")) fail = true;
 	if (!stricmp(arg1,"FAIL")) 
 	{
 		fail = true; 
@@ -1032,7 +812,7 @@ static unsigned int RefineCode(char* buffer)
 	if (debugger) Debugger(ENTER_REFINE);
 	while (currentRule && level == *currentRule) // try all choices
     {
-		if (trace & TRACE_PATTERN)
+		if (trace & PATTERN_TRACE)
 		{
 			char label[MAX_WORD_SIZE];
 			GetLabel(currentRule,label);
@@ -1054,7 +834,6 @@ static unsigned int RefineCode(char* buffer)
 	if (outputRejoinderRuleID == NO_REJOINDER) outputRejoinderRuleID = BLOCKED_REJOINDER; // refine values exist instead of real rejoinders, dont let calling rule do set rejoinder
 	if (debugger) Debugger(EXIT_REFINE);
 	RESTOREOLDCONTEXT()
-	if ((!currentRule || level != *currentRule) && fail) result = FAILRULE_BIT;
 	return result; // finding none does not fail unless told to fail
 }
 
@@ -1067,13 +846,13 @@ static unsigned int RejoinderCode(char* buffer)
 	}
     if (!unusedRejoinder) 
 	{
-		if (trace & TRACE_BASIC) Log(STDUSERLOG," disabled rejoinder\r\n\r\n");
+		if (trace & BASIC_TRACE) Log(STDUSERLOG," disabled rejoinder\r\n\r\n");
 		return 0; //   an earlier response handled this
 	}
 
 	if (inputRejoinderRuleID == NO_REJOINDER) 
 	{
-		if (trace & TRACE_PATTERN) Log(STDUSERLOG,"  rejoinder not set\r\n");
+		if (trace & BASIC_TRACE) Log(STDUSERLOG,"  rejoinder not set\r\n");
 		return 0; // not a failure, just nothing done
 	}
 
@@ -1085,19 +864,19 @@ static unsigned int RejoinderCode(char* buffer)
     char* ptr = GetRule(inputRejoinderTopic,inputRejoinderRuleID);
     if (!ptr)  
 	{
-		if (trace & TRACE_BASIC) Log(STDUSERLOG," no rejoinder data for topic %s\r\n\r\n",GetTopicName(currentTopicID));
+		if (trace & BASIC_TRACE) Log(STDUSERLOG," no rejoinder data for topic %s\r\n\r\n",GetTopicName(currentTopicID));
 		if (pushed) PopTopic();
 		return result;
 	}
 
 	unsigned int oldtrace = trace;
-	if (trace & TRACE_BASIC) Log(STDUSERLOG,"  try rejoinder for: %s",GetTopicName(currentTopicID));
+	if (trace & BASIC_TRACE) Log(STDUSERLOG,"  try rejoinder for: %s",GetTopicName(currentTopicID));
 
 	int id = inputRejoinderRuleID;
-	
     char level[400];
     char word[MAX_WORD_SIZE];
     ReadCompiledWord(ptr,level); //   what marks this level
+	char* usedRule = NULL;
 	ChangeDepth(1,"RejoinderCode");
     while (ptr && *ptr) //   loop will search for a level answer it can use
     {
@@ -1111,6 +890,7 @@ static unsigned int RejoinderCode(char* buffer)
 			if (result == FAIL_MATCH) result = FAILRULE_BIT; // convert 
 			if (!result) // we found a match
 			{
+				usedRule = ptr;
 				unusedRejoinder = false;
 				break; 
 			}
@@ -1128,14 +908,11 @@ static unsigned int RejoinderCode(char* buffer)
         unusedRejoinder = false;
     }
     trace = oldtrace;
-	return  result & (-1 ^ (ENDRULE_BIT | FAILRULE_BIT | RETRYRULE_BIT | RETRYTOPRULE_BIT ));
+	return  result & (-1 ^ (ENDRULE_BIT | FAILRULE_BIT | RETRYRULE_BIT));
 }
 
 static unsigned int RespondCode(char* buffer)
 {  // failing to find a responder is not failure.
-
-	if (planning) return FAILRULE_BIT;	// cannot call from planner
-
 	char* name = ARGUMENT(1);
 	char* arg2 = ARGUMENT(2);
 	unsigned oldIndex = responseIndex;
@@ -1209,7 +986,7 @@ static unsigned int ReuseCode(char* buffer)
 
 	currentReuseID = oldreuseid;
 
-	if (trace & TRACE_OUTPUT) Log(STDUSERTABLOG,""); //   restore index from lower level
+	if (trace & OUTPUT_TRACE) Log(STDUSERTABLOG,""); //   restore index from lower level
 	if (!result && holdindex == responseIndex && !stricmp(arg3,"FAIL")) return FAILRULE_BIT; // user wants notification of failure
 	return result;
 }
@@ -1236,8 +1013,6 @@ static unsigned int AvailableCode(char* buffer)
 
 static unsigned int SetRejoinderCode(char* buffer)
 {
-	if (planning) return 0; // canot rejoinder inside a plan
-
 	char* tag = ARGUMENT(1);
 
 	unsigned int topic = currentTopicID;
@@ -1251,7 +1026,7 @@ static unsigned int SetRejoinderCode(char* buffer)
 	if (!rule) return FAILRULE_BIT; // unable to find labelled rule 
 	outputRejoinderRuleID = id; 
  	outputRejoinderTopic = topic;
-	if (trace & TRACE_OUTPUT) Log(STDUSERLOG,"  **set rejoinder at %s.%d.%d\r\n",tag,TOPLEVELID(id),REJOINDERID(id));
+	if (trace & OUTPUT_TRACE) Log(STDUSERLOG,"  **set rejoinder at %s.%d.%d\r\n",tag,TOPLEVELID(id),REJOINDERID(id));
 	return 0;
 }
 
@@ -1273,7 +1048,7 @@ static unsigned int GetTopicsWithGambitsCode(char* buffer)
 	*buffer = 0;
 
     unsigned int start = 0;
-    while (++start <= lastTopic) 
+    while (++start <= numberOfTopics) 
     {
         topicid = start;
         if (topicid == currentTopicID || HasGambits(topicid) <= 0) continue;
@@ -1297,7 +1072,7 @@ static int OrderTopics(unsigned short topicList[MAX_TOPIC_KEYS],unsigned int mat
 	unsigned int baseid = FindTopicIDByName(currentTopic);
 
 	//  value on each topic
-    for (i = 1; i <= lastTopic; ++i) // value 0 means we havent computed it yet. Value 1 means it has been erased.
+    for (i = 1; i <= numberOfTopics; ++i) // value 0 means we havent computed it yet. Value 1 means it has been erased.
     {
 		if (i == baseid || BlockedBotAccess(i)) continue;
 
@@ -1318,19 +1093,19 @@ static int OrderTopics(unsigned short topicList[MAX_TOPIC_KEYS],unsigned int mat
 			D->inferMark = inferMark;
 
             //   look at references for this topic
-            int start = -1;
+            int start = 0;
             while (GetIthSpot(D,++start)) // find matches in sentence
             {
                 // value of match of this topic in this sentence
                 for (unsigned int k = positionStart; k <= positionEnd; ++k)
                 {
-					if (trace & TRACE_PATTERN) Log(STDUSERLOG,"%s->%s ",wordStarts[k],word);
+					if (trace & OUTPUT_TRACE) Log(STDUSERLOG,"%s->%s ",wordStarts[k],word);
                     val += 10 + strlen(wordStarts[k]);   // each hit gets credit 10 and length of word as subcredit
 					if (!stricmp(wordStarts[k],name+1) || !stricmp(wordCanonical[k],name+1)) val += 20; //  exact hit on topic name
                 }
 				if (positionEnd < positionStart) // phrase subcomponent
 				{
-					if (trace & TRACE_PATTERN)  Log(STDUSERLOG,"%s->%s",wordStarts[positionStart],word);
+					if (trace & OUTPUT_TRACE)  Log(STDUSERLOG,"%s->%s",wordStarts[positionStart],word);
 					val += 10;
   				}
             }
@@ -1350,7 +1125,7 @@ static int OrderTopics(unsigned short topicList[MAX_TOPIC_KEYS],unsigned int mat
 			}
 
 			topicList[i] = (unsigned short)(val + 1); //  1 means we did compute it, beyond that is value
-			if (trace & TRACE_PATTERN && val > 1) Log(STDUSERLOG,"%c(%d) ",priority,topicList[i]);
+			if (trace & MATCH_TRACE && val > 1) Log(STDUSERLOG,"%c(%d) ",priority,topicList[i]);
 		} //   close if
 
         if (val >= max) //  find all best
@@ -1363,7 +1138,7 @@ static int OrderTopics(unsigned short topicList[MAX_TOPIC_KEYS],unsigned int mat
             matches[++index] = i;
         }
     }
-	if (trace & TRACE_PATTERN && newpass ) Log(STDUSERLOG,"\r\n");
+	if (trace && newpass ) Log(STDUSERLOG,"\r\n");
 	matches[0] = max;
     return index;
 }
@@ -1439,7 +1214,6 @@ static unsigned int QueryTopicsCode(char* buffer)
 
 static unsigned int GetParseCode(char* buffer) 
 {  
-#ifndef DISCARDPARSER
 	char* original = buffer;
 	char* ptr = ARGUMENT(1);
 	char var[MAX_WORD_SIZE];
@@ -1490,15 +1264,14 @@ static unsigned int GetParseCode(char* buffer)
 	while (start <= end)
 	{
 		if (role && !(roles[start] & role)) continue; // print out the role
-		if (role & OBJECT2 && roles[start] & SUBJECT2) continue;	// this is clause subject where clause is object as a whole
+		if (role == OBJECT2 && roles[start] & SUBJECT2) continue;	// this is clause subject where clause is object as a whole
 		sprintf(buffer,"%s_",wordStarts[start++]);
 		buffer += strlen(buffer);
 		if (role) break;	 // just do one value of it (if coordinating conjunction exists)
 	}
 	if (buffer == original) return FAILRULE_BIT;
 
-	*(--buffer) = 0; // remove trailing _
-#endif
+	*(--buffer); // remove trailing _
 	return 0;
 }
 
@@ -1528,9 +1301,8 @@ static unsigned int MarkCode(char* buffer)
 	if (!*word) return FAILRULE_BIT; // missing arg
 
 	char word1[MAX_WORD_SIZE];
-	if (IsDigit(*ptr) || *ptr == '_') ptr = ReadCompiledWord(ptr,word1);  // the locator
-	else ptr = ReadShortCommandArg(ptr,word1,result); // evaluate the locator
-	
+	ptr = ReadCompiledWord(ptr,word1);  // the locator
+
 	unsigned startPosition;
 	unsigned endPosition;
 	if (!*word1 || *word1 == ')') startPosition = endPosition = 1; // default mark  (ran out or hit end paren of call
@@ -1559,8 +1331,7 @@ static unsigned int MarkedCode(char* buffer)
 
 	WORDP D = FindWord(arg1);
 	if (!D) return FAILRULE_BIT;
-	if (!GetNextSpot(D,0,positionStart,positionEnd)) return FAILRULE_BIT;
-	strcpy(buffer,  (char*) "1" );
+	strcpy(buffer, (GetNextSpot(D,0,positionStart,positionEnd)) ?  (char*) "1" : (char*)"");
 	return 0;
 }
 
@@ -1573,7 +1344,6 @@ static unsigned int PositionCode(char* buffer)
 	if (result & ENDCODES) return result;
 	char word1[MAX_WORD_SIZE];
 	ptr = ReadCompiledWord(ptr,word1);  // the _ var
-	if (*word1 == '^') strcpy(word1,callArgumentList[atoi(word1+1)+fnVarBase]); // swap to actual
 	if (*word1 == '_') //  wildcard position designator
 	{
 		if (!stricmp(word,"start")) sprintf(buffer,"%d",WILDCARD_START(wildcardPosition[GetWildcardID(word1)]));  // the match location
@@ -1676,7 +1446,9 @@ static unsigned int UnmarkCode(char* buffer)
 	else
 	{
 		WORDP D = FindWord(word); //   set or word to unmark
-		if (D) RemoveMatchValue(D,startPosition);
+		if (!D || D->v.patternStamp != matchStamp) return 0; // not marked
+		if (trace) Log(STDUSERLOG,"unmark %s @word %d  ",word,startPosition);
+		RemoveMatchValue(D, GetWhereInSentence(D),startPosition);
 	}
 	return 0;
 }
@@ -1690,7 +1462,7 @@ static unsigned int InputCode(char* buffer)
 	if (inputCounter++ > 5) return FAILRULE_BIT;// limit per sentence reply
 	if (totalCounter++ > 15) return FAILRULE_BIT; // limit per input from user
 
-	if (trace & TRACE_OUTPUT) Log(STDUSERLOG,"\r\n");
+	if (trace & OUTPUT_TRACE) Log(STDUSERLOG,"\r\n");
 	unsigned int result;
 	char* word = ARGUMENT(1);
 	Output(word,buffer,result);
@@ -1707,17 +1479,13 @@ static unsigned int InputCode(char* buffer)
 
 static unsigned int RemoveTokenFlagsCode(char* buffer)
 {
-	int64 flags;
-	ReadInt64(ARGUMENT(1),flags);
-	tokenFlags &= -1 ^ flags;
+	tokenFlags ^= -1 ^ atoi(ARGUMENT(1));
 	return 0;
 }
 
 static unsigned int SetTokenFlagsCode(char* buffer)
 {
-	int64 flags;
-	ReadInt64(ARGUMENT(1),flags);
-	tokenFlags |= flags;
+	tokenFlags |= atoi(ARGUMENT(1));
 	return 0;
 }
 
@@ -1765,10 +1533,10 @@ static unsigned int ComputeCode(char* buffer)
         else if (!stricmp(op,"^") || !stricmp(op,"power") || !stricmp(op,"exponent")) 
         {
 			int power = (int)Convert2Integer(arg2);
-            if (power >= 1 && power <= 10)
+            if (power >= 1 && power < 6)
             {
 				value = number1;
-				while (--power) value *= number1;
+				while (--power) value *= value;
 			}
             else if (power == 0) value = 1;
 		}
@@ -1788,14 +1556,12 @@ static unsigned int ComputeCode(char* buffer)
 		else if (*op == '*' || !stricmp(op,"x") || !stricmp(op,"multiply") || !strnicmp(op,"times",4)) value = value1 * value2;
 		else if ( *op == '%' || !stricmp(op,"mod") || !strcmp(op,"modulo") || !stricmp(op,"remainder")) value = value1 % value2;
 		else if (!stricmp(op,"random")) value = random((unsigned int)(value2 - value1)) + value1; 
- 		else if (*op == '<' && op[1] == '<')  value = value1 << value2;  // BUT FLAWED if shift >= 32
-		else if (*op == '>' && op[1] == '>') value = value1 >> value2;
-		else if (*op == '^' || !stricmp(op,"exponent") || !stricmp(op,"power"))
+ 		else if (*op == '^' || !stricmp(op,"exponent") || !stricmp(op,"power"))
 		{
 			if (value2 >= 1 && value2 <= 10) // only do small powers
 			{
 				value = value1;
-				while (--value2) value *= value1;
+				while (--value2) value *= value;
 			}
 			else if (value2 == 0) value = 1;
 		}
@@ -1830,47 +1596,31 @@ static unsigned int LogCode(char* buffer)
 	if (flags && *stream == ')') ++stream; // skip end of flags
 	char name[MAX_WORD_SIZE];
 	*name = 0;
-	unsigned int result;
 	if (!strnicmp(stream,"FILE ",5)) // write data to this file
 	{
-		stream = ReadCompiledWord(stream,name); // FILE
-		stream = ReadCommandArg(stream,name,result,OUTPUT_NOQUOTES|OUTPUT_EVALCODE|OUTPUT_NOTREALBUFFER); // name of file
+		stream = ReadCompiledWord(stream,name);
+		stream = ReadCompiledWord(stream,name);
+	}
+
+	unsigned int result;
+	Output(stream,buffer,result,OUTPUT_EVALCODE | (unsigned int) flags);
+	if (*name)
+	{
 		if (*name == '"') 
 		{
 			size_t len = strlen(name);
 			name[len-1] = 0;	// remove trailing "
 		}
-
-		if (!strnicmp(stream,"new",3)) // start with a clean file
-		{
-			char junk[MAX_WORD_SIZE];
-			stream = ReadCompiledWord(stream,junk);
-			FILE* out = fopen((*name == '"') ? (name+1) : name,"wb");
-			if (out) fclose(out);
-			else return FAILRULE_BIT;
-		}
-	}
-
-	*buffer = 0;
-	++outputNest;
-	Output(stream,buffer,result,OUTPUT_EVALCODE | (unsigned int) flags);
-	--outputNest;
-	if (*name)
-	{
 		FILE* out = fopen((*name == '"') ? (name+1) : name,"ab");
 		if (out) 
 		{
 			fprintf(out,"%s",buffer);
 			fclose(out);
 		}
-		else 
-		{
-			*buffer = 0;
-			return FAILRULE_BIT;
-		}
+		else return FAILRULE_BIT;
 	}
 	else Log(STDUSERLOG,"%s",buffer);
-	if (flags & OUTPUT_ECHO && !echo) printf("%s",buffer);
+	if (flags & OUTPUT_ECHO) printf("%s",buffer);
 	*buffer = 0;
 	return 0;
 }
@@ -1882,7 +1632,6 @@ static unsigned int LogCode(char* buffer)
 
 static unsigned int FlushOutputCode(char* buffer)
 {
-	if (planning) return FAILRULE_BIT;
 	if (postProcessing)
 	{
 		ReportBug("Illegal to use ^FlushOutput during postprocessing");
@@ -1907,7 +1656,6 @@ static unsigned int InsertOutput(char* stream, char* buffer, int index)
 
 static unsigned int InsertPrintCode(char* buffer) 
 {     
-	if (planning) return FAILRULE_BIT;
 	if (postProcessing)
 	{
 		ReportBug("Illegal to use ^InsertPrePrint during postprocessing");
@@ -1941,7 +1689,6 @@ static unsigned int InsertPrintCode(char* buffer)
 
 static unsigned int PrintCode(char* buffer) 
 {     
-	if (planning) return FAILRULE_BIT;
 	if (postProcessing)
 	{
 		ReportBug("Illegal to use ^Print during postprocessing");
@@ -1960,7 +1707,6 @@ static unsigned int PrintCode(char* buffer)
 
 static unsigned int PrePrintCode(char* buffer)
 {
-	if (planning) return FAILRULE_BIT;
 	if (postProcessing)
 	{
 		ReportBug("Illegal to use ^PrePrint during postprocessing");
@@ -1981,55 +1727,6 @@ static unsigned int RepeatCode(char* buffer)
 		return FAILRULE_BIT;
 	}
 	AddRepeatable(currentRule); // local repeats allowed this volley
-	return 0;
-}
-
-static unsigned int SetPronounCode(char* buffer) 
-{  
-	// argument1 is a word to use
-	// mark(word _xxx) enable word mark at location of _xxx variable
-	char* ptr = ARGUMENT(1);
-	if (!*ptr) return FAILRULE_BIT;
-
-	unsigned int result;
-	char word[MAX_WORD_SIZE];
-	ptr = ReadShortCommandArg(ptr,word,result); // what is being marked
-	if (result & ENDCODES) return result;
-	if (!*word) return FAILRULE_BIT; // missing arg
-
-	char word1[MAX_WORD_SIZE];
-	ptr = ReadCompiledWord(ptr,word1);  // the locator
-
-	unsigned startPosition;
-	unsigned endPosition;
-	if (!*word1 || *word1 == ')') startPosition = endPosition = 1; // default mark  (ran out or hit end paren of call
-	else if (IsDigit(*word1)) endPosition = startPosition = atoi(word1); // named number as index
-	else if (*word1 == '_') //  wildcard position designator
-	{
-		startPosition = wildcardPosition[GetWildcardID(word1)] & 0x0000ffff; // the match location
-		endPosition = wildcardPosition[GetWildcardID(word1)] >> 16; 
-	}
-	else return FAILRULE_BIT;
-
-	if (startPosition < 1) startPosition = 1;
-	if (startPosition > wordCount)  startPosition = wordCount;
-	WORDP D = StoreWord(word);
-	MarkFacts(MakeMeaning(D),startPosition,startPosition);
-
-	WORDP entry;
-	WORDP canonical;
-	uint64 sysflags = 0;
-	uint64 cansysflags = 0;
-	GetPosData(0,word,entry,canonical,sysflags,cansysflags,false); // NOT first try
-	wordStarts[startPosition] = D->word; 
-	wordCanonical[startPosition] = (canonical) ? canonical->word : D->word;	
-	if (!wordCanonical[startPosition]) wordCanonical[startPosition] = D->word;
-
-	uint64 bits = D->properties & (NOUN_PROPERTIES | NOUN_BITS|NOUN_INFINITIVE|LOWERCASE_TITLE);
-	allOriginalWordBits[startPosition] = bits;
-	finalPosValues[startPosition] = bits;
-	MarkTags(startPosition);
-
 	return 0;
 }
 
@@ -2130,7 +1827,7 @@ static unsigned int ReviseOutputCode(char* buffer)
 
 static unsigned int CommandCode(char* buffer) 
 {
-	DoCommand(ARGUMENT(1),NULL,false);
+	DoCommand(ARGUMENT(1),false);
 	return 0;
 }
 
@@ -2143,7 +1840,7 @@ static unsigned int EndCode(char* buffer)
 { //   good for stopping a loop w/o stopping the rule
 	char* word = ARGUMENT(1);
 	if (!stricmp(word,"RULE")) return ENDRULE_BIT;
-	if (!stricmp(word,"TOPIC") || !stricmp(word,"PLAN")) return ENDTOPIC_BIT;
+	if (!stricmp(word,"TOPIC")) return ENDTOPIC_BIT;
 	if (!stricmp(word,"SENTENCE")) return ENDSENTENCE_BIT;
 	if (!stricmp(word,"INPUT")) return ENDINPUT_BIT;
     return FAILRULE_BIT;
@@ -2160,7 +1857,7 @@ static unsigned int FailCode(char* buffer)
 {      
 	char* word = ARGUMENT(1);
 	if (!stricmp(word,"RULE")) return FAILRULE_BIT;
-	if (!stricmp(word,"TOPIC") || !stricmp(word,"PLAN")) return FAILTOPIC_BIT;
+	if (!stricmp(word,"TOPIC")) return FAILTOPIC_BIT;
 	if (!stricmp(word,"SENTENCE")) return FAILSENTENCE_BIT;
 	if (!stricmp(word,"INPUT")) return FAILINPUT_BIT;
 	return FAILRULE_BIT;
@@ -2242,7 +1939,6 @@ static unsigned int RetryCode(char* buffer)
 	char* arg = ARGUMENT(1);
 	if (!stricmp(arg,"TOPIC"))  return RETRYTOPIC_BIT;
 	if (!stricmp(arg,"sentence"))  return RETRYSENTENCE_BIT;
-	if (!stricmp(arg,"toprule"))  return RETRYTOPRULE_BIT;
 	return RETRYRULE_BIT;
 }
 
@@ -2252,6 +1948,8 @@ static unsigned int RetryCode(char* buffer)
 
 static unsigned int BurstCode(char* buffer) //   take value and break into facts of burst-items as subjects
 {//   ^burst(^cause : )   1: data source 2: burst character
+	char result[MAX_WORD_SIZE];
+	result[0] = 0;
 
 	//   prepare spot to store pieces
 	MEANING verb;
@@ -2266,26 +1964,7 @@ static unsigned int BurstCode(char* buffer) //   take value and break into facts
 	//   get string to search for. If quoted, remove the quotes
 	char* scan = ARGUMENT(2);	//   how to burst
 	if (!*scan) scan = "_"; // default
-	else // clear any special characters
-	{
-		char* find;
-		while ((find = strstr(scan,"\\r"))) // convert cr
-		{
-			*find = '\r';
-			memmove(find+1,find+2,strlen(find)+1);
-		}
-		while ((find = strstr(scan,"\\n"))) // convert cr
-		{
-			*find = '\n';
-			memmove(find+1,find+2,strlen(find)+1);
-		}
-		while ((find = strstr(scan,"\\t"))) // convert cr
-		{
-			*find = '\t';
-			memmove(find+1,find+2,strlen(find)+1);
-		}
-	}
-	if (*scan == '"' ) // if a quoted string, remove the quotes
+	else if (*scan == '"' ) // if a quoted string, remove the quotes
 	{
 		++scan;
 		size_t len = strlen(scan);
@@ -2336,6 +2015,9 @@ static unsigned int BurstCode(char* buffer) //   take value and break into facts
 
 static unsigned int ExplodeCode(char* buffer) //   take value and break into facts of burst-items as subjects
 {
+	char result[MAX_WORD_SIZE];
+	result[0] = 0;
+
 	//   prepare spot to store pieces
 	MEANING verb;
 	MEANING object;
@@ -2372,11 +2054,7 @@ static unsigned int FlagsCode(char* buffer)
 {
 	WORDP D = FindWord(ARGUMENT(1));
 	if (!D) return FAILRULE_BIT;
-#ifdef WIN32
-	sprintf(buffer,"%I64d",D->systemFlags); 
-#else
-	sprintf(buffer,"%lld",D->systemFlags); 
-#endif
+	sprintf(buffer,"%lld",D->systemFlags);
 	return 0;
 }
 
@@ -2390,11 +2068,7 @@ static unsigned int PropertiesCode(char* buffer)
 {
 	WORDP D = FindWord(ARGUMENT(1));
 	if (!D) return FAILRULE_BIT;
-#ifdef WIN32
-	sprintf(buffer,"%I64d",D->properties); 
-#else
-	sprintf(buffer,"%lld",D->properties); 
-#endif
+	sprintf(buffer,"%lld",D->properties);
 	return 0;
 }
 static char* NextWord(char* ptr, WORDP& D,bool canon)
@@ -2405,9 +2079,7 @@ static char* NextWord(char* ptr, WORDP& D,bool canon)
 	if (canon)
 	{
 		WORDP entry,canonical;
-		uint64 sysflags = 0;
-		uint64 cansysflags = 0;
-		GetPosData(0,word,entry,canonical,sysflags,cansysflags); 
+		GetPosData(word,entry,canonical);
 		if (canonical) strcpy(word,canonical->word);
 		else if (entry) strcpy(word,entry->word);
 	}
@@ -2482,12 +2154,7 @@ static unsigned int JoinCode(char* buffer)
 		char word[MAX_WORD_SIZE];
 		char* at = ReadCompiledWord(ptr,word); 
         if (*word == ')' || !*word) break; //   done
-		if (*word == '"' && word[1] == ' ' && word[2] == '"')
-		{
-			strcpy(buffer," ");
-			ptr = at;
-		}
-		else if (*word == '"' && word[1] ==  FUNCTIONSTRING) // compiled code being joined
+		if (*word == '"' && FUNCTIONSTRING) // compiled code being joined
 		{
 			ReformatString(buffer,word+2);
 			ptr = at;
@@ -2499,13 +2166,13 @@ static unsigned int JoinCode(char* buffer)
 			if (result & ENDCODES) return result;
 			strcpy(buffer,word);
 		}
-		if (trace & TRACE_OUTPUT) Log(STDUSERLOG,"%s ",buffer);
+		if (trace & OUTPUT_TRACE) Log(STDUSERLOG,"%s ",buffer);
 		bool did = *buffer != 0;
 		buffer += strlen(buffer);
 		if (autospace && did) *buffer++ = ' '; 
     }
 	if (autospace && original != buffer) *--buffer = 0;
-	if (trace & TRACE_OUTPUT) Log(STDUSERLOG,") = %s ",original);
+	if (trace & OUTPUT_TRACE) Log(STDUSERLOG,") = %s ",original);
  	return 0;
 }
 
@@ -2513,6 +2180,7 @@ static unsigned int POSCode(char* buffer)
 {
 	char* arg1 = ARGUMENT(1);
 	char* arg2 = ARGUMENT(2);
+	if (arg2 && *arg2 == '~') ++arg2;	// concept name sans ~
 	char* arg3 = ARGUMENT(3);
 
 	if (!stricmp(arg1,"syllable"))
@@ -2581,7 +2249,7 @@ static unsigned int POSCode(char* buffer)
 			}
 			if (!*buffer) strcpy(buffer,arg2);
 		}
-		if (IsUpperCase(ARGUMENT(2)[0])) *buffer = GetUppercaseData(*buffer);
+		if (IsUpperCase(ARGUMENT(2)[0])) *buffer = toUppercaseData[*buffer];
 		return 0;
 	}
 	else if (!stricmp(arg1,"aux"))
@@ -2614,7 +2282,7 @@ static unsigned int POSCode(char* buffer)
 		}
 		else result = arg2;
 		strcpy(buffer,result);
-		if (IsUpperCase(ARGUMENT(2)[0])) *buffer = GetUppercaseData(*buffer);
+		if (IsUpperCase(ARGUMENT(2)[0])) *buffer = toUppercaseData[*buffer];
 		return 0;
 	}
 	else if (!stricmp(arg1,"pronoun"))
@@ -2648,7 +2316,7 @@ static unsigned int POSCode(char* buffer)
 				char* word = GetBurstWord(i);
 				WORDP D = FindWord(word,0,LOWERCASE_LOOKUP);
 				if (D && D->properties & LOWERCASE_TITLE); //   allowable particles and connecting words that can be in lower case
-				else *word = GetUppercaseData(*word);
+				else *word = toUppercaseData[(unsigned char)*word];
 				strcat(buffer,word);
 				if (i != (n-1)) strcat(buffer," ");
 			}
@@ -2740,7 +2408,7 @@ static unsigned int POSCode(char* buffer)
 	else if (!stricmp(arg1,"capitalize") || !stricmp(arg1,"uppercase"))
 	{
 		strcpy(buffer,arg2);
-		*buffer = GetUppercaseData(*buffer);
+		*buffer = toUppercaseData[*buffer];
 		return 0;
 	}
 	else if (!stricmp(arg1,"lowercase"))
@@ -2751,9 +2419,7 @@ static unsigned int POSCode(char* buffer)
 	else if (!stricmp(arg1,"canonical"))
 	{
 		WORDP entry,canonical;
-		uint64 sysflags = 0;
-		uint64 cansysflags = 0;
-		GetPosData(0,arg2,entry,canonical,sysflags,cansysflags);
+		GetPosData(arg2,entry,canonical);
 		if (canonical) strcpy(buffer,canonical->word);
 		else if (entry) strcpy(buffer,entry->word);
 		else strcpy(buffer,arg2);
@@ -2794,7 +2460,7 @@ static unsigned int RhymeCode(char* buffer)
 
 static unsigned int SubstituteCode(char* buffer) 
 { 
-	bool wordMode = GetLowercaseData(*ARGUMENT(1)) != 'c'; // is word or character
+	bool wordMode = toLowercaseData[*ARGUMENT(1)] != 'c'; // is word or character
 
 	// adjust substitution value
 	char* substituteValue = ARGUMENT(4);
@@ -2865,8 +2531,8 @@ static void SpellOne(WORDP D, uint64 data)
 	char* match = (char*) data;
 	if (FACTSET_COUNT(spellSet) >= 500) return; //   limit
 
-	if (!(D->properties & (NOUN | VERB | ADJECTIVE | ADVERB | DETERMINER_BITS | PRONOUN_BITS | CONJUNCTION | PREPOSITION | AUX_VERB ))) return;
-	if (D->word && !IsAlpha(*D->word)) return;
+	if (!(D->properties & (NOUN | VERB | ADJECTIVE | ADVERB | DETERMINER | PRONOUN_BITS | CONJUNCTION_BITS | PREPOSITION | AUX_VERB ))) return;
+	if (!IsAlpha(*D->word)) return;
 	if (D->properties & (NOUN_PROPER_SINGULAR | NOUN_PROPER_PLURAL | NOUN_TITLE_OF_ADDRESS)) return;	// want ordinary words
 	if (strchr(D->word,'_') ) return; // only normal words and not multi words either
 	if (MatchesPattern(D->word,match))
@@ -2917,66 +2583,25 @@ static unsigned int SexedCode(char* buffer)
 	return 0;
 }
 
-static unsigned int TallyCode(char* buffer)
-{
-	char* arg1 = ARGUMENT(1);
-	if (!*arg1)
-		return 0;
-	WORDP D = StoreWord(arg1);
-	char* arg2 = ARGUMENT(2);
-	if (!*arg2 ) sprintf(buffer,"%d",GetWordValue(D));
-	else SetWordValue(D,atoi(arg2));
-	return 0;
-}
-
-static char* xbuffer;
-
-static void DWalker(WORDP D,uint64 fn)
-{
-	if (*D->word == '$' || *D->word == ':' || *D->word == '^' || *D->word == '~' || *D->word == '%' || *D->word == '`' || *D->word == '"') return; // not real stuff
-	if (D->internalBits & HAS_SUBSTITUTE) return;
-	if (D->properties & (PUNCTUATION |COMMA|PAREN|QUOTE )) return; // " will cause a crash
-	if (strchr(D->word,' ')) return;
-	unsigned int result;
-	char* function = (char*)fn;
-	char word[MAX_WORD_SIZE];
-	sprintf(word,"( %s )",D->word);
-	DoFunction(function,word,xbuffer,result); 
-	xbuffer += strlen(xbuffer);
-}
-
-static unsigned int WalkDictionaryCode(char* buffer)
-{
-	unsigned int result;
-	xbuffer = buffer;
-	char fn[MAX_WORD_SIZE];
-	char* function = ReadCommandArg(ARGUMENT(1),fn,result,OUTPUT_NOQUOTES|OUTPUT_EVALCODE|OUTPUT_NOTREALBUFFER); 
-	if (result) return result;
-	function = fn;
-	if (*function == '\'') ++function; // skip over the ' 
-	WalkDictionary(DWalker,(uint64)function);
-	return 0;
-}
-
 
 //////////////////////////////////////////////////////////
 /// DICTIONARY
 //////////////////////////////////////////////////////////
 
-static unsigned int GetPropertyCodes(char* who,char* ptr, uint64 &val, uint64 &sysval)
+static unsigned int GetPropertyCodes(char* arg1, uint64 &val, uint64 &sysval)
 {
-	while (ptr && *ptr)
+	for (unsigned int i = 2; i < 10; ++i)
 	{
-		char arg[MAX_WORD_SIZE];
-		ptr = ReadCompiledWord(ptr,arg);
-		if (!*arg || *arg == ')') break;
+		char* arg = ARGUMENT(i);
+		if (!*arg) break;
 		if (!stricmp(arg,"CONCEPT")) 
 		{
-			if (*who != '~') return FAILRULE_BIT; // must be a concept name
-			sysval = CONCEPT;
+			if (*arg1 != '~') return FAILRULE_BIT; // must be a concept name
+			sysval = CONCEPT | buildID;
 		}
 	
 		// fact marks
+		else if (!stricmp(arg,"RECURSIVE")) val = 0;
 		else if (IsDigit(arg[0])) ReadInt64(arg,(int64&)sysval);
 		else 
 		{
@@ -2995,13 +2620,8 @@ static unsigned int GetPropertyCodes(char* who,char* ptr, uint64 &val, uint64 &s
 
 static unsigned int AddPropertyCode(char* buffer)
 {
-	char* ptr = ARGUMENT(1);
-	char arg1[MAX_WORD_SIZE];
-	unsigned int result = 0;
-	if (*ptr == '@') ptr = ReadCompiledWord(ptr,arg1); // dont eval a set
-	else ptr = ReadCommandArg(ptr,arg1,result,OUTPUT_NOQUOTES|OUTPUT_EVALCODE|OUTPUT_NOTREALBUFFER);
-	if (result) return result;
-	if (!*arg1) return FAILRULE_BIT;
+	char* arg1 = ARGUMENT(1);
+	char arg3 = *ARGUMENT(3);
 	WORDP D = NULL;
 	unsigned int store = 0;
 	unsigned int count = 0;
@@ -3009,25 +2629,20 @@ static unsigned int AddPropertyCode(char* buffer)
 	{
 		store = GetSetID(arg1);
 		count =  FACTSET_COUNT(store);
+		*ARGUMENT(3) = 0;
 	}
 	else  D = StoreWord(arg1,0); // add property to dictionary word
-	char arg3 = *GetSetType(arg1);
+	bool recursive = false;
+	if (!stricmp(ARGUMENT(2),"recursive")) recursive = true;
 
 	uint64 val = 0;
 	uint64 sysval = 0;
-	result = GetPropertyCodes(arg1,ptr,val,sysval);
+	unsigned int result = GetPropertyCodes(arg1,val,sysval);
 	if (result) return result;
-	if (D) // add to dictionary entry
+	if (D && *D->word != '~') // add to dictionary entry when not a concept or topic
 	{
-		if (sysval & (TOPIC|SUBSTITUTE_RECIPIENT|FUNCTION_NAME|FUNCTION_BITS)) return FAILRULE_BIT; // not allowed - nor are functions etc
-		if (val & NOUN_SINGULAR && D->internalBits & UPPERCASE_HASH) //make it right
-		{
-			val ^= NOUN_SINGULAR;
-			val |= NOUN_PROPER_SINGULAR;
-		}
 		AddProperty(D,val);
 		AddSystemFlag(D,sysval);
-		if (sysval & CONCEPT) AddInternalFlag(D,buildID);
 	}
 	else if (*arg1 == '@') // add to all properties of fact set
 	{
@@ -3040,19 +2655,13 @@ static unsigned int AddPropertyCode(char* buffer)
 			else
 			{
 				F->flags |= val;
-				if (trace & TRACE_INFER) TraceFact(F);
+				if (trace & INFER_TRACE) TraceFact(F);
 			}
 			if (D)
 			{
-				uint64 val1 = val;
-				if (val1 & NOUN_SINGULAR && D->internalBits & UPPERCASE_HASH) //make it right
-				{
-					val1 ^= NOUN_SINGULAR;
-					val1 |= NOUN_PROPER_SINGULAR;
-				}
-				AddProperty(D,val1);
+				AddProperty(D,val);
 				AddSystemFlag(D,sysval);
-				if (trace & TRACE_INFER) Log(STDUSERLOG," %s\n",D->word);
+				if (trace & INFER_TRACE) Log(STDUSERLOG," %s\n",D->word);
 			}
 		}
 	}
@@ -3072,10 +2681,9 @@ static unsigned int DefineCode(char* buffer)
 	char* which = ARGUMENT(2);
 	for (unsigned int i = 1; i <= GetMeaningCount(D); ++i)
 	{
-		MEANING T = GetMaster(GetMeaning(D,i)) | (GetMeaning(D,i) & TYPE_RESTRICTION);
-		unsigned int index = Meaning2Index(T);
+		MEANING T = GetMaster( D->meanings[i]);
 		WORDP E = Meaning2Word(T);
-		char* gloss = GetGloss(E,index);
+		char* gloss = GetGloss(E,i);
 		if (gloss && T & NOUN && !noun && (!*which || !stricmp(which,"NOUN")))
 		{
 			if (verb) sprintf(buffer,"As a noun it means %s. ",gloss);
@@ -3108,16 +2716,16 @@ static unsigned int DefineCode(char* buffer)
 
 static void ArgFlags(uint64& properties, uint64& flags)
 {
-	properties = FindValueByName(ARGUMENT(2));
+	properties = flags = 0;
+	properties |= FindValueByName(ARGUMENT(2));
+	flags |= FindValue2ByName(ARGUMENT(2));
 	properties |= FindValueByName(ARGUMENT(3));
-	properties |= FindValueByName(ARGUMENT(4));
-	properties |= FindValueByName(ARGUMENT(5));
-	properties |= FindValueByName(ARGUMENT(6));
-
-	flags = FindValue2ByName(ARGUMENT(2));
 	flags |= FindValue2ByName(ARGUMENT(3));
+	properties |= FindValueByName(ARGUMENT(4));
 	flags |= FindValue2ByName(ARGUMENT(4));
+	properties |= FindValueByName(ARGUMENT(5));
 	flags |= FindValue2ByName(ARGUMENT(5));
+	properties |= FindValueByName(ARGUMENT(6));
 	flags |= FindValue2ByName(ARGUMENT(6));
 }
 
@@ -3128,7 +2736,10 @@ static unsigned int HasAnyPropertyCode(char* buffer)
 	uint64 properties;
 	uint64 flags;
 	ArgFlags(properties,flags);
-	return (D->properties & properties || D->systemFlags & flags) ? 0 : FAILRULE_BIT;
+	if (!flags && !properties) return FAILRULE_BIT;
+	if (D->properties & properties) return 0; 
+	if (D->systemFlags & flags) return 0; 
+	return FAILRULE_BIT;
 }
 
 static unsigned int HasAllPropertyCode(char* buffer)
@@ -3144,14 +2755,8 @@ static unsigned int HasAllPropertyCode(char* buffer)
 
 static unsigned int RemovePropertyCode(char* buffer)
 {
-	char* ptr = ARGUMENT(1);
-	char arg1[MAX_WORD_SIZE];
-	unsigned int result = 0;
-	if (*ptr == '@') ptr = ReadCompiledWord(ptr,arg1); // dont eval a set
-	else ptr = ReadCommandArg(ptr,arg1,result,OUTPUT_NOQUOTES|OUTPUT_EVALCODE|OUTPUT_NOTREALBUFFER);
-	if (result) return result;
-	char arg3 = *GetSetType(arg1);
-	if (!*arg1) return FAILRULE_BIT;
+	char* arg1 = ARGUMENT(1);
+	char arg3 = *ARGUMENT(3); // which to act upon (s, v, o,a) when arg1 is factset
 	WORDP D = NULL;
 	unsigned int store = 0;
 	unsigned int count = 0;
@@ -3159,12 +2764,14 @@ static unsigned int RemovePropertyCode(char* buffer)
 	{
 		store = GetSetID(arg1);
 		count = FACTSET_COUNT(store);
+		if (arg3 != 's' && arg3 != 'o' && arg3 != 'v' && arg3 != 'a') return FAILRULE_BIT;
+		*ARGUMENT(3) = 0;
 	}
 	else  D = StoreWord(arg1,0); 
 
 	uint64 val = 0;
 	uint64 sysval = 0;
-	result = GetPropertyCodes(arg1,ptr,val,sysval);
+	unsigned int result = GetPropertyCodes(arg1,val,sysval);
 	if (result) return result;
 	if (D) // remove to dictionary entry
 	{
@@ -3182,13 +2789,13 @@ static unsigned int RemovePropertyCode(char* buffer)
 			else  
 			{
 				F->flags &= -1 ^ val;
-				if (trace & TRACE_INFER) TraceFact(F);
+				if (trace & INFER_TRACE) TraceFact(F);
 			}
 			if (D)
 			{
 				RemoveProperty(D,val);
 				RemoveSystemFlag(D,sysval);
-				if (trace & TRACE_INFER) Log(STDUSERLOG," %s\n",D->word);
+				if (trace & INFER_TRACE) Log(STDUSERLOG," %s\n",D->word);
 			}
 		}
 	}
@@ -3217,7 +2824,6 @@ static unsigned int DisableCode(char* buffer)
 	}
 	else if (!stricmp(arg1,"rule")) // 1st one found
 	{
-		if (planning) return FAILRULE_BIT;
 		int id = 0;
 		unsigned int topic = currentTopicID;
 		bool fulllabel;
@@ -3248,7 +2854,7 @@ static unsigned int EnableCode(char* buffer)
 		if (!stricmp(arg2,"all"))
 		{
 			unsigned int start = 0;
-			while (++start <= lastTopic) 
+			while (++start <= numberOfTopics) 
 			{
 				if (GetTopicFlags(start) & TOPIC_SYSTEM) continue;
 				RemoveTopicFlag(start,TOPIC_BLOCKED);
@@ -3263,7 +2869,6 @@ static unsigned int EnableCode(char* buffer)
 	}
 	else if (!stricmp(ARGUMENT(1),"rule")) 
 	{
-		if (planning) return FAILRULE_BIT;
 		int id = 0;
 		unsigned int topic = currentTopicID;
 		bool fulllabel;
@@ -3375,9 +2980,6 @@ static unsigned int NextCode(char* buffer)
 static unsigned int FLRCodeR(char* buffer)
 {
 	char* word = ARGUMENT(1);
-	char arg[MAX_WORD_SIZE];
-	ReadCompiledWord(word,arg);
-	word = arg;
 	if (*word == '$') word = GetUserVariable(word);
 	else if (*word == '_') word =  GetwildcardText(GetWildcardID(word), true);
 
@@ -3391,7 +2993,6 @@ static unsigned int ResetCode(char* buffer)
 	char* word = ARGUMENT(1);
 	if (!stricmp(word,"USER"))
 	{
-		if (planning) return FAILRULE_BIT;
 		ResetUser(buffer);
 #ifndef DISCARDTESTING
 		wasCommand = false;	// lie so system will save revised user file
@@ -3438,22 +3039,6 @@ static unsigned int ImportFactCode(char* buffer)
 	return (ImportFacts(ARGUMENT(1),ARGUMENT(2),ARGUMENT(3),ARGUMENT(4))) ? 0 : FAILRULE_BIT;
 }
 
-#ifdef JUNK
-#ifdef WIN32
-#pragma comment(lib,"Winmm.lib");
-#endif
-static unsigned int PlaySoundCode(char* buffer)
-{
-	char word[MAX_WORD_SIZE];
-	ReadCompiledWord(buffer,word);
-#ifdef WIN32
-	mciSendString("open output.wma type mpegvideo alias myFile", NULL, 0, 0);  
-	mciSendString("play myFile", NULL, 0, 0);  
-#endif
-	return 0;
-}
-#endif
-
 static unsigned int PopenCode(char* buffer)
 {
 	char   psBuffer[MAX_WORD_SIZE];
@@ -3479,19 +3064,19 @@ static unsigned int PopenCode(char* buffer)
 #endif
    psBuffer[0] = '(';
    psBuffer[1] = ' ';
-   psBuffer[2] = '"'; // stripable string marker
-   psBuffer[3] = '`'; // stripable string marker
+   psBuffer[2] = '"'; 
    while( !feof( pPipe ) )
    {
-		psBuffer[4] = 0;
-		if( fgets( psBuffer+4, MAX_WORD_SIZE - 5, pPipe ) != NULL )
+		psBuffer[3] = 0;
+		if( fgets( psBuffer+3, MAX_WORD_SIZE - 4, pPipe ) != NULL )
 		 {
 			unsigned int result;
 			char* p;
 			while ((p = strchr(psBuffer,'\r'))) *p = ' ';
 			while ((p = strchr(psBuffer,'\n'))) *p = ' ';
-			strcat(psBuffer,"`\" )"); // trailing quote and ending paren
-			DoFunction(function,psBuffer,buffer,result); 
+			char* actual = TrimSpaces(psBuffer);
+			strcat(actual,"\")"); // trailing quote and ending paren
+			DoFunction(function,actual,buffer,result); 
 			buffer += strlen(buffer);
 		}
    }
@@ -3501,172 +3086,6 @@ static unsigned int PopenCode(char* buffer)
    pclose( pPipe );
 #endif
    return 0;
-}
-
-static unsigned int TCPOpenCode(char* buffer)
-{
-#ifdef INFORMATION
-// POST http://de.sempar.ims.uni-stuttgart.de/parse HTTP/1.1
-// Accept: text/html, application/xhtml+xml, */*
-// Host: de.sempar.ims.uni-stuttgart.de
-// Content-Type: application/x-www-form-urlencoded
-// Content-Length: 31
-//
-// sentence=ich+bin&returnType=rdf
-
-// e.g.  TCPOpen(POST "http://de.sempar.ims.uni-stuttgart.de/parse" "sentence=ich+bin&returnType=rdf" 'myfunc)
-#endif
-
-#ifdef DISCARDTCPOPEN
-	return FAILRULE_BIT;
-#else
-	char url[MAX_WORD_SIZE];
-	char directory[MAX_WORD_SIZE];
-	char arg[MAX_WORD_SIZE];
-	char fn[MAX_WORD_SIZE];
-	char kind = 0;
-	unsigned int result;
-
-	char* ptr = ReadCompiledWord(ARGUMENT(1),url);
-	if (!stricmp(url,"POST")) kind = 'P';
-	else if (!stricmp(url,"GET")) kind = 'G';
-	else return FAILRULE_BIT;
-
-	ptr = ReadCommandArg(ptr,url,result,OUTPUT_NOQUOTES|OUTPUT_EVALCODE|OUTPUT_NOTREALBUFFER); 
-	char* dot = strchr(url,'.');
-	if (!dot) return FAILRULE_BIT;
-	char* slash = strchr(dot,'/');
-	if (slash) 
-	{
-		*slash = 0;
-		strcpy(directory,slash+1);
-	}
-	else *directory = 0;
-	ptr = ReadCommandArg(ptr,arg,result,OUTPUT_NOQUOTES|OUTPUT_EVALCODE|OUTPUT_NOTREALBUFFER); 
-	ReadCommandArg(ptr,fn,result,OUTPUT_NOQUOTES|OUTPUT_EVALCODE|OUTPUT_NOTREALBUFFER); 
-
-	// convert \" to " within params
-	char* fix;
-	while ((fix = strchr(arg,'\\'))) memmove(fix,fix+1,strlen(fix)); // remove protective backslash
-	
-	// adjust function reference name
-	char* function = fn;
-	if (*function == '\'') ++function; // skip over the ' 
-
-	unsigned int port = 0;
-	if (kind == 'P' || kind == 'G') port = 80;
-	else
-	{
-		char* colon = strchr(url,':');
-		if (colon)
-		{
-			*colon = 0;
-			port = atoi(colon+1);
-		}
-	}
-	int size = 0;
-	char* tcpbuffer = AllocateBuffer();
-	char* startContent = tcpbuffer;
-	size_t len;
-	try 
-	{
-		if (trace & TRACE_TCP) Log(STDUSERLOG,"TCP: %s %d %c %s",url,port,kind,arg);
-		TCPSocket *sock = new TCPSocket(url, (unsigned short)port);
-		if (kind == 'P')
-		{
-			if (*directory) sprintf(tcpbuffer,"POST /%s HTTP/1.1\r\n",directory);
-			else sprintf(tcpbuffer,"POST HTTP/1.1\r\n");
-			len = strlen(tcpbuffer);
-			sock->send(tcpbuffer, len );
-		}
-		else if (kind == 'G')
-		{
-			sprintf(tcpbuffer,"GET %s?%s HTTP/1.1\r\n",directory,arg);
-			len = strlen(tcpbuffer);
-			sock->send(tcpbuffer, len );
-		}
-
-		strcpy(tcpbuffer,"Accept: text/html, application/xhtml+xml, */*\r\n");
-		len = strlen(tcpbuffer);
-		sock->send(tcpbuffer, len );
-
-		sprintf(tcpbuffer,"Host: %s\r\n",url);
-		len = strlen(tcpbuffer);
-		sock->send(tcpbuffer, len );
-
-		if (kind == 'P')
-		{
-			len = strlen(arg);
-			sprintf(tcpbuffer,"Content-Type: application/x-www-form-urlencoded\r\nContent-Length: %d\r\n\r\n%s\r\n",(unsigned int) len,arg);
-			len = strlen(tcpbuffer);
-			sock->send(tcpbuffer, len );
-		}
-
-		unsigned int bytesReceived = 1;              // Bytes read on each recv()
-		unsigned int totalBytesReceived = 0;         // Total bytes read
-		char* base = tcpbuffer;
-		*base = 0;
-		bool hasContent = false;
-		int allowedBytes = maxBufferSize - 10;
-		while (bytesReceived > 0) 
-		{
-			// Receive up to the buffer size bytes from the sender
-			bytesReceived = sock->recv(base, allowedBytes);
-			allowedBytes -= bytesReceived;
-			totalBytesReceived += bytesReceived;
-			base += bytesReceived;
-			if (!hasContent && (kind == 'P' || kind == 'G' ) ) // std POST/GET http formats
-			{
-				startContent = strstr(tcpbuffer,"\r\n\r\n"); // body separator
-				if (!startContent) continue; // not found yet
-				startContent += 4;
-
-				char* len = strstr(tcpbuffer,"Content-length: "); // look for earlier size info
-				char* at = SkipWhitespace(len+16);
-				size = atoi(at); // size of body
-
-				hasContent = true;
-			}
-			if (hasContent && (base-startContent) >= size) break;	// we have enough
-		}
-		delete(sock);
-		*base++ = 0;
-		*base++ = 0;
-		// chatbot replies this
-		Log(STDUSERLOG,"tcp received: %d %s",totalBytesReceived,tcpbuffer);
-	}
-	catch(SocketException e) { Log(STDUSERLOG,"failed to connect to server %s %d\r\n",url,port); FreeBuffer(); return FAILRULE_BIT;}
-
-	// process http return for validity
-	if (kind == 'P' || kind == 'G')
-	{
-		if (strnicmp(tcpbuffer,"HTTP",4)) return FAILRULE_BIT;
-		char* space = strchr(tcpbuffer,' ');
-		space = SkipWhitespace(space);	// go to end of whitespace
-		if (trace & TRACE_TCP) Log(STDUSERLOG,"response: %s",space);
-		if (*space != '2') return FAILRULE_BIT;	// failure code of some kind
-	}
-	
-	userRecordSourceBuffer = startContent;
-	char* buf1 = AllocateBuffer();
-	buf1[0] = '(';
-	buf1[1] = ' ';
-	buf1[2] = '"'; // strippable string marker
-	buf1[3] = '`'; // strippable string marker
-	result = 0;
-	while (!result)
-	{
-		if (!ReadALine(buf1+4,0)) break;
-		if (!buf1[4]) continue;		// no content
-		char* actual = TrimSpaces(buf1);
-		strcat(actual,"`\" )"); // trailing quote and ending paren
-		DoFunction(function,actual,buffer,result); 
-		buffer += strlen(buffer);
-   }
-   FreeBuffer();
-   FreeBuffer();
-   return result;
-#endif
 }
 
 static unsigned int SystemCode(char* buffer)
@@ -3691,24 +3110,11 @@ static unsigned int SystemCode(char* buffer)
 static unsigned int CreateFactCode(char* buffer)
 { 
 	currentFact = NULL;
-	char* arg = ARGUMENT(1);
-	if (!stricmp(arg,"can~n"))
-	{
-		int xx = 0;
-	}
-	EatFact(arg); // PUTS NOTHING IN THE OUTPUT BUFFER but can be assigned from.
+	EatFact(ARGUMENT(1));
 	return (currentFact) ? 0 : FAILRULE_BIT;
 }
 
-static unsigned int CreateAttributeCode(char* buffer)
-{ 
-	currentFact = NULL;
-	EatFact(ARGUMENT(1),0,true);
-	if (currentFact && !(currentFact->flags & FACTATTRIBUTE)) return FAILINPUT_BIT;	// kill the whole line.
-	return (currentFact) ? 0 : FAILRULE_BIT; // fails if pre-existing fact cant be killed because used in fact
-}
-
-static unsigned int DeleteCode(char* buffer) //   delete all facts in collection
+static unsigned int DeleteQuerySetCode(char* buffer) //   delete all facts in collection
 {
 	int store = GetSetID(ARGUMENT(1));
 	unsigned int count = FACTSET_COUNT(store);
@@ -3716,59 +3122,31 @@ static unsigned int DeleteCode(char* buffer) //   delete all facts in collection
 	return 0;
 }
 
-static unsigned int FlushFactsCode(char* buffer) // delete all facts after this one (presuming sentence failed)
-{
-	if (planning) return FAILRULE_BIT; // dont allow this in planner
-
-	unsigned int f = atoi(ARGUMENT(1)); 
-	FACT* F = factFree;
-	if (f > Fact2Index(F)) return FAILRULE_BIT;
-	while (Fact2Index(F) > f)
-	{
-		F->flags |= FACTDEAD;	// kill it. dont have to do it recursive (KillFact) because everything that might be using this is already killed by this loop
-		--F;
-	}
-	return 0;
-}
-
 static unsigned int FieldCode(char* buffer) 
 {	
 	FACT* F;
 	char* word = ARGUMENT(1);
-	char word1[MAX_WORD_SIZE];
 	if (*word == '@') return FAILRULE_BIT;
 	F = FactTextIndex2Fact(word); 
 	if (!F || F > factFree) return FAILRULE_BIT;
 
-	WORDP xxs = Meaning2Word(F->subject); // for debugging
-	WORDP xxv = Meaning2Word(F->verb);  // for debugging
-	WORDP xxo = Meaning2Word(F->object);  // for debugging
+	WORDP s = Meaning2Word(F->subject);
+	WORDP v = Meaning2Word(F->verb);
+	WORDP o = Meaning2Word(F->object);
 	char* arg2 = ARGUMENT(2);
 	if (*arg2 == 's' || *arg2 == 'S') 
 	{
-		if (F->flags & FACTSUBJECT) 
-		{
-			if (*arg2 == 's') sprintf(buffer,"%d",F->subject);
-			else strcpy(buffer,WriteFact(Index2Fact(F->subject),false,word1,false,false));
-		}
+		if (F->flags & FACTSUBJECT) sprintf(buffer,"%d",F->subject);
 		else strcpy(buffer,WriteMeaning(F->subject));
 	}
 	else if (*arg2 == 'v' || *arg2 == 'V') 
 	{
-		if (F->flags & FACTVERB) 
-		{
-			if (*arg2 == 'v') sprintf(buffer,"%d",F->verb);
-			else strcpy(buffer,WriteFact(Index2Fact(F->verb),false,word1,false,false));
-		}
+		if (F->flags & FACTVERB) sprintf(buffer,"%d",F->verb);
 		else strcpy(buffer,WriteMeaning(F->verb));
 	}
 	else if (*arg2 == 'o' || *arg2 == 'O') 
 	{
-		if (F->flags & FACTOBJECT) 
-		{
-			if (*arg2 == 'o') sprintf(buffer,"%d",F->object);
-			else strcpy(buffer,WriteFact(Index2Fact(F->object),false,word1,false,false));
-		}
+		if (F->flags & FACTOBJECT) sprintf(buffer,"%d",F->object);
 		else strcpy(buffer,WriteMeaning(F->object));
 	}
 	else return FAILRULE_BIT;
@@ -3803,17 +3181,6 @@ static unsigned int FindCode(char* buffer) // given a set, find the ordered posi
 	return FAILRULE_BIT; 
 }
 
-static unsigned int FindFactCode(char* buffer) // given a Simple fact
-{   
-	char* arg1 = ARGUMENT(1);
-	char* arg2 = ARGUMENT(2);
-	char* arg3 = ARGUMENT(3);
-	FACT* F = FindFact(ReadMeaning(arg1,false),ReadMeaning(arg2,false),ReadMeaning(arg3,false),0); 
-	if (!F) return FAILRULE_BIT;
-	sprintf(buffer,"%d",Fact2Index(F));
-	return 0;
-}
-
 static FACT* FindF(MEANING subject,WORDP verb,uint64 marker)
 { 
 	FACT* F = GetSubjectHead(subject);
@@ -3823,11 +3190,11 @@ static FACT* FindF(MEANING subject,WORDP verb,uint64 marker)
         if (v == verb) 
 		{
 			WORDP obj = Meaning2Word(F->object);
-			if (marker != MARKED_WORD) // using a fact marking for find
+			if (marker != MARKED_WORD) 
 			{
 				if (F->flags & marker) return F;
 			}
-			else if (obj->systemFlags & marker) return F; // can use marked word flag as well
+			else if (obj->internalBits & marker) return F;
 			FACT* G = FindF(F->object,verb,marker);
 			if (G) return G;
 		}
@@ -3846,11 +3213,11 @@ static unsigned int FindMarkedFactCode(char* buffer)
 	char* mark = ARGUMENT(3);
 	int64 marker;
 	if (IsDigit(*mark)) ReadInt64(mark,marker);
-	else marker = FindValueByName(mark); // a fact marker like MARKED_FACT  or word systemflag marker like MARKED_WORD
+	else marker = FindValueByName(mark);
 	if (!marker) return FAILRULE_BIT;
 
 	FACT* F = FindF(MakeMeaning(subject),verb,marker);
-	if (trace & TRACE_INFER) 
+	if (trace & INFER_TRACE) 
 	{
 		if (F) 
 		{
@@ -3895,13 +3262,13 @@ static unsigned int IntersectFactsCode(char* buffer)
 	else //  mark set
 	{
 		unsigned toset = GetSetID(to);
-		toKind = GetLowercaseData(*GetSetType(to)); // s v o null
+		toKind = toLowercaseData[*GetSetType(to)]; // s v o null
 		unsigned int limit = FACTSET_COUNT(toset);
 		for (i = 1; i <= limit; ++i)
 		{
 			WORDP D;
 			F = factSet[toset][i];
-			if (trace & TRACE_INFER)   TraceFact(F);
+			if (trace & INFER_TRACE)   TraceFact(F);
 			if (toKind == 's') Meaning2Word(F->subject)->inferMark = usedMark;
  			else if (toKind == 'v') Meaning2Word(F->verb)->inferMark = usedMark;
  			else if (toKind == 'o') Meaning2Word(F->object)->inferMark = usedMark;
@@ -3920,13 +3287,13 @@ static unsigned int IntersectFactsCode(char* buffer)
 
     // look for matches
 	unsigned int where = GetSetID(from); 
-	char fromKind = GetLowercaseData(*GetSetType(from)); // s v o null
+	char fromKind = toLowercaseData[*GetSetType(from)]; // s v o null
     unsigned int limit = FACTSET_COUNT(where);
-  	if (trace & TRACE_INFER) Log(STDUSERLOG," // ");
+  	if (trace & INFER_TRACE) Log(STDUSERLOG," // ");
 	for (i = 1; i <= limit; ++i)
     {
         F = factSet[where][i];
- 		if (trace & TRACE_INFER)   TraceFact(F);
+ 		if (trace & INFER_TRACE)   TraceFact(F);
  		if (fromKind == 's' && Meaning2Word(F->subject)->inferMark == usedMark) AddFact(store,F);
  		else if (fromKind == 'v' && Meaning2Word(F->verb)->inferMark == usedMark) AddFact(store,F);
 		else if (fromKind == 'o' && Meaning2Word(F->object)->inferMark == usedMark) AddFact(store,F);
@@ -3939,7 +3306,7 @@ static unsigned int IntersectFactsCode(char* buffer)
 		}
     }
  	unsigned int count = FACTSET_COUNT(store);
-	if (trace & TRACE_INFER)
+	if (trace & INFER_TRACE)
 	{
 		Log(STDUSERLOG,"Found %d in IntersectFact\r\n",count);
 		for (i = 1; i <= count; ++i) TraceFact(factSet[store][i]);
@@ -3949,98 +3316,6 @@ static unsigned int IntersectFactsCode(char* buffer)
     return 0;
 }
 
-static unsigned int IteratorCode(char* buffer)
-{// ? is std iterator ?? is recursive
-	char* arg1 = ARGUMENT(1);
-	char* arg2 = ARGUMENT(2);
-	char* arg3 = ARGUMENT(3);
-	WORDP verb = FindWord(arg2);
-	if (!verb) return FAILRULE_BIT;
-	MEANING v = MakeMeaning(verb);
-	FACT* F;
-	WORDP D;
-	FACT* holdIterator = NULL;
-	if (currentIterator) // this is a return to iteration- either a normal fact or a special fact containing both hieararcy and normal fact data
-	{
-		F = Index2Fact(currentIterator);
-		if (F->flags & ITERATOR_FACT) 
-		{
-			holdIterator = F;
-			F = Index2Fact(F->object);
-		}
-		F = (*arg1 == '?') ?  GetObjectNext(F) : GetSubjectNext(F);
-	}
-	else // this is a start of iteration
-	{
-		if (*arg1 == '?') 
-		{
-			D = FindWord(arg3); // simple word, not meaning
-			F = (D) ? GetObjectHead(D) : NULL;
-		}
-		else
-		{
-			D = FindWord(arg1); // simple word, not meaning
-			F = (D) ? GetSubjectHead(D) : NULL;
-		}
-	}
-	retry: // level return if any
-	while (F)
-	{
-		if (F->verb == v)
-		{
-			if (arg1[1] == '?' || arg3[1] == '?') // recursive on concepts?
-			{
-				MEANING field = (*arg1 == '?') ? F->subject : F->object;
-				WORDP E = Meaning2Word(field);
-				if (*E->word == '~') // going to nest within
-				{
-					FACT* G = SpecialFact(holdIterator ? (holdIterator->verb) : 0,Fact2Index(F),ITERATOR_FACT); // remember where we were
-					F = (*arg1 == '?') ? GetObjectHead(E) : GetSubjectHead(E);
-					if (!holdIterator) holdIterator = SpecialFact(Fact2Index(G),Fact2Index(F),ITERATOR_FACT); // we return this as holding current level and prior level tree
-					else holdIterator->verb = Fact2Index(G);
-					continue;	// resume hunting at lower level
-				}
-			}
-			break; // found one
-		}
-		F = (*arg1 == '?') ?  GetObjectNext(F) : GetSubjectNext(F);
-	}
-	if (!F) // ran dry
-	{
-		if (holdIterator) // back out of recursive on concepts?
-		{
-			F = Index2Fact(holdIterator->verb);  // this is a special fact also
-			if (!F) return FAILRULE_BIT;		// levels ran dry
-			holdIterator->verb = F->verb;		// hold now points higher
-			F = Index2Fact(F->object);			// where we were at the higher level
-			F = (*arg1 == '?') ?  GetObjectNext(F) : GetSubjectNext(F);
-			goto retry;
-		}
-		return FAILRULE_BIT;
-	}
-	MEANING M = (*arg1 == '?') ? F->subject : F->object;
-	sprintf(buffer,"%s",WriteMeaning(M));
-	if (!withinLoop && planning && !backtrackable) backtrackable = true;
-
-	if (holdIterator)
-	{
-		holdIterator->object = Fact2Index(F); // alter we are pair of hierarchy return and current
-		F = holdIterator;
-	}
-	currentIterator = Fact2Index(F); 
-	return 0;
-}
-
-static unsigned int MakeRealCode(char* buffer)
-{
-	FACT* at = factFree+1;
-	while (--at > factLocked) // user facts
-	{
-		if (at->flags & FACTTRANSIENT) at->flags ^= FACTTRANSIENT;
-	}
-	
-	return 0;
-}
 
 static unsigned int FLRCodeL(char* buffer)
 {
@@ -4049,7 +3324,7 @@ static unsigned int FLRCodeL(char* buffer)
 
 static unsigned int QueryCode(char* buffer)
 { //   kind, s, v, o, count,  from, to, propogate, mark 
-	unsigned int count = 0;
+	unsigned int iarg1 = 0;
 	char* ptr = ARGUMENT(1);
 	int argcount = 0;
 	while (ptr && *ptr) // break apart arguments, but leave any quoted arg UNEVALED.
@@ -4067,26 +3342,18 @@ static unsigned int QueryCode(char* buffer)
 	}
 
 	for (unsigned int i = argcount+1; i <= 9; ++i) strcpy(ARGUMENT(i),""); // default rest of args to ""
-	if (IsDigit(ARGUMENT(5)[0])) ReadInt(ARGUMENT(5),count); // defaults to ? if not given
-	if (count == 0) count = (unsigned int) -1; // infinite
+	if (IsDigit(ARGUMENT(5)[0])) ReadInt(ARGUMENT(5),iarg1); // defaults to ? if not given
+	if (iarg1 == 0) iarg1 = (unsigned int) -1; // infinite
 
 	if (argcount < 9) while (++argcount <= 9) strcpy(ARGUMENT(argcount),"?"); //   default rest of calling Arguments
 	char set[50];
-	char* arg1 = ARGUMENT(1);
-	char* subject = ARGUMENT(2);
-	char* verb = ARGUMENT(3);
-	char* object = ARGUMENT(4);
-	char* from = ARGUMENT(6);
 	char* to = ARGUMENT(7);
-	char* arg8 = ARGUMENT(8);
-	char* arg9 = ARGUMENT(9);
-
 	if (impliedSet != ALREADY_HANDLED) 
 	{
 		sprintf(set,"@%d",impliedSet); 
 		to = set;
 	}
-	unsigned int result = Query(arg1, subject, verb, object, count, from, to,arg8, arg9);
+	unsigned int result = Query(ARGUMENT(1), ARGUMENT(2), ARGUMENT(3), ARGUMENT(4), iarg1, ARGUMENT(6), to,ARGUMENT(8), ARGUMENT(9));
 	// result was a count. now convert to a fail code
 	if (impliedSet != ALREADY_HANDLED) result = 0;
 	else result = (result != 0) ? 0 : FAILRULE_BIT; 
@@ -4134,7 +3401,7 @@ static unsigned int UnduplicateCode(char* buffer)
 	count = FACTSET_COUNT(impliedSet);
 	for (i = 1; i <= count; ++i) factSet[impliedSet][i]->flags ^= MARKED_FACT; 
 
-	if (trace & TRACE_INFER) Log(STDUSERLOG,"Unduplicated %d entries\r\n",count);
+	if (trace & INFER_TRACE) Log(STDUSERLOG,"Unduplicated %d entries\r\n",count);
 	impliedSet = ALREADY_HANDLED;
 	return 0;
 }
@@ -4147,26 +3414,22 @@ static unsigned int UnpackFactRefCode(char* buffer)
 	int count = FACTSET_COUNT(from);
 	char* type = GetSetType(arg1);
 	SET_FACTSET_COUNT(impliedSet,0);
-	FACT* G;
 	for (int i = 1; i <= count; ++i)
 	{
 		FACT* F = factSet[from][i];
 		if (F->flags & FACTSUBJECT && *type != 'v' && *type != 'o') 
 		{
-			G = Index2Fact(F->subject);
-			if (trace & TRACE_INFER) TraceFact(G);
+			FACT* G = Index2Fact(F->subject);
 			AddFact(impliedSet,G);
 		}
 		if (F->flags & FACTVERB && *type != 's' && *type != 'o') 
 		{
-			G = Index2Fact(F->verb);
-			if (trace & TRACE_INFER) TraceFact(G);
+			FACT* G = Index2Fact(F->verb);
 			AddFact(impliedSet,G);
 		}
 		if (F->flags & FACTOBJECT && *type != 's' && *type != 'v') 
 		{
-			 G = Index2Fact(F->object);
-			if (trace & TRACE_INFER) TraceFact(G);
+			FACT* G = Index2Fact(F->object);
 			AddFact(impliedSet,G);
 		}
 	}
@@ -4208,7 +3471,6 @@ SystemFunctionInfo systemFunctionSet[] =
 	{"^marked",MarkedCode,1,SAMELINE,"BOOLEAN - is word/concept marked in sentence"}, 
 	{"^position",PositionCode,STREAM_ARG,SAMELINE,"get FIRST or LAST position of an _ var"}, 
 	{"^setposition",SetPositionCode,1,SAMELINE,"set absolute match position"}, 
-	{"^setpronoun",SetPronounCode,STREAM_ARG,SAMELINE,"replace pronoun with word"}, 
 	{"^unmark",UnmarkCode,STREAM_ARG,SAMELINE,"remove a mark on a word/concept in the sentence"}, 
 
 	{"\r\n---- Input",0,0,0,""},
@@ -4247,7 +3509,7 @@ SystemFunctionInfo systemFunctionSet[] =
 	{"^command",CommandCode,STREAM_ARG,0,"execute a : command"}, 
 	{"^end",EndCode,1,SAMELINE,"cease current processing thru this level"}, 
 	{"^eval",EvalCode,STREAM_ARG,0,"evaluate stream"}, 
-	{"^fail",FailCode,1,SAMELINE,"return a return code of some kind - allowed to erase facts on sentence fail"}, 
+	{"^fail",FailCode,1,SAMELINE,"return a return code of some kind"}, 
 	{"^match",MatchCode,STREAM_ARG,0,"Perform given pattern match"},
 	{"^nofail",NoFailCode,STREAM_ARG,0,"execute script but ignore all failures thru some level"}, 
 	{"^notnull",NotNullCode,STREAM_ARG,0,"tests that output of stream argument is not null, fails otherwise"}, 
@@ -4266,15 +3528,13 @@ SystemFunctionInfo systemFunctionSet[] =
 	{"^substitute",SubstituteCode,VARIABLE_ARGS,0,"alter a string by substitution"}, 
 	{"^spell",SpellCode,1,0,"find words matching pattern and store as facts"}, 
 	{"^sexed",SexedCode,4,0,"pick a word based on sex of given word"}, 
-	{"^tally",TallyCode,VARIABLE_ARGS,0,"get or set a word value"},
 		
 	{"\r\n---- Dictionary",0,0,0,""},
-	{"^addproperty",AddPropertyCode,STREAM_ARG,0,"Add value to dictionary entry properies or systemFlags or facts of factset properties"}, 
+	{"^addproperty",AddPropertyCode,VARIABLE_ARGS,0,"Add value to dictionary entry properies or systemFlags or facts of factset properties"}, 
 	{"^define",DefineCode,VARIABLE_ARGS,0,"get dictionary gloss of  word"}, 
 	{"^hasanyproperty",HasAnyPropertyCode,VARIABLE_ARGS,0,"argument 1 has any of property or systemflags of argument2 .. argumentn"}, 
     {"^hasallproperty",HasAllPropertyCode,VARIABLE_ARGS,0,"argument 1 has all of the properties or systemflags of argument2 .. argumentn"}, 
-	{"^removeproperty",RemovePropertyCode,STREAM_ARG,0,"remove value to dictionary entry properies or systemFlags or facts of factset properties"},
-	{"^walkdictionary",WalkDictionaryCode,1,0,"call a function on every word in the dictionary"},
+	{"^removeproperty",RemovePropertyCode,VARIABLE_ARGS,0,"remove value to dictionary entry properies or systemFlags or facts of factset properties"},
 	
 	{"\r\n---- MultiPurpose Functions",0,0,0,""},
 	{"^disable",DisableCode,VARIABLE_ARGS,SAMELINE,"stop a rule or topic or rejoinder"}, 
@@ -4285,22 +3545,16 @@ SystemFunctionInfo systemFunctionSet[] =
 	{"^reset",ResetCode,VARIABLE_ARGS,0,"reset a topic or all topics or user back to initial state "}, 
 
 	{"\r\n---- Functions on facts",0,0,0,""},
-	{"^createattribute",CreateAttributeCode,STREAM_ARG,OWNTRACE,"create a triple where the 3rd field is exclusive"}, 
 	{"^createfact",CreateFactCode,STREAM_ARG,OWNTRACE,"create a triple"}, 
-	{"^delete",DeleteCode,1,0,""}, 
+	{"^delete",DeleteQuerySetCode,1,0,""}, 
 	{"^field",FieldCode,2,0,"get a field of a fact"}, 
 	{"^find",FindCode,2,0,"Given set, find ordinal position of item within it"},
-	{"^findfact",FindFactCode,3,0,"given simple non-facts subject verb object, see if fact exists of it"},
 	{"^findmarkedfact",FindMarkedFactCode,3,0,"given a subject,a verb, and a mark, return a marked fact that can be found propogating from subject using verb  or null"},
 	{"^first",FLRCodeF,STREAM_ARG,0,"get first element of a set and remove it"},
-	{"^flushfacts",FlushFactsCode,1,0,"erase all facts created after here"}, 
 	{"^intersectfacts",IntersectFactsCode,STREAM_ARG,0,"find facts common to two sets, based on fields"},
-	{"^iterator",IteratorCode,3,0,"walk facts of some thing"},
-	{"^makereal",MakeRealCode,0,0,"make all transient facts non-transient"},
-
 	{"^last",FLRCodeL,STREAM_ARG,0,"get last element of a set and remove it"},
 	{"^query",QueryCode,STREAM_ARG,0,"hunt for fact in fact database"},
-	{"^sort",SortCode,STREAM_ARG,0,"sort facts on named set-field (presumed number) low to high"},
+	{"^sort",SortCode,STREAM_ARG,0,""},
 	{"^save",SaveCode,2,0,"mark fact set to be saved into user data"},
 	{"^unduplicate",UnduplicateCode,1,0,"remove duplicate facts"},
 	{"^unpackfactref",UnpackFactRefCode,1,0,"copy out fields which are facts"}, 
@@ -4310,7 +3564,6 @@ SystemFunctionInfo systemFunctionSet[] =
 	{"^import",ImportFactCode,4,SAMELINE,"read fact set from a file"}, 
 	{"^system",SystemCode,STREAM_ARG,SAMELINE,"send command to the operating system"},
 	{"^popen",PopenCode,STREAM_ARG,SAMELINE,"send command to the operating system and read reply strings"},
-	{"^tcpopen",TCPOpenCode,STREAM_ARG,SAMELINE,"send command to website and read reply strings"},
 
 	{0,0,0,0,""}	
 };

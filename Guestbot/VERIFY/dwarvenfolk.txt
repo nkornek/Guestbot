@@ -1,0 +1,6 @@
+ ~dwarvenfolk.0.0 #!x This topic is a sample of a simple topic, with good indentation style.
+ ~dwarvenfolk.0.0 #!x It is well commented with annotations for :abstractt and :verify.
+     ~dwarvenfolk.0.1 #! Speaking of those dwarves...
+     ~dwarvenfolk.0.2 #! Don't you feel cut off from the rest of the world?
+     ~dwarvenfolk.0.3 #! The villagers are real suspicious of a bunch of dwarvish miners living in the forest. Aren't you?
+     ~dwarvenfolk.0.4 #! Are you sure you haven't been imprisoned by these dwarves?

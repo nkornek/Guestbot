@@ -1,11 +1,3 @@
-concept: ~sense_hear (loud noisy quiet silent soft )
-concept: ~sense_smell (acidy acrid aromatic balmy briny burnt damp dank earthy fishy fragrant fresh gaseous heady mildewed moldy musty odorous perfumed piney pungent putrid rancid reeking 
-          rotten savory scented sharp sickly sour spicy spoiled stagnant sweet )
-concept: ~sense_taste (alkaline bitter bittersweet bland burnt buttery cheesy crisp fishy fruity gingery hearty juicy luscious medicinal mellow oily overripe peppery raw ripe rotten 
-          salty sour spicy spoiled sugary sweet tangy taste tasty unripe vinegary )
-concept: ~sense_touch (bumpy cold cool~a crisp~a damp dry~a dull elastic fleshy fragile furry fuzzy gritty hairy hard icy leathery lukewarm mushy oily prickly rubbery sandy satiny sharp~a 
-          silky slippery smooth soft spongy steamy sticky tender~a tepid thick~a thin~a tough~a velvety warm~a waxy wet woolly )
-
 concept: ~ability_adjectives (capable~a competent~a impossible~a incapable~a incompetent~a possible~a potential~a )
 concept: ~adjectives (~COGNITION_ADJECTIVES ~COMPARISON_ADJECTIVES ~INTELLIGENCE_ADJECTIVES ~INTENSIFIER_ADJECTIVES ~PHYSICAL_PROPERTIES_ADJECTIVES ~RELATIONAL_ADJECTIVES ~TIME_ADJECTIVES 
           ~WEATHER_ADJECTIVES )
@@ -54,13 +46,13 @@ concept: ~gas_adjectives (gaseous~a gas~a plasma~a )
 concept: ~gender_adjectives (female~a hermaphroditic~a male~a neuter~a )
 concept: ~good_appearance (attractive_looking attractive~a beautiful~a good-looking~a good_looking gorgeous~a great_looking handsome~a lovely~a nice~a pretty~a scenic~a stunning~a )
 concept: ~good_intelligence_adjectives (acute~a adept~a agile~a alert~a apt~a astute~a ball~a bold~a brainy~a bright~a brilliant~a brisk~a canny~a clever~a crafty~a effective~a eggheaded~a 
-          genius~a good~a ingenious~a keen~a knowing~a nervy~a nimble~a on pert~a pointed~a quick-witted~a quick~a ready~a resourceful~a sassy~a sharp~a shrewd~a  wise~a )
+          genius~a good~a ingenious~a keen~a knowing~a nervy~a nimble~a on pert~a pointed~a quick-witted~a quick~a ready~a resourceful~a sassy~a sharp~a shrewd~a the wise~a )
 concept: ~good_quality_adjectives (best~a excellent~a fine~a first-rate~a good~a great~a matchless~a outstanding~a peerless~a superb~a superior~a unrivaled~a )
 concept: ~hardness_adjectives (hard~a impenetrable~a malleable~a soft~a )
 concept: ~health_adjectives (alive~a dead~a dying~a extinct~a healthy~a sickly~a sleeping~a )
 concept: ~insult_psychology_adjectives (abrasive~a abrupt~a abusive~a aloof~a arrogant~a awful~a bad~a belligerent~a boorish~a boring~a callous~a careless~a clumsy~a combative~a cowardly~a 
-          crazy~a creepy~a cruel~a deceitful~a defective~a demonic~a deranged~a disagreeable~a disturbed~a domineering~a evil~a filthy~a foolish~a greedy~a gruesome~a grumpy~a harsh~a horrible~a 
-          ignorant~a lacking~a lazy~a malicious~a mean~a mellow~a naive~a nasty~a noisy~a obnoxious~a pathetic~a quarrelsome~a repulsive~a ruthless~a selfish~a silly~a snobbish~a spendthrift~a 
+          crazy~a creepy~a cruel~a deceitful~a defective~a demonic~a deranged~a disagreeable~a disturbed~a domineering~a evil~a filthy~a foolish~a greedy~a gruesome~a grumpy~a horrible~a 
+          ignorant~a lacking~a lazy~a malicious~a mean~a naive~a nasty~a noisy~a obnoxious~a pathetic~a quarrelsome~a repulsive~a ruthless~a selfish~a silly~a snobbish~a spendthrift~a 
           stingy~a strange~a sulky~a tacky~a terrible~a thoughtless~a tiresome~a truculent~a undesirable~a unsuitable~a uptight~a vengeful~a venomous~a vulgar~a wicked~a worthless~a 
           wretched~a )
 concept: ~intelligence_adjectives (~BAD_INTELLIGENCE_ADJECTIVES ~GOOD_INTELLIGENCE_ADJECTIVES )
@@ -82,7 +74,6 @@ concept: ~orientation_adjectives (diagonal~a erect~a horizontal~a kneeling~a pro
 concept: ~origin_adjectives (American~a eastern~a French~a Greek~a lunar~a )
 concept: ~perception_adjectives (fuzzy~a invisible~a visible~a )
 concept: ~permission_adjectives (dutiful~a illegal~a illicit~a legal~a licit~a necessary~a obligatory~a required~a unauthorized~a )
-
 concept: ~physical_properties_adjectives (~AGE_ADJECTIVES ~ANIMATION_ADJECTIVES ~APPEARANCE_ADJECTIVES ~CONTAINMENT_ADJECTIVES ~DENSITY_ADJECTIVES ~economic_adjectives ~ENERGY_ADJECTIVES ~ESTHETIC_ADJECTIVES 
           ~EVALUATION_ADJECTIVES ~FUNCTIONALITY_ADJECTIVES ~HARDNESS_ADJECTIVES ~LOCATIONAL_ADJECTIVES ~MASS_ADJECTIVES ~MATERIALS_ADJECTIVES ~MOISTURE_ADJECTIVES ~MOTION_ADJECTIVES 
           ~ORIENTATION_ADJECTIVES ~ORIGIN_ADJECTIVES ~QUANTITY_ADJECTIVES ~SHAPE_ADJECTIVES ~SIZE_ADJECTIVES ~SOUND_ADJECTIVES ~STATES_OF_MATTER_ADJECTIVES ~TASTE_ADJECTIVES ~TEMPERATURE_ADJECTIVES 
@@ -100,10 +91,9 @@ concept: ~psychology_adjectives (~INSULT_PSYCHOLOGY_ADJECTIVES adaptable~a adora
           self-assured~a sensitive~a shrewd~a sincere~a skilful~a slow~a smiling~a sneaky~a sore~a splendid~a squeamish~a steadfast~a stimulating~a strict~a successful~a succinct~a 
           talented~a tense~a testy~a thick-skinned~a thoughtful~a threatening~a thrifty~a tight~a timid~a tired~a tough~a troubled~a trustworthy~a typical~a unbiased~a unsure~a unusual~a 
           upbeat~a upset~a vague~a vigorous~a vivacious~a volatile~a voracious~a warm~a wary~a wasteful~a weak~a weary~a willing~a wise~a witty~a wonderful~a worried~a zany~a zealous~a )
-
 concept: ~quantity_adjectives (~FEW ~MUCH middling~a several~a some~a )
 concept: ~relational_adjectives (criminal~a )
-concept: ~sensation_adjectives (hungry~a thirsty~a tired~a)
+concept: ~sensation_adjectives (hungry~a )
 concept: ~shape_adjectives ADJECTIVE ADJECTIVE_NORMAL (acicular~a allantoid~a amygdaloid~a ancistroid~a ancoral~a angular~a ankyroid~a annodated~a ansate~a apsidal~a arborescent~a arcate~a 
           arcuate~a arietinous~a aspidate~a auriform~a baculiform~a balanoid~a belemnoid~a beloid~a belonoid~a branching~a broken~a buccinal~a cannular~a cardioid~a carinated~a cassideous~a 
           ceratoid~a choanoid~a chubby~a cingular~a circinate~a circular~a clathrate~a clavate~a clithridiate~a clustered~a clypeate~a cochlear~a conglobate~a conical~a coracoid~a cordate~a 
@@ -111,7 +101,7 @@ concept: ~shape_adjectives ADJECTIVE ADJECTIVE_NORMAL (acicular~a allantoid~a am
           furcular~a galeated~a globular~a helicoid~a helminthoid~a hexagonal~a hollow~a hyoid~a hypsiloid~a ichthyomorphic~a irregular~a lambdoid~a ligulate~a lobular~a lumpy~a lunate~a 
           lunulate~a mitrate~a navicular~a nephroid~a olivary~a omegoid~a ooidal~a ophiomorphic~a oval~a oviform~a padded~a palaceous~a pendulous~a portly~a proportional~a pyramidal~a 
           rectangular~a rotund~a round~a ruffled~a scalloped~a square~a swollen~a top-heavy~a triangular~a tubular~a tufted~a wavy~a winged~a wiry~a )
-concept: ~size_adjectives (astronomical~a big~a enormous~a huge~a infinitesimal~a large~a small~a thick~a thin~a tiny~a wee~a little~a)
+concept: ~size_adjectives (astronomical~a big~a enormous~a huge~a infinitesimal~a large~a small~a thick~a thin~a tiny~a wee~a )
 concept: ~social_adjectives (~COMMUNICATION_ADJECTIVES Catholic~a dominant~a )
 concept: ~solids_adjectives (amorphous~a crystalline~a solid~a )
 concept: ~sound_adjectives (loud~a noisy~a quiet~a silent~a )

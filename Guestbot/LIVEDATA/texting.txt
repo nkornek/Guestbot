@@ -10,21 +10,15 @@
  <cu ~emogoodbye
  <cya ~emogoodbye
  <cyal8r ~emogoodbye
- pwn dominate
  <gn ~emogoodbye
  <gnstdltbbb ~emogoodbye
  <l8r ~emogoodbye
  <l8r_l8r ~emogoodbye
  <lmao ~emolaugh
  <lmfao ~emolaugh
- ofc of+course 
  <logoff ~emogoodbye
  <logout ~emogoodbye
  <lolwut ~emosurprise
- <lulz> ~emolaugh
- doodz dudes
- d0xxes document
- d0x document
  <n ~no
  <omg ~emosurprise
  <rofl ~emolaugh
@@ -63,6 +57,7 @@
  brb be+right+back
  btw by+the+way
  c_u see+you
+ cos because
  coz because
  hbu how+about+you
  hv have
@@ -72,10 +67,8 @@
  luv love
  me_2 me+too
  plz please
- r are
  tmr tomorrow
  tnx thanks
- u you
  ur your
  urs yours
  urself yourself

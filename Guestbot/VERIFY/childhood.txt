@@ -13,8 +13,8 @@
      ~childhood.2.9 #! yes
      ~childhood.2.10 #! no 
  ~childhood.5.0 #! did you ever run away?
- ~childhood.6.0 #! how was your childhood?
- ~childhood.7.0 #! how were you as a kid?
- ~childhood.8.0 #!!K what scares you?
+ ~childhood.6.0 #! how was your childhood
+ ~childhood.7.0 #! how were you was a kid
+ ~childhood.8.0 #! what scares you?
  ~childhood.9.0 #! what is your earliest childhood memory?
  ~childhood.10.0 #! tell me your history

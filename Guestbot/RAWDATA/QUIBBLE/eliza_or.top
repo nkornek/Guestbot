@@ -1,4 +1,4 @@
-topic: ~QUIBBLE_OR system random () #          when all else fails, try here. Presumes no existence of real knowledge about us or the world. 
+topic: ~QUIBBLE_OR system random erase() #          when all else fails, try here. Presumes no existence of real knowledge about us or the world. 
 ?: WHY1 ($fail ) [Studies show that most people list their favorite choice first, so I tried to pick what you might have liked most. ] [It was a random pick. ] [I just liked it more ] 
 ?: WHY2 ($fail ) [Studies show that most people list their favorite choice last, so I tried to pick what you might have liked most. ] [It was a random pick. ] [I liked the other one less ] 
 ?: CHOICE11 (do you like {to } _* or _* ~choose {to } _* ) [I like _0 ] [I'd rather _2 ] 

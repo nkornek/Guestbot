@@ -16,9 +16,7 @@ Portugues Portuguese \n Polski Polish \n  Norsk Norwegian \n English English \n 
 table: ~geofact  (^country ^language ) 
 ^createfact(^language member ~languages)
 ^createfact(^language language ^country)
-^addproperty(^language NOUN NOUN_PROPER_SINGULAR)
-^addproperty(^country  NOUN_PROPER_SINGULAR NOUN LOCATIONWORD ALWAYS_PROPER_NAME_MERGE)
-
+^addProperty(^country ALWAYS_PROPER_NAME_MERGE)
 DATA:
 Albania Albanian
 Algeria Arabic
@@ -149,7 +147,7 @@ table: ~country (^nationality ^nation ) # also concept: ~Nationalities
 ^createfact(^nation member ~country)
 ^createfact(^nationality member ~nationalities)
 ^createfact(^nationality nationality ^nation)
-^addproperty(^nation  NOUN_PROPER_SINGULAR NOUN LOCATIONWORD ALWAYS_PROPER_NAME_MERGE)
+^addproperty(^nation  NOUN_PROPER_SINGULAR NOUN)
 
 DATA:
 Frenchy France \n Samoan Samoa \n French France \n German Germany \n Spanish Spain \n Hungarian Hungary \n Finnish Finland \n
@@ -172,7 +170,7 @@ concept:  ~countryadjective() # otherwise definition is hidden and unknown
 
 table: ~countryof (^countryadjective ^country ) # also concept: ~countryadjective 
 ^createfact(^countryadjective member ~countryadjective)
-^addproperty(^countryadjective ADJECTIVE ADJECTIVE_NORMAL)
+^addproperty(^countryadjective ADJECTIVE POSSESSIVE)
 ^addproperty(^country NOUN   NOUN_PROPER_SINGULAR)
 ^createfact(^country member ~country)
 ^createfact(^countryadjective adjective ^country)
@@ -330,12 +328,14 @@ concept: ~capital()
 
 table: ~capital (^base ^city)
 #_7 = join(^city _ , _ ^base)
-^addproperty(^base  NOUN_PROPER_SINGULAR NOUN LOCATIONWORD ALWAYS_PROPER_NAME_MERGE)
+^addproperty(^city    NOUN_PROPER_SINGULAR NOUN)
+^addproperty(^base   NOUN_PROPER_SINGULAR NOUN)
+^addProperty(^base ALWAYS_PROPER_NAME_MERGE)
+#^createfact(^city refine _7)
 ^createfact(^city part ^base)
 ^createfact(^city member ~capital)
 ^createfact(^city  member  ~city)
-^addproperty(^city  NOUN_PROPER_SINGULAR NOUN LOCATIONWORD ALWAYS_PROPER_NAME_MERGE)
-
+^addProperty(^city ALWAYS_PROPER_NAME_MERGE)
 DATA:
 
 # state Capitals
@@ -602,9 +602,9 @@ table: ~geography  (^relation ^base ^class ^piece)
 ^addProperty(^piece ALWAYS_PROPER_NAME_MERGE)
 ^createfact(^piece member ^class)
 if (^base != *) {
-	^addproperty(^base   NOUN_PROPER_SINGULAR NOUN LOCATIONWORD ALWAYS_PROPER_NAME_MERGE)
+	^addproperty(^base   NOUN_PROPER_SINGULAR NOUN)
 	^createfact(^piece ^relation ^base)
-	^addproperty(^piece   NOUN_PROPER_SINGULAR NOUN LOCATIONWORD ALWAYS_PROPER_NAME_MERGE)
+	^addProperty(^base ALWAYS_PROPER_NAME_MERGE)
 }
 DATA:
 
@@ -630,7 +630,7 @@ DATA:
  part Antarctica ~geographic_areas South_Pole
  part Earth ~earthregion Middle_East
  part North_America ~nAregion [Central_America North_American_Mainland]
- part North_American_Mainland ~country [Canada "United States of America" (United_States U.S. USA America U.S.A.) United_States]
+ part North_American_Mainland ~country [Canada "United States of America" (United_States U.S. USA America U.S.A.)]
  part Europe ~country [Switzerland Norway  Iceland Andorra Vatican_City (Catican "Holy See") Monaco]
  part Europe ~country [ "Most Serene Republic of San Marino" (San_Marino) Belarus Ukraine "Republic of Moldova" (Moldova)]
  part Europe ~country [ Serbia Croatia Albania "Republic of Macedonia" (Macedonia)  Montenegro]
@@ -1121,8 +1121,6 @@ table: ~currencies (^country ^currency ^exchangerate )
 ^createfact(^currency currency ^country)
 ^createfact(^currency currency ^country)
 ^createfact(^exchangerate exchange_rate ^country)
-^addproperty(^country   NOUN_PROPER_SINGULAR NOUN LOCATIONWORD ALWAYS_PROPER_NAME_MERGE)
-
 
  DATA:
  "Serbia" "Serbian dinar"  0.02
@@ -1249,7 +1247,6 @@ table: ~currencies (^country ^currency ^exchangerate )
   "Sultanate_of_Oman" "Omani rial" 0.3845
   "Republic_of_Maldives" "rufiyaa" 12.8
   "Mexico" "Mexican peso" 10.899
-  "Mexico" peso 10.899
   "Malaysia" "ringgit" 3.6683
   "Mozambique" "meticai" 25.4
   "Niue" "New Zealand dollar" 1.5408
@@ -1334,8 +1331,8 @@ table: ~currencies (^country ^currency ^exchangerate )
 
   
 table: ~geography  (^relation ^base ^piece)
-^addproperty(^base   NOUN_PROPER_SINGULAR NOUN LOCATIONWORD ALWAYS_PROPER_NAME_MERGE)
-^addproperty(^piece   NOUN_PROPER_SINGULAR NOUN LOCATIONWORD ALWAYS_PROPER_NAME_MERGE)
+^addproperty(^base   NOUN_PROPER_SINGULAR NOUN)
+^addproperty(^piece   NOUN_PROPER_SINGULAR NOUN)
 ^createfact(^piece ^relation ^base)
 DATA:
 

@@ -15,16 +15,11 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTH
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #endif
 
-#define INPUT_BUFFER_SIZE   4000
-#define MAX_BUFFER_SIZE		80000
-
 // These can be used to shed components of the system to save space
- // #define DISCARDSERVER 1
- // #define DISCARDSCRIPTCOMPILER 1
- // #define DISCARDPARSER 1
- // #define DISCARDTESTING 1
- // #define DISCARDCLIENT 1
- // #define DISCARDTCPOPEN
+// #define DISCARDSERVER 1
+// #define DISCARDSCRIPTCOMPILER 1
+// #define DISCARDTESTING 1
+// #define DISCARDPARSER 1
 #ifdef WIN32
 #define DISCARDDICTIONARYBUILD 1 // only a windows version can build a dictionary from scratch
 #else
@@ -34,8 +29,9 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 // These can be used to include LINUX EVSERVER component - this is automatically done by the makefile in src
 // #define EVSERVER 1
 
-// These can be used to embed chatscript within another application (then you must call InitSystem on startup yourself)
+// These can be used to embed chatscript within another application (then you must call InitSystem, InitStandalone on startup yourself)
 // #define NOMAIN 1
+
 
 typedef unsigned long long int  uint64;
 typedef signed long long  int64;
@@ -100,7 +96,7 @@ typedef signed long long  int64;
 #include <exception>  
 #include <fcntl.h>
 #include <iostream>
-//#include <map>
+#include <map>
 #include <math.h>
 #include <memory.h>
 #include <setjmp.h>
@@ -118,6 +114,11 @@ typedef signed long long  int64;
 #include <vector>
 
 using namespace std;
+
+typedef std::map <int, uint64> Bit64Map;
+typedef std::map <const char*, const char*> CharCharMap;
+typedef std::map <const char*, unsigned int> CharIntMap;
+typedef std::map <const char*, float> CharFloatMap;
 
 #undef WORDP //   remove windows version (unsigned short) for ours
 

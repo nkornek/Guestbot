@@ -1,3 +1,2 @@
- 7-membered ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL ) 
+ 7-membered ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL BASIC_FORM ) 
     seven-membered~1a 
- 7/8 ( NOUN NOUN_SINGULAR KINDERGARTEN ) 

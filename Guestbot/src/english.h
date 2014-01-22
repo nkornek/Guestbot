@@ -23,18 +23,12 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 #define GetInfinitive(word,nonew) (*P_GetInfinitive)(word,nonew)
 #define GetSingularNoun(word,initial,nonew) (*P_GetSingularNoun)(word,initial,nonew)
 #define GetPluralNoun(word) (*P_GetPluralNoun)(word)
-#define SetSentenceTense(start,end) (*P_SetSentenceTense)(start,end)
-
-#define MAX_CLAUSES 25
+#define SetTense() (*P_SetTense)()
 
 extern unsigned int posTiming;
-extern unsigned char quotationInProgress;
-extern unsigned int roleIndex;
-extern unsigned int needRoles[MAX_CLAUSES]; 
-extern unsigned char verbStack[MAX_CLAUSES];
-void SetRole(unsigned int i, uint64 role, bool revise = false, unsigned int currentVerb = verbStack[roleIndex]);
 
-uint64 GetPosData(unsigned int at, char* original,WORDP &entry,WORDP &canonical,uint64 &sysflags,uint64 &cansysflags, bool firstTry = true,bool nogenerate = false,unsigned int start = 0);
+uint64 GetPosData(char* original,WORDP &entry,WORDP &canonical,bool firstTry = true,bool nogenerate = false);
+
 char* English_GetAdjectiveBase(char* word,bool nonew);
 char* English_GetAdverbBase(char* word,bool nonew);
 char* English_GetPastTense(char* word);
@@ -44,10 +38,6 @@ char* English_GetThirdPerson(char* word);
 char* English_GetInfinitive(char* word,bool nonew);
 char* English_GetSingularNoun(char* word,bool initial,bool nonew);
 char* English_GetPluralNoun(WORDP noun);
-void English_SetSentenceTense(unsigned int start, unsigned int end);
-uint64 ProbableAdjective(char* original, unsigned int len);
-uint64 ProbableAdverb(char* original, unsigned int len);
-uint64 ProbableNoun(char* original,unsigned int len);
-uint64 ProbableVerb(char* original,unsigned int len);
-bool IsDeterminedNoun(unsigned int i,unsigned int& det);
+void English_SetTense();
+
 #endif

@@ -1,4 +1,4 @@
-topic: ~QUIBBLE_WHO system random () 
+topic: ~QUIBBLE_WHO system random erase() 
 # WHO
 ?: (whoever * should be ) [I'll tell them that. ] [Yes, but who is that? ] 
 ?: (["who be they" "who be them" ] ) [The shadow conspiracy. ] [Have you trying googling them? ] 

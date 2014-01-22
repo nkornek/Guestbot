@@ -1,6 +1,6 @@
 
 
-topic: ~QUIBBLE_MISC system  random () #          when all else fails, try here. Presumes no existence of real knowledge about us or the world.
+topic: ~QUIBBLE_MISC system  random erase() #          when all else fails, try here. Presumes no existence of real knowledge about us or the world.
 # Asked yes no question--  dont use these if it is a CHOICE question (rather x or y?)
 u: (the future) All the future does is ruin the present.
 u: (you avoid * questions) [Some questions are best left without answers.][You ask a lot of questions.]
@@ -74,7 +74,7 @@ u: (I *~2 have * problem) [Why are you having problems?][What is the nature of t
 s: (I be always right) [That is not true.][No one is always right.][OK, tell me a stock that will go up next week.]
 u: (explain) [Explanations get in the way of intuitive understanding.][If you didn't get it originally, I doubt my explaining will help things.][I leave explanations to scientists.]
 s: (I did not say) [So what did you really mean?][So what did you say?][Maybe you meant that.]
-u: (["it be" "be it"] lucky [to that]) [I suppose.][I guess so.]
+u: (["it is" "is it"] lucky [to that]) [I suppose.][I guess so.]
 u: (you * right now) [I hate to rush into things.][b: I'm kind of busy right now.][Maybe later.]
     b: ( what) I'm busy talking to you.
 s: ( I will stop) [Good.][Glad to hear it.][Fine.][Does that mean I should stop too?]
@@ -467,7 +467,7 @@ s: (* about you ) [All right..... let's talk about me..... ] [OK Let's talk abou
 ?: THEY_SAY (they * say ) [Who says? Can you ever trust the anonymous they? ] [I suppose they do. ] 
 
 #------------------- OTHER generic things
-?: HAVE_LOT (have "a lot" ) [For example? ] [b: How much is a lot? ] 
+?: HAVE_LOT (have a lot ) [For example? ] [b: How much is a lot? ] 
     b: (_~number ) [_0 isn't that much. ] [  Wow, '_0 is more than I was expecting. ] 
     b: (* ) So you can't actually quantify it. 
 

@@ -10,3 +10,4 @@
  i I
  -_-
 
+  a_lot  ![of]"a_lot"  # except for "a lot of fun"

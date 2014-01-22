@@ -20,6 +20,6 @@ extern unsigned int positionStart;
 extern unsigned int positionEnd;
 
 bool MatchesPattern(char* word, char* pattern);
-bool Match(char* ptr, unsigned int depth, int startposition,char kind,bool wildstart,unsigned int& gap,unsigned int& wildcardSelector,unsigned int &returnStart,unsigned int& returnEnd, bool reverse = false );
+bool Match(char* ptr, unsigned int depth, int startposition,char kind,bool wildstart,unsigned int& gap,unsigned int& wildcardSelector,unsigned int &returnStart,unsigned int& returnEnd );
 
 #endif

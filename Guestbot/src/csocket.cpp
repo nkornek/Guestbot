@@ -1,5 +1,8 @@
 // csocket.cpp - handles client/server behaviors  (not needed in a product)
 
+bool echoServer = false;
+char* outputFeed;
+
 /*
  *   C++ sockets on Unix and Windows Copyright (C) 2002 --- see HEADER file
  */
@@ -31,9 +34,6 @@ serverFinishedBy is what time the answer must be delivered (1 second before the 
 
 #include "common.h"
 
-bool echoServer = false;
-char outputFeed[MAX_BUFFER_SIZE];
-
 #ifdef WIN32
 static bool initialized = false; // winsock init
 #endif
@@ -44,9 +44,6 @@ char serverIP[100];
 #define DOSOCKETS 1
 #endif
 #ifndef DISCARDCLIENT
-#define DOSOCKETS 1
-#endif
-#ifndef DISCARDTCPOPEN
 #define DOSOCKETS 1
 #endif
 
@@ -253,6 +250,8 @@ void TCPServerSocket::setListen(int queueLen) throw(SocketException) {
 }
 
 #endif
+
+
 
 #ifndef DISCARDCLIENT
 
@@ -647,22 +646,22 @@ void InternetServer()  //LINUX
  
 void GetLogLock()
 {
-	if (!quitting) EnterCriticalSection(&LogCriticalSection);
+	EnterCriticalSection(&LogCriticalSection);
 }
 
 void ReleaseLogLock()
 {
-	if (!quitting) LeaveCriticalSection(&LogCriticalSection);
+	LeaveCriticalSection(&LogCriticalSection);
 }
 
 void GetTestLock()
 {
-	if (!quitting) EnterCriticalSection(&TestCriticalSection);
+	EnterCriticalSection(&TestCriticalSection);
 }
 
 void ReleaseTestLock()
 {
-	if (!quitting) LeaveCriticalSection(&TestCriticalSection);
+	LeaveCriticalSection(&TestCriticalSection);
 }
 
 static bool ClientGetChatLock()
@@ -749,6 +748,7 @@ void InternetServer()
 	CloseHandle( hChatLockMutex );
 	DeleteCriticalSection(&TestCriticalSection);
 	DeleteCriticalSection(&LogCriticalSection);
+	myexit("end of internet server");
 }
 
 #endif
@@ -756,7 +756,7 @@ void InternetServer()
 static void ServerTransferDataToClient()
 {
     strcpy(clientBuffer+SERVERTRANSERSIZE,outputFeed);  
-    clientBuffer[sizeof(int)] = 0; // mark we are done.... 
+    clientBuffer[sizeof(int)] = 0; // mark we are done....
 #ifndef WIN32
     pendingClients--;
 	pthread_cond_signal( &server_done_var ); // let client know we are done
@@ -784,7 +784,7 @@ static void* Done(TCPSocket * sock,char* memory)
 		size_t len = strlen(output);
 		if (len)  sock->send(output, len);
 	}
-	catch(...) {ReportBug("sending failed\r\n");}
+	catch(...) {printf("sending failed\r\n");}
 	delete sock;
 	free(memory);
 	return NULL;
@@ -798,7 +798,7 @@ static void* HandleTCPClient(void *sock1)  // individual client, data on STACK..
 	char* output = memory+SERVERTRANSERSIZE;
 	*output = 0;
 	char* buffer = memory + sizeof(unsigned int); // reserve the id of the fileread buffer
-	*((unsigned int*)memory) = 0; // will be the volley count when done
+	*((unsigned int*)memory) = 0; // unused user cache buffer id... we can't preread unthreadsafe.
 	TCPSocket *sock = (TCPSocket*) sock1;
 	char IP[20];
 	*IP = 0;
@@ -820,45 +820,37 @@ static void* HandleTCPClient(void *sock1)  // individual client, data on STACK..
 	char* msg;
 	// A user name with a . in front of it means tie it with IP address so it remains unique 
 	try{
-		char* p = buffer; // current end of content
+		char* p = buffer;
 		int len = 0;
 		int strs = 0;
 		user = buffer;
-		char* at = buffer; // where we read a string starting at
 		while (strs < 3) // read until you get 3 c strings... java sometimes sends 1 char, then the rest... tedious
 		{
 			unsigned int len1 = sock->recv(p, SERVERTRANSERSIZE-50); // leave ip address in front alone
 			if (len1 <= 0)  // error
 			{
-				if (len1 < 0) 
-				{
-					ReportBug("TCP recv from %s returned error: %d\n", sock->getForeignAddress().c_str(), errno);
-					Log(SERVERLOG,"TCP recv from %s returned error: %d\n", sock->getForeignAddress().c_str(), errno);
-				}
-				else 
-				{
-					ReportBug("TCP %s closed connection prematurely\n", sock->getForeignAddress().c_str());
-					Log(SERVERLOG,"TCP %s closed connection prematurely\n", sock->getForeignAddress().c_str());
-				}
+				if (len1 < 0) Log(SERVERLOG,"TCP recv from %s returned error: %d\n", sock->getForeignAddress().c_str(), errno);
+				else Log(SERVERLOG,"TCP %s closed connection prematurelly\n", sock->getForeignAddress().c_str());
 				delete sock;
 				free(memory);
 				return NULL;
 			} 
 
 			// break apart the data into its 3 strings
-			len += len1; // total read in so far
-			p += len1; // actual end of read buffer
-			*p = 0; // force extra string end at end of buffer
-			char* nul = p; // just a loop starter
+			len += len1;
+			char* at = p;
+			p += len1;
+			*p = 0; // force string end
+			char* nul = p - 1;
 			while (nul && strs < 3) // find nulls in data
 			{
-				nul = strchr(at,0);	// find a 0 string terminator
-				if (nul >= p) break; // at end of data, doesnt count
-				if (nul) // found one - we have a string we can process
+				nul = strchr(at,0);	// find a 0
+				if (nul)
 				{
+					if (nul >= p) break;
 					++strs;
-					if (strs == 1) bot = nul + 1; // where bot will start
-					else if (strs == 2) msg = nul + 1; // where message will start
+					if (strs == 1) bot = nul + 1;
+					else if (strs == 2) msg = nul + 1;
 					else if (strs == 3) memset(nul+1,0,3); // insure excess clear
 					at = nul+1;
 				}
@@ -882,6 +874,7 @@ static void* HandleTCPClient(void *sock1)  // individual client, data on STACK..
 		// Request load of user data
 
 		// wait to get attention of chatbot server, timeout if doesnt come soon enough
+
 		bool ready = ClientGetChatLock(); // client gets chatlock  ...
 		if (!ready)  // if it takes to long waiting to get server attn, give up
 		{
@@ -939,11 +932,12 @@ static void* HandleTCPClient(void *sock1)  // individual client, data on STACK..
 	clock_t endtime = ElapsedMilliseconds(); 
 	if (!serverLog);
 	else if (*msg)
-		Log(SERVERLOG,"%c %s %s/%s %s time:%d/%d %d msg: %s  =>  %s   <=\n",
+		Log(SERVERLOG,"%c %s %s/%s %s time:%d/%d msg: %s  =>  %s   <=\n",
 			timeout,IP,user,bot,date,
 			(int)(endtime - starttime),(int)(endtime - serverstarttime),
-			*((int*)memory),msg,output);
-	else Log(SERVERLOG,"%c %s %s/%s %s %d start: %s   <=\n", timeout,IP,user,bot,date,*((int*)memory),output);
+			msg,output);
+	else Log(SERVERLOG,"%c %s %s/%s %s start  =>  %s   <=\n",
+		timeout,IP,user,bot,date,output);
 	
 	// do not delete memory til after server would have given up
 	free(memory);
@@ -962,7 +956,7 @@ void GrabPort() // enable server port if you can... if not, we cannot run.
             serverSocket = new TCPServerSocket(interfaceKind, port);
         }
     }
-    catch (SocketException &e) {exit(1);}
+    catch (SocketException &e) {printf("busy port %d\r\n",port) ; exit(1);}
 	echo = 1;
 	server = true;
  
@@ -1012,8 +1006,6 @@ static void* MainChatbotServer()
 	int counter = 0;
 	while (1)
 	{
-		if (quitting) 
-			return NULL; 
 		ServerGetChatLock();
 		startServerTime = ElapsedMilliseconds(); 
 
@@ -1037,8 +1029,7 @@ static void* MainChatbotServer()
 		else strcpy(inputFeed,ptr); // xfer user message to our incoming feed
 		echo = false;
 
-		PerformChat(user,bot,inputFeed,ip,outputFeed);	// this takes however long it takes, exclusive control of chatbot.
-		*((int*) clientBuffer) = inputCount;
+		PerformChat(user,bot,inputFeed,ip,outputFeed,-1);	// this takes however long it takes, exclusive control of chatbot.
 		ServerTransferDataToClient();
 	}
 #ifdef WIN32
@@ -1048,6 +1039,5 @@ static void* MainChatbotServer()
 }
 
 #endif /* EVSERVER */
-
 
 #endif

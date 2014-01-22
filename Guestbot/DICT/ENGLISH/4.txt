@@ -1,24 +1,21 @@
+ 4WD ( meanings=2 glosses=2 NOUN NOUN_PROPER_SINGULAR ) 
+    four-wheel_drive~1nz (transmission~2) a transmission that provides power directly to all four wheels of a motor vehicle
+    four-wheel_drive~2nz (motor_vehicle~1) a motor vehicle with a four-wheel drive transmission system
+ 401-k_plan ( meanings=1 glosses=1 NOUN_ABSTRACT NOUN NOUN_SINGULAR ) 
+    401-k~1nz (retirement_account~1) a retirement savings plan that is funded by employee contributions and matching contributions from the employer
  4-hitter ( meanings=1 NOUN NOUN_SINGULAR ) 
     four-hitter~1n 
- 4WD ( meanings=2 NOUN NOUN_PROPER_SINGULAR ) 
-    four-wheel_drive~1n 
-    four-wheel_drive~2n 
  4to ( meanings=1 NOUN NOUN_SINGULAR ) 
     quarto~1n 
- 401-k_plan ( meanings=1 glosses=1 NOUN_ABSTRACT NOUN NOUN_SINGULAR ) 
-    401-k~1nz (^retirement_savings_account~1) a retirement savings plan that is funded by employee contributions and matching contributions from the employer
  401-k ( meanings=1 NOUN NOUN_SINGULAR ) 
     401-k_plan~1n 
  440_yards ( meanings=1 NOUN NOUN_SINGULAR ) 
     quarter_mile~1n 
- 4G ( meanings=1 NOUN NOUN_PROPER_SINGULAR ) 
-    4G~1nz 
- 4G_coverage ( meanings=1 NOUN NOUN_PROPER_SINGULAR ) 
-    4G_coverage~1nz 
- 4-dimensional ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL posdefault:ADJECTIVE ) 
+ 4G ( NOUN NOUN_PROPER_SINGULAR ) 
+ 4G_coverage ( NOUN NOUN_PROPER_SINGULAR ) 
+ 4-dimensional ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL posdefault:ADJECTIVE BASIC_FORM ) 
     four-dimensional~1a 
- 4-membered ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL ) 
+ 4-membered ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL BASIC_FORM ) 
     four-membered~1a 
- 4-star ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL ) 
-    4-star~1az 
- 4 ( NOUN ADJECTIVE ADJECTIVE_NUMBER NOUN_NUMBER ) 
+ 4-star ( ADJECTIVE ADJECTIVE_NORMAL BASIC_FORM ) 
+ 4 ( NOUN ADJECTIVE ADJECTIVE_CARDINAL NOUN_CARDINAL ) 

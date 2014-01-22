@@ -1,0 +1,10 @@
+ ~appletasting.0.0 #! SUMMARY
+ ~appletasting.0.0 #! Topic definition for APPLETASTING, where the aim is to convince Snow White to eat
+ ~appletasting.0.0 #! a poisoned apple without being discovered as the Evil Queen.
+ ~appletasting.0.0 #! ENDSUMMARY
+     ~appletasting.0.1 #! I'm selling these fine apples...
+     ~appletasting.0.2 #! Sure they do!
+     ~appletasting.0.3 #! These apples are unlike any you've ever seen!
+     ~appletasting.0.4 #! Of course.
+     ~appletasting.0.5 #! Nah...
+     ~appletasting.0.6 #! Uh, no?

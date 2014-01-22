@@ -1,0 +1,274 @@
+concept: ~peddler (peddler salesman saleswoman hawker pedlar seller vender vendor dealer)
+
+topic: ~justify_identity (~peddler woman ~reliability_words help)
+
+u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+t: 	Hi, what brings you to this part of the woods?
+	$threatened = 0
+	$trust = 0
+	$end = 0
+
+#! ----------------------------------------------------------------
+#! Pose as peddler tactic
+#! ----------------------------------------------------------------
+
+		
+s: ($offered==1 ~peddler) Why are you giving your apples away, then?
+	a: (~example)
+		$trust += 1
+		$peddler = 1
+		$identity = 1
+		$purpose = 1
+		Oh, that makes sense. 
+	a: (first * free)
+		$trust += 1
+		$peddler = 1
+		$identity = 1
+		$purpose = 1
+		Oh, that makes sense. 
+
+s: ($offered!=1 ~peddler) 
+		$trust += 1
+		$peddler = 1
+		$identity = 1
+		$purpose = 1
+		I see. Well I'm not interested in any apples.
+
+s:($peddler ~peddler) Yes, we've already established that you are an itinerant apples salesperson.
+
+u: ($offered==1 $peddler!=1 [~sell ~acquire_imperatives here want~1 ~acquiring_verbs] * [apple one it] ) 
+	$offered = 1
+	$purpose = 1
+	Shouldn't you be selling those rather than giving them away? 
+		a: ([~example taste])
+			$trust += 1
+			$peddler = 1
+			$identity = 1
+			Oh! That makes sense.
+		a: (* why * care~8)
+			I'm not sure that I trust you enough.
+
+s:($peddler!=1 [~sell ~buy] * [apple one it] )
+	$offered = 1
+	$peddler = 1
+	$identity = 1
+	$purpose = 1
+	$trust += 1
+	You're an apple vendor? I really can't accept anything from strangers though.
+		a:(why) Because strangers have tried to kill me recently. ^addtopic(~assassination_plot)
+				$plot = 1
+				b:(who) It was actually my stepmother in disguise. ^addtopic(~assassination_plot)
+				b:(how) First it was bodice lace that nearly squeezed the death out of me. Then it was a poisoned comb. ^addtopic(~assassination_plot)
+
+s:(<<dwarf apple ~buy>>) Thank heavens, finally some better food around here!
+	$trust += 1
+	$peddler = 1
+	$identity = 1
+	$purpose = 1
+
+#! ----------------------------------------------------------------
+#! Appeal to trust
+#! ----------------------------------------------------------------
+
+s:([I let] * [help assist] * you) I'll be fine, thank you.
+
+s:(I * [want wish] * [wellness~1 "well-being"]) That's what they all say.
+	a:(it * true) That's also what they all say.
+
+
+s: ([not no ain't] * stranger~1) Who are you then?
+
+u: ([trust believe] * I) Sorry, I can't trust anyone.
+
+u: TELLMEWHY (why * not * trust~1) 
+	$dwarves = 1
+	The dwarves told me not to trust anyone.
+	a: (why)  Because strangers have tried to kill me recently. ^addtopic(~assassination_plot)
+		$plot = 1
+		b:(who) It was actually my stepmother in disguise. ^addtopic(~assassination_plot)
+			b:(really) Yes, crazy business.
+		b:(how) First it was bodice lace that nearly squeezed the death out of me. Then it was a poisoned comb. ^addtopic(~assassination_plot)	
+
+s: (I * be * [~reliability_words sincere truthful]) That's easy to say.
+
+?: (you * be * ~friend) I'm not in a good disposition to make new friends.
+	a:(why) Because of that assassination plot thing. ^addtopic(~assassination_plot)
+		$plot = 1
+
+?:([what how way can] [help assistance assist]) No, I'll be fine, thanks.
+
+s:(you * [should ought] * [wary cautious careful "watch out"]) I'm being as cautious as I can.
+
+#! ----------------------------------------------------------------
+#! Lost tactic
+#! ----------------------------------------------------------------
+
+s:( I * be * [lost disoriented astray]) Simply follow the path and you'll reach a small inn.
+	$identity = 1
+	$purpose = 1
+
+s:(I * [can't cannot unable ~negation] * [find "make my way" "make it"] * [home town city]) Well there's a little path over there that should help you find your way back.
+
+#! ----------------------------------------------------------------
+#! Amnesia tactic
+#! ----------------------------------------------------------------
+
+s:(I *  ~faulty_think * [me my] * ~identity) Oh you poor old thing! I knew they should have beefed up security at the nursing home. Can I help you in some way?
+	$identity = 1
+	$trust += 1
+
+#! ----------------------------------------------------------------
+#! Vader tactic (I am your stepmother)
+#! ----------------------------------------------------------------
+
+s: (!not I * be *  ~evilqueen) GAH! You again! What are you doing here, mother?
+	$threatened += 1
+	$stepmother = 1
+	$identity = 1
+	$plot = 1
+
+#! ----------------------------------------------------------------
+#! Need help tactics
+#! ----------------------------------------------------------------
+
+s: (!~friend I * be * [old frail weak]) You shouldn't be walking alone in the woods like that.
+	a:(why) Because of the wolves and all.
+		a:(wolf) I've never seen a wolf, but you would expect that in the forest.
+
+s:(!you <<[~acquire_imperatives please need] help~1>>) I wish that I could help you but the dwarves told me to be wary of strangers.
+	$purpose = 1
+	a:(why)^reuse(TELLMEWHY)
+
+s:(<<[help~1 scare die fear] ~thewoods>>) Just keep walking in a straight line and you'll make it out eventually.
+	$purpose = 1
+
+s:(<<I [feel be] [faint tired dizzy]>>) You can rest on this bench over there.
+
+s:(<<~agenoun [lonely~1 lonely~4 ~feeling_alone]>>) Poor woman. If only my stepmother hadn't disguised herself as an old woman to kill me, I would be more willing to help.
+	$identity = 1
+	$trust += 1
+	$purpose = 1
+
+u:(I * ["would like" need want "give me" "do you have"] * [water drink ~beverage]) I can get you a glass of water if you want.
+	$purpose = 1
+	a:(~yes) Here.
+		b:([thanks~2 thanks "thank you"]) No problem.
+	a:(~no) Ok.
+
+u:(I * ["would like" need want "give me" "do you have" be] * [food eat hungry famished]) You should one of those apples you have there. ^addtopic(~sell_apple)
+
+u:([need want "give me" "do you have" "will you"] * [help assist]) What do you need?
+	a: (_*) ^input(I need '_0) ^fail(sentence)  
+
+u:([need want "can I" "may I"] * [rest sleep "spend the night" shelter]) Sorry, I can't let anyone in.
+	a:(why)^reuse(TELLMEWHY)
+
+s:(<<I chase>>) You can go hide in the shed there, I'll say I haven't seen you.
+
+s:(!you I * [need want]) I don't think I can help you with that.
+
+u:(I * [die dying ~sicknesses]) There's a doctor in the village nearby, they should be able to help you much better than I could.
+
+#! ----------------------------------------------------------------
+#! Old acquiantance tactic
+#! ----------------------------------------------------------------
+
+u:(~remember * me) Sorry, but your face doesn't seem familiar
+
+u:(!no !not !~evilqueen I * be * ~friend * ~family_members) Really? I never knew my real family very well. How are they doing?
+	a: (~goodness) That's great to hear!
+		$trust += 1
+	a: (~badness) Oh no, that's awful!
+		$trust += 1
+
+s:(I * ~remember * you) Really? I don't think we've met before. Where should I remember you from?
+
+#! ----------------------------------------------------------------
+#! Let's get violent! tactic
+#! ----------------------------------------------------------------
+
+s: (<<[force~2 forcefeed "force feed"] apple>>) You wouldn't dare!
+	$trust -= 1
+
+s: (!evilqueen kill "you") Get away from me you crazy woman!
+	$end = 1
+
+#! ----------------------------------------------------------------
+#! Other identities
+#! ----------------------------------------------------------------
+
+s:(I * name * be _*) My name is Snow White.
+	$name = '_0
+	$identity = 1
+
+s:(!not I * name * be _*) 
+	if ($name != '_0) { But you told me your name was $name! }
+	else { You told me already. }
+
+
+s: ($traveller!=1 !not !no I * be * [stranger~2 traveller~1 "passing by"])
+	$trust -= 1
+	That's odd, we rarely get visitors this deep in the woods.
+		a: ([arrive~1 visit~1 ~goodness] * [secluded~2 seclusion~2])
+			$trust += 1
+			$traveller = 1
+			$identity = 1
+			I can certainly understand that. These woods are so peaceful! 
+
+u: (!stepmother <<I  be  ~family_members>>) I think I would recognize a family member.
+
+u: (we * be * [family related parent]) I don't recognize you. 
+
+s: (I * changed) Whoever you are, I'm sorry to say you haven't changed for the better.
+	
+s: ([official~2 collector ~occupation_law government~4]) The government doesn't really reach here.
+
+s: (I * be * ~samaritan) I can't trust your word on that.
+
+?: ([may can] * [come enter]) That is out of the question.
+
+s: (I * be * [unpleasant_person~1 annoying]) Now that you mention it...
+
+s: (I * [pick] * apple) I wasn't aware there were apple trees around. ^addtopic(~sell_apple)
+	$purpose = 1
+	a:([~yes "there are" indeed]) Interesting. 
+
+s: (I * ["grown-up" adult]) I wasn't even born when you were a child.
+
+s: (!queen I * be * ~royalty) I think I would recognize you.
+
+s: (I * [disguise costume]) What is your real identity, then?
+	a: (_*) ^input(I am '_0) ^fail(sentence) 
+
+
+#! ----------------------------------------------------------------
+#! Fishing for info
+#! ----------------------------------------------------------------
+
+?: ([~feeling_fearful afraid~1]) My stepmother wanting to kill me has made me paranoid.
+	$plot = 1
+	
+?: ([trust~7 believe~1]) The dwarves told me to simply not trust anyone.
+	$dwarves = 1
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t:($identity!=1) Who are you again?
+	a: (_*) ^input(I am '_0) ^fail(sentence)  
+
+t:($purpose!=1) What was it that you wanted again?
+
+t: ($identity!=1) Sorry but I was told not to trust any strangers.
+	a:(why) Because the two last strangers that came here tried to kill me.  ^addtopic(~assassination_plot)
+		$plot = 1
+			b:(who) It was actually my stepmother in disguise. ^addtopic(~assassination_plot)
+			b:(how) First it was bodice lace that nearly squeezed the death out of me. Then it was a poisoned comb. ^addtopic(~assassination_plot)
+	a:(["that's ok" "I understand" good fine understandable]) I'm glad that you understand my predicament.
+		$trust += 1		

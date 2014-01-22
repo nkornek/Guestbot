@@ -1,115 +1,3 @@
-Version 4.02
-0. Short debug commands like :do, :why, :say had accidently been disabled with 4.0. Fixed
-1. version number hadn't been incremented either.
-
-Version 4.01
-0. Bug fix for canonical of 1.46 shouldn't be 1
-1. Fixing loss of John proper name and others in dictionary
-2. Fixed missing ' in output from contractions
-3. bug in ^setrejoinder using a labelled rule fixed
-4. revision on dictionary -   ~verb_tenses now ~verb_bits and dictionary rebuilt along with LIVEDATA/ENGLISH revisions
-
-Version 4.00
-0. setting position reference and direction changed from @_0++ to @_0+ and same for --  and you can now use @_0_i  (inclusive) to make the _0 location be the next thing scanned.
-1. the livedata PRIVATE substitutions file has been moved into the scripting language. A new top-level declaration is replace: xxx yyy  which names an individual
-substitution to add which is enabled with the DO_PRIVATE $token flag.
-2. fixed :verify infinite loop and various other potential crash bugs
-
-
-Version 3.81  
-0. new document Paper- WinningTheLoebners
-1. mark xref per concept/word raised from 7 to 32
-2. ^tally to get and set an integer value on a word (transient to a volley)
-3. ^walkdictionary('fn)  to execute named outputmacro on every dictionary entry
-4. new document Bot Harry - moves initial discussion of harry from basic manual
-5. new document Bot Stockpile - describes how to run the planner bot
-6. new bot and document Bot NLTK - describes how to run natural language analyses
-
-Version 3.8
-0. Fixed bug in :shutdown that crashes on shutdown
-1. moved hardtrace.log to LOGS and renamed exitlog.txt
-2. fixed potential crash bug in spellcheck
-3. :shutdown merged into :quit and removed, use :quit for server or non-server exiting chatscript
-4. fixed bugs when using :build or :restart on a server
-5. new DICT, bits on dictionary entry, data in LIVEDATA/ENGLISH
-
-Version 3.73
-0. 3.72 introduced serious tokenization bug that broke contraction processing.   Fixed.
-1. new manual ChatScript External Communcations- moves stuff from advanced on calling outside things
-2. :topicstats, :abstract, and :topicinfo now accept wildcard topic like ~ne*
-3. :commands will now display their results across a server connection (subject to buffer restrictions)
-4. #DO_CONDITIONAL_POSTAG removed
-
-Version 3.72
-Most of the work has been to increase the accuracy of english pos-tagging. 
-extensive changes in engine and dictionary entries properties and systemflags and concepts related to pos-tagging and parsing
-1. parserdata.top split off from verbhierachy.top in ONTOLOGY and put in own folder
-2.  warning removed - now allows creation of topics with no rules.
-3. %sentence is true if input had a subject (possibly implied) and verb.
-
-
-version 3.71
-1. severe bug in pattern matcher fixed
-
-version 3.7
-0. :document now takes file or directory 
-1 %document now exists to tell you you are in document mode
-2  %command (sentence type) and %impliedyou (you as implied subject)
-3. added ^RETRY(TOPRULE) to return from a ^refine() to the outermost rule to retry
-4. pattern matching can now change direction using @_n++ and @_n--
-5. added documentation old paper "Speaker for the Dead"
-6: added documentation paper "Writing a Chatbot"
-7: added :concepts to tell you quickly how to generalize a word 
-
-version 3.64
-0. ^iterator allowed in any rule not just in planning rule and planning example now also uses iterators.
-1. ^Tcpopen allows get/post from script
-2. :trace display cleaned up, you can do collections like :trace basic  :trace mild  :trace detail,  and :trace tcp added for ^tcpopen.
-
-version 3.63
-0. dualmacro:   allows you to use same code as an output macro and as a pattern macro
-1. new command line parameter  livedata=   allows you to name your own directory to load livedata from. 
-2. :trace now accepts - xxx to turn off stuff, so :trace all - infer - pattern can be used
-3. bugfixes and revisions to how Planning system works - read revised doc 
-4. :build stockpile and stockpile planner demo now exists
-5. :build 1  is now :build Harry
-
-version 3.62
-0. authorizedIP.txt file now also takes L_loginnames that can be authorized.
-1. new manual - finalizing a bot
-2. you can name a range of topics to :verify by ending with * , eg,  :verify ~f* 
-3. :verify sampletopic to restrict warnings to only samples resulting in wrong topics.
-4. ^Log(file filename new)  use of new to clear out any existing content in file
-5.  out-of-band sentences (ones leading with [...]) no long spell check inside the [ ] area nor do they postag/parse.
-6.  :silent toggles showing output or not (good for regression tests)
-7. :diff file1 file2 - reports lines that differ between these two files.
-8. new manual- installing an amazon cloud server.
-
-version 3.61
-0:  NOSAMPLES added as topic control flag to block :verify sample on topic
-1. named locations in worlddata and concepts are marked with systemflag LOCATIONWORD  and
-	concept ~locatedword has been renamed to ~locatedname
-2:  :gambittest moved into :verify gambit
-3. ^findfact(subject verb object) added
-4. new query control field 1 values: S, V, O for queing incoming item as a fact reference.
-5.  ^flushfacts(factid) to kill off all facts created after this one
-6. added << and >> as additional arithmetic operators on assignment  $$tmp = $$a << 4
-7. added NOGAMBITS as topic control flag to block :verify gambit on topic
-
-version 3.6
-0. WARNING- DICT binary format changed, src corresponds to it.
-1. ^createattribute  function similar to createfact, but insures this is the only fact with this combination of subject and verb.
-2. plan:  script element added and ChatScript Planning document added
-3. ^Iterator() added for plans
-4. ^marked() now returns FAILRULE bit if word is not marked, instead of null.
-
-version 3.54
-1. :say xxx yyy zzz  forces chatbot to say that message as its output (good for testing postprocessing scripts)
-2. :facts xxxx  displays all facts involving word or meaning given
-3. WORLDATA facts on authors changed from "exemplar" to "write"  for their works
-4. WORLDATA facts on musicians changed from "exemplar" to "sing" for their works
-5. added NOPATTERNS flag to topic define, so can avoid pattern tests using :verify on that topic
-
 version 3.53
 1. can now use :trace on functions (turns on all tracing on patternmacro or outputmacro)
 2. documented how to deal with issues in proper-name merging in pos-parser documenation.
@@ -260,6 +148,7 @@ Version 1.23
 1. system variable %userInput added
 2. automated pronoun handling supported along with improved pos tagging
 
+
 Version 1.22
 1. help now takes "function" or "variables"
 2. Pos tagging improved, migrating toward full parsing but not there yet
@@ -267,6 +156,7 @@ Version 1.22
 
 Version 1.21 
 bug fixes, more pos tagging  and doc added for ^match()
+
 
 Version 1.20
 1. improved POS tagging, with rules put into Livedata
@@ -292,10 +182,12 @@ Version 1.16
 1. :prepare now takes all and none to mean set as mode for future
 2. revised memory usage--- Linux version was dying in malloc
 
+
 Version 1.15
 1. Added ^settopicflags()
 2. :topics added
 3. An output choice may now be [!$value ...] in addition to [$value ...]
+
 
 Version 1.14
 1. ^keywordtopics now also accepts topics labeled nostay
@@ -320,14 +212,17 @@ Version 1.12
 2. allowed to have global user variables from a :build commands
 3. added autogeneration of responders 
 
+
 Version 1.11
 1. fixed serious bug in script compiler
+
 
 Version 1.1
 1. added %rejoinder (indicates system has a rejoinder it can expect)
 2. clarified eraseure in esoterica
 3. added ^import and ^export to read and write fact files
 4. redefined factset decompositions (@1subject, @1object) and added  @1fact @1verb @1+ @1- @1all
+
 
 version 1.01
 1. stopped deleting the "to" in front of an infinitive.
@@ -353,6 +248,7 @@ version 0.95
 2. redescribed noerase so that gambits are always erased. It only controls responders.
 3. Continuation  renamed rejoinder
 
+
 version 0.94
 1. multiple copies of topics allowed for multiple-bot handling-- see WHICH BOT in documentation
 2. :abstract allowed a topic name argument
@@ -371,15 +267,18 @@ version 0.93 This is considered a stable build and will remain as new builds arr
 3. split ~singular and ~plural into: ~nounsingular, ~nounplural, ~verbsingular,~verbplural
 4. moved ~auxverb from script to engine
 
+
 version 0.92
 1. fixed bugs introduced by spellcheck, which destroyed the interjections system and some canonical forms
 2. documented the interjections system in the manual
 3. renamed concept set ~aux to ~auxverb
 4. added %token and changed the default to allow assignment to all %systemvars.
 
+
 version 0.91
 1. modified :revert to automatically redo your last input
 2. fixed serious bug in marking used responses
+
 
 Version 0.9
 0. added ^fact() and removed fact duplicates
@@ -405,6 +304,7 @@ Version 0.7
 0. Internal representation for "refines" changed to use member verb
 1. Misc bug fixes, particularly to ^query and the \"xxx" construct
 2. added :variables
+
 
 Version 0.6
 

@@ -12,6 +12,14 @@ void BuildShortDictionaryBase()
 {
 }
 
+void C_Suzanne(char* buffer)
+{
+}
+
+void C_VerifyCode(char* buffer)
+{
+}
+
 #else
 #include "../extraSrc/readrawdata.cpp"
 #endif

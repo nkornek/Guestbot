@@ -18,7 +18,7 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 #define MAX_FIND_SETS 20
 
 #define FACTSET_COUNT(x) ( (unsigned int) ( (uintptr_t) factSet[x][0]  ))
-#define SET_FACTSET_COUNT(x,y) factSet[x][0] = (FACT*) ((uint64)y)
+#define SET_FACTSET_COUNT(x,y) factSet[x][0] = (FACT*) (y)
 
 extern FACT* factSet[MAX_FIND_SETS][MAX_FIND+1];
 extern unsigned int factSetNext[MAX_FIND_SETS];

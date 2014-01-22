@@ -1,29 +1,24 @@
- 3-hitter ( meanings=1 NOUN NOUN_SINGULAR ) 
-    three-hitter~1n 
+ 3-hitter ( meanings=1 glosses=1 NOUN_ABSTRACT NOUN NOUN_SINGULAR ) 
+    three-hitter~1nz (baseball~1) a game in which a pitcher allows the opposing team only 3 hits
+ 3-D ( meanings=2 glosses=2 NOUN_ABSTRACT NOUN NOUN_PROPER_SINGULAR ) 
+    3D~1nz (appearance~5) having a three-dimensional form or appearance
+    3D~2nz (pic~2) a movie with images having three dimensional form or appearance
  3TC ( meanings=1 NOUN NOUN_PROPER_SINGULAR ) 
     lamivudine~1n 
  3d_radar ( meanings=1 NOUN NOUN_SINGULAR ) 
     three-dimensional_radar~1n 
- 3-D ( meanings=2 NOUN NOUN_PROPER_SINGULAR ) 
+ 3D ( meanings=2 NOUN NOUN_PROPER_SINGULAR ) 
     three-D~1n 
     three-D~2n 
- 3D ( meanings=2 NOUN NOUN_PROPER_SINGULAR ) 
-    3-D~1n 
-    3-D~2n 
- 3rd_October_Organization ( meanings=1 NOUN NOUN_SINGULAR ) 
+ 3rd_October_Organization ( meanings=1 NOUN NOUN_PROPER_SINGULAR ) 
     Orly_Group~1n 
  366_days ( meanings=1 NOUN NOUN_SINGULAR ) 
-    leap_year~1n 
- 30 ( NOUN ADJECTIVE ADJECTIVE_NUMBER NOUN_NUMBER KINDERGARTEN posdefault:NOUN ) 
- 3G ( meanings=1 NOUN NOUN_PROPER_SINGULAR ) 
-    3G~1nz 
- 3G_coverage ( meanings=1 NOUN NOUN_PROPER_SINGULAR ) 
-    3G_coverage~1nz 
- 3-dimensional ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL posdefault:ADJECTIVE ) 
+    intercalary_year~1n 
+ 30 ( NOUN ADJECTIVE ADJECTIVE_CARDINAL NOUN_CARDINAL posdefault:NOUN KINDERGARTEN ) 
+ 3G ( NOUN NOUN_PROPER_SINGULAR ) 
+ 3G_coverage ( NOUN NOUN_PROPER_SINGULAR ) 
+ 3-dimensional ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL posdefault:ADJECTIVE BASIC_FORM ) 
     three-dimensional~2a 
- 3-membered ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL ) 
+ 3-membered ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL BASIC_FORM ) 
     three-membered~1a 
- 3-star ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL ) 
-    3-star~1az 
- 3/8 ( NOUN NOUN_SINGULAR KINDERGARTEN ) 
- 3/4 ( NOUN NOUN_SINGULAR KINDERGARTEN ) 
+ 3-star ( ADJECTIVE ADJECTIVE_NORMAL BASIC_FORM ) 

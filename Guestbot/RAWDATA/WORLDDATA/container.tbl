@@ -2,6 +2,7 @@
 table: ~container( ^amount ^container)
 ^createfact(^container member ~solid_containers)
 ^createfact(^amount size ^container)
+^addproperty(^container NOUN)
 
 DATA:
 2 saltshaker
@@ -10,7 +11,7 @@ DATA:
 3 [ shoebox tea_chest ]
 3 [ jar biscuit_jar cookie_jar biscuit_tin ]
 4 [ almery ambry atjmery aumbrie jewellery_box jewelry_box keepsake_box ]
-4 [ aluminum_bottle can~n aluminum_can   ]
+4 [ aluminum_bottle can aluminum_can   ]
 4 [ bum_bag money_belt musette fanny_pack hip_pack sporran ]
 4 [ carrier_bag doggy_bag gift_bag paper_bag shopping_bag treat_bag trick_or_treat_bag ]
 4 [ package care_package ]
@@ -127,6 +128,7 @@ DATA:
 table: ~container( ^amount ^container)
 ^createfact(^container member ~liquid_containers)
 ^createfact(^amount size ^container)
+^addproperty(^container NOUN)
 
 DATA:
 1 [ chemical_dropper eye_dropper eyedropper pipette ]
@@ -136,7 +138,7 @@ DATA:
 3 [  vacuum_flask thermos tumbler ]
 3 [ cup glass beverageware drinkware glassware ]
 3 [ specific_gravity_bottle decanter jar ]
-4 [ aluminum_bottle can~n aluminum_can bottle  ]
+4 [ aluminum_bottle can aluminum_can bottle  ]
 4 [ bottle carboy ]
 4 [ coffee_cup teacup mug ]
 5 [ beaker  flask ]

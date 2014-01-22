@@ -21,9 +21,7 @@ extern char chatbotSaid[MAX_USED+1][SAID_LIMIT+3]; // last n messages sent to us
 extern char humanSaid[MAX_USED+1][SAID_LIMIT+3]; //   last n messages read from human
 extern unsigned int humanSaidIndex;
 extern unsigned int chatbotSaidIndex;
-extern char timeturn15[100];
-extern char timeturn0[20];
-extern char timePrior[20];
+
 extern int userFirstLine;
 extern uint64 setControl;
 extern unsigned int userFactCount;
@@ -38,7 +36,7 @@ extern char callerIP[ID_SIZE];
 // process user
 void ReadNewUser();
 void ReadUserData(char* ptr);
-void WriteUserData(time_t curr);
+void WriteUserData();
 char* WriteVariables(char* ptr);
 
 // login

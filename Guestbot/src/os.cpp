@@ -16,13 +16,9 @@ static bool pendingError = false;			// log entry we are building is an error mes
 int userLog = LOGGING_NOT_SET;				// do we log user
 int serverLog = LOGGING_NOT_SET;			// do we log server
 bool echo = false;							// show log output onto console as well
-bool silent = false;						// dont display outputs of chat
-
-char* testOutput = NULL;					// testing commands output reroute
 
 unsigned char memDepth[256];				// memory usage at depth
-bool hasUpperCharacters;
-bool hasUTF8Characters;
+
 
 // buffer information
 #define MAX_BUFFER_COUNT 15
@@ -30,7 +26,6 @@ unsigned int maxBufferLimit = MAX_BUFFER_COUNT;		// default number of system buf
 unsigned int maxBufferSize = MAX_BUFFER_SIZE;		// how big std system buffers from AllocateBuffer should be
 unsigned int maxBufferUsed = 0;						// worst case buffer use - displayed with :variables
 unsigned int bufferIndex = 0;				//   current allocated index into buffers[]  
-unsigned baseBufferIndex = 0;				// preallocated buffers at start
 char* buffers = 0;							//   collection of output buffers
 #define MAX_OVERFLOW_BUFFERS 20
 static char* overflowBuffers[MAX_OVERFLOW_BUFFERS];	// malloced extra buffers if base allotment is gone
@@ -57,12 +52,9 @@ void JumpBack()
 
 void myexit(char* msg)
 {	
-	FILE* in = fopen("LOGS/exitlog.txt","ab");
-	if (in) 
-	{
-		fprintf(in,"%s called myexit\r\n",msg);
-		fclose(in);
-	}
+	printf("%s\r\n",msg);
+	SolidTrace(msg);
+	SolidTrace("myexit called");
 	exit(0);
 }
 
@@ -72,7 +64,7 @@ void myexit(char* msg)
 
 void ResetBuffers()
 {
-	bufferIndex = baseBufferIndex;
+	bufferIndex = 0;
 	memset(memDepth,0,256); 
 }
 
@@ -377,20 +369,6 @@ char* GetTimeInfo() //   Www Mmm dd hh:mm:ss yyyy Where Www is the weekday, Mmm 
     return mytime;
 }
 
-char* GetMyTime(time_t curr)
-{
-	char *mytime = ctime(&curr); //	Www Mmm dd hh:mm:ss yyyy
-	static char when[40];
-	strncpy(when,mytime+4,3); // mmm
-	strncpy(when+3,mytime+8,2); // dd
-	when[5] = '\'';
-	strncpy(when+6,mytime+22,2); // yy
-	when[8] = '-';
-	strncpy(when+9,mytime+11,8); // hh:mm:ss
-	when[17] = 0;
-	return when;
-}
-
 #ifdef IOS
 #elif __MACH__ 
 void clock_get_mactime(struct timespec &ts)
@@ -517,18 +495,15 @@ uint64 X64_Table[256] = //   hash table randomizer
        X64(0x5dedc41a34bbeeb2), X64(0x1f1d25f19d51d821),       X64(0xd80c07cd676f8394), X64(0x9afce626ce85b507)
 };
 
-uint64 Hashit(unsigned char * data, int len)
+uint64 Hashit(unsigned char * data, int len, bool & hasUpperCharacters,bool &HasUTF8Characters)
 {
-	hasUpperCharacters = hasUTF8Characters = false;
 	uint64 crc = 0;
 	while (len-- > 0)
 	{ 
 		unsigned char c = *data++;
-		if (!c) break;
-		if (c & 0x80) hasUTF8Characters = true;
 		if (IsUpperCase(c)) 
 		{
-			c = GetLowercaseData(c);
+			c = toLowercaseData[(unsigned char) c];
 			hasUpperCharacters = true;
 		}
 		crc = X64_Table[(crc >> 56) ^ c ] ^ (crc << 8 );
@@ -575,9 +550,9 @@ void ChangeDepth(int value,char* where)
 
 unsigned int Log(unsigned int channel,const char * fmt, ...)
 {
+	
 	static unsigned int id = 1000;
-	if (quitting) return id;
-	if (server && !userLog && (channel == STDUSERLOG || channel > 1000 || channel == id) && !testOutput) return id;
+	if ((channel == STDUSERLOG || channel > 1000 || channel == id) && !userLog) return id;
     if (!fmt || !logmainbuffer)  return id; // no format or no buffer to use
 	if ((channel == BUGLOG || channel == SERVERLOG) && server && !serverLog)  return id; // not logging server data
 
@@ -612,11 +587,6 @@ unsigned int Log(unsigned int channel,const char * fmt, ...)
 			*at++ = '\r'; //   close out this prior thing
 			*at++ = '\n';
 		}
-		while (ptr[1] == '\n' || ptr[1] == '\r') // we point BEFORE the format
-		{
-			*at++ = *++ptr;
-		}
-
 		int n = globalDepth;
 		if (n < 0) n = 0; //   just in case
 		for (int i = 0; i < n; i++)
@@ -641,34 +611,25 @@ unsigned int Log(unsigned int channel,const char * fmt, ...)
 #else
 				sprintf(at,"%lld",va_arg(ap,uint64)); 
 #endif
-				ptr += 2; 
+				ptr += 3; 
             }
             else if (*ptr== 'l' && ptr[1] == 'd') // ld
             {
                 sprintf(at,"%ld",va_arg(ap,long int));
-				++ptr; 
+				ptr += 2; 
             }
             else if (*ptr== 'l' && ptr[1] == 'l') // lld
             {
-#ifdef WIN32
-				sprintf(at,"%I64d",va_arg(ap,long long int)); 
-#else
-				sprintf(at,"%lld",va_arg(ap,long long int)); 
-#endif
-				ptr += 2;
+                sprintf(at,"%lld",va_arg(ap,long long int));
+				ptr += 3;
             }
             else if (*ptr == 'p') sprintf(at,"%p",va_arg(ap,char*)); // ptr
-            else if (*ptr == 'f') 
-			{
-				float f = (float)va_arg(ap,double);
-				sprintf(at,"%f",f); // float
-			}
             else if (*ptr == 's') // string
             {
                 s = va_arg(ap,char*);
 				if (s) sprintf(at,"%s",s);
             }
-            else if (*ptr == 'x') sprintf(at,"%x",(unsigned long)va_arg(ap,unsigned long)); // hex 
+            else if (*ptr == 'x') sprintf(at,"%x",(unsigned int)va_arg(ap,unsigned long)); // hex 
  			else if (IsDigit(*ptr)) // int %2d
             {
 				i = va_arg(ap,int);
@@ -722,12 +683,10 @@ unsigned int Log(unsigned int channel,const char * fmt, ...)
 #endif	
 	logUpdated = true; // in case someone wants to see if intervening output happened
 
-	size_t bufLen = at - logmainbuffer;
- 
 	if (channel == STDPUBLOG) // :document
 	{
 		FILE* pub = FopenUTF8WriteAppend("LOGS/pub.txt");
-		fwrite(buffer,1,bufLen,pub);
+		fwrite(buffer,1,strlen(buffer),pub);
 		fclose(pub);
 		return 0;
 	}
@@ -744,13 +703,13 @@ unsigned int Log(unsigned int channel,const char * fmt, ...)
 		{
 			if (*currentFilename) fprintf(bug,"   in %s at %d: %s\r\n",currentFilename,currentFileLine,readBuffer);
 			if (channel == BUGLOG && *currentInput) fprintf(bug,"input:%d %s %s caller:%s callee:%s in sentence: %s at %s\r\n",inputCount,GetTimeInfo(),buffer,loginID,computerID,currentInput,located);
-			fwrite(buffer,1,bufLen,bug);
+			fwrite(buffer,1,strlen(buffer),bug);
 			fclose(bug);
 
 			if (debugger && channel == BUGLOG) printf("**** BUG: %s at %s\r\n",buffer,located);
 
 		}
-		if (echo && !silent)
+		if (echo)
 		{
 			if (*currentFilename) fprintf(stdout,"\r\n   in %s at %d: %s\r\n    ",currentFilename,currentFileLine,readBuffer);
 			else if (*currentInput) fprintf(stdout,"\r\n%d %s in sentence: %s \r\n    ",inputCount,GetTimeInfo(),currentInput);
@@ -758,7 +717,7 @@ unsigned int Log(unsigned int channel,const char * fmt, ...)
 		strcat(buffer,"\r\n");	//   end it
 		channel = 1;	//   use normal logging as well
 	}
-    if ((echo && channel == STDUSERLOG) || (channel == STDDEBUGLOG)) fwrite(buffer,1,bufLen,stdout);
+    if ((echo && channel == STDUSERLOG) || (channel == STDDEBUGLOG)) fwrite(buffer,1,strlen(buffer),stdout);
     FILE* out = NULL;
 
 	if (server && trace) channel = SERVERLOG;	// force traced server to go to server log
@@ -767,19 +726,13 @@ unsigned int Log(unsigned int channel,const char * fmt, ...)
     else out = FopenUTF8WriteAppend(serverLogfileName); 
     if (out) 
     {
-        fwrite(buffer,1,bufLen,out);
+        fwrite(buffer,1,strlen(buffer),out);
 		if (!bug);
  		else if (*currentFilename) fprintf(out,"   in %s at %d: %s\r\n    ",currentFilename,currentFileLine,readBuffer);
 		else if (*currentInput) fprintf(out,"%d %s in sentence: %s \r\n    ",inputCount,GetTimeInfo(),currentInput);
 		fclose(out);
 		if (channel == SERVERLOG && echoServer) printf("%s",buffer);
     }
-
-	if (testOutput && server) // command outputs
-	{
-		size_t len = strlen(testOutput);
-		if ((len + bufLen) < (maxBufferSize - 10)) strcat(testOutput,buffer);
-	}
 
 #ifndef DISCARDSERVER
 #ifndef EVSERVER
@@ -793,5 +746,4 @@ unsigned int Log(unsigned int channel,const char * fmt, ...)
 void Bug()
 {
 	int i = 0; // just a place to debug catch errors
-	i = i - 1;
 }

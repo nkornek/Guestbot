@@ -1,7 +1,7 @@
 UNAME := $(shell uname)
 DEBUG=-g
 
-CFLAGS=-c -Wall -O2 -Wno-write-strings -Wno-char-subscripts -Wno-strict-aliasing
+CFLAGS=-c -Wall -O2
 CC=g++
 
 ifeq ($(UNAME), Linux)

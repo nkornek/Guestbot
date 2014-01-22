@@ -1,1 +1,1 @@
-g++  -funsigned-char src/*.cpp -O2 -o LinuxChatScript  -lpthread 2>err.txt
+g++ -lpthread  -funsigned-char src/*.cpp -O2 -o LinuxChatScript 2>err.txt

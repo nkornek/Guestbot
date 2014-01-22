@@ -94,14 +94,14 @@ u: () ^refine()
 	a: (![wrong ?]  ~mainsubject=you < *  ~mainverb=be _*~2 ~badness ) $$intent = i_dislike_you  
 
 	#! I like peas
-	a: (!? << ~mainsubject=I  ~goodness  ~mainobject >> ) $$intent = i_like_something  
+	a: (!? ~mainsubject=I < * ~goodness < * ~mainobject ) $$intent = i_like_something  
 
 	#! I hate peas
 	a: (!? ~mainsubject=I < * ~badness < * ~mainobject ) $$intent = i_dislike_something   
  
 # user perspective
 
-	#! what color is my shirt?
+	#! what color is my shirt
 	a: (? [mine my]) $$intent = my_question
   
 	#! people like my coat
@@ -118,22 +118,22 @@ u: () ^refine()
 
 # bot perspective
 
-	#! will you go with me?
-	a: (? !not  < [~tell would will could can might ] * 'you ) $$intent = you_request         
+	#! will you go with me
+	a: (? !not  < [~tell would will could can might ] * you ) $$intent = you_request         
 
-	#! could we go?
+	#! could we go
 	a: (? [can shall could might] we) $$intent = you_request  
 
-	#! Can I hit you?
-	a: (? < [can may shall might could ] 'I) $$intent = you_request 
+	#! Can I hit you
+	a: (? < [can may shall might could ] I) $$intent = you_request 
  
-	#! what do you think?
+	#! what do you think
 	a: (? << you  [~OPINION_VERBS ~opinion  like hope wish  opinion view attitude interest  hate dislike position viewpoint ] >> ) $$intent = you_opinion   
 
-	#! what color is your shirt?
+	#! what color is your shirt
 	a: (? your)  $$intent = your_question  
 
-	#! what color are you?
+	#! what color are you
 	a: (? 'you) $$intent = you_question  
  
 	#! Your coat is blue
@@ -144,25 +144,25 @@ u: () ^refine()
 
 # world perspective
 
-	#! why do people swim?
+	#! why do people swim
 	a: (? < why  ) $$intent = why 
 
-	#! how do people swim?
+	#! how do people swim
 	a: (?  < how  ) $$intent = how  
 
-	#! where do people swim?
+	#! where do people swim
 	a: (?  < where  ) $$intent = where  
 
-	#! who do people swim?
+	#! who do people swim
 	a: (?  < who  ) $$intent = who 
 
-	#! when do people swim?
+	#! when do people swim
 	a: (?  < when  ) $$intent = when 
 
-	#! what will land in the river?
+	#! what will land in the river
 	a: (? ![tell show ~list I you we who why when where how]   << ~mainsubject ~mainverb >> ) $$intent = world_question  
 
-	#! is the sky blue?
+	#! is the sky blue
 	a: (? ![I you we] ) $$intent = world_question  
 
 	#! Bees fly.
@@ -304,7 +304,7 @@ s: ($$intent==you_opinion ) [Why would I know anything about that? ]
 
 u: ($$intent==you_mutual ) [So we are alike there.][We are so similar.][Cool.][OK.][][][]
 
-# world perspective
+#! world perspective
 
 ?: ($$intent==world_question )
       [I don't know. ] 

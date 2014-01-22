@@ -1,21 +1,26 @@
   sha_n't shall+not
   ai_n't am+not
-  ca_n't can+not
-  do_n't do+not
+  ca_n't can_not
+  do_n't do_not
+ '20s 1920s
+ '30s 1930s
+ '40s 1940s
+ '50s 1950s
+ '60s 1960s
+ '70s 1970s
+ '80s 1980s
  'n	and
+  cannot can_not
   & and
-  e'en even
-  ne'er never
+ '90s 1990s
  'bot robot
  'bout about
-  nor'-west northwest
  'cause because
  'cept except
- a'ready already
  'cuz because
- 'd !tense # special had/would test
-  cannot can+not
+ 'd would
  'd_better I+had+better
+ 'ello hello
  'em them
  'fore before
  'fraid afraid
@@ -28,7 +33,7 @@
  'neath beneath
  'nuff enough
  'pon upon
- 're areo
+ 're are
  'round around
  'scuse excuse
  'sup what+is+up
@@ -46,7 +51,6 @@
  've have
  'way away
  ain't is+not
- albeit although+it+is
  amn't am+not
  anyone'll anyone+will
  aren't are+not
@@ -75,7 +79,7 @@
  hadn't had+not
  hasn't has+not
  haven't have+not
- he'd he+'d
+ he'd he+had
  he'll he+will
  he_'s he+is
  here_'s here+is
@@ -84,8 +88,8 @@
  how's how+is
  how've how+have
  how_'s how+is
- I'd I+'d
- i'd I+'d
+ I'd I+had
+ i'd I+had
  i'd_'ve I+would+have
  I'd_'ve I+would+have
  i'll I+will
@@ -97,7 +101,7 @@
  in't is+it+not
  int'l international
  isn't is+not
- it'd it+'d
+ it'd it+would
  it'll it+will
  it'sn't it+is+not
  it_'s it+is
@@ -125,7 +129,7 @@
  sha'nt shall+not
  shalln't shall+not
  shan't shall+not
- she'd she+'d
+ she'd she+had
  she'll she+will
  she_'s she+is
  should've should+have
@@ -138,25 +142,25 @@
  t'other the+other
  t'was'nt it+was+not
  t'was it+was
- that'd that+'d
+ that'd that+would
  that'll that+will
  that'll_'ve that+will+have
  that_'s that+is
- there'd there+'d
+ there'd there+would
  there'll there+will
  there're there+are
  there_'s there+is
- they'd they+'d
+ they'd they_had
  they'll they+will
  they're they+are
  they've they+have
  things'll things+will
- this'd this+'d
+ this'd this+would
  this'll this+will
  thro' through
  wasn't was+not
  wat_'s what+is
- we'd we+'d
+ we'd we+would
  we'll we+will
  we're we+are
  we've we+have
@@ -172,7 +176,7 @@
  where're where+are
  where've where+have
  where_'s where+is
- who'd who+'d
+ who'd who+would
  who'll who+will
  who're who+are
  who's who+is
@@ -191,11 +195,11 @@
  y'all_'s you+all+are
  y'could've you+could+have
  y'know you+know
- you'd you+'d
+ you'd you+would
  you'da you+would+have
  you'l you+will
  you'll you+will
- you'r you+are
+ you'r you_are
  you're you+are
  you'v you+have
  you've you+have

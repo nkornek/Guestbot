@@ -32,7 +32,6 @@ extern unsigned int maxBufferLimit;
 extern unsigned int maxBufferSize;
 extern unsigned int maxBufferUsed;	
 extern unsigned int bufferIndex;
-extern unsigned int baseBufferIndex;
 extern unsigned int overflowIndex;
 extern char* buffers;
 extern bool showmem;
@@ -70,7 +69,6 @@ char* GetUserPath(char* name);
 #define SKIPWEEKDAY 4 // from gettimeinfo
 
 char* GetTimeInfo();
-char* GetMyTime(time_t curr);
 
 #ifdef __MACH__
 void clock_get_mactime(struct timespec &ts);
@@ -94,9 +92,7 @@ unsigned int GetFutureSeconds(unsigned int seconds);
 #define STDUSERATTNLOG 201
 
 extern bool echo;
-extern bool silent;
 extern uint64 logCount;
-extern char* testOutput;
 
 #define ReportBug(...) {Bug(); Log(BUGLOG, __VA_ARGS__);}
 
@@ -119,8 +115,7 @@ void ChangeDepth(int value,char* where);
 extern unsigned int randIndex;
 
 unsigned int random(unsigned int range);
-uint64 Hashit(unsigned char * data, int len);
-extern bool hasUpperCharacters;
-extern bool hasUTF8Characters;
+uint64 Hashit(unsigned char * data, int len, bool & hasUpperCharacters,bool &hasUTF8Characters);
+
 
 #endif

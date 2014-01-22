@@ -2,6 +2,7 @@
 
 table: madeof(^ingredient ^item)
 createfact(^ingredient constituent ^item)
+^addproperty(^item NOUN NOUN_SINGULAR)
 ^addproperty(^ingredient NOUN NOUN_SINGULAR)
 createfact(^ingredient member ~material)
 

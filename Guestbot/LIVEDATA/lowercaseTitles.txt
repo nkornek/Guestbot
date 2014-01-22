@@ -1,10 +1,10 @@
 # particles in foreign names
-la FOREIGN_WORD 
-de FOREIGN_WORD 
-d' FOREIGN_WORD 
-du FOREIGN_WORD 
-van FOREIGN_WORD 
-von FOREIGN_WORD 
+la
+de
+d'
+du
+van
+von
 
 #possessives BUT NOT AT END of title -  John Henry's Pizza Joint is fine
 '

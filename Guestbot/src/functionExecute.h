@@ -42,22 +42,21 @@ typedef struct SystemFunctionInfo
 #define ENDRULE_BIT 1
 #define FAILRULE_BIT 2
 #define RETRYRULE_BIT 4
-#define RETRYTOPRULE_BIT 8
 
-#define ENDTOPIC_BIT 16
-#define FAILTOPIC_BIT 32
-#define RETRYTOPIC_BIT 64
+#define ENDTOPIC_BIT 8
+#define FAILTOPIC_BIT 16
+#define RETRYTOPIC_BIT 32
 
-#define ENDSENTENCE_BIT 128
-#define FAILSENTENCE_BIT 256
-#define RETRYSENTENCE_BIT 512
+#define ENDSENTENCE_BIT 64
+#define FAILSENTENCE_BIT 128
+#define RETRYSENTENCE_BIT 256
 
-#define ENDINPUT_BIT 1024
-#define FAILINPUT_BIT 2048
+#define ENDINPUT_BIT 512
+#define FAILINPUT_BIT 1024
 
-#define FAIL_MATCH 4096			// transient result of TestRule, converts to FAILRULE_BIT
+#define FAIL_MATCH 2048			// transient result of TestRule, converts to FAILRULE_BIT
 
-#define UNDEFINED_FUNCTION 8192	//   potential function call has no definition so isnt
+#define UNDEFINED_FUNCTION 4096	//   potential function call has no definition so isnt
 
 #define FAILCODES ( FAILINPUT_BIT | FAILTOPIC_BIT|FAILRULE_BIT | FAILSENTENCE_BIT | RETRYSENTENCE_BIT | RETRYTOPIC_BIT )
 #define SUCCESSCODES ( ENDINPUT_BIT | ENDSENTENCE_BIT | ENDTOPIC_BIT | ENDRULE_BIT )
@@ -70,8 +69,6 @@ extern int wasCommand;
 #define MAX_ARG_LIST 200
 #define MAX_ARG_LIMIT 30 // max args to a call -- limit using 1 bit per arg for table mapping behavior
 
-extern unsigned int currentIterator;
-
 extern char lastInputSubstitution[INPUT_BUFFER_SIZE];
 extern int globalDepth;
 #define ARGUMENT(n) callArgumentList[callArgumentBase+n]
@@ -83,15 +80,11 @@ extern unsigned int callArgumentBase;
 extern unsigned int fnVarBase;
 extern SystemFunctionInfo systemFunctionSet[];
 
-extern bool planning;
-extern bool nobacktrack;
-
 void InitFunctionSystem(); 
 char* DoFunction(char* name, char* ptr, char* buffer,unsigned int &result);
 void DumpFunctions();
 unsigned int Callback(WORDP D,char* arguments);
 void ResetFunctionSystem();
-void SaveMark(char* buffer,unsigned int iterator);
 
 unsigned int KeywordTopicsCode(char* buffer);
 

@@ -15,6 +15,9 @@
  jewellery jewelry
  aesthete esthete
  aesthetes esthetes
+ aesthetic esthetic
+ aesthetically esthetically
+ aesthetics esthetics
  aetiology etiology
  ageing aging
  aggrandisement aggrandizement
@@ -77,6 +80,11 @@
  appetisingly appetizingly
  arbour arbor
  arbours arbors
+ archaeological archeological
+ archaeologically archeologically
+ archaeologist archeologist
+ archaeologists archeologists
+ archaeology archeology
  ardour ardor
  armour armor
  armoured armored

@@ -13,13 +13,13 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 #endif
 
 extern bool echoServer;
-extern char outputFeed[MAX_BUFFER_SIZE];
+extern char* outputFeed;
 #ifdef WIN32
   #pragma warning(push,1)
   #pragma warning(disable: 4290) 
   typedef char raw_type;       
   typedef int socklen_t;
-  #include <winsock.h>  
+  #include <winsock.h>        
 #else
   typedef void raw_type;    
   #include <arpa/inet.h>      

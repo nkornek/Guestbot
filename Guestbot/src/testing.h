@@ -16,27 +16,24 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 
 #define TESTING_REPEATALLOWED 1000
 
-// simple
-#define TRACE_BASIC 1	
-#define TRACE_MATCH 2
-#define TRACE_VARIABLE 4
+#define BASIC_TRACE 1	
+#define MATCH_TRACE 2
+#define VARIABLE_TRACE 4
 
-// mild
-#define TRACE_PREPARE 8
-#define TRACE_OUTPUT 16
-#define TRACE_PATTERN 16
+#define PREPARE_TRACE 8
+#define OUTPUT_TRACE 16
+#define PATTERN_TRACE 16
 
-// deep
-#define TRACE_HIERARCHY 32
-#define TRACE_INFER 64
-#define TRACE_SUBSTITUTE 128
-#define TRACE_FACTCREATE 256
-#define TRACE_VARIABLESET 512
-// #define NO_TRACE 1024 // control on a topic 
-#define TRACE_USER 2048
-#define TRACE_POS 4096
-#define TRACE_QUERY 8192
-#define TRACE_TCP 16384
+#define HIERARCHY_TRACE 32
+#define INFER_TRACE 64
+#define SUBSTITUTE_TRACE 128
+#define FACTCREATE_TRACE 126
+#define VARIABLESET_TRACE 512
+
+#define NO_TRACE 1024 // control on a topic 
+
+#define USER_TRACE 2048
+#define POS_TRACE 4096
 
 // codes returned from :command
 #define COMMANDED 0
@@ -63,7 +60,7 @@ typedef struct CommandInfo
 extern CommandInfo commandSet[];
 
 void InitCommandSystem();
-int Command(char* input,char* output);
+int Command(char* input);
 int CountSet(WORDP D,unsigned int baseStamp);
 void CopyFile2File(const char* newname,const char* oldname,bool autoNumber);
 
@@ -73,6 +70,6 @@ void SortTopic0(WORDP D,uint64 junk);
 
 #endif
 
-int DoCommand(char* input,char* output,bool authorize=true);
+int DoCommand(char* input,bool authorize=true);
 
 #endif

@@ -1,6 +1,6 @@
- 8vo ( meanings=1 NOUN NOUN_SINGULAR ) 
-    octavo~1n 
- 8_May_1945 ( meanings=1 glosses=1 NOUN_ABSTRACT NOUN NOUN_SINGULAR ) 
-    V-E_Day~1nz (^Victory_Day~1) the date of Allied victory in Europe, World War II
- 8-membered ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL ) 
+ 8vo ( meanings=1 glosses=1 NOUN_ABSTRACT NOUN NOUN_SINGULAR ) 
+    eightvo~1nz (size~1) the size of a book whose pages are made by folding a sheet of paper three times to form eight leaves
+ 8_May_1945 ( meanings=1 NOUN NOUN_PROPER_SINGULAR ) 
+    V-E_Day~1n 
+ 8-membered ( meanings=1 ADJECTIVE ADJECTIVE_NORMAL BASIC_FORM ) 
     eight-membered~1a 

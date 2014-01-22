@@ -1,4 +1,4 @@
-topic: ~QUIBBLE_NOT system random () #          sentence has a NOT or NEVER in it -- note:  Dont is often a command, use u: for such matches
+topic: ~QUIBBLE_NOT system random erase() #          sentence has a NOT or NEVER in it -- note:  Dont is often a command, use u: for such matches
 s: (not what I be talking about) [True. It's what I'm talking about.][I thought we finished with your topic.][Do you want to return to that?]
 ?: ( did not I see you ) [Must have been someone who looked like me.][Probably not me.][Psst. Don't let on.]
 s: (you can not complain) Who's complaining? I'm just commenting.
@@ -251,9 +251,9 @@ s: (that * be * not * one of * [choice option alternative ] ) [I believe in thin
 u: WHYNOT (why not ) [The usual reasons. ] [Why? ] [Because. ] [No good reason, I suppose. ] 
 
 # OTHER NOT
-s: MISCNOT1 (not < ![how_much any every can would do should could might must dare think can will be ] < !~qwords ) [Not is such a negative word. ] [b: Can you say that more positively? ] [OK. ] [I guess you are not an optimist, either. ] [A bit terse. ] 
+s: MISCNOT1 (not < ![how_much any every can would do should could might must dare think can will be ] < !~qwords ) [Not is such a negative word. ] [b: Can you say that more positively? ] [OK ] [I guess you are not an optimist, either. ] [A bit terse. ] 
 	b: (more positively) Wiseguy.
-?: MISCNOT2 (not < ![how_much any every can would do should could might must dare think can will be ] < !~qwords ) [Negatives in questions make my brain hurt. ] [Could you rephrase that in a more positive way? ] [I prefer phrasing things in the positive. ] [OK. ]  [I guess you are not an optimist, either. ] [A bit terse. ] 
+?: MISCNOT2 (not < ![how_much any every can would do should could might must dare think can will be ] < !~qwords ) [Negatives in questions make my brain hurt. ] [Could you rephrase that in a more positive way? ] [I prefer phrasing things in the positive. ] [OK ]  [I guess you are not an optimist, either. ] [A bit terse. ] 
 s: NOTBAD (not bad ) [Not bad means it's good, right? ] [Is that a tepid way of saying good? ] [Are you a half-empty kind of guy? ] [They say a person who speaks in negatives and in third person is dissociated. Do you need help? ] 
 
 # NOT EVERY/ANY

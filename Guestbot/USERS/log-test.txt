@@ -1,0 +1,328 @@
+﻿Start: user:test bot:snowwhite ip: rand:3089 (~justify_identity) 0 ==> Hi, what brings you to this part of the woods?  When:Sat Oct 19 14:46:14 2013 Version:3.53 Build0:1379951602 Build1:1381975128 Why: ~justify_identity.0.0 
+Command: :up passing
+
+For passing:
+ Set hierarchy:
+ Wordnet hierarchy:
+  passing~1: success in satisfying a test or requirement 
+    is success~1  an attainment that is successful 
+       is attainment~1z the act of achieving an aim 
+          is accomplishment~1z the action of accomplishing something 
+             is action~1z something done  
+                is act~1z something that people do or cause to happen 
+                   is event~1z something that happens at a given place and time 
+                      is psychological_feature~1z a feature of the mental life of a living organism 
+                         is abstraction~1z a general concept formed by extracting common features from specific examples 
+                            is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  passing~2: going by something that is moving in order to get in front of it 
+    is reordering~1  a rearrangement in a different order 
+       is rearrangement~1z changing an arrangement 
+          is arrangement~1z the act of arranging and adapting a piece of music 
+             is composition~2z musical creation 
+                is creating_by_mental_acts~1z the act of creating something by thinking 
+                   is creation~2z the human act of creating 
+                      is activity~1z any specific behavior 
+                         is act~1z something that people do or cause to happen 
+                            is event~1z something that happens at a given place and time 
+                               is psychological_feature~1z a feature of the mental life of a living organism 
+                                  is abstraction~1z a general concept formed by extracting common features from specific examples 
+                                     is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  passing~3: a play that involves one player throwing the ball to a teammate 
+    is football_play~1  a play by the offensive team 
+       is swordplay~1z a preset plan of action in team sports 
+          is plan_of_action~1z a plan for actively doing something 
+             is architectural_plan~1z a series of steps to be carried out or goals to be accomplished 
+                is thinking~1 the content of cognition 
+                   is depicted_object~1z the sum or range of what has been perceived, discovered, or learned 
+                      is knowledge~1z the psychological result of perception and learning and reasoning 
+                         is psychological_feature~1z a feature of the mental life of a living organism 
+                            is abstraction~1z a general concept formed by extracting common features from specific examples 
+                               is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  passing~4: a bodily reaction of changing from one place or stage to another 
+    is reaction~2  a bodily process occurring due to the effect of some antecedent stimulus or agent 
+       is activity~1z an organic process that takes place in the body 
+          is biological_process~1z a process occurring in living organisms 
+             is process~1z a sustained phenomenon or one marked by gradual changes through a series of states 
+                is physical_entity~1z an entity that has physical existence 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  passing~5: the end of something 
+    is last~3  the concluding parts of an event or occurrence 
+       is finishing~1z event whose occurrence ends something 
+          is natural_event~1z an event that happens 
+             is event~1z something that happens at a given place and time 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  passing~6: the motion of one object relative to another 
+    is movement~8  a natural event that involves a change in the position or location of something 
+       is natural_event~1z an event that happens 
+          is event~1z something that happens at a given place and time 
+             is psychological_feature~1z a feature of the mental life of a living organism 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  passing~7: euphemistic expressions for death 
+    is expiry~1  the event of dying or departure from life 
+       is adjustment~1 an event that occurs when something passes from one state or phase to another 
+          is natural_event~1z an event that happens 
+             is event~1z something that happens at a given place and time 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  passing~8: hasty and without attention to detail 
+  passing~9: of advancing the ball by throwing it 
+  passing~10: lasting a very short time 
+  passing~11: allowing you to pass satisfactorily 
+  passing~12: to an extreme degree 
+Command: :up visit
+
+For visit:
+ Set hierarchy:
+ Wordnet hierarchy:
+  visit~1: a temporary stay 
+    is stay~1  continuing or remaining in a place or state 
+       is act~1z something that people do or cause to happen 
+          is event~1z something that happens at a given place and time 
+             is psychological_feature~1z a feature of the mental life of a living organism 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  visit~2: the act of going to see some person in a professional capacity 
+    is coming_together~2  the social act of assembling for some common purpose 
+       is fabrication~2z the social act of assembling 
+          is group_action~1z action taken by a group of people 
+             is event~1z something that happens at a given place and time 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+             is act~1z something that people do or cause to happen 
+                is event~1z something that happens at a given place and time 
+                   is psychological_feature~1z a feature of the mental life of a living organism 
+                      is abstraction~1z a general concept formed by extracting common features from specific examples 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  visit~3: the act of visiting in an official capacity 
+    is coming_together~2  the social act of assembling for some common purpose 
+       is fabrication~2z the social act of assembling 
+          is group_action~1z action taken by a group of people 
+             is event~1z something that happens at a given place and time 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+             is act~1z something that people do or cause to happen 
+                is event~1z something that happens at a given place and time 
+                   is psychological_feature~1z a feature of the mental life of a living organism 
+                      is abstraction~1z a general concept formed by extracting common features from specific examples 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  visit~4: the act of going to see some person or place or thing for a short time 
+    is coming_together~2  the social act of assembling for some common purpose 
+       is fabrication~2z the social act of assembling 
+          is group_action~1z action taken by a group of people 
+             is event~1z something that happens at a given place and time 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+             is act~1z something that people do or cause to happen 
+                is event~1z something that happens at a given place and time 
+                   is psychological_feature~1z a feature of the mental life of a living organism 
+                      is abstraction~1z a general concept formed by extracting common features from specific examples 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  visit~5: a meeting arranged by the visitor to see someone for treatment or advice 
+    is meeting~5  a small informal social gathering 
+       is social_affair~1z a gathering for the purpose of promoting fellowship 
+          is assembly~2 a group of persons together in one place 
+             is social_group~1z people sharing some social relation 
+                is group~1z any number of entities considered as a unit 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  visit~6: assail 
+  visit~7: impose something unpleasant 
+  visit~8: talk socially without exchanging too much information 
+  visit~9: go to certain places as for sightseeing 
+  visit~10: come to see in an official or professional capacity 
+  visit~11: pay a brief visit 
+  visit~12: go to see a place, as for entertainment 
+  visit~13: stay with as a guest 
+Command: :down visit
+     2. call~3z a visit in an official or professional capacity
+     2. flying_visit~1z a visit that last for only a very short time
+     2. call~4z a brief social visit
+     2. visiting~1z the activity of making visits
+     2. site_visit~1z a visit in an official capacity to examine a site to determine its suitability for some enterprise
+     2. visitation~1z an official visit for inspection or supervision
+
+Command: :down arrive
+
+Command: :down arrive
+
+Command: :build 1
+Start: user:test bot:snowwhite ip: rand:3089 (~justify_identity) 0 ==> Sorry but I was told not to trust any strangers.  When:Sat Oct 19 20:00:34 2013 Version:3.53 Build0:1379951602 Build1:1382212211 Why: ~justify_identity.2.0 
+Command: :build 1
+Start: user:test bot:snowwhite ip: rand:3089 (~introductions) 0 ==> Welcome to ChatScript.  When:Sat Oct 19 20:18:09 2013 Version:3.53 Build0:1379951602 Build1:1382227574 Why: ~introductions.3.0 
+Command: :up nature
+
+For nature:
+ Set hierarchy:
+ Wordnet hierarchy:
+  nature~1: the complex of emotional and intellectual attributes that determine a person's characteristic actions and reactions 
+    is trait~1  a distinguishing feature of your personal nature 
+       is attribute~1z an abstraction belonging to or characteristic of an entity 
+          is abstraction~1z a general concept formed by extracting common features from specific examples 
+             is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  nature~2: the essential qualities or characteristics by which something is recognized 
+    is quality~1  an essential and distinguishing attribute of something or someone 
+       is attribute~1z an abstraction belonging to or characteristic of an entity 
+          is abstraction~1z a general concept formed by extracting common features from specific examples 
+             is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  nature~3: a particular type of thing 
+    is type~2  a subdivision of a particular kind of thing 
+       is diverseness~1z a category of things distinguished by some common characteristic or quality 
+          is category~1z a general concept that marks divisions or coordinations in a conceptual scheme 
+             is concept~1z an abstract or general idea inferred or derived from specific instances 
+                is thinking~1 the content of cognition 
+                   is depicted_object~1z the sum or range of what has been perceived, discovered, or learned 
+                      is knowledge~1z the psychological result of perception and learning and reasoning 
+                         is psychological_feature~1z a feature of the mental life of a living organism 
+                            is abstraction~1z a general concept formed by extracting common features from specific examples 
+                               is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  nature~4: the natural physical world including plants and animals and landscapes etc. 
+    is world~6  everything that exists anywhere 
+       is natural_object~1z an object occurring naturally 
+          is unit~1z an assemblage of parts that is regarded as a single entity 
+             is physical_object~1z a tangible and visible entity 
+                is physical_entity~1z an entity that has physical existence 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  nature~5: a causal agent creating and controlling things in the universe 
+    is causal_agency~1  any entity that produces an effect or is responsible for events or results 
+       is physical_entity~1z an entity that has physical existence 
+          is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+Command: :up animal
+
+For animal:
+ Set hierarchy:
+ Wordnet hierarchy:
+  animal~1: a living organism characterized by voluntary movement 
+    is being~1  a living thing that has the ability to act or function independently 
+       is living_thing~1z a living entity 
+          is unit~1z an assemblage of parts that is regarded as a single entity 
+             is physical_object~1z a tangible and visible entity 
+                is physical_entity~1z an entity that has physical existence 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  animal~2: marked by the appetites and passions of the body 
+Command: :up forest
+
+For forest:
+ Set hierarchy:
+ Wordnet hierarchy:
+  forest~1: the trees and other plants in a large densely wooded area 
+    is flora~2  all the plant life in a particular region or period 
+       is assembly~2 several things grouped together or considered as a whole 
+          is group~1z any number of entities considered as a unit 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  forest~2: land that is covered with trees and shrubs 
+    is biome~1  a major biotic community characterized by the dominant forms of plant life and the prevailing climate 
+       is biotic_community~1z a group of interdependent organisms inhabiting the same region and interacting with each other 
+          is group~1z any number of entities considered as a unit 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+    is ground~8  the solid part of the earth's surface 
+       is physical_object~1z a tangible and visible entity 
+          is physical_entity~1z an entity that has physical existence 
+             is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  forest~3: establish a forest on previously unforested land 
+Command: :up sing
+
+For sing:
+ Set hierarchy:
+ Wordnet hierarchy:
+  sing~1: divulge confidential information or secrets 
+  sing~2: make a whining, ringing, or whistling sound 
+  sing~3: to make melodious sounds 
+  sing~4: produce tones with the voice 
+  sing~5: deliver by singing 
+Command: :up we
+
+For we:
+ Set hierarchy:
+ Wordnet hierarchy:
+  we~1:
+Command: :build 1
+Start: user:test bot:snowwhite ip: rand:3091 (~dwarves) 0 ==> The dwarves told me not to let anyone in.  When:Sat Oct 26 22:52:28 2013 Version:3.53 Build0:1379951602 Build1:1382230325 Why: ~dwarves.0.0 
+Command: :up forest
+
+For forest:
+ Set hierarchy:
+ Wordnet hierarchy:
+  forest~1: the trees and other plants in a large densely wooded area 
+    is flora~2  all the plant life in a particular region or period 
+       is assembly~2 several things grouped together or considered as a whole 
+          is group~1z any number of entities considered as a unit 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  forest~2: land that is covered with trees and shrubs 
+    is biome~1  a major biotic community characterized by the dominant forms of plant life and the prevailing climate 
+       is biotic_community~1z a group of interdependent organisms inhabiting the same region and interacting with each other 
+          is group~1z any number of entities considered as a unit 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+    is ground~8  the solid part of the earth's surface 
+       is physical_object~1z a tangible and visible entity 
+          is physical_entity~1z an entity that has physical existence 
+             is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  forest~3: establish a forest on previously unforested land 
+Command: :up woods
+
+For woods:
+ Set hierarchy:
+ Wordnet hierarchy:
+  woods~1: the trees and other plants in a large densely wooded area 
+    is flora~2  all the plant life in a particular region or period 
+       is assembly~2 several things grouped together or considered as a whole 
+          is group~1z any number of entities considered as a unit 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+Command: :up not
+
+For not:
+ Set hierarchy:
+ Wordnet hierarchy:
+  not~1: negation of a word or group of words 
+Command: :build 2
+Command: :build2
+Command: :build1
+Command: :build 1
+Start: user:test bot:snowwhite ip: rand:3091 (~dwarves) 0 ==> The dwarves would think I'm really stupid if I accept another gift from a stranger.  When:Sat Oct 26 23:12:38 2013 Version:3.53 Build0:1379951602 Build1:1382843457 Why: ~dwarves.1.0 
+Command: :reset
+Respond: user:test bot:snowwhite ip: (~justify_identity) 0  :reset ==> Hi, what brings you to this part of the woods?  When:Sat Oct 26 23:12:44 2013 Why: ~justify_identity.0.0 
+Respond: user:test bot:snowwhite ip: (~justify_identity) 1  i'm a traveller ==> That's odd, we rarely get visitors this deep in the woods.  When:Sat Oct 26 23:13:00 2013 Why: ~justify_identity.10.0 
+Respond: user:test bot:snowwhite ip: (~justify_identity) 2  i like isolation ==> Sorry but I was told not to trust any strangers.  When:Sat Oct 26 23:13:05 2013 Why: ~justify_identity.2.0 
+Respond: user:test bot:snowwhite ip: (~chicken) 3  i like seclusion ==> Chicken chicken chicken, and beef  When:Sat Oct 26 23:13:10 2013 Why: ~chicken.1.0 
+Command: :reset
+Respond: user:test bot:snowwhite ip: (~justify_identity) 0  :reset ==> Hi, what brings you to this part of the woods?  When:Sat Oct 26 23:13:21 2013 Why: ~justify_identity.0.0 
+Respond: user:test bot:snowwhite ip: (~justify_identity) 1  i'm a traveller ==> That's odd, we rarely get visitors this deep in the woods.  When:Sat Oct 26 23:13:26 2013 Why: ~justify_identity.10.0 
+Respond: user:test bot:snowwhite ip: (~justify_identity) 2  i like seclusion ==> I can certainly understand that. These woods are so peaceful!  When:Sat Oct 26 23:13:31 2013 Why: ~justify_identity.10.1 
+Respond: user:test bot:snowwhite ip: (~praise_nature) 3  the animals are nice ==> Aren't they! Sometimes I sing with them!  When:Sat Oct 26 23:13:54 2013 Why: ~praise_nature.1.0 
+Respond: user:test bot:snowwhite ip: (~praise_nature) 4  would you like a snack? ==> I love it here in the woods!  When:Sat Oct 26 23:14:06 2013 Why: ~praise_nature.0.0 
+Command: :up snack
+
+For snack:
+ Set hierarchy:
+ Wordnet hierarchy:
+  snack~1: a light informal meal 
+    is meal~2  the food served and eaten at one time 
+       is upkeep~2 a source of materials to nourish the body 
+          is nutrient~1z any substance that can be metabolized by an animal to give energy and build tissue 
+             is substance~1z a particular kind or species of matter with uniform properties 
+                is matter~1z that which has mass and occupies space 
+                   is physical_entity~1z an entity that has physical existence 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  snack~2: eat a snack 
+Respond: user:test bot:snowwhite ip: (~justify_identity) 5  it must be lonely out here ==> Sorry but I was told not to trust any strangers.  When:Sat Oct 26 23:15:08 2013 Why: ~justify_identity.2.0 
+Command: :up lonely
+
+For lonely:
+ Set hierarchy:
+ Wordnet hierarchy:
+  lonely~1: marked by dejection from being alone 
+  lonely~2: devoid of creatures 
+  lonely~3: characterized by or preferring solitude 
+  lonely~4: lacking companions or companionship 
+Command: :build 1

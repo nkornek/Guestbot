@@ -2,7 +2,7 @@
 table: ~albums(^group ^album ^date ) # Store albums by group IN ORDER so 1st is first
 ^addproperty(^group NOUN_HUMANGROUP  NOUN NOUN_PROPER_SINGULAR)
 ^createfact(^group member ~band)
-^createfact(^album sing ^group)
+^createfact(^album exemplar ^group)
 if (^date != *){^createfact(^date date ^album)}
 DATA:
 "Florence and the Machine" Lung 2010
@@ -133,7 +133,7 @@ Queen Freddy_Mercury
 
 table: ~bands  ( ^group ^song) # bands with song they did
 ^addproperty(^group NOUN_HUMANGROUP  NOUN NOUN_PROPER_SINGULAR )
-^createfact(^song sing ^group)
+^createfact(^song exemplar ^group)
 ^createfact(^group member ~band)
 DATA:
  "Grateful Dead" *
@@ -143,6 +143,7 @@ DATA:
  "Saving Abel" *
  "Jefferson Airplane" "White Rabbit"
  "Jefferson Starship" *
+ "3 Doors Down" "It's Not My Time"
  "Rehab" "Bartender Song"
  "Theory of a Deadman" "Bad Girlfriend"
  "Disturbed" "Inside the Fire"
@@ -151,6 +152,7 @@ DATA:
  "Linkin Park" "Shadow of the Day"
  "Red Hot Chili Peppers" "Dani California"
  "Buckcherry" "Crazy Bitch"
+ "3 Doors Down" "Kryptonite"
  "The Verve" "Bittersweet Symphony"
  "Staind" "Believe"
  "The Fray" "How to Save a Life"
@@ -207,8 +209,6 @@ DATA:
   "Drowning Pool" 
   "Papa Roach" 
   "Demon Hunter"
-  "She Daisy"
-  "Lady Antelbellum"
   "Trapt" 
   "U2" 
   "Puddle of Mudd" 
@@ -282,7 +282,6 @@ DATA:
 ~singer "Janet Jackson"   
 ~singer "Carole King"  
 ~singer "Beyonce"  
-~singer "Mylie Cyrus" 
 ~singer "Nelly Furtado"  
 ~singer "Fergie" 
 ~singer "Avril Lavigne"  
@@ -293,34 +292,4 @@ DATA:
 ~singer "Mariah Carey"  
 ~singer "Kate Perry" 
 ~singer "Sara Bareilles"  
-~singer "Sarah Mclachlan"  
-~singer "Sara Groves"  
-~singer "Shawn Colvin"  
-~singer "Taylor Swift"
-~singer "Stevie Nicks"
-~singer "Terri Clark"
-~singer "Trisha Yearwood"
-~singer "Vanessa Carlton"
-~singer "Michelle Branch"
-~singer "Melissa Etheridge"
-~singer "Mary Chapin Carpenter"
-~singer "Mary-Chapin Carpenter"
-~singer "Martina McBride"
-~singer "Loreena McKennitt"
-~singer "Liz Phair"
-~singer "Lindsay Pagan"
-~singer "Lady Gaga"
-~singer "Kelly Clarkson"
-~singer "Joan Osborne"
-~singer "Jann Arden"
-~singer Enya
-~singer "Deana Carter"
-~singer "Colbie Cailat"
-~singer "Christina Perri"
-~singer "Chantel Kreviazuk"
-~singer "Avril Lavigne"
-~singer "Alison Kraus"
-~singer "Amanda Marshall"
-
-
-
+~singer "Mylie Cyrus" 

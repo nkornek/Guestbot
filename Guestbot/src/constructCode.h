@@ -15,7 +15,7 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 #endif
 
 extern int impliedIf;
-extern unsigned int withinLoop;
+
 char* HandleIf(char* ptr, char* buffer, unsigned int &result);
 char* HandleLoop(char* ptr, char* buffer, unsigned int &result);
 unsigned int HandleRelation(char* word1,char* op, char* word2,bool iflog,unsigned int& id);

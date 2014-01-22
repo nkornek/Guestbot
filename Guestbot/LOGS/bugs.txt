@@ -1,0 +1,1729 @@
+﻿   in simpletopic.top at 2:  #! @summary
+FILE-1 Unknown top-level declaration #! in RAWDATA/BLANCHENEIGE/simpletopic.topMissing topic index for ~introductions
+input:1 Sat Aug 24 20:47:15 2013 Missing topic index for ~control
+ caller:test callee:snowwhite in sentence: hello at 
+Missing topic index for ~control
+input:0 Sat Aug 24 20:47:40 2013 Missing topic index for ~introductions
+ caller:test callee:snowwhite in sentence: hello at 
+Missing topic index for ~introductions
+   in simpletopic.top at 2: #! Relevant concepts
+FILE-1 Unknown top-level declaration #! in RAWDATA/BLANCHENEIGE/simpletopic.topinput:4 Mon Sep 23 11:16:26 2013 Missing topic index for ~defendpresence
+ caller: callee:snowwhite in sentence: Here's an apple at 
+Missing topic index for ~defendpresence
+input:4 Mon Sep 23 11:16:26 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: Here's an apple at 
+Missing topic index for ~introductions
+input:4 Mon Sep 23 11:16:26 2013 Missing topic index for ~defendpresence
+ caller: callee:snowwhite in sentence: Here's an apple at 
+Missing topic index for ~defendpresence
+   in simpletopic.top at 2: #! Relevant concepts
+FILE-1 Unknown top-level declaration #! in RAWDATA/BLANCHENEIGE/simpletopic.topinput:4 Mon Sep 23 11:17:35 2013 Missing topic index for ~defendpresence
+ caller: callee:snowwhite in sentence: Here's an apple at 
+Missing topic index for ~defendpresence
+input:4 Mon Sep 23 11:17:35 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: Here's an apple at 
+Missing topic index for ~introductions
+input:4 Mon Sep 23 11:17:35 2013 Missing topic index for ~defendpresence
+ caller: callee:snowwhite in sentence: Here's an apple at 
+Missing topic index for ~defendpresence
+   in simpletopic.top at 2: #! Relevant concepts
+FILE-1 Unknown top-level declaration #! in RAWDATA/BLANCHENEIGE/simpletopic.topinput:4 Mon Sep 23 11:18:46 2013 Missing topic index for ~defendpresence
+ caller: callee:snowwhite in sentence: Here's an apple at 
+Missing topic index for ~defendpresence
+input:4 Mon Sep 23 11:18:46 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: Here's an apple at 
+Missing topic index for ~introductions
+input:4 Mon Sep 23 11:18:46 2013 Missing topic index for ~defendpresence
+ caller: callee:snowwhite in sentence: Here's an apple at 
+Missing topic index for ~defendpresence
+   in simpletopic.top at 5: $EQ_peddler=1
+Expecting responder for topic ~defendpresence, got $eq_peddler=1input:4 Mon Sep 23 11:41:43 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: want apple? at 
+Missing topic index for ~introductions
+input:4 Mon Sep 23 11:41:43 2013 Missing topic index for ~defendpresence
+ caller: callee:snowwhite in sentence: want apple? at 
+Missing topic index for ~defendpresence
+   in identity.top at 3: topic: ~identity (~peddler who woman be)
+TOPIC-1 Concept already defined with this topic name ~identity   in identity.top at 5: t: [So, what brings you to this part of the woods?][Yes, what can I do for you?]
+Bad topic flag t: for topic ~identity   in identity.top at 9: s: ($offered==1 ~peddler) Why are you giving your apples away, then?
+Bad topic flag s: for topic ~identity   in identity.top at 15: s: ($offered==0 ~peddler) 
+Bad topic flag s: for topic ~identity   in simpletopic.top at 1: concept: ~peddler (peddler salesman saleswoman hawker pedlar seller vender vendor dealer)
+CONCEPT-3 Concept/topic already defined ~peddlerinput:5 Mon Sep 23 14:24:16 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: peddler at 
+Missing topic index for ~introductions
+input:5 Mon Sep 23 14:24:16 2013 Missing topic index for ~apple
+ caller: callee:snowwhite in sentence: peddler at 
+Missing topic index for ~apple
+   in identity.top at 1: topic: ~identity (~peddler who woman be)
+TOPIC-1 Concept already defined with this topic name ~identity   in identity.top at 3: t: [So, what brings you to this part of the woods?][Yes, what can I do for you?]
+Bad topic flag t: for topic ~identity   in identity.top at 7: s: ($offered==1 ~peddler) Why are you giving your apples away, then?
+Bad topic flag s: for topic ~identity   in identity.top at 13: s: ($offered==0 ~peddler) 
+Bad topic flag s: for topic ~identityinput:5 Mon Sep 23 14:26:28 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: peddler at 
+Missing topic index for ~introductions
+input:5 Mon Sep 23 14:26:28 2013 Missing topic index for ~apple
+ caller: callee:snowwhite in sentence: peddler at 
+Missing topic index for ~apple
+   in apple.top at 2: concept: ~taste (taste eat try)
+CONCEPT-3 Concept/topic already defined ~taste   in plot.top at 1: concept: ~plot (plot plan assassination murder scheme machination intrigue conspiracy cabal kill murder)
+CONCEPT-3 Concept/topic already defined ~plotinput:2 Mon Sep 23 14:54:40 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: I'm a peddler at 
+Missing topic index for ~introductions
+input:2 Mon Sep 23 14:54:41 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: I'm a peddler at 
+Missing topic index for ~justify_identity
+   in test.top at 3: s:(like * chicken) ^keep(You like chicken.)  
+CALL-60 Incorrect argument count to function ^keep- 3 instead of 0input:4 Thu Sep 26 12:52:27 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: i like chicken at 
+Missing topic index for ~justify_identity
+input:4 Thu Sep 26 12:52:27 2013 Missing topic index for ~chicken
+ caller: callee:snowwhite in sentence: i like chicken at 
+Missing topic index for ~chicken
+input:4 Thu Sep 26 12:52:27 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: i like chicken at 
+Missing topic index for ~introductions
+   in test.top at 1: topic: ~chicken (chicken roasting pork) ^keep()
+Expecting responder for topic ~chicken, got ^keepinput:2 Thu Sep 26 12:54:07 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: I like chicken at 
+Missing topic index for ~introductions
+input:2 Thu Sep 26 12:54:07 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: I like chicken at 
+Missing topic index for ~justify_identity
+input:2 Thu Sep 26 12:54:07 2013 Missing topic index for ~chicken
+ caller: callee:snowwhite in sentence: I like chicken at 
+Missing topic index for ~chicken
+   in test.top at 3: s: ^keep() (like * chicken)  You like chicken. 
+RULE-3 Missing pattern for ruleinput:2 Thu Sep 26 12:54:22 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: I like chicken at 
+Missing topic index for ~introductions
+input:2 Thu Sep 26 12:54:22 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: I like chicken at 
+Missing topic index for ~justify_identity
+input:2 Thu Sep 26 12:54:22 2013 Missing topic index for ~chicken
+ caller: callee:snowwhite in sentence: I like chicken at 
+Missing topic index for ~chicken
+   in test.top at 3: t:Chicken chicken chicken ^keep()
+Expecting responder for topic ~chicken, got t:Chickeninput:2 Thu Sep 26 12:59:35 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: I like chicken at 
+Missing topic index for ~introductions
+input:2 Thu Sep 26 12:59:35 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: I like chicken at 
+Missing topic index for ~justify_identity
+input:2 Thu Sep 26 12:59:35 2013 Missing topic index for ~chicken
+ caller: callee:snowwhite in sentence: I like chicken at 
+Missing topic index for ~chicken
+   in z_catchall.top at 5: t: ($end==1) [The door is shut, no one is hearing you.] ^keep ^repeat
+CALL-1 Call to function not yet defined ^keepinput:15 Thu Oct 10 16:18:17 2013 Missing topic index for ~assassination_plot
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~assassination_plot
+input:15 Thu Oct 10 16:18:18 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~introductions
+input:15 Thu Oct 10 16:18:18 2013 Missing topic index for ~sell_apple
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~sell_apple
+input:15 Thu Oct 10 16:18:18 2013 Missing topic index for ~catchall
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~catchall
+input:15 Thu Oct 10 16:18:18 2013 Missing topic index for ~chicken
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~chicken
+input:15 Thu Oct 10 16:18:18 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~justify_identity
+   in z_catchall.top at 5: t: ($end==1) The door is shut, no one is hearing you. ^keep ^repeat
+CALL-1 Call to function not yet defined ^keepinput:15 Thu Oct 10 16:19:41 2013 Missing topic index for ~assassination_plot
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~assassination_plot
+input:15 Thu Oct 10 16:19:41 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~introductions
+input:15 Thu Oct 10 16:19:41 2013 Missing topic index for ~sell_apple
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~sell_apple
+input:15 Thu Oct 10 16:19:41 2013 Missing topic index for ~catchall
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~catchall
+input:15 Thu Oct 10 16:19:41 2013 Missing topic index for ~chicken
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~chicken
+input:15 Thu Oct 10 16:19:41 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: dsf at 
+Missing topic index for ~justify_identity
+input:16 Thu Oct 10 16:19:41 2013 Missing topic index for ~control
+ caller: callee:snowwhite in sentence:   at 
+Missing topic index for ~control
+input:15 Thu Oct 10 16:19:43 2013 Missing topic index for ~assassination_plot
+ caller: callee:snowwhite in sentence:   at 
+Missing topic index for ~assassination_plot
+input:15 Thu Oct 10 16:19:43 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence:   at 
+Missing topic index for ~introductions
+input:15 Thu Oct 10 16:19:43 2013 Missing topic index for ~sell_apple
+ caller: callee:snowwhite in sentence:   at 
+Missing topic index for ~sell_apple
+input:15 Thu Oct 10 16:19:43 2013 Missing topic index for ~catchall
+ caller: callee:snowwhite in sentence:   at 
+Missing topic index for ~catchall
+input:15 Thu Oct 10 16:19:43 2013 Missing topic index for ~chicken
+ caller: callee:snowwhite in sentence:   at 
+Missing topic index for ~chicken
+input:15 Thu Oct 10 16:19:43 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence:   at 
+Missing topic index for ~justify_identity
+   in plot.top at 52: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 53: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 54: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 55: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 56: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 57: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 58: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 59: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 60: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 61: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 62: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 63: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 64: s:
+input:20 Thu Oct 10 16:56:58 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 65: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 66: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 67: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 68: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 69: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 70: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 71: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 72: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 73: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 74: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 75: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 76: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 77: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 78: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 79: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 80: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 81: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 82: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 83: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 84: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 85: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 86: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 87: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 88: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 89: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 90: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 91: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 92: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 93: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 94: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 95: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 96: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 97: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 98: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 99: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 100: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 101: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 102: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 103: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 104: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 105: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 106: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 107: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 108: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 109: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 110: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 111: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 112: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 113: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 114: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 115: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 116: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 117: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 118: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 119: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 120: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 121: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 122: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 123: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 124: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 125: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 126: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 127: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 128: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 129: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 130: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 131: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 132: s:
+input:20 Thu Oct 10 16:56:59 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 133: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 134: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 135: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 136: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 137: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 138: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 139: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 140: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 141: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 142: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 143: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 144: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 145: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 146: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 147: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 148: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 149: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 150: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 151: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 152: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 153: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 154: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 155: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 156: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 157: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 158: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 159: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 160: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 161: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 162: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 163: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 164: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 165: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 166: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 167: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 168: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 169: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 170: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 171: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 172: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 173: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 174: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 175: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 176: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 177: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 178: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 179: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 180: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 181: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 182: s:
+input:20 Thu Oct 10 16:57:00 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 183: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 184: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 185: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 186: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 187: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 188: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 189: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 190: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 191: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 192: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 193: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 194: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 195: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 196: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 197: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 198: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 199: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 200: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 201: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 202: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 203: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 204: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 205: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 206: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 207: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 208: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 209: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 210: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 211: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 212: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 213: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 214: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 215: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 216: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 217: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 218: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 219: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 220: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 221: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 222: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 223: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 224: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 225: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 226: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 227: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 228: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 229: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 230: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 231: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 232: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 233: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 234: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 235: s:
+input:20 Thu Oct 10 16:57:01 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 236: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 237: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 238: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 239: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 240: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 241: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 242: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 243: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 244: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 245: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 246: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 247: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 248: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 249: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 250: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 251: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 252: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 253: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 254: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 255: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 256: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 257: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 258: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 259: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 260: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 261: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 262: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 263: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 264: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 265: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 266: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 267: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 268: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 269: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 270: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 271: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 272: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 273: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 274: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 275: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 276: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 277: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 278: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 279: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 280: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 281: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 282: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 283: s:
+input:20 Thu Oct 10 16:57:02 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 284: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 285: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 286: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 287: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 288: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 289: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 290: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 291: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 292: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 293: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 294: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 295: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 296: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 297: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 298: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 299: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 300: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 301: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 302: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 303: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 304: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 305: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 306: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 307: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 308: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 309: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 310: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 311: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 312: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 313: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 314: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 315: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 316: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 317: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 318: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 319: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 320: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 321: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 322: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 323: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 324: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 325: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 326: s:
+input:20 Thu Oct 10 16:57:03 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 327: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 328: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 329: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 330: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 331: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 332: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 333: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 334: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 335: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 336: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 337: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 338: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 339: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 340: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 341: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 342: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 343: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 344: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 345: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 346: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 347: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 348: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 349: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 350: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 351: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 352: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 353: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 354: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 355: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 356: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 357: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 358: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 359: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 360: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 361: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 362: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 363: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 364: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 365: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 366: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 367: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 368: s:
+input:20 Thu Oct 10 16:57:04 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 369: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 370: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 371: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 372: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 373: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 374: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 375: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 376: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 377: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 378: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 379: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 380: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 381: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 382: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 383: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 384: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 385: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 386: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 387: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 388: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 389: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 390: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 391: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 392: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 393: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 394: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 395: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 396: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 397: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 398: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 399: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 400: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 401: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 402: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 403: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 404: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 405: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 406: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 407: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 408: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 409: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 410: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 411: s:
+input:20 Thu Oct 10 16:57:05 2013 unexpected word in ReadTopLevelRule -  caller: callee:snowwhite in sentence: the evil queen is dead at 
+unexpected word in ReadTopLevelRule -    in plot.top at 52: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 53: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 54: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 55: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 56: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 57: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 58: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 59: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 60: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 61: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 62: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 63: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 64: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 65: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 66: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 67: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 68: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 69: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 70: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 71: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 72: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 73: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 74: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 75: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 76: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 77: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 78: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 79: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 80: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 81: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 82: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 83: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 84: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 85: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 86: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 87: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 88: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 89: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 90: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 91: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 92: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 93: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 94: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 95: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 96: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 97: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 98: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 99: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 100: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 101: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 102: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 103: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 104: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 105: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 106: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 107: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 108: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 109: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 110: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 111: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 112: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 113: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 114: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 115: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 116: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 117: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 118: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 119: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 120: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 121: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 122: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 123: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 124: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 125: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 126: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 127: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 128: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 129: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 130: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 131: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 132: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 133: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 134: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 135: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 136: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 137: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 138: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 139: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 140: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 141: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 142: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 143: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 144: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 145: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 146: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 147: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 148: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 149: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 150: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 151: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 152: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 153: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 154: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 155: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 156: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 157: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 158: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 159: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 160: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 161: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 162: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 163: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 164: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 165: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 166: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 167: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 168: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 169: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 170: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 171: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 172: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 173: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 174: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 175: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 176: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 177: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 178: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 179: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 180: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 181: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 182: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 183: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 184: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 185: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 186: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 187: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 188: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 189: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 190: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 191: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 192: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 193: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 194: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 195: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 196: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 197: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 198: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 199: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 200: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 201: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 202: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 203: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 204: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 205: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 206: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 207: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 208: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 209: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 210: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 211: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 212: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 213: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 214: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 215: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 216: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 217: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 218: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 219: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 220: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 221: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 222: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 223: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 224: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 225: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 226: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 227: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 228: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 229: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 230: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 231: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 232: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 233: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 234: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 235: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 236: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 237: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 238: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 239: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 240: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 241: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 242: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 243: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 244: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 245: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 246: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 247: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 248: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 249: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 250: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 251: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 252: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 253: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 254: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 255: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 256: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 257: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 258: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 259: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 52: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 53: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 54: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 55: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 56: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 57: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 58: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 59: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 60: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 61: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 62: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 63: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 64: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 65: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 66: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 67: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 68: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 69: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 70: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 71: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 72: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 73: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 74: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 75: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 76: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 77: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 78: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 79: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 80: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 81: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 82: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 83: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 84: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 85: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 86: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 87: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 88: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 89: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 90: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 91: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 92: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 93: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 94: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 95: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 96: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 97: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 98: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 99: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 100: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 101: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 102: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 103: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 104: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 105: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 106: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 107: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 108: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 109: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 110: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 111: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 112: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 113: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 114: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 115: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 116: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 117: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 118: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 119: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 120: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 121: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 122: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 123: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 124: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 125: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 126: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 127: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 128: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 129: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 130: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 131: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 132: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 133: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 134: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 135: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 136: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 137: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 138: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 139: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 140: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 141: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 142: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 143: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 144: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 145: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 146: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 147: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 148: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 149: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 150: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 151: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 152: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 153: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 154: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 155: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 156: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 157: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 158: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 159: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 160: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 161: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 162: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 163: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 164: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 165: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 166: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 167: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 168: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 169: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 170: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 171: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 172: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 173: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 174: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 175: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 176: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 177: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 178: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 179: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 180: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 181: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 182: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 183: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 184: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 185: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 186: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 187: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 188: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 189: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 190: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 191: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 192: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 193: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 194: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 195: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 196: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 197: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 198: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 199: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 200: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 201: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 202: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 203: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 204: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 205: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 206: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 207: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 208: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 209: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 210: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 211: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 212: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 213: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 214: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 215: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 216: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 217: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 218: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 219: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 220: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 221: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 222: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 223: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 224: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 225: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 226: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 227: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 228: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 229: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 230: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 231: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 232: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 233: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 234: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 235: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 236: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 237: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 238: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 239: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 240: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 241: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 242: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 243: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 244: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 245: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 246: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 247: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 248: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 249: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 250: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 251: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 252: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 253: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 254: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 255: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 256: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 257: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 258: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 259: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 260: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 261: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 262: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 263: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 264: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 265: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 266: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 267: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 268: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 269: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 270: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 271: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 272: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 273: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 274: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 275: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 276: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 277: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 278: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 279: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 280: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 281: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 282: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 283: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 284: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 285: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 286: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 287: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 288: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 289: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 290: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 291: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 292: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 293: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 294: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 295: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 296: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 297: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 298: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 299: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 300: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 301: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 302: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 303: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 304: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 305: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 306: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 307: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 308: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 309: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 310: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 311: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 312: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 313: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 314: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 315: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 316: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 317: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 318: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 319: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 320: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 321: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 322: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 323: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 324: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 325: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 326: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 327: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 328: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 329: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 330: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 331: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 332: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 333: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 334: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 335: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 336: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 337: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 338: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 52: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 53: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 54: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 55: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 56: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 57: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 58: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 59: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 60: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 61: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 62: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 63: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 64: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 65: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 66: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 67: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 68: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 69: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 70: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 71: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 72: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 73: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 74: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 75: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 76: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 77: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 78: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 79: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 80: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 81: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 82: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 83: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 84: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 85: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 86: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 87: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 88: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 89: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 90: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 91: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 92: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 93: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 94: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 95: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 96: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 97: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 98: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 99: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 100: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 101: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 102: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 103: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 104: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 105: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 106: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 107: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 108: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 109: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 110: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 111: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 112: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 113: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 114: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 115: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 116: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 117: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 118: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 119: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 120: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 121: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 122: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 123: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 124: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 125: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 126: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 127: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 128: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 129: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 130: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 131: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 132: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 133: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 134: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 135: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 136: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 137: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 138: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 139: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 140: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 141: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 142: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 143: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 144: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 145: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 146: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 147: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 148: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 149: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 150: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 151: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 152: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 153: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 154: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 155: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 156: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 157: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 158: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 159: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 160: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 161: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 162: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 163: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 164: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 165: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 166: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 167: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 168: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 169: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 170: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 171: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 172: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 173: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 174: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 175: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 176: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 177: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 178: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 179: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 180: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 181: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 182: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 183: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 184: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 185: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 186: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 187: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 188: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 189: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 190: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 191: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 192: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 193: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 194: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 195: s:
+unexpected word in ReadTopLevelRule -    in plot.top at 196: s:
+unexpected word in ReadTopLevelRule -    in identity.top at 68:   a: ([arrive~1 visit~1 ~goodness] * [secluded~2 seclusion~2)
+PATTERN-9 ) is not closing corresponding (input:2 Sat Oct 19 20:52:05 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: i like seclusion at 
+Missing topic index for ~justify_identity
+input:2 Sat Oct 19 20:52:05 2013 Missing topic index for ~introductions
+ caller: callee:snowwhite in sentence: i like seclusion at 
+Missing topic index for ~introductions
+input:2 Sat Oct 19 20:52:05 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: i like seclusion at 
+Missing topic index for ~justify_identity
+   in apple.top at 33: d:(I * have * too~1 * apple) There's no such thing as too many apples.
+RULE-1 Illegal rejoinder level d:input:1 Thu Oct 31 21:35:30 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: you are boring at 
+Missing topic index for ~justify_identity
+input:1 Thu Oct 31 21:35:31 2013 Missing topic index for ~snowwhite
+ caller: callee:snowwhite in sentence: you are boring at 
+Missing topic index for ~snowwhite
+   in identity.top at 105: s: (%length<5 I * be _*) Your name is really ^substitue(CHARACTER '_0 " "  )?
+CALL-1 Call to function not yet defined ^substitueinput:2 Thu Oct 31 21:39:26 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: my name is bob at 
+Missing topic index for ~justify_identity
+   in identity.top at 56:  You're an apple vendor? I really can't accept anything from strangers though. ^explanation()
+CALL-1 Call to function not yet defined ^explanation   in plot.top at 58:  a:(why) Because strangers have tried to kill me recently. ^addtopic(~assassination_plot)
+FILE-1 Unknown top-level declaration a: in RAWDATA/BLANCHENEIGE/plot.top   in plot.top at 67: t: Look, I can't be too cautious with my stepmother wanting to kill me.
+FILE-1 Unknown top-level declaration t: in RAWDATA/BLANCHENEIGE/plot.top   in plot.top at 69: t: ($plot==1) It's so hard living with this sword of Damocles over my head.
+FILE-1 Unknown top-level declaration t: in RAWDATA/BLANCHENEIGE/plot.topinput:5 Fri Nov 01 14:42:27 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: i'm an asshole at 
+Missing topic index for ~justify_identity
+   in identity.top at 56:  You're an apple vendor? I really can't accept anything from strangers though. ^explanation()
+CALL-1 Call to function not yet defined ^explanation   in plot.top at 60:   b:(who) It was actually my stepmother in disguise. ^addtopic(~assassination_plot)
+CHOICE-2 Fail to close code started with ( why ) Because strangers have tried to kill me re    in plot.top at 68: t: Look, I can't be too cautious with my stepmother wanting to kill me.
+FILE-1 Unknown top-level declaration t: in RAWDATA/BLANCHENEIGE/plot.top   in plot.top at 70: t: ($plot==1) It's so hard living with this sword of Damocles over my head.
+FILE-1 Unknown top-level declaration t: in RAWDATA/BLANCHENEIGE/plot.topinput:5 Fri Nov 01 14:45:33 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: i'm an asshole at 
+Missing topic index for ~justify_identity
+input:5 Fri Nov 01 14:49:08 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: i'm an asshole at 
+Missing topic index for ~justify_identity
+   in identity.top at 118: u: (!stepmother <<I * be * ~family_members>>) I think I would recognize a family member.
+PATTERN-45 Cannot have wildcard * inside << >>Missing topic index for ~justify_identity
+Missing topic index for ~justify_identity
+   in identity.top at 161:  a: (_*) mark(I 1) ^mark(be 2) ^retry(SENTENCE)) ^repeat() ^keep()
+OUTPUT-3 Unbalanced )input:2 Fri Nov 01 21:17:28 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: jojo at 
+Missing topic index for ~justify_identity
+input:2 Fri Nov 01 21:17:28 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: jojo at 
+Missing topic index for ~justify_identity
+input:2 Sat Nov 02 13:46:36 2013 Cannot use ^Analyze except in postprocessing caller: callee:snowwhite in sentence: jojo at ~justify_identity.32.1
+Cannot use ^Analyze except in postprocessinginput:2 Sat Nov 02 13:46:55 2013 Cannot use ^Analyze except in postprocessing caller: callee:snowwhite in sentence: jojo at ~justify_identity.32.1
+Cannot use ^Analyze except in postprocessinginput:2 Sat Nov 02 13:51:36 2013 Cannot use ^Analyze except in postprocessing caller: callee:snowwhite in sentence: jojo at ~justify_identity.32.1
+Cannot use ^Analyze except in postprocessinginput:2 Sat Nov 02 13:52:05 2013 Cannot use ^Analyze except in postprocessing caller: callee:snowwhite in sentence: jojo at ~justify_identity.32.1
+Cannot use ^Analyze except in postprocessinginput:2 Sat Nov 02 13:52:27 2013 Cannot use ^Analyze except in postprocessing caller: callee:snowwhite in sentence: jojo at ~justify_identity.32.1
+Cannot use ^Analyze except in postprocessinginput:2 Sat Nov 02 13:52:30 2013 Cannot use ^Analyze except in postprocessing caller: callee:snowwhite in sentence: brother at ~justify_identity.32.1
+Cannot use ^Analyze except in postprocessinginput:2 Sat Nov 02 13:52:54 2013 Cannot use ^Analyze except in postprocessing caller: callee:snowwhite in sentence: jojo at ~justify_identity.32.1
+Cannot use ^Analyze except in postprocessinginput:2 Sat Nov 02 13:54:35 2013 Cannot use ^Analyze except in postprocessing caller: callee:snowwhite in sentence: jojo at ~justify_identity.32.1
+Cannot use ^Analyze except in postprocessinginput:2 Sat Nov 02 14:08:26 2013 Cannot use ^Analyze except in postprocessing caller: callee:snowwhite in sentence: brother at ~justify_identity.32.1
+Cannot use ^Analyze except in postprocessing   in dwarves.top at 59: s: (<<you * ~feeling_alone>>) Yeah, it sucks being the only human around here.
+PATTERN-45 Cannot have wildcard * inside << >>input:6 Wed Nov 06 11:49:42 2013 Missing topic index for ~sell_apple
+ caller: callee:snowwhite in sentence: it must get lonely out here when the dwarves are at work at 
+Missing topic index for ~sell_apple
+input:6 Wed Nov 06 11:49:42 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: it must get lonely out here when the dwarves are at work at 
+Missing topic index for ~justify_identity
+input:6 Wed Nov 06 11:49:42 2013 Missing topic index for ~praise_nature
+ caller: callee:snowwhite in sentence: it must get lonely out here when the dwarves are at work at 
+Missing topic index for ~praise_nature
+input:6 Wed Nov 06 11:49:42 2013 Missing topic index for ~sell_apple
+ caller: callee:snowwhite in sentence: it must get lonely out here when the dwarves are at work at 
+Missing topic index for ~sell_apple
+input:7 Wed Nov 06 11:49:42 2013 Missing topic index for ~control
+ caller: callee:snowwhite in sentence:   at 
+Missing topic index for ~control
+   in friendship.top at 1: topic: ~build friendship (~friend ~befriend ~feeling_alone ~befriend)
+TOPIC-1 Concept already defined with this topic name ~build   in friendship.top at 3: concept: ~friend (bro "~no ~stranger" homie ~role_ally "best friend")
+CONCEPT-3 Concept/topic already defined ~friend   in friendship.top at 7: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+FILE-1 Unknown top-level declaration u: in RAWDATA/BLANCHENEIGE/friendship.top   in friendship.top at 9: s: ($trust<2 I * be * ~friend) I just met you.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in friendship.top at 11: s: ($trust>=2 I * be * ~friend) I guess I do know you a bit better now.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in friendship.top at 17: s: (<<you ~feeling_alone>>) Yeah, it sucks being the only human around here.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in friendship.top at 25: s: ($trust>=2 [no not] I * be * stranger~2) You're right, I have gotten to know you a bit better.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in friendship.top at 1: topic: ~build friendship (~friend ~befriend ~feeling_alone ~befriend)
+TOPIC-1 Concept already defined with this topic name ~build   in friendship.top at 1: topic: ~build friendship (~friend ~befriend ~feeling_alone ~befriend)
+TOPIC-1 Concept already defined with this topic name ~build   in friendship.top at 15:  a: ($friend~=1 <<I be !~no ~bro>>) That would be nice.
+CONCEPT-8 Cannot include topic into self   in friendship.top at 23: s: ($trust<2 $friend!=1 I * be * ~bro) I just met you.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in friendship.top at 25: s: ($trust>=2 $friend!=1[no not] I * be * stranger~2) You're right, I have gotten to know you a bit better.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in friendship.top at 29: s: ($trust>=2 $friend!=1 I * be * !~no * ~bro) I guess I do know you a bit better now.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in apple.top at 8: u: (_it) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 11   in apple.top at 9: u: (_them) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 11   in apple.top at 10: u: (_they) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 11   in apple.top at 11: u: (_one) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 11   in apple.top at 13: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 11   in apple.top at 106: u: ($trust<3 !~insults !unpleasant_person~1 [~acquire_imperatives here taste buy want ~acquiring_verbs ~eat] * [apple ~it_words] ) No. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 11   in dwarves.top at 4: u: (_they) ^mark(dwarf _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 11   in dwarves.top at 5: u: (_them) ^mark(dwarf _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 11   in dwarves.top at 7: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 11   in friendship.top at 15:  a: ($friend~=1 <<I be !~no ~bro>>) That would be nice.
+CONCEPT-8 Cannot include topic into self   in friendship.top at 23: s: ($trust<2 $friend!=1 I * be * ~bro) I just met you.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in friendship.top at 25: s: ($trust>=2 $friend!=1[no not] I * be * stranger~2) You're right, I have gotten to know you a bit better.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in friendship.top at 29: s: ($trust>=2 $friend!=1 I * be * !~no * ~bro) I guess I do know you a bit better now.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in identity.top at 5: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 11   in nature.top at 3: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 11   in plot.top at 7: u: (_she) ^mark(queen _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 11   in plot.top at 8: u: (_her) ^mark(queen _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 11   in plot.top at 9: u: (_it) ^mark(plot _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 11   in plot.top at 11: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 11   in simplecontrol.top at 98:  }
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 11   in simplecontrol.top at 144:  ^repeat() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 11   in snowwhite.top at 3: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 11   in z_catchall.top at 5: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 11   in z_catchall.top at 30: s: (I * [understand see know]) Uh-huh... ^poptopic() ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 11   in z_catchall.top at 31: ?: (really) Yup. ^poptopic() ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 11   in z_catchall.top at 32: u: ([here take have] _* ) No thanks, I have all the '_0 I need. ^poptopic() ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 11   in script1.txt at 2: TOPIC: ~sell_apple 0 -1740989128 31 2 3874 apple.top
+failed to read all of topic ~sell_apple read: 614 wanted: 3874 
+   in friendship.top at 15:  a: ($friend~=1 <<I be !~no ~bro>>) That would be nice.
+CONCEPT-8 Cannot include topic into self   in friendship.top at 23: s: ($trust<2 $friend!=1 I * be * ~bro) I just met you.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in friendship.top at 25: s: ($trust>=2 $friend!=1[no not] I * be * stranger~2) You're right, I have gotten to know you a bit better.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in friendship.top at 29: s: ($trust>=2 $friend!=1 I * be * !~no * ~bro) I guess I do know you a bit better now.
+FILE-1 Unknown top-level declaration s: in RAWDATA/BLANCHENEIGE/friendship.top   in apple.top at 8: u: (_it) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in apple.top at 9: u: (_them) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in apple.top at 10: u: (_they) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in apple.top at 11: u: (_one) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in apple.top at 13: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in apple.top at 106: u: ($trust<3 !~insults !unpleasant_person~1 [~acquire_imperatives here taste buy want ~acquiring_verbs ~eat] * [apple ~it_words] ) No. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in dwarves.top at 4: u: (_they) ^mark(dwarf _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in dwarves.top at 5: u: (_them) ^mark(dwarf _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in dwarves.top at 7: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in friendship.top at 8: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in identity.top at 5: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in nature.top at 3: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in plot.top at 7: u: (_she) ^mark(queen _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in plot.top at 8: u: (_her) ^mark(queen _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in plot.top at 9: u: (_it) ^mark(plot _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in plot.top at 11: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in simplecontrol.top at 98:  }
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in simplecontrol.top at 144:  ^repeat() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in snowwhite.top at 3: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in z_catchall.top at 5: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in z_catchall.top at 30: s: (I * [understand see know]) Uh-huh... ^poptopic() ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in z_catchall.top at 31: ?: (really) Yup. ^poptopic() ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in z_catchall.top at 32: u: ([here take have] _* ) No thanks, I have all the '_0 I need. ^poptopic() ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in apple.top at 8: u: (_it) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in apple.top at 9: u: (_them) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in apple.top at 10: u: (_they) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in apple.top at 11: u: (_one) ^mark(apple _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in apple.top at 13: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in apple.top at 106: u: ($trust<3 !~insults !unpleasant_person~1 [~acquire_imperatives here taste buy want ~acquiring_verbs ~eat] * [apple ~it_words] ) No. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in dwarves.top at 4: u: (_they) ^mark(dwarf _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in dwarves.top at 5: u: (_them) ^mark(dwarf _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in dwarves.top at 7: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in friendship.top at 8: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in identity.top at 5: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in nature.top at 3: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in plot.top at 7: u: (_she) ^mark(queen _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in plot.top at 8: u: (_her) ^mark(queen _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in plot.top at 9: u: (_it) ^mark(plot _0)  ^repeat() ^keep() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in plot.top at 11: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in simplecontrol.top at 98:  }
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in simplecontrol.top at 144:  ^repeat() 
+CALL-60 Incorrect argument count to function ^repeat- 0 instead of 23   in snowwhite.top at 3: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in z_catchall.top at 5: u: ($end==1) The door is shut, no one is hearing you. ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in z_catchall.top at 30: s: (I * [understand see know]) Uh-huh... ^poptopic() ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in z_catchall.top at 31: ?: (really) Yup. ^poptopic() ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in z_catchall.top at 32: u: ([here take have] _* ) No thanks, I have all the '_0 I need. ^poptopic() ^keep() ^repeat()
+CALL-60 Incorrect argument count to function ^keep- 0 instead of 23   in script1.txt at 2: TOPIC: ~sell_apple 0 -1740989128 31 2 3874 apple.top
+failed to read all of topic ~sell_apple read: 623 wanted: 3874 
+   in identity.top at 195:   b:(who) It was actually my stepmother in disguise. ^addtopic(~assassination_plot)
+RULE-1 Illegal rejoinder level b:input:3 Thu Nov 14 15:42:56 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: thanks at 
+Missing topic index for ~justify_identity
+input:3 Thu Nov 14 15:42:56 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: thanks at 
+Missing topic index for ~justify_identity
+   in identity.top at 169: s: (<<force~2 apple) You wouldn't dare!
+PATTERN-70 Failed to close <<Missing topic index for ~justify_identity
+Missing topic index for ~justify_identity
+   in dwarves.top at 34: u: (<< [normal natural suitable fitting moral think virtue virtuous] live with dwarf~2) Is it wrong for a young girl to live with seven grown--albeit small--men?
+PATTERN-70 Failed to close <<input:13 Wed Nov 27 15:00:59 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: Is it natural for a young girl to live with dwarves? at 
+Missing topic index for ~justify_identity
+input:13 Wed Nov 27 15:00:59 2013 Missing topic index for ~build_friendship
+ caller: callee:snowwhite in sentence: Is it natural for a young girl to live with dwarves? at 
+Missing topic index for ~build_friendship
+input:13 Wed Nov 27 15:00:59 2013 Missing topic index for ~dwarves
+ caller: callee:snowwhite in sentence: Is it natural for a young girl to live with dwarves? at 
+Missing topic index for ~dwarves
+input:13 Wed Nov 27 15:00:59 2013 Missing topic index for ~sell_apple
+ caller: callee:snowwhite in sentence: Is it natural for a young girl to live with dwarves? at 
+Missing topic index for ~sell_apple
+input:13 Wed Nov 27 15:00:59 2013 Missing topic index for ~assassination_plot
+ caller: callee:snowwhite in sentence: Is it natural for a young girl to live with dwarves? at 
+Missing topic index for ~assassination_plot
+   in simplecontrol.top at 5: #! removed : | #DO_SUBSTITUTE_SYSTEM
+FILE-1 Unknown top-level declaration #! in RAWDATA/BLANCHENEIGE/simplecontrol.topinput:5 Wed Nov 27 22:08:08 2013 Missing topic index for ~justify_identity
+ caller: callee:snowwhite in sentence: please help at 
+Missing topic index for ~justify_identity

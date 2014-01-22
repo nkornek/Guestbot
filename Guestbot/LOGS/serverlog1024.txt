@@ -1,0 +1,16 @@
+﻿Server ready
+  127.0.0.1 test/ Oct 11 14:35:29 start  =>  Hi, what brings you to this part of the woods?   <=
+Server ready
+  127.0.0.1 test/ Oct 11 14:43:38 start  =>  Hi, what brings you to this part of the woods?   <=
+TCP 127.0.0.1 closed connection prematurelly
+TCP 127.0.0.1 closed connection prematurelly
+TCP 127.0.0.1 closed connection prematurelly
+TCP 127.0.0.1 closed connection prematurelly
+TCP 127.0.0.1 closed connection prematurelly
+TCP 127.0.0.1 closed connection prematurelly
+TCP 127.0.0.1 closed connection prematurelly
+TCP 127.0.0.1 closed connection prematurelly
+TCP 127.0.0.1 closed connection prematurelly
+TCP 127.0.0.1 closed connection prematurelly
+TCP 127.0.0.1 closed connection prematurelly
+TCP 127.0.0.1 closed connection prematurelly

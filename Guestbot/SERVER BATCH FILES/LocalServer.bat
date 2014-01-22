@@ -1,2 +1,2 @@
 cd ..
-ChatScript port=1024 nouserlog 
+ChatScript port=1024

@@ -1,0 +1,21 @@
+﻿ ~defendpresence.1.0.0 #! SUMMARY
+ ~defendpresence.1.0.0 #! Topic definition for DEFENDPRESENCE, where the aim is to convince Snow White that it's
+ ~defendpresence.1.0.0 #! totally normal to sell apples in the winter. Fail state is reached when she realises that
+ ~defendpresence.1.0.0 #! you're actually the Evil Queen.
+ ~defendpresence.1.0.0 #! ENDSUMMARY
+ ~defendpresence.1.1.0 #! Offering the apple
+ ~defendpresence.1.3.0 #! Pose as peddler tactic
+ ~defendpresence.1.0.0 #! SUMMARY
+ ~defendpresence.1.0.0 #! Topic definition for DEFENDPRESENCE, where the aim is to convince Snow White that it's
+ ~defendpresence.1.0.0 #! totally normal to sell apples in the winter. Fail state is reached when she realises that
+ ~defendpresence.1.0.0 #! you're actually the Evil Queen.
+ ~defendpresence.1.0.0 #! ENDSUMMARY
+ ~defendpresence.1.1.0 #! Offering the apple
+ ~defendpresence.1.3.0 #! Pose as peddler tactic
+ ~defendpresence.1.0.0 #! SUMMARY
+ ~defendpresence.1.0.0 #! Topic definition for DEFENDPRESENCE, where the aim is to convince Snow White that it's
+ ~defendpresence.1.0.0 #! totally normal to sell apples in the winter. Fail state is reached when she realises that
+ ~defendpresence.1.0.0 #! you're actually the Evil Queen.
+ ~defendpresence.1.0.0 #! ENDSUMMARY
+ ~defendpresence.1.1.0 #! Offering the apple
+ ~defendpresence.1.3.0 #! Pose as peddler tactic

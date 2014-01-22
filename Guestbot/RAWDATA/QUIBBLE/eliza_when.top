@@ -1,5 +1,6 @@
 
-topic: ~QUIBBLE_WHEN system random  () 
+
+topic: ~QUIBBLE_WHEN system random erase () 
 # WHEN
 ?: (when [will be can do have]) [Maybe next year.][Shortly.]
 ?: (when you be not) [But I'm always doing that.][Just about everything. It's a full life, you know.]

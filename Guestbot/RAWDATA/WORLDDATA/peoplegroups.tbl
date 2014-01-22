@@ -7,7 +7,7 @@ concept: ~nFC-North_football_team()
 concept: ~nfc-south_football_team()
 concept: ~aFC-South_football_team()
 concept: ~afc-north_football_team()
-concept: ~football_teams NOUN NOUN_PROPER_SINGULAR (~AFC-EAST_FOOTBALL_TEAM ~AFC-NORTH_FOOTBALL_TEAM ~AFC-SOUTH_FOOTBALL_TEAM ~AFC-WEST_FOOTBALL_TEAM ~NFC-EAST_FOOTBALL_TEAM ~NFC-NORTH_FOOTBALL_TEAM ~NFC-SOUTH_FOOTBALL_TEAM 
+concept: ~football_teams NOUN (~AFC-EAST_FOOTBALL_TEAM ~AFC-NORTH_FOOTBALL_TEAM ~AFC-SOUTH_FOOTBALL_TEAM ~AFC-WEST_FOOTBALL_TEAM ~NFC-EAST_FOOTBALL_TEAM ~NFC-NORTH_FOOTBALL_TEAM ~NFC-SOUTH_FOOTBALL_TEAM 
           ~NFC-WEST_FOOTBALL_TEAM 49ers Bears Colts Patriots Ravens Saints Steelers Vikings )
 
 table: ~groups  ( ^set ^group)
@@ -29,11 +29,7 @@ DATA:
 
 
 table: nickname(^nick ^name)
-$$nick = ^pos(lowercase ^nick)
-$$nick = ^pos(uppercase $$nick)
-$$name = ^pos(lowercase ^name)
-$$name = ^pos(uppercase 44name)
-createfact($$nick nickname $$name)
+createfact(^nick nickname ^name)
 addproperty(^name NOUN_PROPER_SINGULAR NOUN_FIRSTNAME NOUN_HUMAN)
 DATA:
 
