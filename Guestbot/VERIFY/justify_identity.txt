@@ -1,39 +1,9 @@
+ ~justify_identity.0.0 #! ----------------------------------------------------------------
+ ~justify_identity.0.0 #! Entry point of conversation
+ ~justify_identity.0.0 #! ----------------------------------------------------------------
  ~justify_identity.1.0 #! ----------------------------------------------------------------
- ~justify_identity.1.0 #! Entry point of conversation
+ ~justify_identity.1.0 #! Fishing for info
  ~justify_identity.1.0 #! ----------------------------------------------------------------
- ~justify_identity.2.0 #! ----------------------------------------------------------------
- ~justify_identity.2.0 #! Pose as peddler tactic
- ~justify_identity.2.0 #! ----------------------------------------------------------------
- ~justify_identity.8.0 #! ----------------------------------------------------------------
- ~justify_identity.8.0 #! Appeal to trust
- ~justify_identity.8.0 #! ----------------------------------------------------------------
- ~justify_identity.17.0 #! ----------------------------------------------------------------
- ~justify_identity.17.0 #! Lost tactic
- ~justify_identity.17.0 #! ----------------------------------------------------------------
- ~justify_identity.19.0 #! ----------------------------------------------------------------
- ~justify_identity.19.0 #! Amnesia tactic
- ~justify_identity.19.0 #! ----------------------------------------------------------------
- ~justify_identity.20.0 #! ----------------------------------------------------------------
- ~justify_identity.20.0 #! Vader tactic (I am your stepmother)
- ~justify_identity.20.0 #! ----------------------------------------------------------------
- ~justify_identity.21.0 #! ----------------------------------------------------------------
- ~justify_identity.21.0 #! Need help tactics
- ~justify_identity.21.0 #! ----------------------------------------------------------------
- ~justify_identity.32.0 #! ----------------------------------------------------------------
- ~justify_identity.32.0 #! Old acquiantance tactic
- ~justify_identity.32.0 #! ----------------------------------------------------------------
- ~justify_identity.35.0 #! ----------------------------------------------------------------
- ~justify_identity.35.0 #! Let's get violent! tactic
- ~justify_identity.35.0 #! ----------------------------------------------------------------
- ~justify_identity.36.0 #! Would fire "I've killed your stepmother"
- ~justify_identity.36.0 #!s: (kill "you") Get away from me you crazy woman!
- ~justify_identity.36.0 #! $end = 1
- ~justify_identity.36.0 #! ----------------------------------------------------------------
- ~justify_identity.36.0 #! Other identities
- ~justify_identity.36.0 #! ----------------------------------------------------------------
- ~justify_identity.50.0 #! ----------------------------------------------------------------
- ~justify_identity.50.0 #! Fishing for info
- ~justify_identity.50.0 #! ----------------------------------------------------------------
- ~justify_identity.52.0 #! ----------------------------------------------------------------
- ~justify_identity.52.0 #! Topic-related gambits
- ~justify_identity.52.0 #! ----------------------------------------------------------------
+ ~justify_identity.3.0 #! ----------------------------------------------------------------
+ ~justify_identity.3.0 #! Topic-related gambits
+ ~justify_identity.3.0 #! ----------------------------------------------------------------

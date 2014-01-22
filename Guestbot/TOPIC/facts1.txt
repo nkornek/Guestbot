@@ -1,2 +1,2 @@
 ﻿#`end variables
-( snowwhite defaultbot defaultbot )
+( jeeves defaultbot defaultbot )

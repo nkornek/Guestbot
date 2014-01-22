@@ -1,3 +1,0 @@
-﻿Start: user:jo bot:anonymous ip: rand:2998 () 0 ==>   When:Thu Oct 10 16:58:16 2013 Version:3.53 Build0:1379951602 Build1:1381438618 
-Command: :build
-Command: :build 1

@@ -1,17 +1,17 @@
-# this function is executed once for every new user chatting with snowwhite
-outputmacro: snowwhite()  # you get snowwhite by default
+# this function is executed once for every new user chatting with Jarvis
+outputmacro: jarvis()  # you get Jarvis by default
 $token = #DO_INTERJECTION_SPLITTING     | #DO_NUMBER_MERGE   | #DO_PROPERNAME_MERGE  | #DO_SPELLCHECK | #DO_POSTAG  | #DO_PARSE
 
 # removed : | #DO_SUBSTITUTE_SYSTEM
 ^addtopic(~justify_identity)
 $control_main = ~control
 $userprompt = ^"$login: >"
-$botprompt = ^"SNOWWHITE: "
+$botprompt = ^"Jarvis: "
 
 table: defaultbot (^name)
 ^createfact(^name defaultbot defaultbot)
 DATA:
-snowwhite
+jarvis
 
 topic: ~control system ()
 
@@ -143,4 +143,4 @@ u: (%response=0)
 		}
 u: (%response=0)		
 	^repeat() 
-	I don't know what to say. 
+	I am afraid that I'm positively baffled. 

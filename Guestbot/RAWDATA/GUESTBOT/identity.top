@@ -1,0 +1,40 @@
+concept: ~peddler (peddler salesman saleswoman hawker pedlar seller vender vendor dealer)
+
+topic: ~justify_identity (~peddler woman ~reliability_words help)
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+t: 	Good day to you. How may this humble butler be of assistance?
+
+#!
+#!
+#!
+
+#! ----------------------------------------------------------------
+#! Fishing for info
+#! ----------------------------------------------------------------
+
+?: ([~feeling_fearful afraid~1]) My stepmother wanting to kill me has made me paranoid.
+	$plot = 1
+	
+?: ([trust~7 believe~1]) The dwarves told me to simply not trust anyone.
+	$dwarves = 1
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t:($identity!=1) Who are you again?
+	a: (_*) ^input(I am '_0) ^fail(sentence)  
+
+t:($purpose!=1) What was it that you wanted again?
+
+t: ($identity!=1) Sorry but I was told not to trust any strangers.
+	a:(why) Because the two last strangers that came here tried to kill me.  ^addtopic(~assassination_plot)
+		$plot = 1
+			b:(who) It was actually my stepmother in disguise. ^addtopic(~assassination_plot)
+			b:(how) First it was bodice lace that nearly squeezed the death out of me. Then it was a poisoned comb. ^addtopic(~assassination_plot)
+	a:(["that's ok" "I understand" good fine understandable]) I'm glad that you understand my predicament.
+		$trust += 1		

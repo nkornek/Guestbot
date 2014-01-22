@@ -1,6 +1,6 @@
 # underlying conversation system
 # RAWDATA/HARRY/	
-RAWDATA/BLANCHENEIGE/
+RAWDATA/GUESTBOT/
 
 # quibble ability
 #RAWDATA/QUIBBLE/

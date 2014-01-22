@@ -1,20 +1,4 @@
-﻿+ ~delicious CONCEPT 
-+ ~samaritan CONCEPT 
-+ samaritan 
-+ ~takethis CONCEPT 
-+ take_this 
-+ would_you_like 
-+ how_about 
-+ would_you_care_for 
-+ would_you_care_to_join_me 
-+ ~bro CONCEPT 
-+ ~sing CONCEPT 
-+ ~peddler CONCEPT 
-+ ~evilqueen CONCEPT 
-+ ~thewoods CONCEPT 
-+ ~murderplot CONCEPT 
-+ evil_queen 
-+ stepmom 
-+ ~agreement CONCEPT 
-+ snowwhite 
+﻿+ ~peddler CONCEPT 
++ ~assassination_plot 
++ jeeves 
 + defaultbot 
