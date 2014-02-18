@@ -1,1 +1,1 @@
-﻿^jeeves O 0 $token = 2048 | 256 | 512 | 1024 | 4096 | 8192 ^addtopic ( ~justify_identity ) $control_main = ~control $userprompt = ^"$login: >" $botprompt = ^"Jeeves: " 
+﻿^jarvis O 0 $token = 2048 | 256 | 512 | 1024 | 4096 | 8192 ^addtopic ( ~main ) $control_main = ~control $userprompt = ^"$login: >" $botprompt = ^"Jarvis: " 

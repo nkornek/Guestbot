@@ -3,7 +3,7 @@ outputmacro: jarvis()  # you get Jarvis by default
 $token = #DO_INTERJECTION_SPLITTING     | #DO_NUMBER_MERGE   | #DO_PROPERNAME_MERGE  | #DO_SPELLCHECK | #DO_POSTAG  | #DO_PARSE
 
 # removed : | #DO_SUBSTITUTE_SYSTEM
-^addtopic(~justify_identity)
+^addtopic(~main)
 $control_main = ~control
 $userprompt = ^"$login: >"
 $botprompt = ^"Jarvis: "
@@ -17,7 +17,7 @@ topic: ~control system ()
 
 # on startup, do introduction
 u: ( %input<%userfirstline) 
-	gambit(~justify_identity)
+	gambit(~main)
 
 u: () # main per-sentence processing
 
@@ -95,7 +95,7 @@ u: () # main per-sentence processing
 	if (%response == 0) 
 	{
 		 ^repeat() 
-		 I don't know what to say. 
+		 I'm sorry but I have not been programmed to comprehend that. How dreadful!
 	}
 
 
@@ -143,4 +143,4 @@ u: (%response=0)
 		}
 u: (%response=0)		
 	^repeat() 
-	I am afraid that I'm positively baffled. 
+	I am afraid that I am completely baffled. 

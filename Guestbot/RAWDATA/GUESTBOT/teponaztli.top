@@ -1,0 +1,39 @@
+topic: ~teponaztli ("teponaztli")
+
+#! ----------------------------------------------------------------
+#! Games: Teponaztli
+#! ----------------------------------------------------------------
+
+u: (who) The game was made by Sylvain Payen, a PhD student here at Concordia University.
+	a: (~positive_response) Yes, he's very nice.
+	a: (~negative_response) You're a very mean person. I hope you know that.
+
+u: (what !else) Teponaztli is a two player game that mixes platforming and soccer. Players can either work together as chums, or compete as bitter rivals.
+	a: (~positive_response) It certainly leads to some interesting interactions.
+	a: (~negative_response) You're going to become my bitter rival if you keep that up.
+
+u: (where) 
+	a: (~positive_response) 
+	a: (~negative_response) 
+
+u: (when)
+	a: (~positive_response) 
+	a: (~negative_response)
+
+u: (why)
+	a: (~positive_response)
+	a: (~negative_response)
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+u: ("teponaztli") What would you like to know about Teponaztli? ^keep() ^repeat()
+
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: I can answer any questions that you have about Teponaztli. What would you like to know? ^keep() ^repeat()

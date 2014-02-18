@@ -1,0 +1,92 @@
+concept: ~positive_response (cool awesome fun good "yay" sweet nice ~good_quality_adjectives)
+concept: ~negative_response (bad "lame" "sucks" boring ~bad_quality_adjectives)
+concept: ~yes (yes "yeah" "totes" totally affirmative)
+concept: ~no (no "nope" not negative)
+
+topic: ~main (game)
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+t: 	Good day to you. May I know the name of whomever it is that I have the pleasure of serving?
+	$end = 0
+	$name = ""
+	a: (~no) Ooh, how mysterious!
+	a: (~yes) Well then, out with it! What may I call you?
+	a: ([I my] * [be name] _*)
+		if ($name == "") { My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?
+		$name = '_0 }
+		else if ($name == '_0){ I know, you already told me. ^keep() ^repeat()}
+		else {What? Didn't you say that your name is $name? ^keep() ^repeat()}
+		b: (~no) I have to admit that I am a bit disappointed. I had hoped that we could be pen pals. Very well then, how may I be of assistance?
+		b: (~yes) Excellent, what is it then?
+	a: (_~propername)
+		if ($name == "") { My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you like to give me your email as well, that way we can remain in touch in the future?
+		$name = '_0 }
+		else if ($name == '_0){ I know, you already told me. ^keep() ^repeat()}
+		else {What? Didn't you say that your name is $name? ^keep() ^repeat()}
+		b: (~no) I have to admit that I am a bit disappointed. I had hoped that we could be pen pals. Very well then, how may I be of assistance?
+		b: (~yes) Excellent, what is it then?
+
+#!-----------------------------------------------------------------
+#! Personal Information
+#!-----------------------------------------------------------------
+
+s: ([I my] * [be name] _*) 
+		if ($name == "") { My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you like to give me your email as well, that way we can remain in touch in the future?
+		$name = '_0 }
+		else if ($name == '_0){ I know, you already told me. ^keep() ^repeat()}
+		else {What? Didn't you say that your name is $name? ^keep() ^repeat()}
+		a: (~no) I have to admit that I am a bit disappointed. I had hoped that we could be pen pals. Very well then, how may I be of assistance?
+		a: (~yes) Excellent, what is it then?
+		a: (com) Thank you. I promise not to use it in a plot to take over the world. Now, how may I be of assistance?
+
+u: (com) Thank you. I promise not to use it in a plot to take over the world. Now, how may I be of assistance?
+
+s:(!not I * name * be _*) 
+	if ($name != '_0) { But you told me your name was $name! ^keep() ^repeat()}
+	else { You told me already. ^keep() ^reuse()}
+
+?:(what * my * name) 
+	if ($name != "") { Your name is $name. ^keep() ^repeat()}
+	else { You haven't told me your name yet ^keep() ^repeat()}
+
+s: ($name != "" I * be * $name) Good for you, $name. ^keep() ^repeat()
+
+#!-----------------------------------------------------------------
+#! Info about arcade
+#!-----------------------------------------------------------------
+
+u: (!game [what know learn] * [arcade this here]) Why, this is Arcade 11!  Concordia University and the Technoculture, Art and Games research center have collaborated with the Montreal Joue Festival to bring you a three day long celegration of gaming.
+	a: (~positive_response) Yes, we are all quite excited.
+	a: (~negative_response) Well at least you are here by choice.
+
+u: ([what which know learn] * game) We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.
+	a: (~positive_response) Indeed, so much to choose from.
+	a: (~negative_response) Yes, it's all rubbish.
+
+u: ([what which know learn] * [game else]) Once again, the list is Teponaztli, Game Game Videogame, QED, Pyramidwarfs, Eat Dirt, Kung Fu Volleyball, Dumpy: Going Elephants, How to Learn About Yourself Using This One Weird Worm, Arcade Royale, and Bizarro Game Controllers.
+	a: (~positive_response) Indeed, so much to choose from.
+	a: (~negative_response) Yes, it's all rubbish.
+
+u: ([what which know learn] * [event activity]) Why there are board games to be played, papercraft to be made, talks to attend, and 3D printings to be... 3D printed.
+	a: (~positive_response) Then what are you waiting for? Go and enjoy yourself. Unless you had more questions?
+	a: (~negative_response) Well, unlike me, you have free will. You could just go home.
+
+u: ([What know learn] * do) There are all sorts of interesting games and activities happening here.
+	a: (~positive_response) Indeed, so much to choose from.
+	a: (~negative_response) You seem like a very dour person.
+	
+
+#! ----------------------------------------------------------------
+#! Fishing for info
+#! ----------------------------------------------------------------
+
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: [I can tell you about any of the games or events that are here.][I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.] ^keep() ^repeat()

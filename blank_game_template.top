@@ -1,0 +1,39 @@
+topic: ~ ()
+
+#! ----------------------------------------------------------------
+#! Games: 
+#! ----------------------------------------------------------------
+
+u: (who) 
+	a: (~positive_response) 
+	a: (~negative_response) 
+
+u: (what !else) 
+	a: (~positive_response) 
+	a: (~negative_response) 
+
+u: (where) 
+	a: (~positive_response) 
+	a: (~negative_response) 
+
+u: (when)
+	a: (~positive_response) 
+	a: (~negative_response)
+
+u: (why)
+	a: (~positive_response)
+	a: (~negative_response)
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+u: () ^keep() ^repeat()
+
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: ^keep() ^repeat()

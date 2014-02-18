@@ -1,4 +1,6 @@
-﻿+ ~peddler CONCEPT 
-+ ~assassination_plot 
-+ jeeves 
+﻿+ ~bizarro CONCEPT 
++ ~positive_response CONCEPT 
++ ~negative_response CONCEPT 
++ yay 
++ jarvis 
 + defaultbot 

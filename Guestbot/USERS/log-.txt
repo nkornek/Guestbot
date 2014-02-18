@@ -1,0 +1,431 @@
+﻿Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. How may this humble butler be of assistance?  When:Tue Feb 18 10:54:37 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  you suck ==> I don't know what to say.  When:Tue Feb 18 10:54:42 2014 Why: ~control.1.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  you are ugly ==> I don't know what to say.  When:Tue Feb 18 10:55:11 2014 Why: ~control.1.0 
+Respond: user: bot:jarvis ip: (~catchall) 3  hello ==> Hello there.  When:Tue Feb 18 10:55:26 2014 Why: ~catchall.1.0 
+Respond: user: bot:jarvis ip: (~catchall) 4  you are evil ==> I don't know what to say.  When:Tue Feb 18 10:55:33 2014 Why: ~control.1.0 
+Respond: user: bot:jarvis ip: (~catchall) 5  I will kill you ==> What are you going to do? Unplug me?.  When:Tue Feb 18 10:55:38 2014 Why: ~catchall.16.0 
+Respond: user: bot:jarvis ip: (~catchall) 6  i will kill you ==> You do know that I'm not real, right?  When:Tue Feb 18 10:55:44 2014 Why: ~catchall.17.0 
+Respond: user: bot:jarvis ip: (~catchall) 7  i will kill you ==> I am composed of code. So technically I am immortal.  When:Tue Feb 18 10:55:47 2014 Why: ~catchall.18.0 
+Respond: user: bot:jarvis ip: (~catchall) 8  i will kill you ==> Or I could reset myself and be rid of you. Good day!  When:Tue Feb 18 10:55:52 2014 Why: ~catchall.19.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 0  i will kill you ==> REBOOTING...  When:Tue Feb 18 10:55:55 2014 Why: ~catchall.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1    ==> Good day to you. How may this humble butler be of assistance?  When:Tue Feb 18 10:55:57 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~catchall) 2  hello ==> Hello there.  When:Tue Feb 18 10:56:04 2014 Why: ~catchall.1.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. How may this humble butler be of assistance?  When:Tue Feb 18 10:58:57 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  test test ==> I don't know what to say.  When:Tue Feb 18 10:59:00 2014 Why: ~control.1.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. How may this humble butler be of assistance?  When:Tue Feb 18 11:46:57 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  what is this? ==> Why, this is Arcade 11! Concordia University and the Technoculture, Art and Games research center have collaborated with the Montreal Joue Festival to bring you a three day long celegration of gaming.  When:Tue Feb 18 11:47:05 2014 Why: ~justify_identity.1.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  cool ==> Yes, we are all quite excited.  When:Tue Feb 18 11:47:11 2014 Why: ~justify_identity.1.1 
+Respond: user: bot:jarvis ip: (~justify_identity) 3  what is there to do? ==> There are all sorts of interesting games and activities happening here.  When:Tue Feb 18 11:47:17 2014 Why: ~justify_identity.5.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 4  what games? ==> We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.  When:Tue Feb 18 11:47:23 2014 Why: ~justify_identity.2.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 5  what activities are happening? ==> Why there are board games to be played, papercraft to be made, talks to attend, and 3D printings to be... 3D printed.  When:Tue Feb 18 11:47:48 2014 Why: ~justify_identity.4.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 6  which games were there again? ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 11:47:57 2014 Why: ~control.1.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. How may this humble butler be of assistance?  When:Tue Feb 18 11:49:53 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  which games are here? ==> We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.  When:Tue Feb 18 11:49:57 2014 Why: ~justify_identity.2.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what games are there again? ==> Indeed, so much to choose from.  When:Tue Feb 18 11:50:03 2014 Why: ~justify_identity.2.1 
+Respond: user: bot:jarvis ip: (~justify_identity) 3  what games are there again? ==> Once again, the list is Teponaztli, Game Game Videogame, QED, Pyramidwarfs, Eat Dirt, Kung Fu Volleyball, Dumpy: Going Elephants, How to Learn About Yourself Using This One Weird Worm, Arcade Royale, and Bizarro Game Controllers.  When:Tue Feb 18 11:50:17 2014 Why: ~justify_identity.3.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. How may this humble butler be of assistance?  When:Tue Feb 18 11:50:23 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  what games ==> We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.  When:Tue Feb 18 11:50:27 2014 Why: ~justify_identity.2.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what activities ==> Why there are board games to be played, papercraft to be made, talks to attend, and 3D printings to be... 3D printed.  When:Tue Feb 18 11:50:33 2014 Why: ~justify_identity.4.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 3  what do ==> There are all sorts of interesting games and activities happening here.  When:Tue Feb 18 11:50:37 2014 Why: ~justify_identity.5.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 4  cool ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 12:23:10 2014 Why: ~control.1.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. How may this humble butler be of assistance?  When:Tue Feb 18 12:23:40 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  what do? ==> There are all sorts of interesting games and activities happening here.  When:Tue Feb 18 12:23:43 2014 Why: ~justify_identity.5.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  cool ==> Indeed, so much to choose from.  When:Tue Feb 18 12:23:46 2014 Why: ~justify_identity.5.1 
+Respond: user: bot:jarvis ip: (~justify_identity) 3  what games? ==> We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.  When:Tue Feb 18 12:23:52 2014 Why: ~justify_identity.2.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 4  sounds boring ==> Yes, it's all rubbish.  When:Tue Feb 18 12:23:58 2014 Why: ~justify_identity.2.2 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know who it is that I have the pleasure of serving?  When:Tue Feb 18 12:44:18 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  No ==> Ooh, how mysterious!  When:Tue Feb 18 12:44:26 2014 Why: ~justify_identity.0.1 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  my name is Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 12:44:35 2014 Why: ~justify_identity.1.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 3  I'm bob ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 12:44:49 2014 Why: ~control.1.0 
+Command: :build 1
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know who it is that I have the pleasure of serving?  When:Tue Feb 18 12:46:07 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  I'm Nick ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 12:46:13 2014 Why: ~control.1.0 
+Respond: user: bot:jarvis ip: (~catchall) 2  build 1 ==> Are you trying to compile me again?  When:Tue Feb 18 12:47:00 2014 Why: ~catchall.20.0 
+Command: :build 1
+Missing topic index for ~justify_identity
+
+2 Tue Feb 18 12:48:27 2014 in sentence: build 1 
+    Missing topic index for ~catchall
+
+2 Tue Feb 18 12:48:27 2014 in sentence: build 1 
+    Command: :build 1
+Missing topic index for ~justify_identity
+
+2 Tue Feb 18 13:07:13 2014 in sentence: build 1 
+    Missing topic index for ~catchall
+
+2 Tue Feb 18 13:07:13 2014 in sentence: build 1 
+    Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know who it is that I have the pleasure of serving?  When:Tue Feb 18 13:07:30 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  I'm nick ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 13:07:33 2014 Why: ~control.1.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know who it is that I have the pleasure of serving?  When:Tue Feb 18 13:09:24 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  I'm Nick ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 13:09:28 2014 Why: ~control.1.0 
+Command: :up I'm
+
+For I'm:
+ Set hierarchy:
+ Wordnet hierarchy:
+  I'm~1:
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know who it is that I have the pleasure of serving?  When:Tue Feb 18 13:10:19 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  I'm nick ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 13:10:22 2014 Why: ~control.1.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  my name is nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:10:28 2014 Why: ~justify_identity.1.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 3  I'm nick ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 13:11:34 2014 Why: ~control.1.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know who it is that I have the pleasure of serving?  When:Tue Feb 18 13:11:55 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  my name is nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:12:01 2014 Why: ~justify_identity.1.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know who it is that I have the pleasure of serving?  When:Tue Feb 18 13:12:04 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  I'm nick ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 13:12:06 2014 Why: ~control.1.0 
+Command: :build 1
+Missing topic index for ~justify_identity
+
+1 Tue Feb 18 13:19:21 2014 in sentence: I'm nick 
+    Missing topic index for ~control
+
+2 Tue Feb 18 13:19:21 2014 in sentence: Build 1 
+    Respond: user: bot:jarvis ip: () 2  Build 1 ==>   When:Tue Feb 18 13:19:21 2014 
+Missing topic index for ~justify_identity
+
+1 Tue Feb 18 13:19:29 2014 in sentence: Build 1 
+    Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:19:45 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  My name is nickj ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:19:50 2014 Why: ~justify_identity.0.3 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is name is nickj.  When:Tue Feb 18 13:19:54 2014 Why: ~justify_identity.2.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:19:58 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:19:59 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is  my name? ==> Your name is Nick.  When:Tue Feb 18 13:20:04 2014 Why: ~justify_identity.2.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:20:07 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  I'm Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:20:09 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is i'm Nick.  When:Tue Feb 18 13:20:13 2014 Why: ~justify_identity.2.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:20:56 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  I'm Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:20:59 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is i'm Nick.  When:Tue Feb 18 13:21:02 2014 Why: ~justify_identity.2.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:22:07 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  I'm nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:22:12 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is i'm nick.  When:Tue Feb 18 13:22:15 2014 Why: ~justify_identity.2.0 
+Command: :build 1
+Missing topic index for ~justify_identity
+
+2 Tue Feb 18 13:28:00 2014 in sentence: what is my name 
+    Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:28:14 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  no ==> Ooh, how mysterious! Mysterio  When:Tue Feb 18 13:28:17 2014 Why: ~justify_identity.0.1 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is [.  When:Tue Feb 18 13:28:25 2014 Why: ~justify_identity.3.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:32:08 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  no ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:32:15 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is no.  When:Tue Feb 18 13:32:28 2014 Why: ~justify_identity.3.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:32:46 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  no ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:32:47 2014 Why: ~justify_identity.0.6 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:33:47 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  no ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:33:52 2014 Why: ~justify_identity.0.6 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:35:32 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  no ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:35:34 2014 Why: ~justify_identity.0.6 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:37:14 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  no ==> Ooh, how mysterious!  When:Tue Feb 18 13:37:15 2014 Why: ~justify_identity.0.1 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:40:42 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  no ==> Ooh, how mysterious! (4) if random == 0 {} else if random == 1 {} else if random == 2 {} else if random == 3 {} else if random == 4 {}  When:Tue Feb 18 13:40:44 2014 Why: ~justify_identity.0.1 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:41:18 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  no ==> Ooh, how mysterious! (4) if random == 0 {} else if random == 1 {} else if random == 2 {} else if random == 3 {} else if random == 4 {}  When:Tue Feb 18 13:41:19 2014 Why: ~justify_identity.0.1 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:42:11 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  no ==> Ooh, how mysterious! (0 random 4) if random == 0 {} else if random == 1 {} else if random == 2 {} else if random == 3 {} else if random == 4 {}  When:Tue Feb 18 13:42:45 2014 Why: ~justify_identity.0.1 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:43:29 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  no ==> Ooh, how mysterious!  When:Tue Feb 18 13:43:30 2014 Why: ~justify_identity.0.1 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:43:32 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  'm nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:43:55 2014 Why: ~justify_identity.0.6 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:43:59 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  I'm nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:44:03 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is i'm nick.  When:Tue Feb 18 13:44:05 2014 Why: ~justify_identity.3.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:46:37 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  I'm Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:46:40 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is Nick.  When:Tue Feb 18 13:46:42 2014 Why: ~justify_identity.3.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:46:50 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  my name is dumbface ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:46:56 2014 Why: ~justify_identity.0.3 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is name is dumb face.  When:Tue Feb 18 13:46:59 2014 Why: ~justify_identity.3.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:47:19 2014 Why: ~justify_identity.0.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:48:04 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  my name is dumbface ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:48:14 2014 Why: ~justify_identity.1.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is name is dumb face.  When:Tue Feb 18 13:48:18 2014 Why: ~justify_identity.3.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:49:33 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  my name is dumbface ==> But you told me your name was ""!  When:Tue Feb 18 13:49:40 2014 Why: ~justify_identity.2.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:49:44 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  my name is dumbface ==> But you told me your name was ""!  When:Tue Feb 18 13:49:50 2014 Why: ~justify_identity.2.0 
+Respond: user: bot:jarvis ip: (~catchall) 2  build 1 ==> Are you trying to compile me again?  When:Tue Feb 18 13:50:38 2014 Why: ~catchall.20.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:50:54 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  my name is dumbface ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:51:00 2014 Why: ~justify_identity.0.3 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is name is dumb face.  When:Tue Feb 18 13:51:04 2014 Why: ~justify_identity.3.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:51:07 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  my name is poop ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:51:12 2014 Why: ~justify_identity.0.3 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is name is poop.  When:Tue Feb 18 13:51:17 2014 Why: ~justify_identity.3.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:52:43 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  my name is dumbface ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:52:48 2014 Why: ~justify_identity.0.3 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  what is my name ==> Your name is dumb face.  When:Tue Feb 18 13:52:51 2014 Why: ~justify_identity.3.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 3  my name is nick ==> What? Didn't you say that your name is dumb face?  When:Tue Feb 18 13:53:02 2014 Why: ~justify_identity.1.0 
+Start: user: bot:build 1 ip: rand:0 () 0 ==>   When:Tue Feb 18 13:56:38 2014 Version:3.53 Build0:1390424187 Build1:1392749544 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 13:56:57 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  i'm nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 13:57:01 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  nkornek@gmail.com ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 13:57:09 2014 Why: ~control.1.0 
+Respond: user: bot:jarvis ip: (~catchall) 3  build 1 ==> Are you trying to compile me again?  When:Tue Feb 18 13:58:44 2014 Why: ~catchall.20.0 
+Command: :build 1
+Missing topic index for ~justify_identity
+
+3 Tue Feb 18 13:59:35 2014 in sentence: build 1 
+    Missing topic index for ~catchall
+
+3 Tue Feb 18 13:59:36 2014 in sentence: build 1 
+    Command: :build 1
+Missing topic index for ~justify_identity
+
+3 Tue Feb 18 13:59:57 2014 in sentence: build 1 
+    Missing topic index for ~catchall
+
+3 Tue Feb 18 13:59:57 2014 in sentence: build 1 
+    Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 14:00:13 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 14:00:16 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  nkornek@gmail.com ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 14:00:20 2014 Why: ~control.1.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 14:02:37 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 14:02:39 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  nkornek@gmail.com ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 14:02:45 2014 Why: ~control.1.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 14:11:28 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 14:11:30 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  nkornek@gmail.com ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 14:11:35 2014 Why: ~control.1.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 14:13:04 2014 Why: ~justify_identity.0.0 
+Respond: user: bot:jarvis ip: (~justify_identity) 1  nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 14:13:06 2014 Why: ~justify_identity.0.6 
+Respond: user: bot:jarvis ip: (~justify_identity) 2  nkornek@gmail.com ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 14:13:09 2014 Why: ~control.1.0 
+Command: :build 1
+Command: :build 1
+Command: :build 1
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 15:18:42 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 15:18:46 2014 Why: ~main.0.6 
+Respond: user: bot:jarvis ip: (~main) 2  yes ==> Excellent, what is it then?  When:Tue Feb 18 15:18:48 2014 Why: ~main.0.8 
+Respond: user: bot:jarvis ip: (~main) 3  what games are here? ==> Why, this is Arcade 11! Concordia University and the Technoculture, Art and Games research center have collaborated with the Montreal Joue Festival to bring you a three day long celegration of gaming.  When:Tue Feb 18 15:18:57 2014 Why: ~main.6.0 
+Respond: user: bot:jarvis ip: (~main) 4  I want to hear more about those controllers ==> I can tell you about any of the games or events that are here.  When:Tue Feb 18 15:19:06 2014 Why: ~main.11.0 
+Command: :build 1
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 15:21:03 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 15:21:05 2014 Why: ~main.0.6 
+Respond: user: bot:jarvis ip: (~main) 2  no ==> I have to admit that I am a bit disappointed. I had hoped that we could be pen pals. Very well then, how may I be of assistance?  When:Tue Feb 18 15:21:07 2014 Why: ~main.0.7 
+Respond: user: bot:jarvis ip: (~main) 3  I want to know more about the controllers ==> Quite...  When:Tue Feb 18 15:21:15 2014 Why: ~catchall.8.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 15:22:26 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  I want to know more about the controllers ==> I can tell you about any of the games or events that are here.  When:Tue Feb 18 15:22:30 2014 Why: ~main.11.0 
+Respond: user: bot:jarvis ip: (~bizarro) 2  I want to know more about the controllers ==> Ah yes, the Bizarro Game Controllers. What would you like to know about them?  When:Tue Feb 18 15:22:33 2014 Why: ~bizarro.0.0 
+Respond: user: bot:jarvis ip: (~bizarro) 3  who made them? ==> The project was led by Joachim Despland, Adam Van Sertima, Bronson Zgeb, and other TAG researchers. They're all a little odd if you ask me.  When:Tue Feb 18 15:22:42 2014 Why: ~bizarro.1.0 
+Respond: user: bot:jarvis ip: (~bizarro) 4  what do they do? ==> Such a strange project! They used a variety of parts to build all sorts of intriguing input devices and came up with new ways to interface with videogames.  When:Tue Feb 18 15:22:50 2014 Why: ~bizarro.2.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 15:22:57 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 15:22:58 2014 Why: ~main.0.6 
+Respond: user: bot:jarvis ip: (~main) 2  no ==> I have to admit that I am a bit disappointed. I had hoped that we could be pen pals. Very well then, how may I be of assistance?  When:Tue Feb 18 15:23:00 2014 Why: ~main.0.7 
+Respond: user: bot:jarvis ip: (~main) 3  I want to know more about the controllers ==> I can tell you about any of the games or events that are here.  When:Tue Feb 18 15:23:07 2014 Why: ~main.11.0 
+Respond: user: bot:jarvis ip: (~bizarro) 4  I want to know more about the controllers ==> Ah yes, the Bizarro Game Controllers. What would you like to know about them?  When:Tue Feb 18 15:24:04 2014 Why: ~bizarro.0.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 15:25:11 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 15:25:15 2014 Why: ~main.0.6 
+Respond: user: bot:jarvis ip: (~main) 2  no ==> I have to admit that I am a bit disappointed. I had hoped that we could be pen pals. Very well then, how may I be of assistance?  When:Tue Feb 18 15:25:19 2014 Why: ~main.0.7 
+Respond: user: bot:jarvis ip: (~main) 3  I want to know about the bizarro thing ==> I can tell you about any of the games or events that are here.  When:Tue Feb 18 15:25:28 2014 Why: ~main.11.0 
+Respond: user: bot:jarvis ip: (~bizarro) 4  I want to know about the bizarro thing ==> Ah yes, the Bizarro Game Controllers. What would you like to know about them?  When:Tue Feb 18 15:25:38 2014 Why: ~bizarro.0.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 15:29:22 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 15:29:37 2014 Why: ~main.0.6 
+Respond: user: bot:jarvis ip: (~main) 2  no ==> I have to admit that I am a bit disappointed. I had hoped that we could be pen pals. Very well then, how may I be of assistance?  When:Tue Feb 18 15:29:43 2014 Why: ~main.0.7 
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 15:40:43 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  Noice ==> I can tell you about any of the games or events that are here.  When:Tue Feb 18 15:40:46 2014 Why: ~main.11.0 
+Respond: user: bot:jarvis ip: (~main) 2  no ==> I can tell you about any of the games or events that are here.  When:Tue Feb 18 15:40:48 2014 Why: ~main.11.0 
+Respond: user: bot:jarvis ip: (~bizarro) 3  Can I hear about the controllers? ==> Ah yes, the Bizarro Game Controllers. What would you like to know about them?  When:Tue Feb 18 15:41:37 2014 Why: ~bizarro.0.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 15:53:09 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you like to give me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 15:53:13 2014 Why: ~main.0.6 
+Respond: user: bot:jarvis ip: (~main) 2  no ==> I have to admit that I am a bit disappointed. I had hoped that we could be pen pals. Very well then, how may I be of assistance?  When:Tue Feb 18 15:53:13 2014 Why: ~main.0.7 
+Respond: user: bot:jarvis ip: (~bizarro_controller) 3  i want to know about the bizarro controllers ==> Ah yes, the Bizarro Game Controllers. What would you like to know about them?  When:Tue Feb 18 15:54:14 2014 Why: ~bizarro_controller.0.0 
+Respond: user: bot:jarvis ip: (~bizarro_controller) 4  who made the bizarro controllers ==> Ah yes, the Bizarro Game Controllers. What would you like to know about them?  When:Tue Feb 18 15:54:22 2014 Why: ~bizarro_controller.0.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 15:55:29 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~bizarro_controller) 1  bizarro ==> Ah yes, the Bizarro Game Controllers. What would you like to know about them?  When:Tue Feb 18 15:55:31 2014 Why: ~bizarro_controller.5.0 
+Respond: user: bot:jarvis ip: (~bizarro_controller) 2  who made the controllers ==> The project was led by Joachim Despland, Adam Van Sertima, Bronson Zgeb, and other TAG researchers. They're all a little odd if you ask me.  When:Tue Feb 18 15:55:36 2014 Why: ~bizarro_controller.0.0 
+Respond: user: bot:jarvis ip: (~bizarro_controller) 3  cool ==> Yes, they are all gentlemen and scholars.  When:Tue Feb 18 15:55:43 2014 Why: ~bizarro_controller.0.1 
+Respond: user: bot:jarvis ip: (~bizarro_controller) 4  what do the controllers do? ==> Such a strange project! They used a variety of parts to build all sorts of intriguing input devices and came up with new ways to interface with videogames.  When:Tue Feb 18 15:55:53 2014 Why: ~bizarro_controller.1.0 
+Respond: user: bot:jarvis ip: (~bizarro_controller) 5  no way ==> Sorry, let's get back on topic, shall we? Would you like to know more about the Bizarro Game Controllers or was there something else that you wanted to ask me about?  When:Tue Feb 18 15:55:57 2014 Why: ~bizarro_controller.6.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 16:05:31 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you like to give me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 16:05:39 2014 Why: ~main.0.6 
+Respond: user: bot:jarvis ip: (~main) 2  no ==> I have to admit that I am a bit disappointed. I had hoped that we could be pen pals. Very well then, how may I be of assistance?  When:Tue Feb 18 16:05:45 2014 Why: ~main.0.7 
+Respond: user: bot:jarvis ip: (~main) 3  what games are here ==> Why, this is Arcade 11! Concordia University and the Technoculture, Art and Games research center have collaborated with the Montreal Joue Festival to bring you a three day long celegration of gaming.  When:Tue Feb 18 16:05:59 2014 Why: ~main.6.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 16:07:08 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  Nick ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you like to give me your email as well, that way we can remain in touch in the future?  When:Tue Feb 18 16:07:11 2014 Why: ~main.0.6 
+Respond: user: bot:jarvis ip: (~main) 2  no ==> I have to admit that I am a bit disappointed. I had hoped that we could be pen pals. Very well then, how may I be of assistance?  When:Tue Feb 18 16:07:14 2014 Why: ~main.0.7 
+Respond: user: bot:jarvis ip: (~main) 3  what games are here? ==> We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.  When:Tue Feb 18 16:07:19 2014 Why: ~main.7.0 
+Respond: user: bot:jarvis ip: (~main) 4  can I hear about Teponaztli ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Tue Feb 18 16:07:37 2014 Why: ~main.11.0 
+Respond: user: bot:jarvis ip: (~main) 5  how about teponaztli ==> I can tell you about any of the games or events that are here.  When:Tue Feb 18 16:08:18 2014 Why: ~main.11.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 16:09:03 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~teponaztli) 1  what's up with teponaztli? ==> What would you like to know about Teponaztli?  When:Tue Feb 18 16:09:12 2014 Why: ~teponaztli.5.0 
+Respond: user: bot:jarvis ip: (~teponaztli) 2  who made it? ==> The game was made by Sylvain Payen, a PhD student here at concordia.  When:Tue Feb 18 16:09:20 2014 Why: ~teponaztli.0.0 
+Command: :up fun
+
+For fun:
+ Set hierarchy:
+ Wordnet hierarchy:
+  fun~1: activities that are enjoyable or amusing 
+    is recreation~2  an activity that diverts or amuses or stimulates 
+       is activity~1z any specific behavior 
+          is act~1z something that people do or cause to happen 
+             is event~1z something that happens at a given place and time 
+                is psychological_feature~1z a feature of the mental life of a living organism 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  fun~2: violent and excited activity 
+    is activity~1  any specific behavior 
+       is act~1z something that people do or cause to happen 
+          is event~1z something that happens at a given place and time 
+             is psychological_feature~1z a feature of the mental life of a living organism 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  fun~3: a disposition to find causes for amusement 
+    is frivolity~3  the trait of being frivolous 
+       is trait~1z a distinguishing feature of your personal nature 
+          is attribute~1z an abstraction belonging to or characteristic of an entity 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  fun~4: verbal wit or mockery  
+    is wit~2  a message whose ingenuity or verbal skill or incongruity has the power to evoke laughter 
+       is message~2z what a communication that is about something is about 
+          is communication~1z something that is communicated by or to or between people or groups 
+             is abstraction~1z a general concept formed by extracting common features from specific examples 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+Command: :up great
+
+For great:
+ Set hierarchy:
+ Wordnet hierarchy:
+  great~1: a person who has achieved distinction and honor in some field 
+    is succeeder~1  a person with a record of successes 
+       is somebody~1z a human being 
+          is organism~1z a living thing that has the ability to act or function independently 
+             is living_thing~1z a living entity 
+                is unit~1z an assemblage of parts that is regarded as a single entity 
+                   is physical_object~1z a tangible and visible entity 
+                      is physical_entity~1z an entity that has physical existence 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+          is causal_agent~1z any entity that produces an effect or is responsible for events or results 
+             is physical_entity~1z an entity that has physical existence 
+                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  great~2: in an advanced stage of pregnancy 
+  great~3: very good 
+  great~4: of major significance or importance 
+  great~5: relatively large in size or number or extent 
+  great~6: uppercase 
+  great~7: remarkable or out of the ordinary in degree or magnitude or effect 
+Command: :down ~meaningless_praise_words
+admirable amazing best certified champion choice darling decadent deluxe desirable 
+  distinctive elite exceptional extraordinaire extraordinary fabulous famous fantastic fascinating favorable 
+  favorite finest funny grand great heavenly hi-tech ideal impressive infamous 
+  ingenious inspiring irresistible lovely luxurious luxury magnificent mighty miracle miraculous 
+  ostentatious perfect persuasive popular powerful practical preeminent preferable preferred premium 
+  pretentious prime prize-winning prize_winning prominent remarkable revolutionary scientific select showy 
+  significant smart sophisticated special stringent sublime super supreme tremendous unparalleled 
+  versatile wonderful worthwhile 
+Command: :up bad
+
+For bad:
+ Set hierarchy:
+ Wordnet hierarchy:
+  bad~1: that which is below standard or expectations as of ethics or decency 
+    is quality~1  an essential and distinguishing attribute of something or someone 
+       is attribute~1z an abstraction belonging to or characteristic of an entity 
+          is abstraction~1z a general concept formed by extracting common features from specific examples 
+             is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  bad~2: feeling physical discomfort or pain  
+  bad~3: not in an edible or usable condition 
+  bad~4: not working properly 
+  bad~5: reproduced fraudulently 
+  bad~6: having undesirable or negative qualities 
+  bad~7: characterized by wickedness or immorality 
+  bad~8: feeling or expressing regret or sorrow or a sense of loss over something done or undone 
+  bad~9: capable of harming 
+  bad~10: physically unsound or diseased 
+  bad~11: very intense 
+  bad~12: not financially safe or secure 
+  bad~13: nonstandard 
+  bad~14: below average in quality or performance 
+  bad~15: not capable of being collected 
+  bad~16: very much 
+  bad~17: with great intensity  

@@ -1,0 +1,41 @@
+concept: ~bizarro ("bizarro" controllers)
+
+topic: ~bizarro_controller (~bizarro)
+
+#! ----------------------------------------------------------------
+#! Games: Bizarro Game Controllers
+#! ----------------------------------------------------------------
+
+u: (who) The project was led by Joachim Despland, Adam Van Sertima, Bronson Zgeb, and other TAG researchers. They're all a little odd if you ask me.
+	a: (~positive_response) Yes, they are all gentlemen and scholars.
+	a: (~negative_response) Hmph, how rude.
+
+u: (what !else) Such a strange project! They used a variety of parts to build all sorts of intriguing input devices and came up with new ways to interface with videogames.
+	a: (~positive_response) Yes, I wish those controllers could interface with me. They seem friendly.
+	a: (~negative_response) Go back to your plain old gamepad then.
+
+u: (where) It actually happened right here at Concordia! Who knew?
+	a: (~positive_response) Indeed. There are all sorts of cool projects being developed here. I was one of them too!
+	a: (~negative_response) I'll just make a note of that respons in case you decide to apply here someday.
+
+u: (when)
+	a: (~positive_response) 
+	a: (~negative_response)
+
+u: (why)
+	a: (~positive_response) 
+	a: (~negative_response)
+	
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+u: (~bizarro) Ah yes, the Bizarro Game Controllers. What would you like to know about them? ^keep() ^repeat()
+
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: Sorry, let's get back on topic, shall we? Would you like to know more about the Bizarro Game Controllers or was there something else that you wanted to ask me about? ^keep() ^repeat()

@@ -1727,3 +1727,66 @@ Missing topic index for ~assassination_plot
 FILE-1 Unknown top-level declaration #! in RAWDATA/BLANCHENEIGE/simplecontrol.topinput:5 Wed Nov 27 22:08:08 2013 Missing topic index for ~justify_identity
  caller: callee:snowwhite in sentence: please help at 
 Missing topic index for ~justify_identity
+   in identity.top at 36:  a:(why) Because the two last strangers that came here tried to kill me.  )
+OUTPUT-3 Unbalanced )   in topic__jarvis.txt at 0: ^jarvis
+Missing topic index for ~justify_identity
+   in identity.top at 2: concept: ~negative response (bad "lame" sucks boring)
+CONCEPT-4 Unknown concept property responseMissing topic index for ~justify_identity
+   in identity.top at 2: concept: ~negative response (bad "lame" sucks boring)
+CONCEPT-4 Unknown concept property responseMissing topic index for ~justify_identity
+   in identity.top at 22: s:([I I'm] * _*) 
+PATTERN-46 Cannot have wildcard followed by *input:2 Tue Feb 18 12:48:27 2014 Missing topic index for ~justify_identity
+ caller: callee:jarvis in sentence: build 1 at 
+Missing topic index for ~justify_identity
+input:2 Tue Feb 18 12:48:27 2014 Missing topic index for ~catchall
+ caller: callee:jarvis in sentence: build 1 at 
+Missing topic index for ~catchall
+   in identity.top at 22: s:([I I'm] * _) 
+PATTERN-7 Must attach _ to next token. If you mean _ match, use escaped _. 
+ ) input:2 Tue Feb 18 13:07:13 2014 Missing topic index for ~justify_identity
+ caller: callee:jarvis in sentence: build 1 at 
+Missing topic index for ~justify_identity
+input:2 Tue Feb 18 13:07:13 2014 Missing topic index for ~catchall
+ caller: callee:jarvis in sentence: build 1 at 
+Missing topic index for ~catchall
+   in identity.top at 22: s:(<<[I "I'm" name be] _*>>) 
+PATTERN-45 Cannot have wildcard * inside << >>input:1 Tue Feb 18 13:19:21 2014 Missing topic index for ~justify_identity
+ caller: callee:jarvis in sentence: I'm nick at 
+Missing topic index for ~justify_identity
+input:2 Tue Feb 18 13:19:21 2014 Missing topic index for ~control
+ caller: callee:jarvis in sentence: Build 1 at 
+Missing topic index for ~control
+input:1 Tue Feb 18 13:19:29 2014 Missing topic index for ~justify_identity
+ caller: callee:jarvis in sentence: Build 1 at 
+Missing topic index for ~justify_identity
+   in identity.top at 42:   b: (~no) I have to admit that I am a bit disappointed. I had hoped that we could be pen pals. Very well then, how may I be of assistance?
+RULE-1 Illegal rejoinder level b:input:2 Tue Feb 18 13:28:00 2014 Missing topic index for ~justify_identity
+ caller: callee:jarvis in sentence: what is my name at 
+Missing topic index for ~justify_identity
+   in identity.top at 44: u: (*"@"*) Thank you. I promise not to use it to take over the world. So, how may I be of assistance?
+PATTERN-55 * jammed against some other token- *"@"*input:3 Tue Feb 18 13:59:35 2014 Missing topic index for ~justify_identity
+ caller: callee:jarvis in sentence: build 1 at 
+Missing topic index for ~justify_identity
+input:3 Tue Feb 18 13:59:35 2014 Missing topic index for ~catchall
+ caller: callee:jarvis in sentence: build 1 at 
+Missing topic index for ~catchall
+   in identity.top at 44: u: (.com >) Thank you. I promise not to use it to take over the world. So, how may I be of assistance?
+PATTERN-71 Cannot use  . for anything except a wildcard name - .cominput:3 Tue Feb 18 13:59:57 2014 Missing topic index for ~justify_identity
+ caller: callee:jarvis in sentence: build 1 at 
+Missing topic index for ~justify_identity
+input:3 Tue Feb 18 13:59:57 2014 Missing topic index for ~catchall
+ caller: callee:jarvis in sentence: build 1 at 
+Missing topic index for ~catchall
+   in identity.top at 1: concept: ~positive_response (cool awesome fun good "yay")
+CONCEPT-3 Concept/topic already defined ~positive_response   in identity.top at 2: concept: ~negative_response (bad "lame" "sucks" boring)
+CONCEPT-3 Concept/topic already defined ~negative_response   in identity.top at 3: concept: ~yes (yes "yeah" "totes" totally affirmative)
+CONCEPT-3 Concept/topic already defined ~yes   in identity.top at 4: concept: ~no (no "nope" not negative)
+CONCEPT-3 Concept/topic already defined ~no   in bizarro.top at 3: topic: ~bizarro
+TOPIC-1 Concept already defined with this topic name ~bizarro   in bizarro.top at 9: u: (~bizarro) Ah yes, the Bizarro Game Controllers. What would you like to know about them? ^keep() ^repeat()
+Bad topic flag u: for topic ~bizarro   in bizarro.top at 15: u: (who) The project was led by Joachim Despland, Adam Van Sertima, Bronson Zgeb, and other TAG researchers. They're all a little odd if you ask me.
+Bad topic flag u: for topic ~bizarro   in bizarro.top at 19: u: (what !else) Such a strange project! They used a variety of parts to build all sorts of intriguing input devices and came up with new ways to interface with videogames.
+Bad topic flag u: for topic ~bizarro   in bizarro.top at 23: u: (where) It actually happened right here at Concordia! Who knew?
+Bad topic flag u: for topic ~bizarro   in bizarro.top at 27: u: (when)
+Bad topic flag u: for topic ~bizarro   in bizarro.top at 31: u: (why)
+Bad topic flag u: for topic ~bizarro   in bizarro.top at 44: t: Sorry, let's get back on topic, shall we? Would you like to know more about the Bizarro Game Controllers or was there something else that you wanted to ask me about? ^keep() ^repeat()
+Bad topic flag t: for topic ~bizarroMissing topic index for ~main

@@ -1,0 +1,41 @@
+concept: ~dumpy ("dumpy" elephant oculus rift)
+
+topic: ~dumpy_game (~dumpy)
+
+#! ----------------------------------------------------------------
+#! Games: Dumpy
+#! ----------------------------------------------------------------
+
+u: (who) 
+	a: (~positive_response) 
+	a: (~negative_response) 
+
+u: (what !else) 
+	a: (~positive_response) 
+	a: (~negative_response) 
+
+u: (where) 
+	a: (~positive_response) 
+	a: (~negative_response) 
+
+u: (when) The game was made for an Oculus Rift focused game jam. It was pretty much the silliest thing there.
+	a: (~positive_response) 
+	a: (~negative_response)
+
+u: (why)
+	a: (~positive_response)
+	a: (~negative_response)
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+u: (~dumpy) Aha! Dumpy! The silly elephant game for the Occulus Rift! So entertaining, yet so undignified! What would you like to know? ^keep() ^repeat()
+
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: ^keep() ^repeat()
