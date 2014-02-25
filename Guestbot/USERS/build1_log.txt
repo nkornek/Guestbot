@@ -1,20 +1,31 @@
 
+----Reading file a_game_game_videogame.top
+Reading concept ~ggvg
+Reading topic ~ggvg_game
+
 ----Reading file bizarro.top
 Reading concept ~bizarro
 *** Warning- line 1 of bizarro.top: "bizarro" is not a known word. Is it misspelled?
 Reading topic ~bizarro_controller
 
-----Reading file main.top
+----Reading file b_main.top
 Reading concept ~positive_response
 Reading concept ~negative_response
-*** Warning- line 2 of main.top: "lame" is not a known word. Is it misspelled?
-*** Warning- line 2 of main.top: "sucks" is not a known word. Is it misspelled?
+*** Warning- line 2 of b_main.top: "lame" is not a known word. Is it misspelled?
+*** Warning- line 2 of b_main.top: "sucks" is not a known word. Is it misspelled?
 Reading concept ~yes
-*** Warning- line 3 of main.top: "totes" is not a known word. Is it misspelled?
+*** Warning- line 3 of b_main.top: "totes" is not a known word. Is it misspelled?
 Reading concept ~no
-*** Warning- line 4 of main.top: "nope" is not a known word. Is it misspelled?
+*** Warning- line 4 of b_main.top: "nope" is not a known word. Is it misspelled?
 Reading topic ~main
-*** Warning- line 43 of main.top: com is unknown as a word in pattern
+
+----Reading file dumpy.top
+Reading concept ~dumpy
+Reading topic ~dumpy_game
+
+----Reading file eat_dirt.top
+Reading concept ~eat_dirt
+Reading topic ~eat_dirt_game
 
 ----Reading file simplecontrol.top
 Reading outputmacro: ^jarvis
@@ -30,7 +41,7 @@ Reading topic ~teponaztli
 Reading topic ~catchall
 
 WARNING SUMMARY: 
-7 spelling warnings and 0 more serious warnings
+6 spelling warnings and 0 more serious warnings
     
 
 Finished compile

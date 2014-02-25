@@ -1,6 +1,11 @@
-﻿+ ~bizarro CONCEPT 
+﻿+ ~ggvg CONCEPT 
++ game_game,_videogame 
++ game_game_videogame 
 + ~positive_response CONCEPT 
 + ~negative_response CONCEPT 
++ ~bizarro CONCEPT 
 + yay 
++ ~dumpy CONCEPT 
++ ~eat_dirt CONCEPT 
 + jarvis 
 + defaultbot 

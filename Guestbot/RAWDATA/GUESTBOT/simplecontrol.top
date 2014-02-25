@@ -1,6 +1,6 @@
 # this function is executed once for every new user chatting with Jarvis
 outputmacro: jarvis()  # you get Jarvis by default
-$token = #DO_INTERJECTION_SPLITTING     | #DO_NUMBER_MERGE   | #DO_PROPERNAME_MERGE  | #DO_SPELLCHECK | #DO_POSTAG  | #DO_PARSE
+$token = #DO_INTERJECTION_SPLITTING     | #DO_NUMBER_MERGE   | #DO_PROPERNAME_MERGE | #DO_SPELLCHECK | #DO_POSTAG  | #DO_PARSE
 
 # removed : | #DO_SUBSTITUTE_SYSTEM
 ^addtopic(~main)

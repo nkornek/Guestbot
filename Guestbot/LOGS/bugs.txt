@@ -1790,3 +1790,5 @@ Bad topic flag u: for topic ~bizarro   in bizarro.top at 27: u: (when)
 Bad topic flag u: for topic ~bizarro   in bizarro.top at 31: u: (why)
 Bad topic flag u: for topic ~bizarro   in bizarro.top at 44: t: Sorry, let's get back on topic, shall we? Would you like to know more about the Bizarro Game Controllers or was there something else that you wanted to ask me about? ^keep() ^repeat()
 Bad topic flag t: for topic ~bizarroMissing topic index for ~main
+   in main.top at 46:   if (^substitute(character '_0@ @)) {Thank you. I promise not to use it in a plot to take over the world. Now, how may I be of assistance?} 
+OUTPUT-4 bad factset reference - @Missing topic index for ~main

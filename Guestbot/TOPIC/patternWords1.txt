@@ -3,10 +3,12 @@ controllers
 sucks
 totes
 nope
-com
 ""
+how_many
 What
+technoculture
 teponaztli
+would_you_like
 see_you
 thanks~2
 oh

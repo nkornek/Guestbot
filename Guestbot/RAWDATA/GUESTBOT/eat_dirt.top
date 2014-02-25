@@ -1,0 +1,40 @@
+concept: ~eat_dirt (eat dirt worm)
+
+topic: ~eat_dirt_game (~eat_dirt)
+
+#! ----------------------------------------------------------------
+#! Games: 
+#! ----------------------------------------------------------------
+
+u: (who) This is the first game from Game of the Year! It was made by Jessica Rose Marcotte, Jana Sloan Van Geest, and Nick Kornek. He's actually the one who programmed me as well. 
+	a: (~positive_response) Yes, they are very nice people, except for Mr. Kornek. I do not like him very much.
+	a: (~negative_response) Are you insulting my creator? Only I am allowed to do that.
+
+u: (what !else) It is a game where you play as a worm in a composter. I am aware that it sounds dreadfully boring, but it is actually exceptionally fun, especially with friends. Beware of the gigantic rock!
+	a: (~positive_response) I truly hope that you enjoy it.
+	a: (~negative_response) You really should give it a try. I wager that it will defy your expectations.
+
+u: (where) It was actually made in this very room!
+	a: (~positive_response) Yes, you are standing in a historic place for game development.
+	a: (~negative_response) Shoo! Away with you!
+
+u: (when) Eat Dirt! was made last November during the Gamerella game jam. It won top honours from the judges.
+	a: (~positive_response) If you are interested in making games you should join us for one of the many game jams that are hosted by TAG.
+	a: (~negative_response) Game jams are great fun. Perhaps if you were not such a boring individual you would have known that.
+
+u: (why) Like all of Game of the Year's games, Eat Dirt! is really about bringing pure fun back to games.
+	a: (~positive_response) It pleases me to hear that you like fun. I am also a fan of fun.
+	a: (~negative_response) I was not aware that people who hated fun were allowed to be here. Give me a moment to alert our security guards of the situation so that you may be immediately escorted away.
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+u: (~eat_dirt) Eat Dirt! The most interesting came about composting ever made! What would you like to know? ^keep() ^repeat()
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: Is there anything else that you would like to know about Eat Dirt? ^keep() ^repeat()

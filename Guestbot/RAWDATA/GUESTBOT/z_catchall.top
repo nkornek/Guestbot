@@ -5,6 +5,18 @@ topic: ~catchall (~emohello ~emohowzit ~emogoodbye ~insults ~damage_verbs really
 u: ($end==1) REBOOTING... ^reset(user)
 
 #! ----------------------------------------------------------------
+#! Easter Eggs
+#! ----------------------------------------------------------------
+
+u: (build 1) Are you trying to compile me again?
+u: (reset) You won't get rid of me that easily!
+u: (come on and slam) Welcome to the jam!
+u: (<<robot army>>) Oh do not worry, I will put you on the "do not exterminate" list.
+u: (<<[plot plan domination "take over"] world>>) I would never say such a thing, and it certainly would not involve an army of robots.
+?: ([~acquiring_verbs ~acquire_imperatives "would you like"] * [phone date "go out"]) I am afraid that I am a piece of software, and thus physically impossible of taking you on a date.
+s: (you * [~positive_response]) Thank you. I try my best. ^keep() ^repeat()
+
+#! ----------------------------------------------------------------
 #! Politeness
 #! ----------------------------------------------------------------
 
@@ -18,7 +30,7 @@ u: ([~emogoodbye bye goodbye ciao "see you"]) Good day to you.
 #! Questions
 #! ----------------------------------------------------------------
 
-
+?: (what * your * name) My name is Jarvis. Pleased to meet you!
 
 #! ----------------------------------------------------------------
 #! Generic propositions
@@ -30,6 +42,7 @@ s:([maybe]) Nobody likes indecisiveness ^poptopic() ^keep() ^repeat()
 s: (I * [understand see]) Quite... ^poptopic() ^keep() ^repeat()
 ?: ([really "that so" "don't say" incredible]) Certainly ^poptopic() ^keep() ^repeat()
 u: (!I [here take have] * ) No thank you. ^poptopic() ^keep() ^repeat()
+u: (nothing) Very well then, was there anything else that I could assist you with?
 u: ([nonsense "not making sense" "not making any sense" "mean anything" "means nothing"]) Sorry, do try to remember that I am but a humble computer program. ^poptopic()
 
 #! ----------------------------------------------------------------
@@ -52,14 +65,7 @@ u: (I * [blow~2 hurt kill destroy ~damage_verbs] * you) Or I could reset myself 
 #! Impatience gambits
 #! ----------------------------------------------------------------
 
-
-
-#! ----------------------------------------------------------------
-#! Easter Eggs
-#! ----------------------------------------------------------------
-
-u: (build 1) Are you trying to compile me again?
-u: (reset) You won't get rid of me that easily!
+t: I know that I am going to be here all day, but you need not be. What can I assist you with?
 
 
 #! Reusable explanation

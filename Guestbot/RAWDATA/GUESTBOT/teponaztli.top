@@ -20,15 +20,15 @@ u: (when)
 	a: (~positive_response) 
 	a: (~negative_response)
 
-u: (why)
-	a: (~positive_response)
-	a: (~negative_response)
+u: (why) The creator is actually researching the engendering of emotions through video games, and this game is part of that project.
+	a: (~positive_response) Indeed, it's an interesting subject.
+	a: (~negative_response) Do you have a problem with software that has emotions?
 
 #! ----------------------------------------------------------------
 #! Entry point of conversation
 #! ----------------------------------------------------------------
 
-u: ("teponaztli") What would you like to know about Teponaztli? ^keep() ^repeat()
+u: ("teponaztli") What would you like to know about Tzepon... Tepanzi... how is it pronounced again? Teponaztli? ^keep() ^repeat()
 
 
 

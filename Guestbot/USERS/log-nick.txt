@@ -1,352 +1,64 @@
-﻿Start: user:nick bot:jarvis ip: rand:2581 (~justify_identity) 0 ==> Good day to you. How may this humble butler be of assistance?  When:Tue Feb 18 10:54:16 2014 Version:3.53 Build0:1390424187 Build1:1392738397 Why: ~justify_identity.0.0 
-Command: :build 1
-Start: user:nick bot:jarvis ip: rand:2582 (~justify_identity) 0 ==> I don't know what to say.  When:Tue Feb 18 10:56:58 2014 Version:3.53 Build0:1390424187 Build1:1392738865 Why: ~control.1.0 
-Command: :resey
-Command: :reset
-Respond: user:nick bot:jarvis ip: (~justify_identity) 0  :reset ==> Good day to you. How may this humble butler be of assistance?  When:Tue Feb 18 10:57:03 2014 Why: ~justify_identity.0.0 
-Respond: user:nick bot:jarvis ip: (~justify_identity) 1  yoooooo ==> I don't know what to say.  When:Tue Feb 18 10:57:07 2014 Why: ~control.1.0 
-Respond: user:nick bot:jarvis ip: (~justify_identity) 2  nkornek@gmail.com ==> I don't know what to say.  When:Tue Feb 18 10:57:11 2014 Why: ~control.1.0 
-Command: :build 1
-Start: user:nick bot:jarvis ip: rand:2584 (~justify_identity) 2 ==> I don't know what to say.  When:Tue Feb 18 11:02:16 2014 Version:3.53 Build0:1390424187 Build1:1392739076 Why: ~control.1.0 
-Command: :up staff
-
-For staff:
- Set hierarchy:
- Wordnet hierarchy:
-  staff~1: a strong rod or stick with a specialized utilitarian purpose 
-    is stick~3  an implement consisting of a length of wood 
-       is implement~1z instrumentation used to effect an end 
-          is instrumentation~1z an artifact that is instrumental in accomplishing some end 
-             is artefact~1z a man-made object taken as a whole 
-                is unit~1z an assemblage of parts that is regarded as a single entity 
-                   is physical_object~1z a tangible and visible entity 
-                      is physical_entity~1z an entity that has physical existence 
-                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-  staff~2: the system of five horizontal lines on which the musical notes are written 
-    is musical_notation~1  notation used by musicians 
-       is notation~1z a technical system of symbols used to represent special things 
-          is committal_to_writing~1z letters or symbols that are written or imprinted on a surface to represent the sounds or words of a language 
-             is written_communication~1z communication by means of written symbols 
-                is communication~1z something that is communicated by or to or between people or groups 
-                   is abstraction~1z a general concept formed by extracting common features from specific examples 
-                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-  staff~3: a rod carried as a symbol 
-    is symbol~2  an arbitrary sign that has acquired a conventional significance 
-       is sign~3z any nonverbal action or gesture that encodes a message 
-          is communication~1z something that is communicated by or to or between people or groups 
-             is abstraction~1z a general concept formed by extracting common features from specific examples 
-                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-  staff~4: the body of teachers and administrators at a school 
-    is body~9  a group of persons associated by some common tie or occupation and regarded as an entity 
-       is social_group~1z people sharing some social relation 
-          is group~1z any number of entities considered as a unit 
-             is abstraction~1z a general concept formed by extracting common features from specific examples 
-                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-  staff~5: personnel who assist their superior in carrying out an assigned task 
-    is force~8  group of people willing to obey orders 
-       is constitution~1z a group of people who work together 
-          is social_group~1z people sharing some social relation 
-             is group~1z any number of entities considered as a unit 
-                is abstraction~1z a general concept formed by extracting common features from specific examples 
-                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-  staff~6: building material consisting of plaster and hair 
-    is building_material~1  material used for constructing buildings 
-       is artefact~1z a man-made object taken as a whole 
-          is unit~1z an assemblage of parts that is regarded as a single entity 
-             is physical_object~1z a tangible and visible entity 
-                is physical_entity~1z an entity that has physical existence 
-                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-  staff~7: provide with staff 
-  staff~8: serve on the staff of 
-Command: :up visitor
-
-For visitor:
- Set hierarchy:
- Wordnet hierarchy:
-  visitor~1: someone who visits 
-    is traveler~1  a person who changes location 
-       is somebody~1z a human being 
-          is organism~1z a living thing that has the ability to act or function independently 
-             is living_thing~1z a living entity 
-                is unit~1z an assemblage of parts that is regarded as a single entity 
-                   is physical_object~1z a tangible and visible entity 
-                      is physical_entity~1z an entity that has physical existence 
-                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-          is causal_agent~1z any entity that produces an effect or is responsible for events or results 
-             is physical_entity~1z an entity that has physical existence 
-                is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-Command: :down role_ally
-
-Command: :down ~role_ally
-~friend acquaintance aide ally colleague confederate friend guest helper neighbor 
-  subordinate teammate visitor 
-Command: :down ~positive_value
-
-Command: :up awesome
-
-For awesome:
- Set hierarchy:
- Wordnet hierarchy:
-  awesome~1: inspiring awe or admiration or wonder 
-Command: :down ~goodness
-~emohappy ability above absolutely absolve absorb absorbent abundance abundant accelerate 
-  accept acceptable accessible acclaim acclimate accommodate accomplish accomplishment accountable accurate 
-  ace achieve achievement acknowledge active actualize adamant adaptable adept adequate 
-  admirable admiration admire adorable adore adroit advance adventure adventurous advice 
-  advocate affable affection affectionate affirm affirmative affluent affordable agape ageless 
-  agile agility aglow agree agreeable agreement ahead aid aim airy 
-  alert alive all-natural all-new Allah allure alluring almighty alright alter 
-  altruism altruistic amaze amazing ambassador ambition ambitious amenable amiable amicable 
-  amorous amuse amused amusing ancient animate animated answer anticipate anticipation 
-  appeal appealing applaud appreciate appreciative approachable appropriate approval approve aquiver 
-  ardent aroma arouse art artful articulate artisan artistic aspiration aspire 
-  assertive assertiveness assistance associate association assure astonish astonishing astound astounding 
-  astute at_ease athletic attach attentive attract attraction attractive audacious auspices 
-  authentic authenticity authoritative autonomous autonomy avenge avid award aware awe 
-  awe-struck awed awesome awestruck balance balance_out balanced balm balmy banter 
-  bargain barter beaming beatific beautiful beauty beckon bedazzle befriend beguile 
-  believable belong belonging beloved bemuse benefactor beneficent benevolent benign bequest 
-  besot best better bewitch big big-hearted bigger bits bless blessed 
-  blessing bliss blissful blithe bloom blossom bodacious boisterous bold bon_vivant 
-  boost botanical bounce bouncy boundless brainy brand-new brave bravery breakthrough 
-  breathless breathtaking breezy brief bright brilliant brim brisk broad-minded brother 
-  bubbly build bullish buoyant buy buzz cajole cake calm candid 
-  canny capable captivate captivating care carefree careful caress caring casual 
-  cautious celebration center central cerebral certain champion change charismatic charitable 
-  charity charm charmed charming chaste chatty cheer cheerful cheery cherish 
-  chic chipper chivalrous choice chosen chuffed church circumspect civil classic 
-  classy clean cleanliness cleanse clear clearheaded clever cleverness close co-creation 
-  coach cognizant coherent collaborate colleague color colorful colourful comedic comely 
-  comfort comfortable comfy commend commendable commit commitment communicate communicative community 
-  compact companionable compassionate compatible compelling competent competitive complementary complete complex 
-  compliant compliment compose concentrate conciliatory concise concordance conducive conduct confidence 
-  confident confirm conform congenial congregation connoisseur conscientious conscious consider considerate 
-  consideration consistent console consonance constant constructive consummate contemplative content contented 
-  continual continually continuity contribute contribution contrite convenient convince convincing convivial 
-  convulsive cool cooperate cooperation cooperative coordinate coordination copasetic cope cordial 
-  correct cost-effective counsel courage courageous courteous courtly coy cozy crafty 
-  creamy create creation creative creativity credential credible credit crisp cuddle 
-  cuddly cultivate culture cultured cunning curiosity curious cute dainty dance 
-  dare daring dashing daughter dauntless dazzle dazzling dear debonair debut 
-  decent decide decisive decorous dedicate dedicated deep defined definite delectable 
-  deliberate delicate delicious delight delighted delightful deliver deluxe democratic democratically 
-  demure dependable depth deserve deserving design desirable desire desirous detailed 
-  determination determine determined develop devote devoted devout diamond dicker difference 
-  dignified dignify dignity diligence diligent dimple diplomacy diplomatic direct disarming 
-  discern discerning discipline discount discreet discrete discriminating disentangle dispassionate display 
-  distinctive distinguish diverse diversification divine doctor donate done donor dote 
-  dramatic dream dreamy drool durable dutiful dynamic eager early earnest 
-  earthy ease easiest easy easy-going easy-on-the-eyes easygoing eater ebullient eccentric 
-  eclectic eco-friendly economical economy ecstatic edify educate education educational efface 
-  effective effervescent efficacious efficient effusive elastic elate elated electrify electronic 
-  elegance elegant elevate elite eloquent emancipate embed embrace emerge eminent 
-  empathetic empathic empathy emphatic empower enable enamor enchant enchanted enchanting 
-  encompass encourage encouraging endless endorse endow endurable endurance endure energetic 
-  energize energy engage engaging engross engrossed enhance enjoy enjoyable enjoyment 
-  enlighten enlightened enliven ennoble enormous enrapture enrich ensure enterprising entertain 
-  entertaining enthrall enthusiastic entice entitle entrance entrepreneurial entrust equal equality 
-  equanimous equip equitable eros erudite escape essence essential establish established 
-  esteem eternal eternally ethereal ethical euphoric even-tempered evolution evolve exact 
-  exactly excellent exceptional excite excited exciting exclusive exculpate exempt exhilarate 
-  exhilarated exhilaration exonerate exotic expand expandable expansive expectant expensive experience 
-  expert express expression expressive exquisite extensive extol extra extraordinary extricate 
-  extrovert extroverted exuberant exultant eye-catching fab fable fabulous fain fair 
-  fair-minded fairy faith faithful fame family famous fantabulous fantasize fantastic 
-  farewell fascinate fascinating fascination fashionable fast fastidious father favor favorite 
-  favourite fearless feast feat feature-packed fecund feisty felicitous feminine ferment 
-  fertile fervent fervor festive fetch find fine finesse finest finish 
-  firm first first-class first-rate fit five-star five_star fizz flair flatter 
-  flattering flavorful fledgling flexibility flexible flirt flirtatious flourish flourishing flow 
-  fluid focus focused foil fond fondle foolproof forbear forbearance forbearing 
-  forceful foresight forever forgive forgiven forgiving form formidable forte forthright 
-  fortify fortitude fortunate fortune forward foster fragrance fragrant frank free 
-  freedom fresh freshness friend friendly frisky frolicsome frontier frugal fruitful 
-  fulfill full fun fun_loving functional funky funny furnish future gallant 
-  galore galvanize game gather gaze generous genial genius gentile gentle 
-  genuine giddy gift giggle gild give giving glad glamorous glamour 
-  glamourous glee gleeful glitter global glorious glow glowing go-ahead goal 
-  God godly golden good good-looking good-natured goodhearted goodness gorgeous graceful 
-  gracious grand grant grateful gratify gratifying gravitas great green greet 
-  gregarious grin groovy ground grounded grown guarantee guide guilt-free guiltless 
-  gutsy haggle half-price hallow handy happy happy-go-lucky hard-working hardworking hardy 
-  harmless harmonious harmoniousness harmony harness heady heal health health-conscious healthy 
-  heart-to-heart hearten heartfelt heartily heartwarming hearty heavenly heed heedful help 
-  helpful heroic high high-quality high-spirited hilarious hire hold_dear home_cooked honest 
-  honesty honor honorable honourable hope hopeful horny hospitable hospitality hot 
-  hug human-centered humane humanitarian humanity humble humility humor humorous hunky_dory 
-  hypnosis hypnotic hypnotize ideal idealism idealistic idolize illuminate imagination imaginative 
-  imbue immaculate immortal immune impact impartial impassion impassive impeccable imperturbable 
-  impervious impish implacable important impress impressive incentive incisive incomparable incontrovertible 
-  incredible inculcate indebted independent indescribable indestructible indispensable individual individuality indulge 
-  indulgent industrious inexpensive infallible influence influential inform informative infuse ingenious 
-  inner innocent innovate innovation innovative inoculate inquire inquisitive insatiable inside 
-  inspirational inspire inspired inspiring instant instill instinctive instruct instructive instrumental 
-  intact intellectual intelligent intense intent interact interaction interest interesting internal 
-  interrelate intimate intrepid intrigue introspection introspective introvert intuitive invaluable inventive 
-  invigorate invigorating invincible invite involve invulnerable irreproachable irresistible jaunty jazzed 
-  jest jewel jocular join joke jolly josh jovial joy joyful 
-  joyous jubilant judicious juggle juiced juicy just justice K.O. karma 
-  keen keenest kid kind kind-hearted kindhearted kindly kindness kingly kiss 
-  kissable knack knightly knockout know-how knowing knowledge knowledgeable known labile 
-  laconic languid large-hearted lascivious laud laudable laugh laughing lavish law-abiding 
-  lead leadership leading-edge learn learned legend legitimate leisure lenient level 
-  level-headed liberal liberate lifelike lift light lighthearted likable like likeable 
-  linger lionhearted listen listener lively local logical longest looking lovable 
-  love lovely lovestruck loving low-cost low-priced loyal loyalty lubricious lucid 
-  lucky luminary luminescent luminous luscious lush lustful lusty luxe luxurious 
-  macho magic magical magnanimous magnetic magnificent magnify majestic make malleable 
-  manage manageable management managerial manifest manly mannered manners marriage marry 
-  marshall marvellous marvelous masculine massage masterful masterly mastermind mastery matchless 
-  maternal mature maxi meaningful mediation meditative meld mellow melodious melodiousness 
-  memorable memory mentor mentorship merciful meritorious merry mesmerize methodical meticulous 
-  mighty mild mile-marker milepost milestone mindful miracle miraculous mirthful mischievous 
-  mission mobilize moderate modern modest modify mold mollify money-making moral 
-  more mother motherly motivate mouthwatering move moved movement multi multidimensional 
-  munchy muse music musical mysterious mystic mystical myth naked natural 
-  naturalness nature near neat neatness necessary need negotiate neighborhood neighborly 
-  nestle new next-generation nice nifty nimble ninja noble nonchalant normal 
-  normality nostalgic notice nourish nourishing novel nude nudge nurse nurture 
-  nutritious nuzzle O.K. obedient obey objective objectivity observant observe occasion 
-  ogle OK okay oligarch omnipotent one-of-a-kind open open-minded open-mindedness open-source 
-  openhanded openheartedness opportunistic opportunity optimist optimistic optional opulent order orderliness 
-  orderly organic organize original originality originate outgoing outgoingness outlast outside 
-  outspoken outstanding overcome overjoyed painstaking palate palatial pamper paradise pardon 
-  participate partner partnership party passionate pastoral patience patient patriotism patronage 
-  peace peaceful peacemaking peachy peak pearl peerless peppy perceptive perfect 
-  perfection perform performance perky permanent perseverance persistent personable perspicuous persuade 
-  persuasive pert pertinent pet philanthropic philosophical philosophy pick-me-up pilgrimage pioneer 
-  pioneering pious placid plan plausible play playful pleasant please pleased 
-  pleasing pleasure plenitude plenty plethora plucky plum plump plus plush 
-  poem poetic poise polish polished polite popular popularity portable portentous 
-  positive potent power powerful practical pragmatic praise praiseworthy pray precious 
-  precise precision precocious prefer premier premium prepare preppy president prestige 
-  pretty priceless pride prim primal primary prime pristine privilege privileged 
-  prize prize-winning pro-active proactive prodigal prodigious productive professional professionalism proficient 
-  profitable profound progress progressive prolific promise promising promote promotion promotional 
-  prompt propel proper proprietary prosper prosperity prosperous protect protection protective 
-  proud provident provocative prudent psyched psychedelic public-spirited pumped_up punctual pure 
-  purify purity purposeful qualify quality quantity quench quest quick quick-witted 
-  quiescent quiet quirky quivery quixotic rad radiant rainbow raise rapid-action 
-  rapt rapture rapturous rare rational ravishing raw re-energize reachable ready 
-  real realistic reap reason reasonable reassure rebate reborn rebound reception 
-  receptive receptivity recognize recommend recommendation reconcile recoup recover recruit recycle 
-  redeem redesign refine refined refinement reflective reform refresh refreshing refuel 
-  regain regular regularity rehabilitate reinforce reinvented rejoice rejoicing rejuvenate relationship 
-  relax relaxed release relevance relevant reliable reliant relief relieve relieved 
-  remarkable remedy remember remind remorseful renew renown repentant replenish reposed 
-  reputation request rescue reserved resilient resolute resolve resourceful respect respectable 
-  respectful resplendent responsible responsive rest restful restive restrained restructure reunite 
-  reuse reveal revelation revere reverent revisit revitalize revive revolutionary reward 
-  rewarding rhetorical rich right righteous rigorous riveted robust rock romance 
-  romantic romp rosy royal safe safety sagacious sage saintly salute 
-  samurai sanctify sane sanguine sapient sardonic sassy sate satiate satisfaction 
-  satisfied satisfy saucy save savor savvy scalable scholarly scientific scintillate 
-  scores scrutinize search searching secret secure security sedate seduce seductive 
-  seemly select selective self-assured self-confident self-denying self-determination self-disciplined self-expression self-motivated 
-  self-reliance self-reliant self-satisfied selfless sensational sensible sensitive sensitivity sensual sensuous 
-  sentient sentimental serenade serendipitous serene serenity serious serve service set 
-  settle sexually sexy shapely share sharp sheer shelter shield shrewd 
-  shy significant silent silly silver simple simplify sincere sing singular 
-  sister sizzle skilful skill skillful slick slug sly smart smashing 
-  smile smiling smitten smooth snuggle soar sociable social soft soft-spoken 
-  solar sole solicit solid son soon sooth soothe sophisticated soulful 
-  sound soundness spacious spaciousness spare sparkle sparkling special spectacular speed 
-  speedy spellbind spellbound spice spicy spirit spirited spiritual splendid splendiferous 
-  sponsorship spontaneity spontaneous spotless sprightly sprite spruce spry spunky stable 
-  staggering stalwart star state-of-the-art steadfast steady stimulate stimulating stimulation stout 
-  stout_hearted straightforward strategic strategy strength strengthen strive stroke strong strong-willed 
-  studious stunning stupendous stylish suave sublime substantial subtle succeed success 
-  successful succinct succulent sugar suggest suitable sumptuous sumptuousness sun sunny 
-  sunshine super superb superior superlative supersede supersonic supervise supervisory support 
-  supportive supreme sure surpass surprise surreal sweet swell symmetrical sympathetic 
-  sympathize sympathy symphony systematic tactful talent talented tan tangible tangy 
-  tasteful tasty teach tease technology tempting tenacious tender tender_hearted tenderhearted 
-  terrific thank thankful the_yoke_of theme thin thorough thoroughbred thoughtful thoughtfulness 
-  thrifty thrill thrilled thrive tickle tidy timeless tingle tiny toast 
-  tolerance tolerant top totally touch touched tough toward tradition traditional 
-  train tranquil transcend transformation travel treasure treat treaty tremendous trendy 
-  tribute triumph triumphant true truly trust trusting trustworthy truth truthful 
-  turned_on tutor ubiquitous ubiquity ultimate ultra unafraid unassuming unbeatable unbiased 
-  unblemished unbreakable undeniable undeniably understand understanding understood undoubtedly uninterrupted unique 
-  unite unity universal unlock unparalleled unquestionably unrivaled unrivalled unshackled unshakable 
-  unsparing unsurpassed unusual up upbeat upgrade uplifted upright usability usable 
-  use useful V.I.P. valiant valid valuable value vanish vary venture 
-  versatile versatility vest vibrant victor victory vigorous vindicate vintage virile 
-  virtue virtuous vision visionary visit vital vivacious vivid voluntarily voluntary 
-  volunteer warm warm-hearted warmhearted warrior waterproof wealth welcome well well-being 
-  well-deserved well-rounded well-trained wellness whimsical whisper white whiz whole wholesale 
-  wholesome whopper will willing win wink winner winsome wise wish 
-  wishful wistful witty wonder wonderful wondrous worldly worth worthy wow 
-  write yearn yes yield young youthful Yule zany zeal zealous 
-  zest zestful 
-Command: :up yes
-
-For yes:
- Set hierarchy:
- Wordnet hierarchy:
-  yes~1: an affirmative 
-    is affirmative~1  a reply of affirmation 
-       is affirmation~1z a statement asserting the existence or the truth of something 
-          is asseveration~1z a declaration that is made emphatically 
-             is resolution~6 a statement that is emphatic and explicit 
-                is financial_statement~1z a message that is stated or declared 
-                   is message~2z what a communication that is about something is about 
-                      is communication~1z something that is communicated by or to or between people or groups 
-                         is abstraction~1z a general concept formed by extracting common features from specific examples 
-                            is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-Command: :up cool
-
-For cool:
- Set hierarchy:
- Wordnet hierarchy:
-  cool~1: great coolness and composure under strain 
-    is calm~1  steadiness of mind under stress 
-       is disposal~1 your usual mood 
-          is nature~1z the complex of emotional and intellectual attributes that determine a person's characteristic actions and reactions 
-             is trait~1z a distinguishing feature of your personal nature 
-                is attribute~1z an abstraction belonging to or characteristic of an entity 
-                   is abstraction~1z a general concept formed by extracting common features from specific examples 
-                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-  cool~2: the quality of being at a refreshingly low temperature 
-    is frigidity~2  the absence of heat 
-       is vasoconstrictive~1z any agent that causes a narrowing of an opening of a blood vessel: cold or stress or nicotine or epinephrine or norepinephrine or angiotensin or vasopressin or certain drugs 
-          is agentive_role~1 an active and efficient cause 
-             is causal_agent~1z any entity that produces an effect or is responsible for events or results 
-                is physical_entity~1z an entity that has physical existence 
-                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-       is temperature~1z the degree of hotness or coldness of a body or environment 
-          is physical_property~1z any property used to characterize matter and energy and their interactions 
-             is prop~3z a basic or essential attribute shared by all members of a class 
-                is attribute~1z an abstraction belonging to or characteristic of an entity 
-                   is abstraction~1z a general concept formed by extracting common features from specific examples 
-                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-          is fundamental_measure~1z one of the four quantities that are the basis of systems of measurement 
-             is quantity~1z how much there is or how many there are of something that you can quantify 
-                is abstraction~1z a general concept formed by extracting common features from specific examples 
-                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
-  cool~3: loose heat 
-  cool~4: lose intensity 
-  cool~5: make cool or cooler 
-  cool~6: marked by calm self-control  
-  cool~7: fashionable and attractive at the time 
-  cool~8: without exaggeration or qualification 
-  cool~9: neither warm nor very cold 
-  cool~10: psychologically cool and unenthusiastic 
-  cool~11: inducing the impression of coolness 
-Start: user:nick bot:jarvis ip: rand:2584 (~justify_identity) 2 ==> I don't know what to say.  When:Tue Feb 18 11:46:19 2014 Version:3.53 Build0:1390424187 Build1:1392739076 Why: ~control.1.0 
-Command: :build 1
-Start: user:nick bot:jarvis ip: rand:2584 (~justify_identity) 2 ==> I'm sorry but I have not been programmed to comprehend that.  When:Tue Feb 18 12:42:10 2014 Version:3.53 Build0:1390424187 Build1:1392744201 Why: ~control.1.0 
-Command: :build 1
-Missing topic index for ~justify_identity
-
-Command: :build 1
-Missing topic index for ~justify_identity
-
-Command: :build 1
-Start: user:nick bot:jarvis ip: rand:2583 (~main) 2 ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 18 15:40:22 2014 Version:3.53 Build0:1390424187 Build1:1392755349 Why: ~main.0.0 
-Command: :build 1
-Start: user:nick bot:jarvis ip: rand:2583 (~main) 2 ==> I can tell you about any of the games or events that are here.  When:Tue Feb 18 15:49:16 2014 Version:3.53 Build0:1390424187 Build1:1392756025 Why: ~main.11.0 
-Command: :build 1
+﻿Command: :build 1
 Missing topic index for ~main
 
+Command: :build 1
+Start: user:nick bot:jarvis ip: rand:2585 (~main) 2 ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Tue Feb 25 14:56:33 2014 Version:3.53 Build0:1390424187 Build1:1393355008 Why: ~main.13.0 
+Command: :build 1
+Start: user:nick bot:jarvis ip: rand:2585 (~main) 2 ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Tue Feb 25 16:15:33 2014 Version:3.53 Build0:1390424187 Build1:1393360103 Why: ~main.13.0 
+Command: :up give
+
+For give:
+ Set hierarchy:
+ Wordnet hierarchy:
+  give~1: the elasticity of something that can be stretched and returns to its original length 
+    is snap~7  the tendency of a body to return to its original shape after it has been stretched or compressed 
+       is physical_property~1z any property used to characterize matter and energy and their interactions 
+          is prop~3z a basic or essential attribute shared by all members of a class 
+             is attribute~1z an abstraction belonging to or characteristic of an entity 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  give~2: proffer  
+  give~3: consent to engage in sexual intercourse with a man 
+  give~4: occur 
+  give~5: estimate the duration or outcome of something 
+  give~6: dedicate 
+  give~7: inflict as a punishment 
+  give~8: allow to have or take 
+  give~9: guide or direct, as by behavior of persuasion 
+  give~10: submit for consideration, judgment, or use 
+  give~11: give entirely to a specific person, activity, or cause 
+  give~12: offer in good faith 
+  give~13: manifest or show 
+  give~14: convey or communicate 
+  give~15: convey, as of a compliment, regards, attention, etc. 
+  give~16: bestow 
+  give~17: accord by verdict 
+  give~18: propose 
+  give~19: give food to 
+  give~20: be flexible under stress of physical force 
+  give~21: give or supply 
+  give~22: cause to happen or be responsible for 
+  give~23: bring about 
+  give~24: perform for an audience 
+  give~25: present to view 
+  give~26: organize or be responsible for 
+  give~27: move in order to make room for someone for something 
+  give~28: break down, literally or metaphorically 
+  give~29: transfer possession of something concrete or abstract to somebody 
+  give~30: leave with 
+  give~31: give as a present 
+  give~32: place into the hands or custody of 
+  give~33: convey or reveal information 
+  give~34: transmit  
+  give~35: contribute to some cause 
+  give~36: give or convey physically 
+  give~37: give  
+  give~38: cause to have, in the abstract sense or physical sense 
+  give~39: bestow, especially officially 
+  give~40: be the cause or source of 
+  give~41: endure the loss of 
+  give~42: afford access to 
+  give~43: deliver in exchange or recompense 
+  give~44: emit or utter 
+  give~45: execute and deliver 
 Command: :build 1
