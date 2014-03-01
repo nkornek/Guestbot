@@ -96,3 +96,60 @@ Respond: user: bot:jarvis ip: (~catchall) 9  you are silly ==> I know that I am 
 Respond: user: bot:jarvis ip: (~eat_dirt_game) 10  go away ==> Is there anything else that you would like to know about Eat Dirt?  When:Tue Feb 25 15:39:44 2014 Why: ~eat_dirt_game.6.0 
 Command: :reset
 Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Feb 25 16:21:34 2014 Why: ~main.0.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Wed Feb 26 16:05:08 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  My name is Jessica. ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Wed Feb 26 16:06:14 2014 Why: ~main.0.3 
+Respond: user: bot:jarvis ip: (~main) 2  Don't you think that's a little forward? ==> I can tell you about any of the games or events that are here.  When:Wed Feb 26 16:06:27 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 3  Great! ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Wed Feb 26 16:06:32 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 4  Where is the arcade? ==> I can tell you about any of the games or events that are here.  When:Wed Feb 26 16:06:41 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 5  Where are the games? ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Wed Feb 26 16:07:02 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 6  What is this? ==> Why, this is Arcade 11! Concordia University and the Technoculture, Art and Games research center have collaborated with the Montreal Joue Festival to bring you a three day long celebration of gaming.  When:Wed Feb 26 16:07:23 2014 Why: ~main.9.0 
+Respond: user: bot:jarvis ip: (~main) 7  Wow! ==> I can tell you about any of the games or events that are here.  When:Wed Feb 26 16:07:31 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 8  What games are there? ==> We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.  When:Wed Feb 26 16:07:44 2014 Why: ~main.10.0 
+Respond: user: bot:jarvis ip: (~main) 9  Tell me about Elephants. ==> I can tell you about any of the games or events that are here.  When:Wed Feb 26 16:08:07 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 10  Tell me about Elephants ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Wed Feb 26 16:08:13 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 11  Tell me about Kung Fu Volleyball ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Wed Feb 26 16:08:26 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 12  What is a Bizarro Game Controller? ==> I can tell you about any of the games or events that are here.  When:Wed Feb 26 16:08:38 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 13  What is Eat Dirt!? ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Wed Feb 26 16:08:45 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 14  What is Eat Dirt? ==> I can tell you about any of the games or events that are here.  When:Wed Feb 26 16:08:50 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 15  What is a Bizarro Controller? ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Wed Feb 26 16:09:06 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 16  How do I play? ==> I can tell you about any of the games or events that are here.  When:Wed Feb 26 16:10:00 2014 Why: ~main.15.0 
+Respond: user: bot:jarvis ip: (~main) 17  Who is here? ==> No thank you.  When:Wed Feb 26 16:10:10 2014 Why: ~catchall.18.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Sat Mar 01 10:51:05 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  what games are here? ==> We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.  When:Sat Mar 01 10:51:13 2014 Why: ~main.10.0 
+Respond: user: bot:jarvis ip: (~ggvg_game) 2  what is game game videogame? ==> It is a four player competitive game where you must shoot your opponents and dance with a jewel.  When:Sat Mar 01 10:51:19 2014 Why: ~ggvg_game.1.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 3  what about the elephant game? ==> In this game, you play as an elephant and must use your trunk to smash everything that you can.  When:Sat Mar 01 10:51:27 2014 Why: ~dumpy_game.1.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Sat Mar 01 16:55:01 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  I want to know about the worm game ==> We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.  When:Sat Mar 01 16:55:10 2014 Why: ~main.10.0 
+Respond: user: bot:jarvis ip: (~main) 2  what about the worm game? ==> Once again, the list is Teponaztli, Game Game Videogame, QED, Pyramidwarfs, Eat Dirt, Kung Fu Volleyball, Dumpy: Going Elephants, How to Learn About Yourself Using This One Weird Worm, Arcade Royale, and Bizarro Game Controllers.  When:Sat Mar 01 16:55:17 2014 Why: ~main.11.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Sat Mar 01 16:56:04 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  I want to know about the worm game ==> Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"?  When:Sat Mar 01 16:56:14 2014 Why: ~main.9.0 
+Respond: user: bot:jarvis ip: (~main) 2  the wierd worm ==> Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"?  When:Sat Mar 01 16:56:22 2014 Why: ~main.9.0 
+Respond: user: bot:jarvis ip: (~main) 3  the weird worm ==> Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"?  When:Sat Mar 01 16:56:28 2014 Why: ~main.9.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Sat Mar 01 16:59:55 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  i want to know about worms ==> Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"?  When:Sat Mar 01 17:00:17 2014 Why: ~main.9.0 
+Respond: user: bot:jarvis ip: (~main) 2  the weird worm ==> Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"?  When:Sat Mar 01 17:00:21 2014 Why: ~main.9.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 3  i want to learn about yourself ==> I may not be able to help you learn about yourself, but I can certainly help you learn about How to Learn About Yourself Using This One Weird Worm.  When:Sat Mar 01 17:01:04 2014 Why: ~weirdworm_game.6.0 
+Respond: user: bot:jarvis ip: (~eat_dirt_game) 4  I want to learn about eat dirt ==> Eat Dirt! The most interesting came about composting ever made! What would you like to know?  When:Sat Mar 01 17:01:16 2014 Why: ~eat_dirt_game.5.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 5  i want to learn about the weird worm ==> I may not be able to help you learn about yourself, but I can certainly help you learn about How to Learn About Yourself Using This One Weird Worm.  When:Sat Mar 01 17:01:25 2014 Why: ~weirdworm_game.6.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Sat Mar 01 17:02:03 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  I want to learn about the worm game ==> Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"?  When:Sat Mar 01 17:02:12 2014 Why: ~main.9.0 
+Respond: user: bot:jarvis ip: (~main) 2  the weird worm ==> Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"?  When:Sat Mar 01 17:02:15 2014 Why: ~main.9.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Sat Mar 01 17:02:43 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  I want to learn about the worm game ==> Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"?  When:Sat Mar 01 17:02:52 2014 Why: ~main.9.0 
+Respond: user: bot:jarvis ip: (~main) 2  the weird worm ==> Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"?  When:Sat Mar 01 17:02:56 2014 Why: ~main.9.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Sat Mar 01 17:03:36 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  I want to know about the worm game ==> Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"?  When:Sat Mar 01 17:03:43 2014 Why: ~main.9.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 2  the weird worm ==> I may not be able to help you learn about yourself, but I can certainly help you learn about How to Learn About Yourself Using This One Weird Worm.  When:Sat Mar 01 17:03:48 2014 Why: ~weirdworm_game.6.0 

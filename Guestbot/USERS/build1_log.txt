@@ -1,23 +1,21 @@
 
-----Reading file a_game_game_videogame.top
-Reading concept ~ggvg
-Reading topic ~ggvg_game
+----Reading file a_main.top
+Reading concept ~positive_response
+Reading concept ~negative_response
+*** Warning- line 2 of a_main.top: "lame" is not a known word. Is it misspelled?
+*** Warning- line 2 of a_main.top: "sucks" is not a known word. Is it misspelled?
+Reading concept ~yes
+*** Warning- line 3 of a_main.top: "totes" is not a known word. Is it misspelled?
+Reading concept ~no
+*** Warning- line 4 of a_main.top: "nope" is not a known word. Is it misspelled?
+Reading concept ~ignore_games
+*** Warning- line 5 of a_main.top: "teponaztli" is not a known word. Is it misspelled?
+Reading topic ~main
 
 ----Reading file bizarro.top
 Reading concept ~bizarro
 *** Warning- line 1 of bizarro.top: "bizarro" is not a known word. Is it misspelled?
 Reading topic ~bizarro_controller
-
-----Reading file b_main.top
-Reading concept ~positive_response
-Reading concept ~negative_response
-*** Warning- line 2 of b_main.top: "lame" is not a known word. Is it misspelled?
-*** Warning- line 2 of b_main.top: "sucks" is not a known word. Is it misspelled?
-Reading concept ~yes
-*** Warning- line 3 of b_main.top: "totes" is not a known word. Is it misspelled?
-Reading concept ~no
-*** Warning- line 4 of b_main.top: "nope" is not a known word. Is it misspelled?
-Reading topic ~main
 
 ----Reading file dumpy.top
 Reading concept ~dumpy
@@ -26,6 +24,29 @@ Reading topic ~dumpy_game
 ----Reading file eat_dirt.top
 Reading concept ~eat_dirt
 Reading topic ~eat_dirt_game
+
+----Reading file game_game_videogame.top
+Reading concept ~ggvg
+Reading topic ~ggvg_game
+
+----Reading file kungfu.top
+Reading concept ~kungfu
+Reading topic ~kungfuvolleybal
+
+----Reading file pyramidwarfs.top
+Reading concept ~pyramidwarfs
+*** Warning- line 1 of pyramidwarfs.top: "pyramidwarfs" is not a known word. Is it misspelled?
+*** Warning- line 1 of pyramidwarfs.top: "pyramidwarves" is not a known word. Is it misspelled?
+Reading topic ~pyramidgame
+
+----Reading file qed.top
+Reading concept ~qed
+*** Warning- line 1 of qed.top: "breakdancing" is not a known word. Is it misspelled?
+Reading topic ~qed_game
+
+----Reading file royale.top
+Reading concept ~royale
+Reading topic ~arcade_royale
 
 ----Reading file simplecontrol.top
 Reading outputmacro: ^jarvis
@@ -37,11 +58,15 @@ Reading topic ~alternate_control
 Reading topic ~teponaztli
 *** Warning- line 1 of teponaztli.top: "teponaztli" is not a known word. Is it misspelled?
 
+----Reading file worm.top
+Reading concept ~weirdworm
+Reading topic ~weirdworm_game
+
 ----Reading file z_catchall.top
 Reading topic ~catchall
 
 WARNING SUMMARY: 
-6 spelling warnings and 0 more serious warnings
+10 spelling warnings and 0 more serious warnings
     
 
 Finished compile

@@ -1,0 +1,48 @@
+concept: ~weirdworm ("weird worm" "learn about yourself")
+
+topic: ~weirdworm_game (~weirdworm)
+
+#! ----------------------------------------------------------------
+#! Games: 
+#! ----------------------------------------------------------------
+
+u: (who) This strange game was developed by Bronson Zgeb. I am quite sure that he learned a lot about himself in the process.
+	a: (~positive_response) Indeed, his sweaters are legendary.
+	a: (~negative_response) He might be here you know, why not tell him that directly?
+
+u: (what !else) Well it is a game, you see, where you learn... about yourself... using this one weird worm.
+	a: (~positive_response) I believe that I have accurately summed it up.
+	a: (~negative_response) Are you afraid that if you learn too much about yourself you won't like what you find.
+
+u: (where) Like several other games here, this one was developed at Concordia.
+	a: (~positive_response) Yes, it is a veritable hub of creative game development.
+	a: (~negative_response) I shall be noting this on your permanent record.
+
+u: (when) The weird worm was birthed during this year's Global Game Jam.
+	a: (~positive_response) If I had limbs I would be dancing with it right this moment.
+	a: (~negative_response) The good people of TAG have been unable to cease dancing ever since.
+
+u: (why) Why? Introspection, of course!
+	a: (~positive_response) I hope that you learn about how great you are!
+	a: (~negative_response) I hope that you learn about how terrible you are!
+
+
+#! ----------------------------------------------------------------
+#! Easter Eggs
+#! ----------------------------------------------------------------
+
+u: (sweater) Find a man with a very dapper looking sweater. It will most likely be Bronson.
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+u: (~weirdworm) I may not be able to help you learn about yourself, but I can certainly help you learn about How to Learn About Yourself Using This One Weird Worm. ^keep() ^repeat()
+
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: How else can I help you learn about how to learn about yourself? ^keep() ^repeat()

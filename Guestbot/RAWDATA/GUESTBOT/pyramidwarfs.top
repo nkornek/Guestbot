@@ -1,0 +1,49 @@
+concept: ~pyramidwarfs (pyramid dwarf "pyramidwarfs" "pyramidwarves")
+
+topic: ~pyramidgame (~pyramidwarfs)
+
+#! ----------------------------------------------------------------
+#! Games: pyramidwarfs
+#! ----------------------------------------------------------------
+
+u: (who) Pyramidwarfs is a game by Renaud Bédard, Samuel Boucher, and Stefan Boucher. It figures that it took 3 people to make a game about forming pyramids.
+	a: (~positive_response) Would you believe that they made a human pyramid throughout the game's entire development. No? I should hope not. That would be silly.
+	a: (~negative_response) You seem like a very unpleasant person.
+
+u: (what !else) This is a game where you attempt to stack several silly looking dwarves upon each other's shoulders to form human pyramids.
+	a: (~positive_response) I wish that I had the appendages required to form such a shape.
+	a: (~negative_response) I challenge you to try and form such a pyramid. I expect to hear of your results within the hour.
+
+u: (where) The game was developed right here at Concordia as part of this year's Global Game Jam.
+	a: (~positive_response) It was quite the event!
+	a: (~negative_response) You should really get out more.
+
+u: (when) Pyramidwarfs was made during 48 hours for the 2014 Global Game Jam.
+	a: (~positive_response) So much progress in such a short time!
+	a: (~negative_response) It was a fun event. There were no pessimists like you present.
+
+u: (why)
+	a: (~positive_response)
+	a: (~negative_response)
+
+#! ----------------------------------------------------------------
+#! Easter eggs
+#! ----------------------------------------------------------------
+
+s: (I * ~creation_verbs * pyramid) Congratulations, you have bested my challenge. Would you like a congratulatory cookie?
+	a: (~yes) Well too bad, I have no way of actually giving you one.
+	a: (~no) Good, because I would not have been capable of giving you one anyways.
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+u: (~pyramidwarfs) What would you like to know about the dwarf stacking simulator? ^keep() ^repeat()
+
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: Would you like more details about Pyramidwarfs? I unfortunately cannot provide you with gameplay tips as I lack the appendages required to play the game. ^keep() ^repeat()

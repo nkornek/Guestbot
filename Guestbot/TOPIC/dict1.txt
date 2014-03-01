@@ -1,11 +1,21 @@
-﻿+ ~ggvg CONCEPT 
-+ game_game,_videogame 
-+ game_game_videogame 
-+ ~positive_response CONCEPT 
-+ ~negative_response CONCEPT 
-+ ~bizarro CONCEPT 
+﻿+ ~positive_response CONCEPT 
 + yay 
++ ~negative_response CONCEPT 
++ ~ignore_games CONCEPT 
++ ~bizarro CONCEPT 
++ ~ggvg CONCEPT 
 + ~dumpy CONCEPT 
 + ~eat_dirt CONCEPT 
++ ~royale CONCEPT 
++ ~qed CONCEPT 
++ ~weirdworm CONCEPT 
++ game_game,_videogame 
++ game_game_videogame 
++ ~kungfu CONCEPT 
++ ~pyramidwarfs CONCEPT 
++ qed 
++ arcade_royale 
 + jarvis 
 + defaultbot 
++ weird_worm 
++ learn_about_yourself 

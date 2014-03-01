@@ -1,0 +1,43 @@
+concept: ~royale ("arcade royale" cabinet "arcade machine")
+
+topic: ~arcade_royale (~royale)
+
+#! ----------------------------------------------------------------
+#! Games: Arcade Royale
+#! ----------------------------------------------------------------
+
+u: (who) The Arcade Royale was created by the Mount Royal Game Society by Evan Lackey. They are a group of people that share an interest in games and game development who meet up every month here in Montreal.
+	a: (~positive_response) Indeed. Were I a human I would definitely join them.
+	a: (~negative_response) You'll never know what you are missing.
+
+u: (what !else) It is an arcade machine that contains a great many games made by Montreal's independent game development community.
+	a: (~positive_response) Yes, my creator has developed games for it.
+	a: (~negative_response) Do you have something against independent developers?
+
+u: (where) The cabinet usually travels to various locations around Montreal. If you want to know more you should visit www.mrgs.ca.
+	a: (~positive_response) I wish that I could travel as much as that machine.
+	a: (~negative_response) 
+
+u: (when) The machine was constructed for the Prince of Arcade event in 2012, where all sorts of interesting games are showcased in an art gallery setting.
+	a: (~positive_response) It has become a yearly event. You should check it out later this year.
+	a: (~negative_response) Games ARE an art form. That debate was won years ago.
+
+u: (why) Not only does it showcase Montreal's talented game developers, but it also allows games to infiltrate areas where people would not expect to find them such as restaurants and libraries.
+	a: (~positive_response) Yes, it presents games in a way that is familiar and approachable to everyone.
+	a: (~negative_response) You are just jealous.
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+u: (~royale) What would you like to know about the Arcade Royale? ^keep() ^repeat()
+
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: Will you require and more information about the Arcade Royale? ^keep() ^repeat()
+	a: (~yes) Ask away. ^keep() ^repeat()
+	a: (~no) Well then, what else can I assist you with? ^keep() ^repeat()

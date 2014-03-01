@@ -62,3 +62,99 @@ For give:
   give~44: emit or utter 
   give~45: execute and deliver 
 Command: :build 1
+Start: user:nick bot:jarvis ip: rand:2585 (~main) 2 ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Sat Mar 01 10:50:48 2014 Version:3.53 Build0:1390424187 Build1:1393448686 Why: ~main.15.0 
+Command: :build 1
+Start: user:nick bot:jarvis ip: rand:2585 (~main) 2 ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Sat Mar 01 14:24:32 2014 Version:3.53 Build0:1390424187 Build1:1393689050 Why: ~main.15.0 
+Command: :up formed
+
+For formed:
+ Set hierarchy:
+ Wordnet hierarchy:
+  formed~1: having or given a form or shape 
+Respond: user:nick bot:jarvis ip: (~main) 3  ~up made ==> I can tell you about any of the games or events that are here.  When:Sat Mar 01 14:24:48 2014 Why: ~main.15.0 
+Command: :up made
+
+For made:
+ Set hierarchy:
+ Wordnet hierarchy:
+  made~1: produced by a manufacturing process 
+  made~2: having the sheets and blankets set in order 
+  made~3: successful or assured of success 
+Command: :up make
+
+For make:
+ Set hierarchy:
+ Wordnet hierarchy:
+  make~1: the act of mixing cards haphazardly 
+    is reordering~1  a rearrangement in a different order 
+       is rearrangement~1z changing an arrangement 
+          is arrangement~1z the act of arranging and adapting a piece of music 
+             is composition~2z musical creation 
+                is creating_by_mental_acts~1z the act of creating something by thinking 
+                   is creation~2z the human act of creating 
+                      is activity~1z any specific behavior 
+                         is act~1z something that people do or cause to happen 
+                            is event~1z something that happens at a given place and time 
+                               is psychological_feature~1z a feature of the mental life of a living organism 
+                                  is abstraction~1z a general concept formed by extracting common features from specific examples 
+                                     is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  make~2: a recognizable kind 
+    is variety~3  a category of things distinguished by some common characteristic or quality 
+       is category~1z a general concept that marks divisions or coordinations in a conceptual scheme 
+          is concept~1z an abstract or general idea inferred or derived from specific instances 
+             is thinking~1 the content of cognition 
+                is depicted_object~1z the sum or range of what has been perceived, discovered, or learned 
+                   is knowledge~1z the psychological result of perception and learning and reasoning 
+                      is psychological_feature~1z a feature of the mental life of a living organism 
+                         is abstraction~1z a general concept formed by extracting common features from specific examples 
+                            is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  make~3: act in a certain way so as to acquire 
+  make~4: eliminate urine 
+  make~5: have a bowel movement 
+  make~6: behave in a certain way 
+  make~7: give certain properties to something 
+  make~8: put in order or neaten 
+  make~9: develop into 
+  make~10: change from one form into another 
+  make~11: favor the development of 
+  make~12: cause to be enjoyable or pleasurable 
+  make~13: institute, enact, or establish 
+  make~14: calculate as being 
+  make~15: consider as being 
+  make~16: make, formulate, or derive in the mind 
+  make~17: cause to do 
+  make~18: represent fictitiously, as in a play, or pretend to be or act like 
+  make~19: assure the success of 
+  make~20: induce to have sex 
+  make~21: make or cause to be or to become 
+  make~22: create or design, often in a certain way 
+  make~23: create or manufacture a man-made product 
+  make~24: create by artistic means 
+  make~25: give rise to 
+  make~26: compel or make somebody or something to act in a certain way 
+  make~27: make by shaping or bringing together constituents 
+  make~28: make by combining materials and parts 
+  make~29: prepare for eating by applying heat 
+  make~30: organize or be responsible for 
+  make~31: gather and light the materials for 
+  make~32: perform or carry out 
+  make~33: reach a destination, either real or abstract 
+  make~34: reach in time 
+  make~35: reach a goal, e.g., 
+  make~36: proceed along a path 
+  make~37: head into a specified direction 
+  make~38: appear to begin an activity 
+  make~39: earn on some commercial or business transaction 
+  make~40: achieve a point or goal 
+  make~41: charge with a function 
+  make~42: engage in 
+  make~43: carry out or commit 
+  make~44: form by assembling individuals or constituents 
+  make~45: constitute the essence of 
+  make~46: to compose or represent: 
+  make~47: amount to 
+  make~48: be or be capable of being changed or made into 
+  make~49: add up to 
+  make~50: be suitable for 
+  make~51: undergo fabrication or creation 
+Command: :build 1

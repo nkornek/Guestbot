@@ -1,0 +1,41 @@
+concept: ~qed ("qed" "breakdancing" "break dancing" "hot dog" "hotdog" sausage)
+
+topic: ~qed_game (~qed)
+
+#! ----------------------------------------------------------------
+#! Games: QED
+#! ----------------------------------------------------------------
+
+u: (who) The game was primarily developed by Stephen Ascher. How he came up with the idea is the real mystery.
+	a: (~positive_response) Indeed, charming fellow.
+	a: (~negative_response) How rude of you.
+
+u: (what !else) It is a game where you play as a breakdancing sausage. There is certainly nothing strange about that.
+	a: (~positive_response) Yes, I was displaying an emotion which you humans know as "sarcasm." The game is bloody bizarre.
+	a: (~negative_response) Go back to playing your generic shooter game of the year if you feel that way.
+
+u: (where) 
+	a: (~positive_response) 
+	a: (~negative_response) 
+
+u: (when)
+	a: (~positive_response) 
+	a: (~negative_response)
+
+u: (why) 
+	a: (~positive_response)
+	a: (~negative_response)
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+u: (~qed)Do you have questions about the advanced sausage breakdancing simulator that is QED? ^keep() ^repeat()
+
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: What else would you like to know about QED? ^keep() ^repeat()
