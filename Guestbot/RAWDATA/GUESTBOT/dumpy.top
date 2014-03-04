@@ -13,30 +13,30 @@ u: (_"this game") ^mark(~dumpy _0) ^repeat() ^keep()
 
 u: (who * ~dumpy) Dumpy was developed by Brian Schrank, Tom Huffman, Brian Gabor Jr., Graham Gilreath, David Bayzer, Daniel Martinez, Mike Langley, and Nathan Chamot.
 	a: (~positive_response) They must be very funny people to have come up with this game. Either that, or they are all insane.
-	a: (~negative_response) Just because they have silly names does not give you the right to berate them.
+	a: (~negative_response) *angry*  Just because they have silly names does not give you the right to berate them.
 
 u: (what * ~dumpy) In this game, you play as an elephant and must use your trunk to smash everything that you can.
 	a: (~positive_response) Yes, it pleases my circuits to watch humans flail their heads around.
-	a: (~negative_response) Are you alergic to fun?
+	a: (~negative_response) *angry*  Are you alergic to fun?
 
 u: (where * ~dumpy) Dumpy comes to us from DePaul Univerity, in the far off land of Chicago.
 	a: (~positive_response) Did you know that Chicago is over 1300 kilometers away!
 		b: (~yes) Nobody like a know-it-all.
 		b: (~no) Indeed it is.
-	a: (~negative_response) Let's not go to Chicago, it is a silly place.
+	a: (~negative_response) *angry*  Let's not go to Chicago, it is a silly place.
 
 u: (when * ~dumpy) The game was made for an Oculus Rift focused game jam. It was pretty much the silliest thing there.
 	a: (~positive_response) I wish that I were compatible with the Oculus Rift.
-	a: (~negative_response) I guess you have no sense of fun then.
+	a: (~negative_response) *angry*  I guess you have no sense of fun then.
 
 u: (why * ~dumpy) It is fun, so why not?
 	a: (~positive_response) I am glad that you agree.
-	a: (~negative_response) You are such a bore.
+	a: (~negative_response) *angry*  You are such a bore.
 
 
 u: ([who what where when why] * ~dumpy) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
-	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+	a: (~negative_response) *angry*  I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
 
 
 #! ----------------------------------------------------------------

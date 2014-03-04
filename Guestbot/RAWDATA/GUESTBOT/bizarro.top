@@ -13,28 +13,28 @@ u: (_"this game") ^mark(~bizarro _0) ^repeat() ^keep()
 
 u: (who * ~bizarro) The project was led by Joachim Despland, Adam Van Sertima, Bronson Zgeb, and other TAG researchers. They're all a little odd if you ask me.
 	a: (~positive_response) Yes, they are all gentlemen and scholars.
-	a: (~negative_response) Hmph, how rude.
+	a: (~negative_response) *angry*  Hmph, how rude.
 
 u: (what * ~bizarro) Such a strange project! They used a variety of parts to build all sorts of intriguing input devices and came up with new ways to interface with videogames.
 	a: (~positive_response) Yes, I wish those controllers could interface with me. They seem friendly.
-	a: (~negative_response) Go back to your plain old gamepad then.
+	a: (~negative_response) *angry*  Go back to your plain old gamepad then.
 
 u: (where * ~bizarro) It actually happened right here at Concordia! Who knew?
 	a: (~positive_response) Indeed. There are all sorts of cool projects being developed here. I was one of them too!
-	a: (~negative_response) I'll just make a note of that respons in case you decide to apply here someday.
+	a: (~negative_response) *angry*  I'll just make a note of that respons in case you decide to apply here someday.
 
 u: (when * ~bizarro) 
 	a: (~positive_response) 
-	a: (~negative_response)
+	a: (~negative_response) *angry* 
 
 u: (why * ~bizarro) 
 	a: (~positive_response) 
-	a: (~negative_response)
+	a: (~negative_response) *angry* 
 
 
 u: ([who what where when why] * ~bizarro) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
-	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+	a: (~negative_response) *angry*  I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
 	
 #! ----------------------------------------------------------------
 #! Entry point of conversation

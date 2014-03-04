@@ -11,27 +11,27 @@ u: (_"this game") ^mark(teponaztli _0) ^repeat() ^keep()
 
 u: (who * teponaztli) The game was made by Sylvain Payen, a PhD student here at Concordia University.
 	a: (~positive_response) Yes, he's very nice.
-	a: (~negative_response) You're a very mean person. I hope you know that.
+	a: (~negative_response) *angry*  You're a very mean person. I hope you know that.
 
 u: (what * teponaztli) Teponaztli is a two player game that mixes platforming and soccer. Players can either work together as chums, or compete as bitter rivals.
 	a: (~positive_response) It certainly leads to some interesting interactions.
-	a: (~negative_response) You're going to become my bitter rival if you keep that up.
+	a: (~negative_response) *angry*  You're going to become my bitter rival if you keep that up.
 
 u: (where * teponaztli) 
 	a: (~positive_response) 
-	a: (~negative_response) 
+	a: (~negative_response) *angry*  
 
 u: (when * teponaztli)
 	a: (~positive_response) 
-	a: (~negative_response)
+	a: (~negative_response) *angry* 
 
 u: (why * teponaztli) The creator is actually researching the engendering of emotions through video games, and this game is part of that project.
 	a: (~positive_response) Indeed, it's an interesting subject.
-	a: (~negative_response) Do you have a problem with software that has emotions?
+	a: (~negative_response) *angry*  Do you have a problem with software that has emotions?
 
 u: ([who what where when why] * ~teponaztli) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
-	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+	a: (~negative_response) *angry*  I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
 
 #! ----------------------------------------------------------------
 #! Entry point of conversation

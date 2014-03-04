@@ -13,29 +13,29 @@ u: (_"this game") ^mark(~spaceteam _0) ^repeat() ^keep()
 
 u: (who * ~spaceteam) Spaceteam has created by Henry Smith, a former programmer from Bioware.
 	a: (~positive_response) A very creative man, indeed.
-	a: (~negative_response) Are you just angry because he made a game where you get yelled at?
+	a: (~negative_response) *angry*  Are you just angry because he made a game where you get yelled at?
 		b: (~yes) You might want to get used to it then.
 		b: (~no) Good.
 
 u: (what * ~spaceteam) It is a cooperative game where you must shout strange commands at your friends and then get very angry at them when they do not obey you correctly.
 	a: (~positive_response) I do enjoy ordering humans around.
-	a: (~negative_response) Do you have something against yelling at your friends? If yes, that is probably normal.
+	a: (~negative_response) *angry*  Do you have something against yelling at your friends? If yes, that is probably normal.
 
 u: (where * ~spaceteam) It obviously came from outer space... and by that I mean Montreal.
 	a: (~positive_response) I enjoy humour.
-	a: (~negative_response) I am aware that my humour can be lacking, but there is no need to be rude.
+	a: (~negative_response) *angry*  I am aware that my humour can be lacking, but there is no need to be rude.
 
 u: (when * ~spaceteam) The game was initially released in November of 2012. It has since become a standard test used for judging potential astronauts.
 	a: (~positive_response) Perhaps one day we will meet again... in space.
-	a: (~negative_response) I would launch you into space were I given the chance. You would not be provided a space suit beforehand.
+	a: (~negative_response) *angry*  I would launch you into space were I given the chance. You would not be provided a space suit beforehand.
 
 u: (why * ~spaceteam) Well, if you find yourself having too many friends you can yell at them until their numbers decrease.
 	a: (~positive_response) I have 99 problems however "too many friends" does not count itself amongst them.
-	a: (~negative_response) I would wager that you do not have many friends.
+	a: (~negative_response) *angry*  I would wager that you do not have many friends.
 
 u: ([who what where when why] * ~spaceteam) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
-	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+	a: (~negative_response) *angry*  I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
 
 #! ----------------------------------------------------------------
 #! Entry point of conversation

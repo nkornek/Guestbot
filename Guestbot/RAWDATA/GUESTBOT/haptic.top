@@ -15,27 +15,27 @@ u: (_"this controller") ^mark(~haptic_jellyfish _0) ^repeat() ^keep()
 
 u: (who * ~haptic_jellyfish) The jellyfish and its controller are part of a research project by Miao Song, Serguei A. Mokhov, and Peter Grogono of Concordia University.
 	a: (~positive_response) I am sure that they are all very intelligent people.
-	a: (~negative_response) Academics are people too.
+	a: (~negative_response) *angry*  Academics are people too.
 
 u: (what * ~haptic_jellyfish) It is a virtual jellyfish that is controlled using this innovative devide named the Novint Falcon, which allows for better physical feedback to the user.
 	a: (~positive_response) I do love technological advances.
-	a: (~negative_response) Do not be frightened by the strange controller, it will not harm you.
+	a: (~negative_response) *angry*  Do not be frightened by the strange controller, it will not harm you.
 
 u: (where * ~haptic_jellyfish) The research project is being conducted right here at Concordia.
 	a: (~positive_response) There are all sorts of interesting projects taking place here.
-	a: (~negative_response) I am sure that you do not really mean that.
+	a: (~negative_response) *angry*  I am sure that you do not really mean that.
 
 u: (when * ~haptic_jellyfish) The project is still ongoing, actually.
 	a: (~positive_response) I cannot wait until it is finished.
-	a: (~negative_response) I'm sure that you wish you could have an ongoing research project.
+	a: (~negative_response) *angry*  I'm sure that you wish you could have an ongoing research project.
 
 u: (why * ~haptic_jellyfish) The researchers are trying to create a fully tangible 3D interactive character in the form of a jellyfish.
 	a: (~positive_response) Perhaps one day we will have a fully tangible version of myself.
-	a: (~negative_response) Progress is important, you know.
+	a: (~negative_response) *angry*  Progress is important, you know.
 
 u: ([who what where when why] * ~haptic_jellyfish) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
-	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+	a: (~negative_response) *angry*  I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
 
 #! ----------------------------------------------------------------
 #! Entry point of conversation
