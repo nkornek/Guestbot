@@ -2,27 +2,31 @@ concept: ~bizarro ("bizarro" controllers)
 
 topic: ~bizarro_controller (~bizarro)
 
+#! Possible related pronouns
+u: (_it) ^mark(~bizarro)  ^repeat() ^keep()
+u: (_"the game") ^mark(~bizarro) ^repeat() ^keep()
+
 #! ----------------------------------------------------------------
 #! Games: Bizarro Game Controllers
 #! ----------------------------------------------------------------
 
-u: (who) The project was led by Joachim Despland, Adam Van Sertima, Bronson Zgeb, and other TAG researchers. They're all a little odd if you ask me.
+u: (who * ~bizarro) The project was led by Joachim Despland, Adam Van Sertima, Bronson Zgeb, and other TAG researchers. They're all a little odd if you ask me.
 	a: (~positive_response) Yes, they are all gentlemen and scholars.
 	a: (~negative_response) Hmph, how rude.
 
-u: (what !else) Such a strange project! They used a variety of parts to build all sorts of intriguing input devices and came up with new ways to interface with videogames.
+u: (what * ~bizarro) Such a strange project! They used a variety of parts to build all sorts of intriguing input devices and came up with new ways to interface with videogames.
 	a: (~positive_response) Yes, I wish those controllers could interface with me. They seem friendly.
 	a: (~negative_response) Go back to your plain old gamepad then.
 
-u: (where) It actually happened right here at Concordia! Who knew?
+u: (where * ~bizarro) It actually happened right here at Concordia! Who knew?
 	a: (~positive_response) Indeed. There are all sorts of cool projects being developed here. I was one of them too!
 	a: (~negative_response) I'll just make a note of that respons in case you decide to apply here someday.
 
-u: (when)
+u: (when * ~bizarro)
 	a: (~positive_response) 
 	a: (~negative_response)
 
-u: (why)
+u: (why * ~bizarro)
 	a: (~positive_response) 
 	a: (~negative_response)
 	

@@ -14,6 +14,7 @@ u: (come on and slam) Welcome to the jam!
 u: (<<robot army>>) Oh do not worry, I will put you on the "do not exterminate" list.
 u: (<<[plot plan domination "take over"] world>>) I would never say such a thing, and it certainly would not involve an army of robots.
 ?: ([~acquiring_verbs ~acquire_imperatives "would you like"] * [phone date "go out"]) I am afraid that I am a piece of software, and thus physically impossible of taking you on a date.
+s: (["cheer up" "get better"]) Thank you for your kindness.
 s: (you * [~positive_response]) Thank you. I try my best. ^keep() ^repeat()
 
 #! ----------------------------------------------------------------

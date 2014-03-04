@@ -4,6 +4,7 @@ Reading concept ~positive_response
 Reading concept ~negative_response
 *** Warning- line 2 of a_main.top: "lame" is not a known word. Is it misspelled?
 *** Warning- line 2 of a_main.top: "sucks" is not a known word. Is it misspelled?
+*** Warning- line 2 of a_main.top: "crappy" is not a known word. Is it misspelled?
 Reading concept ~yes
 *** Warning- line 3 of a_main.top: "totes" is not a known word. Is it misspelled?
 Reading concept ~no
@@ -31,7 +32,9 @@ Reading topic ~ggvg_game
 
 ----Reading file kungfu.top
 Reading concept ~kungfu
+*** Warning- line 1 of kungfu.top: "kungfu" is not a known word. Is it misspelled?
 Reading topic ~kungfuvolleybal
+*** Warning- line 28 of kungfu.top: kung is unknown as a word in pattern
 
 ----Reading file pyramidwarfs.top
 Reading concept ~pyramidwarfs
@@ -54,6 +57,11 @@ Reading table tbl:defaultbot
 Reading topic ~control
 Reading topic ~alternate_control
 
+----Reading file spaceteam.top
+Reading concept ~spaceteam
+*** Warning- line 1 of spaceteam.top: "spaceteam" is not a known word. Is it misspelled?
+Reading topic ~spaceteam_game
+
 ----Reading file teponaztli.top
 Reading topic ~teponaztli
 *** Warning- line 1 of teponaztli.top: "teponaztli" is not a known word. Is it misspelled?
@@ -66,7 +74,7 @@ Reading topic ~weirdworm_game
 Reading topic ~catchall
 
 WARNING SUMMARY: 
-10 spelling warnings and 0 more serious warnings
+14 spelling warnings and 0 more serious warnings
     
 
 Finished compile

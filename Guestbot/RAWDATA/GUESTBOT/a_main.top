@@ -1,8 +1,8 @@
 concept: ~positive_response (cool awesome fun good "yay" sweet nice ~good_quality_adjectives)
-concept: ~negative_response (bad "lame" "sucks" boring ~bad_quality_adjectives)
+concept: ~negative_response (bad "lame" "sucks" boring "crappy" ~bad_quality_adjectives)
 concept: ~yes (yes "yeah" "totes" totally affirmative)
 concept: ~no (no "nope" not negative)
-concept: ~ignore_games (~bizarro ~ggvg ~dumpy "teponaztli" ~eat_dirt ~royale ~qed ~pyramidgame ~weirdworm)
+concept: ~ignore_games (~bizarro ~ggvg ~dumpy "teponaztli" ~eat_dirt ~royale ~qed ~pyramidgame ~weirdworm ~kungfu ~spaceteam)
 
 topic: ~main (game)
 
@@ -81,11 +81,11 @@ u: (!game !royale [what know learn] * [arcade this here]) Why, this is Arcade 11
 	a: (~positive_response) Yes, we are all quite excited. ^keep() ^repeat()
 	a: (~negative_response) Well at least you are here by choice. ^keep() ^repeat()
 
-u: (<<!~ignore_games [what which know learn "how many"] game>>) We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.
+u: (<<!~ignore_games [what which know learn "how many"] game>>) We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, Spaceteam or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.
 	a: (~positive_response) Indeed, so much to choose from.
 	a: (~negative_response) Yes, it's all rubbish.
 
-u: (<<!~ignore_games [what which know learn "how many"] [game else]>>) Once again, the list is Teponaztli, Game Game Videogame, QED, Pyramidwarfs, Eat Dirt, Kung Fu Volleyball, Dumpy: Going Elephants, How to Learn About Yourself Using This One Weird Worm, Arcade Royale, and Bizarro Game Controllers. ^keep() ^repeat()
+u: (<<!~ignore_games [what which know learn "how many"] [game else]>>) Once again, the list is Teponaztli, Game Game Videogame, QED, Pyramidwarfs, Spaceteam, Eat Dirt, Kung Fu Volleyball, Dumpy: Going Elephants, How to Learn About Yourself Using This One Weird Worm, Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers. ^keep() ^repeat()
 	a: (~positive_response) Indeed, so much to choose from. ^keep() ^repeat()
 	a: (~negative_response) Yes, it's all rubbish. ^keep() ^repeat()
 

@@ -6,31 +6,34 @@ topic: ~kungfuvolleybal (~kungfu)
 #! Games: 
 #! ----------------------------------------------------------------
 
-u: (who) Kung Fu Volleyball is a game by Montreal based developer KO-OP Mode. 
+u: (who) Kung Fu Volleyball is a game by your friendly neighbourhood Montreal based developer, KO-OP Mode. 
 	a: (~positive_response) They are quite good at working together, if you catch my drift.
-	a: (~negative_response) 
+	a: (~negative_response) You are quite antagonistic. Perhaps we should call you VERSUS Mode.
 
-u: (what !else) 
-	a: (~positive_response) 
-	a: (~negative_response) 
+u: (what !else) This is a game where you use the powers of flight, teleportation, and kicking, to play the sport of volleyball. You know, just like in real life.
+	a: (~positive_response) I wish that I had the capability of performing any of those actions. Sadly, I am but a mere computer AI.
+	a: (~negative_response) Why don't you just go teleport away then?
 
-u: (where) 
-	a: (~positive_response) 
-	a: (~negative_response) 
+u: (where) Like most of the games here, it was developed in Montreal.
+	a: (~positive_response) This is a truly great city.
+	a: (~negative_response) I'll contact an angry mob to brandish pitchforks and chase you out of town.
 
-u: (when)
-	a: (~positive_response) 
-	a: (~negative_response)
+u: (when) The game was officially released last April, and was originally created in just 3 days during a game jam.
+	a: (~positive_response) You can purchase a copy for yourself from their website. Just search for KO-OP mode. Tell them Jarvis sent you.
+	a: (~negative_response) I'm sorry if it is not "old-school" enough for your tastes.
 
-u: (why)
-	a: (~positive_response)
-	a: (~negative_response)
+u: (why) They sought to make a sports game that was far more epic than your average game of volleyball, and thus they added kung fu.
+	a: (~positive_response) I know kung fu, however my lack of limbs prevents me from practicing kung fu.
+	a: (~negative_response) I would wager that you do not know kung fu.
+		b: (I know kung fu) Alright there, Neo.
+		b: (~yes) Such a shame that you miss the reference. Your knowledge of pop culture is truly abysmal.
+		b: (~no) I thought not.
 
 #! ----------------------------------------------------------------
 #! Entry point of conversation
 #! ----------------------------------------------------------------
 
-u: () ^keep() ^repeat()
+u: (~kungfu) What would you like to know about the absolutely real sport of Kung Fu Volleyball? ^keep() ^repeat()
 
 
 
@@ -38,4 +41,4 @@ u: () ^keep() ^repeat()
 #! Topic-related gambits
 #! ----------------------------------------------------------------
 
-t: ^keep() ^repeat()
+t: I would demonstrate Kung Fu Volleyball for you, but I have no limbs with which to play. Why don't I tell you about it instead? What would you like to know? ^keep() ^repeat()

@@ -9,13 +9,15 @@
 + ~royale CONCEPT 
 + ~qed CONCEPT 
 + ~weirdworm CONCEPT 
++ ~kungfu CONCEPT 
++ ~spaceteam CONCEPT 
 + game_game,_videogame 
 + game_game_videogame 
-+ ~kungfu CONCEPT 
 + ~pyramidwarfs CONCEPT 
 + qed 
 + arcade_royale 
 + jarvis 
 + defaultbot 
++ ipad 
 + weird_worm 
 + learn_about_yourself 

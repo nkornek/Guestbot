@@ -1792,3 +1792,10 @@ Bad topic flag u: for topic ~bizarro   in bizarro.top at 44: t: Sorry, let's get
 Bad topic flag t: for topic ~bizarroMissing topic index for ~main
    in main.top at 46:   if (^substitute(character '_0@ @)) {Thank you. I promise not to use it in a plot to take over the world. Now, how may I be of assistance?} 
 OUTPUT-4 bad factset reference - @Missing topic index for ~main
+   in dumpy.top at 6: u: (_it) ^mark_(~dumpy _0)  ^repeat() ^keep()
+CALL-1 Call to function not yet defined ^mark_input:3 Tue Mar 04 14:13:22 2014 Missing topic index for ~main
+ caller: callee:jarvis in sentence: what is the game about? at 
+Missing topic index for ~main
+input:3 Tue Mar 04 14:13:22 2014 Missing topic index for ~dumpy_game
+ caller: callee:jarvis in sentence: what is the game about? at 
+Missing topic index for ~dumpy_game

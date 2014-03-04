@@ -1,33 +1,35 @@
-concept: ~ ()
+concept: ~spaceteam ("spaceteam" space "ipad")
 
-topic: ~ ()
+topic: ~spaceteam_game (~spaceteam)
 
 #! Possible related pronouns
-u: (_it) ^mark(~ _0)  ^repeat() ^keep()
-u: (_"the game") ^mark(~ _0) ^repeat() ^keep()
-u: (_"this game") ^mark(~ _0) ^repeat() ^keep()
+u: (_it) ^mark(~spaceteam)  ^repeat() ^keep()
+u: (_"the game") ^mark(~spaceteam) ^repeat() ^keep()
+u: (_"this game") ^mark(~spaceteam _0) ^repeat() ^keep()
 
 #! ----------------------------------------------------------------
 #! Games: 
 #! ----------------------------------------------------------------
 
-u: (who * ) 
+u: (who * ~spaceteam) Spaceteam has created by Henry Smith, a former programmer from Bioware.
+	a: (~positive_response) A very creative man, indeed.
+	a: (~negative_response) Are you just angry because he made a game where you get yelled at?
+		b: (~yes) You might want to get used to it then.
+		b: (~no) 
+
+u: (what * ~spaceteam) 
 	a: (~positive_response) 
 	a: (~negative_response) 
 
-u: (what *) 
+u: (where * ~spaceteam) 
 	a: (~positive_response) 
 	a: (~negative_response) 
 
-u: (where *) 
-	a: (~positive_response) 
-	a: (~negative_response) 
-
-u: (when *)
+u: (when * ~spaceteam)
 	a: (~positive_response) 
 	a: (~negative_response)
 
-u: (why *)
+u: (why * ~spaceteam)
 	a: (~positive_response)
 	a: (~negative_response)
 

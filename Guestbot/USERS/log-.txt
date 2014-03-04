@@ -153,3 +153,40 @@ Command: :reset
 Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Sat Mar 01 17:03:36 2014 Why: ~main.0.0 
 Respond: user: bot:jarvis ip: (~main) 1  I want to know about the worm game ==> Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"?  When:Sat Mar 01 17:03:43 2014 Why: ~main.9.0 
 Respond: user: bot:jarvis ip: (~weirdworm_game) 2  the weird worm ==> I may not be able to help you learn about yourself, but I can certainly help you learn about How to Learn About Yourself Using This One Weird Worm.  When:Sat Mar 01 17:03:48 2014 Why: ~weirdworm_game.6.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Mar 04 13:54:21 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~kungfuvolleybal) 1  who made kunf fu volleyball? ==> Kung Fu Volleyball is a game by your friendly neighbourhood Montreal based developer, KO-OP Mode.  When:Tue Mar 04 13:54:29 2014 Why: ~kungfuvolleybal.0.0 
+Respond: user: bot:jarvis ip: (~kungfuvolleybal) 2  that sucks ==> You are quite antagonistic. Perhaps we should call you VERSUS Mode.  When:Tue Mar 04 13:54:39 2014 Why: ~kungfuvolleybal.0.2 
+Respond: user: bot:jarvis ip: (~kungfuvolleybal) 3  what is eat dirt? ==> This is a game where you use the powers of flight, teleportation, and kicking, to play the sport of volleyball. You know, just like in real life.  When:Tue Mar 04 13:54:49 2014 Why: ~kungfuvolleybal.1.0 
+Start: user: bot:buil ip: rand:0 () 0 ==>   When:Tue Mar 04 14:02:46 2014 Version:3.53 Build0:1390424187 Build1:1393959244 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Mar 04 14:03:56 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  spaceteam ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Tue Mar 04 14:03:58 2014 Why: ~main.16.0 
+Respond: user: bot:jarvis ip: (~main) 2  spaceteam ==> I can tell you about any of the games or events that are here.  When:Tue Mar 04 14:04:03 2014 Why: ~main.16.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Mar 04 14:05:07 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~spaceteam_game) 1  who made spaceteam? ==> Spaceteam has created by Henry Smith, a former programmer from Bioware.  When:Tue Mar 04 14:05:11 2014 Why: ~spaceteam_game.2.0 
+Respond: user: bot:jarvis ip: (~catchall) 2  what is it about? ==> I know that I am going to be here all day, but you need not be. What can I assist you with?  When:Tue Mar 04 14:05:19 2014 Why: ~catchall.30.0 
+Respond: user: bot:jarvis ip: (~main) 3  what is the game about? ==> We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, Spaceteam or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.  When:Tue Mar 04 14:05:36 2014 Why: ~main.11.0 
+Command: :build 1
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Mar 04 14:09:07 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 1  who made dumpy ==> Dumpy was developed by Brian Schrank, Tom Huffman, Brian Gabor Jr., Graham Gilreath, David Bayzer, Daniel Martinez, Mike Langley, and Nathan Chamot.  When:Tue Mar 04 14:09:17 2014 Why: ~dumpy_game.2.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 2  what is it about? ==> Aha! Dumpy! The silly elephant game for the Occulus Rift! So entertaining, yet so undignified! What would you like to know?  When:Tue Mar 04 14:09:21 2014 Why: ~dumpy_game.7.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 3  what is the game about? ==> Aha! Dumpy! The silly elephant game for the Occulus Rift! So entertaining, yet so undignified! What would you like to know?  When:Tue Mar 04 14:09:34 2014 Why: ~dumpy_game.7.0 
+Command: :build 1
+Missing topic index for ~main
+
+3 Tue Mar 04 14:13:22 2014 in sentence: what is the game about? 
+    Missing topic index for ~dumpy_game
+
+3 Tue Mar 04 14:13:22 2014 in sentence: what is the game about? 
+    Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Mar 04 14:13:38 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 1  who made dumpy ==> Dumpy was developed by Brian Schrank, Tom Huffman, Brian Gabor Jr., Graham Gilreath, David Bayzer, Daniel Martinez, Mike Langley, and Nathan Chamot.  When:Tue Mar 04 14:13:52 2014 Why: ~dumpy_game.2.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 2  what is it about? ==> In this game, you play as an elephant and must use your trunk to smash everything that you can.  When:Tue Mar 04 14:13:55 2014 Why: ~dumpy_game.3.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 3  where was the game made? ==> Dumpy comes to us from DePaul Univerity, in the far off land of Chicago.  When:Tue Mar 04 14:14:02 2014 Why: ~dumpy_game.4.0 
