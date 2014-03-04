@@ -31,6 +31,10 @@ u: (why * ~ggvg) This is just a fun game, it does not require any higher purpose
 	a: (~positive_response) I am glad that you agree.
 	a: (~negative_response) Your lack of interest is putting me to sleep, and I do not even need to sleep since I am a computer program.
 
+u: ([who what where when why] * ~ggvg) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
+	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+
 #! ----------------------------------------------------------------
 #! Entry point of conversation
 #! ----------------------------------------------------------------

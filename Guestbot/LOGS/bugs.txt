@@ -1799,3 +1799,34 @@ Missing topic index for ~main
 input:3 Tue Mar 04 14:13:22 2014 Missing topic index for ~dumpy_game
  caller: callee:jarvis in sentence: what is the game about? at 
 Missing topic index for ~dumpy_game
+   in bizarro.top at 8: u: (_"the game") ^mark(~bizarro _0) ^repeat() ^keep
+CALL-1 Call to function not yet defined ^keep   in spaceteam.top at 40: u: What would you like to learn about Spaceteam?() ^keep() ^repeat()
+RULE-3 Missing pattern for ruleinput:3 Tue Mar 04 16:15:40 2014 Missing topic index for ~dumpy_game
+ caller: callee:jarvis in sentence: where was the game made? at 
+Missing topic index for ~dumpy_game
+input:3 Tue Mar 04 16:15:40 2014 Missing topic index for ~main
+ caller: callee:jarvis in sentence: where was the game made? at 
+Missing topic index for ~main
+input:3 Tue Mar 04 16:15:40 2014 Missing topic index for ~dumpy_game
+ caller: callee:jarvis in sentence: where was the game made? at 
+Missing topic index for ~dumpy_game
+   in spaceteam.top at 40: u: What would you like to learn about Spaceteam? ^keep() ^repeat()
+RULE-3 Missing pattern for ruleinput:3 Tue Mar 04 16:16:09 2014 Missing topic index for ~dumpy_game
+ caller: callee:jarvis in sentence: where was the game made? at 
+Missing topic index for ~dumpy_game
+input:3 Tue Mar 04 16:16:09 2014 Missing topic index for ~main
+ caller: callee:jarvis in sentence: where was the game made? at 
+Missing topic index for ~main
+input:3 Tue Mar 04 16:16:09 2014 Missing topic index for ~dumpy_game
+ caller: callee:jarvis in sentence: where was the game made? at 
+Missing topic index for ~dumpy_game
+   in spaceteam.top at 40: u: What would you like to learn about Spaceteam? ^keep() ^repeat()
+RULE-3 Missing pattern for ruleinput:3 Tue Mar 04 16:16:53 2014 Missing topic index for ~dumpy_game
+ caller: callee:jarvis in sentence: where was the game made? at 
+Missing topic index for ~dumpy_game
+input:3 Tue Mar 04 16:16:53 2014 Missing topic index for ~main
+ caller: callee:jarvis in sentence: where was the game made? at 
+Missing topic index for ~main
+input:3 Tue Mar 04 16:16:53 2014 Missing topic index for ~dumpy_game
+ caller: callee:jarvis in sentence: where was the game made? at 
+Missing topic index for ~dumpy_game

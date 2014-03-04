@@ -29,6 +29,10 @@ u: (why * teponaztli) The creator is actually researching the engendering of emo
 	a: (~positive_response) Indeed, it's an interesting subject.
 	a: (~negative_response) Do you have a problem with software that has emotions?
 
+u: ([who what where when why] * ~teponaztli) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
+	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+
 #! ----------------------------------------------------------------
 #! Entry point of conversation
 #! ----------------------------------------------------------------

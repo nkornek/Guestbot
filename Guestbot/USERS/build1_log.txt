@@ -30,11 +30,15 @@ Reading topic ~eat_dirt_game
 Reading concept ~ggvg
 Reading topic ~ggvg_game
 
+----Reading file haptic.top
+Reading concept ~haptic_jellyfish
+Reading topic ~haptic_game
+
 ----Reading file kungfu.top
 Reading concept ~kungfu
 *** Warning- line 1 of kungfu.top: "kungfu" is not a known word. Is it misspelled?
 Reading topic ~kungfuvolleybal
-*** Warning- line 28 of kungfu.top: kung is unknown as a word in pattern
+*** Warning- line 33 of kungfu.top: kung is unknown as a word in pattern
 
 ----Reading file pyramidwarfs.top
 Reading concept ~pyramidwarfs

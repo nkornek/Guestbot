@@ -35,6 +35,10 @@ u: (what * game * ~royale) There are quite a few. I do not feel like listing the
 	a: (~positive_response) Great to hear!
 	a: (~negative_response) My opinion of you remains quite apathetic.
 
+u: ([who what where when why] * ~royale) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
+	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+
 #! ----------------------------------------------------------------
 #! Entry point of conversation
 #! ----------------------------------------------------------------

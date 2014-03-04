@@ -31,6 +31,10 @@ u: (why * ~pyramidwarfs) Because stacking things is fun, and stacking people is 
 	a: (~positive_response) I am glad that you agree.
 	a: (~negative_response) You will never know until you try.
 
+u: ([who what where when why] * ~pyramidwarfs) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
+	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+
 #! ----------------------------------------------------------------
 #! Easter eggs
 #! ----------------------------------------------------------------

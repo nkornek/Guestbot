@@ -190,3 +190,53 @@ Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know 
 Respond: user: bot:jarvis ip: (~dumpy_game) 1  who made dumpy ==> Dumpy was developed by Brian Schrank, Tom Huffman, Brian Gabor Jr., Graham Gilreath, David Bayzer, Daniel Martinez, Mike Langley, and Nathan Chamot.  When:Tue Mar 04 14:13:52 2014 Why: ~dumpy_game.2.0 
 Respond: user: bot:jarvis ip: (~dumpy_game) 2  what is it about? ==> In this game, you play as an elephant and must use your trunk to smash everything that you can.  When:Tue Mar 04 14:13:55 2014 Why: ~dumpy_game.3.0 
 Respond: user: bot:jarvis ip: (~dumpy_game) 3  where was the game made? ==> Dumpy comes to us from DePaul Univerity, in the far off land of Chicago.  When:Tue Mar 04 14:14:02 2014 Why: ~dumpy_game.4.0 
+Command: :build 1
+Missing topic index for ~dumpy_game
+
+3 Tue Mar 04 16:15:40 2014 in sentence: where was the game made? 
+    Missing topic index for ~main
+
+3 Tue Mar 04 16:15:40 2014 in sentence: where was the game made? 
+    Missing topic index for ~dumpy_game
+
+3 Tue Mar 04 16:15:40 2014 in sentence: where was the game made? 
+    Command: :build 1
+Missing topic index for ~dumpy_game
+
+3 Tue Mar 04 16:16:09 2014 in sentence: where was the game made? 
+    Missing topic index for ~main
+
+3 Tue Mar 04 16:16:09 2014 in sentence: where was the game made? 
+    Missing topic index for ~dumpy_game
+
+3 Tue Mar 04 16:16:09 2014 in sentence: where was the game made? 
+    Command: :build 1
+Missing topic index for ~dumpy_game
+
+3 Tue Mar 04 16:16:53 2014 in sentence: where was the game made? 
+    Missing topic index for ~main
+
+3 Tue Mar 04 16:16:53 2014 in sentence: where was the game made? 
+    Missing topic index for ~dumpy_game
+
+3 Tue Mar 04 16:16:53 2014 in sentence: where was the game made? 
+    Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Mar 04 16:17:09 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 1  who made dumpy ==> Dumpy was developed by Brian Schrank, Tom Huffman, Brian Gabor Jr., Graham Gilreath, David Bayzer, Daniel Martinez, Mike Langley, and Nathan Chamot.  When:Tue Mar 04 16:17:16 2014 Why: ~dumpy_game.3.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 2  what is it? ==> In this game, you play as an elephant and must use your trunk to smash everything that you can.  When:Tue Mar 04 16:17:19 2014 Why: ~dumpy_game.4.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 3  when was it made? ==> The game was made for an Oculus Rift focused game jam. It was pretty much the silliest thing there.  When:Tue Mar 04 16:17:23 2014 Why: ~dumpy_game.6.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 4  where did it come from? ==> Dumpy comes to us from DePaul Univerity, in the far off land of Chicago.  When:Tue Mar 04 16:17:33 2014 Why: ~dumpy_game.5.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 5  why did they make the game ==> It is fun, so why not?  When:Tue Mar 04 16:17:41 2014 Why: ~dumpy_game.7.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 6  i guess ==> What else would you like to know about the silly elephant game?  When:Tue Mar 04 16:17:47 2014 Why: ~dumpy_game.10.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 7  who made it ==> Aha! Dumpy! The silly elephant game for the Occulus Rift! So entertaining, yet so undignified! What would you like to know?  When:Tue Mar 04 16:17:51 2014 Why: ~dumpy_game.9.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 8  who made dumpy ==> Aha! Dumpy! The silly elephant game for the Occulus Rift! So entertaining, yet so undignified! What would you like to know?  When:Tue Mar 04 16:17:59 2014 Why: ~dumpy_game.9.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Mar 04 16:18:31 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 1  who made dumpy? ==> Dumpy was developed by Brian Schrank, Tom Huffman, Brian Gabor Jr., Graham Gilreath, David Bayzer, Daniel Martinez, Mike Langley, and Nathan Chamot.  When:Tue Mar 04 16:18:35 2014 Why: ~dumpy_game.3.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 2  what is it ==> In this game, you play as an elephant and must use your trunk to smash everything that you can.  When:Tue Mar 04 16:18:42 2014 Why: ~dumpy_game.4.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 3  where was it made? ==> Dumpy comes to us from DePaul Univerity, in the far off land of Chicago.  When:Tue Mar 04 16:18:46 2014 Why: ~dumpy_game.5.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 4  why was it made? ==> It is fun, so why not?  When:Tue Mar 04 16:18:52 2014 Why: ~dumpy_game.7.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 5  when did the game jam happen? ==> The game was made for an Oculus Rift focused game jam. It was pretty much the silliest thing there.  When:Tue Mar 04 16:19:05 2014 Why: ~dumpy_game.6.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 6  who made it? ==> I am afraid that I have already told you everything that I know about that subject  When:Tue Mar 04 16:19:14 2014 Why: ~dumpy_game.8.0 

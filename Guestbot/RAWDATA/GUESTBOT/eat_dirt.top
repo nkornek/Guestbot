@@ -31,6 +31,10 @@ u: (why * ~eat_dirt) Like all of Game of the Year's games, Eat Dirt! is really a
 	a: (~positive_response) It pleases me to hear that you like fun. I am also a fan of fun.
 	a: (~negative_response) I was not aware that people who hated fun were allowed to be here. Give me a moment to alert our security guards of the situation so that you may be immediately escorted away.
 
+u: ([who what where when why] * ~eat_dirt) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
+	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+
 #! ----------------------------------------------------------------
 #! Entry point of conversation
 #! ----------------------------------------------------------------

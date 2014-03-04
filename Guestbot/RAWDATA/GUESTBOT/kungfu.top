@@ -34,6 +34,11 @@ u: (why * ~kungfu) They sought to make a sports game that was far more epic than
 		b: (~yes) Such a shame that you miss the reference. Your knowledge of pop culture is truly abysmal.
 		b: (~no) I thought not.
 
+u: ([who what where when why] * ~kungfu) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
+	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+
+
 #! ----------------------------------------------------------------
 #! Entry point of conversation
 #! ----------------------------------------------------------------

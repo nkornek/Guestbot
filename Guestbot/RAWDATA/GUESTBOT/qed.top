@@ -31,6 +31,10 @@ u: (why * ~qed) Because... dancing! That is all that I was told to say.
 	a: (~positive_response) Well, I suppose dancing is a good reason.
 	a: (~negative_response) Well, I quite like dancing... or at least watching you humans flail around as if you were dancing.
 
+u: ([who what where when why] * ~qed) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
+	a: (~negative_response) I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+
 #! ----------------------------------------------------------------
 #! Entry point of conversation
 #! ----------------------------------------------------------------
