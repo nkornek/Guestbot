@@ -3,8 +3,9 @@ concept: ~bizarro ("bizarro" controllers)
 topic: ~bizarro_controller (~bizarro)
 
 #! Possible related pronouns
-u: (_it) ^mark(~bizarro)  ^repeat() ^keep()
-u: (_"the game") ^mark(~bizarro) ^repeat() ^keep()
+u: (_it) ^mark(~bizarro _0)  ^repeat() ^keep()
+u: (_"the game") ^mark(~bizarro _0) ^repeat() ^keep
+u: (_"this game") ^mark(~bizarro _0) ^repeat() ^keep()
 
 #! ----------------------------------------------------------------
 #! Games: Bizarro Game Controllers

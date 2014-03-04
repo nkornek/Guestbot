@@ -2,27 +2,32 @@ concept: ~ggvg ("game game, videogame" "game game videogame")
 
 topic: ~ggvg_game (~ggvg)
 
+#! Possible related pronouns
+u: (_it) ^mark(~ggvg _0)  ^repeat() ^keep()
+u: (_"the game") ^mark(~ggvg _0) ^repeat() ^keep()
+u: (_"this game") ^mark(~ggvg _0) ^repeat() ^keep()
+
 #! ----------------------------------------------------------------
 #! Games: 
 #! ----------------------------------------------------------------
 
-u: (who) Joachim Despland made this game. Yes, he did it all alone.
+u: (who * ~ggvg) Joachim Despland made this game. Yes, he did it all alone.
 	a: (~positive_response) Yes, it is quite impressive.
 	a: (~negative_response) Would you have been more impressed if this game had been made by no people?
 
-u: (what !else) It is a four player competitive game where you must shoot your opponents and dance with a jewel.
+u: (what * ~ggvg) It is a four player competitive game where you must shoot your opponents and dance with a jewel.
 	a: (~positive_response) It is a lot of fun. I am especially fond of the dancing.
 	a: (~negative_response) I suppose that you would say that, given what a bore you appear to be.
 
-u: (where) 
+u: (where * ~ggvg) 
 	a: (~positive_response) 
 	a: (~negative_response) 
 
-u: (when)
+u: (when * ~ggvg)
 	a: (~positive_response) 
 	a: (~negative_response)
 
-u: (why) This is just a fun game, it does not require any higher purpose.
+u: (why * ~ggvg) This is just a fun game, it does not require any higher purpose.
 	a: (~positive_response) I am glad that you agree.
 	a: (~negative_response) Your lack of interest is putting me to sleep, and I do not even need to sleep since I am a computer program.
 

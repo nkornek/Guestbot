@@ -2,7 +2,7 @@ concept: ~positive_response (cool awesome fun good "yay" sweet nice ~good_qualit
 concept: ~negative_response (bad "lame" "sucks" boring "crappy" ~bad_quality_adjectives)
 concept: ~yes (yes "yeah" "totes" totally affirmative)
 concept: ~no (no "nope" not negative)
-concept: ~ignore_games (~bizarro ~ggvg ~dumpy "teponaztli" ~eat_dirt ~royale ~qed ~pyramidgame ~weirdworm ~kungfu ~spaceteam)
+concept: ~ignore_games (~bizarro ~ggvg ~dumpy "teponaztli" ~eat_dirt ~royale ~qed ~pyramidgame ~weirdworm ~kungfu ~spaceteam ~haptic_jellyfish)
 
 topic: ~main (game)
 

@@ -1,26 +1,31 @@
 topic: ~teponaztli ("teponaztli")
 
+#! Possible related pronouns
+u: (_it) ^mark(teponaztli _0)  ^repeat() ^keep()
+u: (_"the game") ^mark(teponaztli _0) ^repeat() ^keep()
+u: (_"this game") ^mark(teponaztli _0) ^repeat() ^keep()
+
 #! ----------------------------------------------------------------
 #! Games: Teponaztli
 #! ----------------------------------------------------------------
 
-u: (who) The game was made by Sylvain Payen, a PhD student here at Concordia University.
+u: (who * teponaztli) The game was made by Sylvain Payen, a PhD student here at Concordia University.
 	a: (~positive_response) Yes, he's very nice.
 	a: (~negative_response) You're a very mean person. I hope you know that.
 
-u: (what !else) Teponaztli is a two player game that mixes platforming and soccer. Players can either work together as chums, or compete as bitter rivals.
+u: (what * teponaztli) Teponaztli is a two player game that mixes platforming and soccer. Players can either work together as chums, or compete as bitter rivals.
 	a: (~positive_response) It certainly leads to some interesting interactions.
 	a: (~negative_response) You're going to become my bitter rival if you keep that up.
 
-u: (where) 
+u: (where * teponaztli) 
 	a: (~positive_response) 
 	a: (~negative_response) 
 
-u: (when)
+u: (when * teponaztli)
 	a: (~positive_response) 
 	a: (~negative_response)
 
-u: (why) The creator is actually researching the engendering of emotions through video games, and this game is part of that project.
+u: (why * teponaztli) The creator is actually researching the engendering of emotions through video games, and this game is part of that project.
 	a: (~positive_response) Indeed, it's an interesting subject.
 	a: (~negative_response) Do you have a problem with software that has emotions?
 
