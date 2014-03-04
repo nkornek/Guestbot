@@ -34,6 +34,10 @@ Reading topic ~ggvg_game
 Reading concept ~haptic_jellyfish
 Reading topic ~haptic_game
 
+----Reading file jarvis.top
+Reading concept ~jarvis
+Reading topic ~jarvis_topic
+
 ----Reading file kungfu.top
 Reading concept ~kungfu
 *** Warning- line 1 of kungfu.top: "kungfu" is not a known word. Is it misspelled?

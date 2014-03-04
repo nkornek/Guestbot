@@ -14,10 +14,11 @@
 + ~haptic_jellyfish CONCEPT 
 + game_game,_videogame 
 + game_game_videogame 
++ ~jarvis CONCEPT 
++ jarvis 
 + ~pyramidwarfs CONCEPT 
 + qed 
 + arcade_royale 
-+ jarvis 
 + defaultbot 
 + ipad 
 + weird_worm 
