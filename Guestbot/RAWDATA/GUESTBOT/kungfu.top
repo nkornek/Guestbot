@@ -1,4 +1,4 @@
-concept: ~kungfu ("kung fu" volleyball)
+concept: ~kungfu ("kung fu" "kungfu" volleyball)
 
 topic: ~kungfuvolleybal (~kungfu)
 
@@ -6,8 +6,8 @@ topic: ~kungfuvolleybal (~kungfu)
 #! Games: 
 #! ----------------------------------------------------------------
 
-u: (who) 
-	a: (~positive_response) 
+u: (who) Kung Fu Volleyball is a game by Montreal based developer KO-OP Mode. 
+	a: (~positive_response) They are quite good at working together, if you catch my drift.
 	a: (~negative_response) 
 
 u: (what !else) 
