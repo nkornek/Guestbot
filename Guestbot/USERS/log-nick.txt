@@ -164,3 +164,5 @@ Start: user:nick bot:jarvis ip: rand:2586 (~main) 3 ==> I can tell you about any
 Command: :build 1
 Start: user:nick bot:jarvis ip: rand:2586 (~main) 3 ==> I can tell you about any of the games or events that are here.  When:Wed Mar 05 14:38:59 2014 Version:3.53 Build0:1390424187 Build1:1394033491 Why: ~main.19.0 
 Command: :build 1
+Start: user:nick bot:anonymous ip: rand:2581 () 0 ==>   When:Wed Mar 05 15:59:34 2014 Version:3.53 Build0:1390424187 Build1: 
+Command: :build 1

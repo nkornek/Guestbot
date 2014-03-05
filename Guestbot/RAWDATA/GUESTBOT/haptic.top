@@ -17,7 +17,7 @@ u: (who * ~haptic_jellyfish) The jellyfish and its controller are part of a rese
 	a: (~positive_response) I am sure that they are all very intelligent people.
 	a: (~negative_response) angerangerangerAcademics are people too.
 
-u: (what * ~haptic_jellyfish) It is a virtual jellyfish that is controlled using this innovative devide named the Novint Falcon, which allows for better physical feedback to the user.
+u: (what * ~haptic_jellyfish) It is a virtual jellyfish that is controlled using this innovative device named the Novint Falcon, which allows for better physical feedback to the user.
 	a: (~positive_response) I do love technological advances.
 	a: (~negative_response) angerangerangerDo not be frightened by the strange controller, it will not harm you.
 

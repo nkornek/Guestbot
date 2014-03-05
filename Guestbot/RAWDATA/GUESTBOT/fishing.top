@@ -13,25 +13,25 @@ u: (_"this game") ^mark(~fishinggame _0) ^repeat() ^keep()
 
 u: (who * ~fishinggame) This mysterious game was developed by the equally mysterious being known only as "narF".
 	a: (~positive_response) His true identity is a complete mystery... except that it is not.
-	a: (~negative_response) angerangeranger
+	a: (~negative_response) angerangerangerFine! His real name is Francis Sheridan Paré
 
-u: (what * ~fishinggame) 
-	a: (~positive_response) 
-	a: (~negative_response) angerangeranger
+u: ([what how] * ~fishinggame) Well, you play a fishing game... with actual water.
+	a: (~positive_response) It has been described to me as "like playing Guitar Hero, but with buckets of water."
+	a: (~negative_response) angerangerangerGo back to your old virtual fishing then!
 
-u: (where * ~fishinggame) 
-	a: (~positive_response) 
-	a: (~negative_response) angerangeranger
+u: (where * ~fishinggame) The game was made here in Montreal and presented at the 2013 Papercade event.
+	a: (~positive_response) Yes, very impressive.
+	a: (~negative_response) angerangerangerYou should not be so rude.
 
-u: (when * ~fishinggame)
-	a: (~positive_response) 
-	a: (~negative_response) angerangeranger
+u: (when * ~fishinggame) It was actually created for a Fishing Game Jam last year.
+	a: (~positive_response) Such a silly theme for a Game Jam.
+	a: (~negative_response) angerangerangerI will not teach you to fish!
 
-u: (why * ~fishinggame)
-	a: (~positive_response)
-	a: (~negative_response) angerangeranger
+u: (why * ~fishinggame) Its creator really wanted to make a messy game, but also realized that water is much easier to clean.
+	a: (~positive_response) Yes, it is much easier than using Jello or pudding.
+	a: (~negative_response) angerangerangerDo not even consider pouring water on my circuits!
 
-u: ([who what where when why] * ~fishinggame) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+u: ([who what where when why how] * ~fishinggame) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
 	a: (~negative_response) angerangerangerI am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
 
@@ -39,7 +39,7 @@ u: ([who what where when why] * ~fishinggame) I am afraid that I have already to
 #! Entry point of conversation
 #! ----------------------------------------------------------------
 
-u: () ^keep() ^repeat()
+u: (~fishinggame) What would you like to know about this strange fishing game? ^keep() ^repeat()
 
 
 
@@ -47,4 +47,4 @@ u: () ^keep() ^repeat()
 #! Topic-related gambits
 #! ----------------------------------------------------------------
 
-t: ^keep() ^repeat()
+t: I can teach a man to fish, and I can teach you about A Fishing Game with Actual Water.^keep() ^repeat()

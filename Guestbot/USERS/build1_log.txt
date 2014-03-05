@@ -1,4 +1,10 @@
 
+----Reading file activities.top
+Reading concept ~activities
+*** Warning- line 1 of activities.top: "papercraft" is not a known word. Is it misspelled?
+*** Warning- line 1 of activities.top: "micro-talks" is not a known word. Is it misspelled?
+Reading topic ~activities_top
+
 ----Reading file a_main.top
 Reading concept ~positive_response
 Reading concept ~negative_response
@@ -28,34 +34,8 @@ Reading concept ~eat_dirt
 Reading topic ~eat_dirt_game
 
 ----Reading file fishing.top
-*** Error- line 1 of fishing.top: CONCEPT-2 Illegal characters in concept name ~
-   in fishing.top at 1: concept: ~ ()
-    Reading topic ~
-*** Error- line 3 of fishing.top: TOPIC-2 Illegal characters in topic name ~
-   in fishing.top at 3: topic: ~ ()
-    *** Error- line 6 of fishing.top: Bad topic flag u: for topic ~
-   in fishing.top at 6: u: (_it) ^mark(~ _0)  ^repeat() ^keep()
-    *** Error- line 7 of fishing.top: Bad topic flag u: for topic ~
-   in fishing.top at 7: u: (_"the game") ^mark(~ _0) ^repeat() ^keep()
-    *** Error- line 8 of fishing.top: Bad topic flag u: for topic ~
-   in fishing.top at 8: u: (_"this game") ^mark(~ _0) ^repeat() ^keep()
-    *** Error- line 14 of fishing.top: Bad topic flag u: for topic ~
-   in fishing.top at 14: u: (who * ) 
-    *** Error- line 18 of fishing.top: Bad topic flag u: for topic ~
-   in fishing.top at 18: u: (what *) 
-    *** Error- line 22 of fishing.top: Bad topic flag u: for topic ~
-   in fishing.top at 22: u: (where *) 
-    *** Error- line 26 of fishing.top: Bad topic flag u: for topic ~
-   in fishing.top at 26: u: (when *)
-    *** Error- line 30 of fishing.top: Bad topic flag u: for topic ~
-   in fishing.top at 30: u: (why *)
-    *** Error- line 34 of fishing.top: Bad topic flag u: for topic ~
-   in fishing.top at 34: u: ([who what where when why] * ~) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
-    *** Error- line 42 of fishing.top: Bad topic flag u: for topic ~
-   in fishing.top at 42: u: () ^keep() ^repeat()
-    *** Error- line 50 of fishing.top: Bad topic flag t: for topic ~
-   in fishing.top at 50: t: ^keep() ^repeat()
-    *** Warning- line 52 of fishing.top: No data in topic ~
+Reading concept ~fishinggame
+Reading topic ~fishinggame_top
 
 ----Reading file game_game_videogame.top
 Reading concept ~ggvg
@@ -116,19 +96,9 @@ Reading topic ~weirdworm_game
 ----Reading file z_catchall.top
 Reading topic ~catchall
 
- ERROR SUMMARY: 
-  line 1 of fishing.top: CONCEPT-2 Illegal characters in concept name ~
-  line 3 of fishing.top: TOPIC-2 Illegal characters in topic name ~
-  line 6 of fishing.top: Bad topic flag u: for topic ~
-  line 7 of fishing.top: Bad topic flag u: for topic ~
-  line 8 of fishing.top: Bad topic flag u: for topic ~
-  line 14 of fishing.top: Bad topic flag u: for topic ~
-  line 18 of fishing.top: Bad topic flag u: for topic ~
-  line 22 of fishing.top: Bad topic flag u: for topic ~
-  line 26 of fishing.top: Bad topic flag u: for topic ~
-  line 30 of fishing.top: Bad topic flag u: for topic ~
-  line 34 of fishing.top: Bad topic flag u: for topic ~
-  line 42 of fishing.top: Bad topic flag u: for topic ~
-  line 50 of fishing.top: Bad topic flag t: for topic ~
-r
-13 errors - press Enter to quit. Then fix and try again.
+WARNING SUMMARY: 
+17 spelling warnings and 0 more serious warnings
+    
+
+Finished compile
+

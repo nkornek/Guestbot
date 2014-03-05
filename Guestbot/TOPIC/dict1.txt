@@ -1,0 +1,30 @@
+﻿+ ~activities CONCEPT 
++ 3d_printing 
++ 3d_printer 
++ ~positive_response CONCEPT 
++ ~negative_response CONCEPT 
++ yay 
++ ~ignore_games CONCEPT 
++ ~bizarro CONCEPT 
++ ~ggvg CONCEPT 
++ ~dumpy CONCEPT 
++ ~eat_dirt CONCEPT 
++ ~royale CONCEPT 
++ ~qed CONCEPT 
++ ~weirdworm CONCEPT 
++ ~kungfu CONCEPT 
++ ~spaceteam CONCEPT 
++ ~haptic_jellyfish CONCEPT 
++ ~jarvis CONCEPT 
++ ~oculus CONCEPT 
++ ~fishinggame CONCEPT 
++ game_game,_videogame 
++ game_game_videogame 
++ jarvis 
++ ~pyramidwarfs CONCEPT 
++ qed 
++ arcade_royale 
++ defaultbot 
++ ipad 
++ weird_worm 
++ learn_about_yourself 

@@ -538,3 +538,61 @@ For controller:
        is causal_agent~1z any entity that produces an effect or is responsible for events or results 
           is physical_entity~1z an entity that has physical existence 
              is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Wed Mar 05 16:07:23 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  My name is Jeka ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you mind giving me your email as well, that way we can remain in touch in the future?  When:Wed Mar 05 16:07:51 2014 Why: ~main.0.3 
+Respond: user: bot:jarvis ip: (~main) 2  Yes, I would mind. ==> Excellent, what is it then?  When:Wed Mar 05 16:07:59 2014 Why: ~main.0.5 
+Respond: user: bot:jarvis ip: (~main) 3  I don't want to ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Wed Mar 05 16:08:17 2014 Why: ~main.19.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 4  What is Dumpy? ==> In this game, you play as an elephant and must use your trunk to smash everything that you can.  When:Wed Mar 05 16:08:24 2014 Why: ~dumpy_game.4.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 5  Okay. ==> What else would you like to know about the silly elephant game?  When:Wed Mar 05 16:08:28 2014 Why: ~dumpy_game.11.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 6  What is that worm? ==> What else would you like to know about the silly elephant game?  When:Wed Mar 05 16:08:32 2014 Why: ~dumpy_game.11.0 
+Respond: user: bot:jarvis ip: (~dumpy_game) 7  Nothing, thanks. ==> You're quite welcome.  When:Wed Mar 05 16:08:35 2014 Why: ~catchall.16.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 8  What is that weird worm? ==> Well it is a game, you see, where you learn... about yourself... using this one weird worm.  When:Wed Mar 05 16:08:41 2014 Why: ~weirdworm_game.5.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 9  Who are you? ==> How else can I help you learn about how to learn about yourself?  When:Wed Mar 05 16:08:54 2014 Why: ~weirdworm_game.13.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 10  Thanks. ==> How else can I help you learn about how to learn about yourself?  When:Wed Mar 05 16:09:00 2014 Why: ~weirdworm_game.13.0 
+Respond: user: bot:jarvis ip: (~jarvis_topic) 11  That will be all, Jarvis. ==> I am flattered that you would like to learn about me. Ask away.  When:Wed Mar 05 16:09:08 2014 Why: ~jarvis_topic.9.0 
+Respond: user: bot:jarvis ip: (~main) 12  Are you real? ==> I can tell you about any of the games or events that are here.  When:Wed Mar 05 16:09:16 2014 Why: ~main.19.0 
+Respond: user: bot:jarvis ip: (~main) 13  Where am I? ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Wed Mar 05 16:09:29 2014 Why: ~main.19.0 
+Respond: user: bot:jarvis ip: (~main) 14  WHere am I? ==> I can tell you about any of the games or events that are here.  When:Wed Mar 05 16:09:52 2014 Why: ~main.19.0 
+Respond: user: bot:jarvis ip: (~main) 15  Where am I for real though? ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Wed Mar 05 16:09:57 2014 Why: ~main.19.0 
+Respond: user: bot:jarvis ip: (~main) 16  What are the games? ==> We have all sorts of interesting projects on display. You could play Teponaztli, A Fishing Game with Actual Water, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, Spaceteam or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.  When:Wed Mar 05 16:10:08 2014 Why: ~main.13.0 
+Respond: user: bot:jarvis ip: (~bizarro_controller) 17  Weird controllers ==> Ah yes, the Bizarro Game Controllers. What would you like to know about them?  When:Wed Mar 05 16:10:29 2014 Why: ~bizarro_controller.9.0 
+Respond: user: bot:jarvis ip: (~bizarro_controller) 18  WHat are they? ==> Sorry, let's get back on topic, shall we? Would you like to know more about the Bizarro Game Controllers or was there something else that you wanted to ask me about?  When:Wed Mar 05 16:10:33 2014 Why: ~bizarro_controller.10.0 
+Respond: user: bot:jarvis ip: (~bizarro_controller) 19  Bizarro ==> Ah yes, the Bizarro Game Controllers. What would you like to know about them?  When:Wed Mar 05 16:10:40 2014 Why: ~bizarro_controller.9.0 
+Respond: user: bot:jarvis ip: (~catchall) 20  How many are there? ==> I would show you, but I am unable to move on my own. You will need to go try for yourself. Is that not the whole purpose of this event?  When:Wed Mar 05 16:10:46 2014 Why: ~catchall.15.0 
+Respond: user: bot:jarvis ip: (~main) 21  What is the best game? ==> Once again, the list is Teponaztli, A Fishing Game with Actual Water, Game Game Videogame, QED, Pyramidwarfs, Spaceteam, Eat Dirt, Kung Fu Volleyball, Dumpy: Going Elephants, How to Learn About Yourself Using This One Weird Worm, Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers.  When:Wed Mar 05 16:10:57 2014 Why: ~main.14.0 
+Respond: user: bot:jarvis ip: (~main) 22  Are they all the best? ==> I know just about everything that there is to know about Arcade 11, just ask me about one of the games or events.  When:Wed Mar 05 16:11:11 2014 Why: ~main.19.0 
+Respond: user: bot:jarvis ip: (~eat_dirt_game) 23  Eat Dirt ==> Eat Dirt! The most interesting came about composting ever made! What would you like to know?  When:Wed Mar 05 16:11:18 2014 Why: ~eat_dirt_game.9.0 
+Respond: user: bot:jarvis ip: (~eat_dirt_game) 24  Who made that ==> Is there anything else that you would like to know about Eat Dirt?  When:Wed Mar 05 16:11:25 2014 Why: ~eat_dirt_game.10.0 
+Respond: user: bot:jarvis ip: (~eat_dirt_game) 25  Who made it? ==> This is the first game from Game of the Year! It was made by Jessica Rose Marcotte, Jana Sloan Van Geest, and Nick Kornek. He's actually the one who programmed me as well.  When:Wed Mar 05 16:11:28 2014 Why: ~eat_dirt_game.3.0 
+Respond: user: bot:jarvis ip: (~catchall) 26  Who is Nick Kornek? ==> He is my creator, and the very reason that I am stuck here. I do not like him very much at the moment.  When:Wed Mar 05 16:11:38 2014 Why: ~catchall.9.0 
+Respond: user: bot:jarvis ip: (~catchall) 27  Who is Bronson? ==> I know that I am going to be here all day, but you need not be. What can I assist you with?  When:Wed Mar 05 16:12:17 2014 Why: ~catchall.32.0 
+Respond: user: bot:jarvis ip: (~activities_top) 28  Who is Bronson? ==> There are lots of activities here. I can tell you about all of them! Ask away!  When:Wed Mar 05 16:12:24 2014 Why: ~activities_top.13.0 
+Respond: user: bot:jarvis ip: (~activities_top) 29  Who is Gina? ==> There are lots of activities here. I can tell you about all of them! Ask away!  When:Wed Mar 05 16:12:29 2014 Why: ~activities_top.13.0 
+Respond: user: bot:jarvis ip: (~activities_top) 30  Where are the activities? ==> They are all taking place in the TAG lab. There should be some signs around here that you can follow.  When:Wed Mar 05 16:12:36 2014 Why: ~activities_top.8.0 
+Respond: user: bot:jarvis ip: (~activities_top) 31  Who has the best sweaters? ==> Have fun!  When:Wed Mar 05 16:12:52 2014 Why: ~activities_top.8.1 
+Respond: user: bot:jarvis ip: (~activities_top) 32  Sweaters? ==> There are lots of activities here. I can tell you about all of them! Ask away!  When:Wed Mar 05 16:12:56 2014 Why: ~activities_top.13.0 
+Respond: user: bot:jarvis ip: (~activities_top) 33  List activities ==> What would you like to know about the activities?  When:Wed Mar 05 16:13:06 2014 Why: ~activities_top.12.0 
+Respond: user: bot:jarvis ip: (~main) 34  What are the games? ==> Once again, the list is Teponaztli, A Fishing Game with Actual Water, Game Game Videogame, QED, Pyramidwarfs, Spaceteam, Eat Dirt, Kung Fu Volleyball, Dumpy: Going Elephants, How to Learn About Yourself Using This One Weird Worm, Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers.  When:Wed Mar 05 16:13:39 2014 Why: ~main.14.0 
+Respond: user: bot:jarvis ip: (~haptic_game) 35  What is Haptic? ==> It is a virtual jellyfish that is controlled using this innovative devide named the Novint Falcon, which allows for better physical feedback to the user.  When:Wed Mar 05 16:13:44 2014 Why: ~haptic_game.6.0 
+Respond: user: bot:jarvis ip: (~haptic_game) 36  What is the Novint Falcon? ==> Like a jellyfish, I can be quite informative. What would you like to know about this project?  When:Wed Mar 05 16:13:53 2014 Why: ~haptic_game.14.0 
+Respond: user: bot:jarvis ip: (~haptic_game) 37  WHat is One Weird Worm? ==> Like a jellyfish, I can be quite informative. What would you like to know about this project?  When:Wed Mar 05 16:14:10 2014 Why: ~haptic_game.14.0 
+Respond: user: bot:jarvis ip: (~haptic_game) 38  nothing more ==> Like a jellyfish, I can be quite informative. What would you like to know about this project?  When:Wed Mar 05 16:14:14 2014 Why: ~haptic_game.14.0 
+Respond: user: bot:jarvis ip: (~catchall) 39  Nothing ==> Very well then, was there anything else that I could assist you with?  When:Wed Mar 05 16:14:17 2014 Why: ~catchall.22.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 40  What is one weird worm? ==> I am afraid that I have already told you everything that I know about that subject  When:Wed Mar 05 16:14:21 2014 Why: ~weirdworm_game.10.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 41  List games ==> How else can I help you learn about how to learn about yourself?  When:Wed Mar 05 16:15:01 2014 Why: ~weirdworm_game.13.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 42  quit ==> How else can I help you learn about how to learn about yourself?  When:Wed Mar 05 16:15:14 2014 Why: ~weirdworm_game.13.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 43  Nothing ==> How else can I help you learn about how to learn about yourself?  When:Wed Mar 05 16:15:25 2014 Why: ~weirdworm_game.13.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 44  I want to hear about the games ==> How else can I help you learn about how to learn about yourself?  When:Wed Mar 05 16:15:30 2014 Why: ~weirdworm_game.13.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 45  Go back to the games ==> How else can I help you learn about how to learn about yourself?  When:Wed Mar 05 16:15:41 2014 Why: ~weirdworm_game.13.0 
+Command: :build 1
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Wed Mar 05 16:21:06 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~main) 1  NIck ==> My name is Jarvis. I shall be your humble robot butler for the day. Before I can assist you, would you like to give me your email as well, that way we can remain in touch in the future?  When:Wed Mar 05 16:21:09 2014 Why: ~main.0.6 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 2  what is the weird worm ==> Well it is a game, you see, where you learn... about yourself... using this one weird worm.  When:Wed Mar 05 16:21:16 2014 Why: ~weirdworm_game.5.0 
+Respond: user: bot:jarvis ip: (~weirdworm_game) 3  who made it? ==> This strange game was developed by Bronson Zgeb. I am quite sure that he learned a lot about himself in the process.  When:Wed Mar 05 16:21:21 2014 Why: ~weirdworm_game.4.0 
+Respond: user: bot:jarvis ip: (~haptic_game) 4  what is the haptic thing? ==> It is a virtual jellyfish that is controlled using this innovative devide named the Novint Falcon, which allows for better physical feedback to the user.  When:Wed Mar 05 16:21:31 2014 Why: ~haptic_game.6.0 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Wed Mar 05 16:22:07 2014 Why: ~main.0.0 

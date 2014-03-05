@@ -1,0 +1,66 @@
+concept: ~activities ("board game" "board games" "papercraft" "3d printing" "3d printer" "pecha kucha" "micro talks" "micro-talks")
+
+topic: ~activities_top (~activities)
+
+#! Possible related pronouns
+u: (_it) ^mark(~activities _0)  ^repeat() ^keep()
+u: (_"the game") ^mark(~activities _0) ^repeat() ^keep()
+u: (_"this game") ^mark(~activities _0) ^repeat() ^keep()
+
+#! ----------------------------------------------------------------
+#! Specifics
+#! ----------------------------------------------------------------
+
+u: (what * ["board game" "board games"]) There are so many board games available that I could not possibly be expected to list them all. You should go see for yourself.
+	a: (~positive_response) I do enjoy a good board game!
+	a: (~negative_response) angerangerangerBoard games are just as fun as video games!
+
+u: (what * "papercraft") Papercraft is where you build a little model of something using nothing but paper, some scissors, and some glue.
+	a: (~positive_response) Maybe you can make a paper Jarvis!
+	a: (~negative_response) angerangerangerYou probably sniffed too much glue!
+
+u: (what * ["3d printing" "3d printer"]) A 3D Printer is just like a normal printer except that it prints objects rather than text.
+	a: (~positive_response) It is very impressive technology.
+	a: (~negative_response) angerangerangerYou are impossible to impress!
+
+u: (what * ["pecha kucha" "micro talks" "micro-talks"]) They are a series of short presentations on a variety of topics.
+	a: (~positive_response) You should definitely attend!
+	a: (~negative_response) Do not bother coming then!
+
+#! ----------------------------------------------------------------
+#! General 
+#! ----------------------------------------------------------------
+
+u: (who * [activities ~activities]) All of the activities are being run by the fine members of TAG.
+	a: (~positive_response) Feel free to ask them questions as well. They are quite friendly.
+	a: (~negative_response) angerangerangerThis event would not be possible without them, you should show some respect.
+
+u: (where * [activities ~activities]) They are all taking place in the TAG lab. There should be some signs around here that you can follow.
+	a: (~positive_response) Have fun!
+	a: (~negative_response) angerangerangerYou are very bad at following instructions.
+
+u: (when * [activities ~activities]) They are happening throughout the event!
+	a: (~positive_response) Go forth and enjoy yourself!
+	a: (~negative_response) angerangerangerLook around. Everyone else is enjoying themselves.
+
+u: (why * [activities ~activities]) To show you all sorts of interesting facets of games and game studies!
+	a: (~positive_response) Games are truly the best!
+	a: (~negative_response) angerangerangerIf you do not like games your should just leave!
+
+u: ([who what where when why] *  [activities ~activities]) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
+	a: (~negative_response) angerangerangerI am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+u: ([activities ~activities]) What would you like to know about the activities? ^keep() ^repeat()
+
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: There are lots of activities here. I can tell you about all of them! Ask away! ^keep() ^repeat()
