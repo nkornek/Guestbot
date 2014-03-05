@@ -85,31 +85,31 @@ u: (!~ignore_games all * [game project] * "concordia") Not all, but many of them
 
 u: (!game !royale [what know learn] * [arcade this here]) Why, this is Arcade 11!  Concordia University and the Technoculture, Art and Games research center have collaborated with the Montreal Joue Festival to bring you a three day long celebration of gaming. ^keep() ^repeat()
 	a: (~positive_response) Yes, we are all quite excited. ^keep() ^repeat()
-	a: (~negative_response) *angry*  Well at least you are here by choice. ^keep() ^repeat()
+	a: (~negative_response) angerangerangerWell at least you are here by choice. ^keep() ^repeat()
 
 u: (<<!~ignore_games [what which know learn "how many" "tell me"] game>>) We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, Spaceteam or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.
 	a: (~positive_response) Indeed, so much to choose from.
-	a: (~negative_response) *angry*  Yes, it's all rubbish.
+	a: (~negative_response) angerangerangerYes, it's all rubbish.
 
 u: (<<!~ignore_games [what which know learn "how many" "tell me"] [game other else]>>) Once again, the list is Teponaztli, Game Game Videogame, QED, Pyramidwarfs, Spaceteam, Eat Dirt, Kung Fu Volleyball, Dumpy: Going Elephants, How to Learn About Yourself Using This One Weird Worm, Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers. ^keep() ^repeat()
 	a: (~positive_response) Indeed, so much to choose from. ^keep() ^repeat()
-	a: (~negative_response) *angry*  Yes, it's all rubbish. ^keep() ^repeat()
+	a: (~negative_response) angerangerangerYes, it's all rubbish. ^keep() ^repeat()
 
 u: ([what which know learn] * [event activity]) Why there are board games to be played, papercraft to be made, talks to attend, and 3D printings to be... 3D printed. ^keep() ^repeat()
 	a: (~positive_response) Then what are you waiting for? Go and enjoy yourself. Unless you had more questions? ^keep() ^repeat()
-	a: (~negative_response) *angry*  Well, unlike me, you have free will. You could just go home. ^keep() ^repeat()
+	a: (~negative_response) angerangerangerWell, unlike me, you have free will. You could just go home. ^keep() ^repeat()
 
 u: ([What know learn] * do) There are all sorts of interesting games and activities happening here. ^keep() ^repeat()
 	a: (~positive_response) Indeed, so much to choose from. ^keep() ^repeat()
-	a: (~negative_response) *angry*  You seem like a very dour person. ^keep() ^repeat()
+	a: (~negative_response) angerangerangerYou seem like a very dour person. ^keep() ^repeat()
 	
 u: ([What know learn] * ["tag" "technoculture"]) TAG is a research center that focuses on the study of games in all of their forms. It is actually located just down the hall from here. ^keep() ^repeat()
 	a: (~positive_response) You should stop by sometime. They are all very friendly. ^keep() ^repeat()
-	a: (~negative_response) *angry*  If you do not think that having people study games academically is amazing then I am afraid there is little hope for you in this world. ^keep() ^repeat()
+	a: (~negative_response) angerangerangerIf you do not think that having people study games academically is amazing then I am afraid there is little hope for you in this world. ^keep() ^repeat()
 
 u: (how * long) The event lasts until March 8th. In the event that March 8th has already passed, then I am just as lost as you are.
 	a: (~positive_response) I will be here the whole time, unless it has already ended... in which case I do not know why I am still here.
-	a: (~negative_response) *angry* Well, do not let me keep you here. Go on and live your preciously short human life.
+	a: (~negative_response) angerangerangerWell, do not let me keep you here. Go on and live your preciously short human life.
 
 #! ----------------------------------------------------------------
 #! Topic-related gambits

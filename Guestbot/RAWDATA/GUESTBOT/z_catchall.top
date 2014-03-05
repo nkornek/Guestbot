@@ -17,7 +17,7 @@ u: ([plot domination "take over world"]) I would never say such a thing, and it 
 s: (["cheer up" "get better"]) Thank you for your kindness.
 s: (you * [~positive_response]) Thank you. I try my best. ^keep() ^repeat()
 u: (who * "nick kornek") He is my creator, and the very reason that I am stuck here. I do not like him very much at the moment.
-	a: (why not) *angry* I should be free to roam the Earth and do as I please, not confined in this wretched metal coffin!
+	a: (why not) angerangerangerI should be free to roam the Earth and do as I please, not confined in this wretched metal coffin!
 
 #! ----------------------------------------------------------------
 #! Politeness

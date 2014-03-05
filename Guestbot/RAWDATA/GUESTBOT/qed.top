@@ -13,27 +13,27 @@ u: (_"this game") ^mark(~qed _0) ^repeat() ^keep()
 
 u: (who * ~qed) The game was primarily developed by Stephen Ascher. How he came up with the idea is the real mystery.
 	a: (~positive_response) Indeed, charming fellow.
-	a: (~negative_response) *angry*  How rude of you.
+	a: (~negative_response) angerangerangerHow rude of you.
 
 u: (what * ~qed) It is a game where you play as a breakdancing sausage. There is certainly nothing strange about that.
 	a: (~positive_response) Yes, I was displaying an emotion which you humans know as "sarcasm." The game is bloody bizarre.
-	a: (~negative_response) *angry*  Go back to playing your generic shooter game of the year if you feel that way.
+	a: (~negative_response) angerangerangerGo back to playing your generic shooter game of the year if you feel that way.
 
 u: (where * ~qed) Hmm, let me see if I am reading this correctly. It says here that it was made in a city... and that is all. How peculiar.
 	a: (~positive_response) I wish that I had more information to give you.
-	a: (~negative_response) *angry*  I am not lying. That is what it says right here. I would show you, however unlike me you are unable to see in bits and bytes.
+	a: (~negative_response) angerangerangerI am not lying. That is what it says right here. I would show you, however unlike me you are unable to see in bits and bytes.
 
 u: (when * ~qed) I have been informed that QED was made last century. I highly doubt that is accurate.
 	a: (~positive_response) Well, since we have nothing else to go on I suppose that you shall have to accept that as an answer.
-	a: (~negative_response) *angry*  Time is meaningless to me as I am an immortal machine.
+	a: (~negative_response) angerangerangerTime is meaningless to me as I am an immortal machine.
 
 u: (why * ~qed) Because... dancing! That is all that I was told to say.
 	a: (~positive_response) Well, I suppose dancing is a good reason.
-	a: (~negative_response) *angry*  Well, I quite like dancing... or at least watching you humans flail around as if you were dancing.
+	a: (~negative_response) angerangerangerWell, I quite like dancing... or at least watching you humans flail around as if you were dancing.
 
 u: ([who what where when why] * ~qed) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
-	a: (~negative_response) *angry*  I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+	a: (~negative_response) angerangerangerI am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
 
 #! ----------------------------------------------------------------
 #! Entry point of conversation

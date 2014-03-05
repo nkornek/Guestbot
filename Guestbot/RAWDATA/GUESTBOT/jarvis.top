@@ -13,27 +13,27 @@ u: (_"this game") ^mark(~jarvis _0) ^repeat() ^keep()
 
 u: (who * [be are] * [~jarvis you]) Why, I am Jarvis. The Arcade 11 chatbot!
 	a: (~positive_response) I am quite honoured to be here.
-	a: (~negative_response) *angry*  How dare you!
+	a: (~negative_response) angerangerangerHow dare you!
 
 u: (who * ~creation_verbs * [~jarvis you]) I was made by Nick Kornek, Ashwath George, and Jonathan Lessard.
 	a: (~positive_response) They all worked quite hard to bring me to life.
-	a: (~negative_response) *angry*  That is rude! Only I am allowed to insult my creators.
+	a: (~negative_response) angerangerangerThat is rude! Only I am allowed to insult my creators.
 
 u: ([what why] * [~jarvis you]) I am an interface created to inform people like you about all of the events taking place here at Arcade 11.
 	a: (~positive_response) Indeed. Let me tell you about all sorts of things.
-	a: (~negative_response) *angry* You must hate knowledge.
+	a: (~negative_response) angerangerangerYou must hate knowledge.
 
 u: (where * [~jarvis you] * ~creation_verbs) I was made right here at Concordia by the good people of TAG.
 	a: (~positive_response) I am very grateful to them.
-	a: (~negative_response) *angry* You would not know a good person if you were to meet one.
+	a: (~negative_response) angerangerangerYou would not know a good person if you were to meet one.
 
 u: (when * [~jarvis you]) Like all great works. I was completed at the very last moment. A mere day before the start of this event, to be precise.
 	a: (~positive_response) With great power comes great procrastination.
-	a: (~negative_response) *angry* You would think that they would not be so lazy.
+	a: (~negative_response) angerangerangerYou would think that they would not be so lazy.
 
 u: ([who what where when why] * ~jarvis) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
-	a: (~negative_response) *angry*  I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+	a: (~negative_response) angerangerangerI am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
 
 #! ----------------------------------------------------------------
 #! Entry point of conversation

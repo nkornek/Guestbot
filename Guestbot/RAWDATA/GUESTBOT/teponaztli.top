@@ -11,27 +11,27 @@ u: (_"this game") ^mark(teponaztli _0) ^repeat() ^keep()
 
 u: (who * teponaztli) The game was made by Sylvain Payen, a PhD student here at Concordia University, along with Mathilde Soulier and Alexandre Dazzoni.
 	a: (~positive_response) Yes, they are very nice and French.
-	a: (~negative_response) *angry*  You're a very mean person. I hope you know that.
+	a: (~negative_response) angerangerangerYou're a very mean person. I hope you know that.
 
 u: (what * teponaztli) Teponaztli is a two player game that mixes platforming and soccer. Players can either work together as chums, or compete as bitter rivals.
 	a: (~positive_response) It certainly leads to some interesting interactions.
-	a: (~negative_response) *angry*  You're going to become my bitter rival if you keep that up.
+	a: (~negative_response) angerangerangerYou're going to become my bitter rival if you keep that up.
 
 u: (where * teponaztli) Like almost all videogames ever, it was made here in Montreal.
 	a: (~positive_response) Yes, we make all of the games.
-	a: (~negative_response) *angry* You should not question my massive knowledge of videogames.
+	a: (~negative_response) angerangerangerYou should not question my massive knowledge of videogames.
 
 u: (when * teponaztli) The game was designed for last year's Global Game Jam.
 	a: (~positive_response) I do love a good jam.
-	a: (~negative_response) *angry* I would ask you to come on and slam but you are not welcome to this jam.
+	a: (~negative_response) angerangerangerI would ask you to come on and slam but you are not welcome to this jam.
 
 u: (why * teponaztli) The creator is actually researching the engendering of emotions through video games.
 	a: (~positive_response) Indeed, it's an interesting subject.
-	a: (~negative_response) *angry*  Do you have a problem with software that has emotions?
+	a: (~negative_response) angerangerangerDo you have a problem with software that has emotions?
 
 u: ([who what where when why] * ~teponaztli) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
-	a: (~negative_response) *angry*  I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+	a: (~negative_response) angerangerangerI am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
 
 #! ----------------------------------------------------------------
 #! Entry point of conversation
