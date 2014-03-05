@@ -11,7 +11,7 @@ u: (_"this game") ^mark(~ggvg _0) ^repeat() ^keep()
 #! Games: 
 #! ----------------------------------------------------------------
 
-u: (who * ~ggvg) Joachim Despland made this game. Yes, he did it all alone.
+u: (who * ~ggvg) Joachim Despland made this game. Yes, he did it all alone... except for the music. That was done by Thomas Martinet.
 	a: (~positive_response) Yes, it is quite impressive.
 	a: (~negative_response) angerangerangerWould you have been more impressed if this game had been made by no people?
 
@@ -19,13 +19,13 @@ u: (what * ~ggvg) It is a four player competitive game where you must shoot your
 	a: (~positive_response) It is a lot of fun. I am especially fond of the dancing.
 	a: (~negative_response) angerangerangerI suppose that you would say that, given what a bore you appear to be.
 
-u: (where * ~ggvg) 
-	a: (~positive_response) 
-	a: (~negative_response) angerangeranger
+u: (where * ~ggvg) Would you believe me if I told you that it was made here in Montreal?
+	a: ([~positive_response ~yes]) I should hope so, because it is true.
+	a: ([~negative_response ~no]) angerangerangerWell that'is too bad, because it is true!
 
-u: (when * ~ggvg)
-	a: (~positive_response) 
-	a: (~negative_response) angerangeranger
+u: (when * ~ggvg) Game Game, Videogame has been out since 2011!
+	a: (~positive_response) I am surprised that you have not played that you. You should correct that immediately.
+	a: (~negative_response) angerangerangerI am certain that you were not as cool when you were 3 years old.
 
 u: (why * ~ggvg) This is just a fun game, it does not require any higher purpose.
 	a: (~positive_response) I am glad that you agree.

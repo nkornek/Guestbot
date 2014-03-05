@@ -11,7 +11,7 @@ u: (_"this game") ^mark(~bizarro _0) ^repeat() ^keep()
 #! Games: Bizarro Game Controllers
 #! ----------------------------------------------------------------
 
-u: (who * ~bizarro) The project was led by Joachim Despland, Adam Van Sertima, Bronson Zgeb, and other TAG researchers. They're all a little odd if you ask me.
+u: (who * ~bizarro) The project was led by Joachim Despland, Adam Van Sertima, Bronson Zgeb, and other TAG researchers. They are all a little odd if you ask me.
 	a: (~positive_response) Yes, they are all gentlemen and scholars.
 	a: (~negative_response) angerangerangerHmph, how rude.
 
@@ -23,13 +23,13 @@ u: (where * ~bizarro) It actually happened right here at Concordia! Who knew?
 	a: (~positive_response) Indeed. There are all sorts of cool projects being developed here. I was one of them too!
 	a: (~negative_response) angerangerangerI'll just make a note of that respons in case you decide to apply here someday.
 
-u: (when * ~bizarro) 
-	a: (~positive_response) 
-	a: (~negative_response) angerangeranger
+u: (when * ~bizarro) It began as a workshop organized by Cindy Poremba and Amanda Williams, and then went on to Montreal Maker Faire.
+	a: (~positive_response) I do enjoy seeing humans build things.
+	a: (~negative_response) angerangeranger You probably only like destroying things.
 
-u: (why * ~bizarro) 
-	a: (~positive_response) 
-	a: (~negative_response) angerangeranger
+u: (why * ~bizarro) The purpose of the project was to create new and interesting ways with which to interact with games.
+	a: (~positive_response) Perhaps one day you will be able to interact with me in new and interesting ways.
+	a: (~negative_response) angerangerangerYou are neither new, nor interesting.
 
 
 u: ([who what where when why] * ~bizarro) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
