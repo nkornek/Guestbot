@@ -1830,3 +1830,17 @@ Missing topic index for ~main
 input:3 Tue Mar 04 16:16:53 2014 Missing topic index for ~dumpy_game
  caller: callee:jarvis in sentence: where was the game made? at 
 Missing topic index for ~dumpy_game
+   in fishing.top at 1: concept: ~ ()
+CONCEPT-2 Illegal characters in concept name ~   in fishing.top at 3: topic: ~ ()
+TOPIC-2 Illegal characters in topic name ~   in fishing.top at 6: u: (_it) ^mark(~ _0)  ^repeat() ^keep()
+Bad topic flag u: for topic ~   in fishing.top at 7: u: (_"the game") ^mark(~ _0) ^repeat() ^keep()
+Bad topic flag u: for topic ~   in fishing.top at 8: u: (_"this game") ^mark(~ _0) ^repeat() ^keep()
+Bad topic flag u: for topic ~   in fishing.top at 14: u: (who * ) 
+Bad topic flag u: for topic ~   in fishing.top at 18: u: (what *) 
+Bad topic flag u: for topic ~   in fishing.top at 22: u: (where *) 
+Bad topic flag u: for topic ~   in fishing.top at 26: u: (when *)
+Bad topic flag u: for topic ~   in fishing.top at 30: u: (why *)
+Bad topic flag u: for topic ~   in fishing.top at 34: u: ([who what where when why] * ~) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+Bad topic flag u: for topic ~   in fishing.top at 42: u: () ^keep() ^repeat()
+Bad topic flag u: for topic ~   in fishing.top at 50: t: ^keep() ^repeat()
+Bad topic flag t: for topic ~

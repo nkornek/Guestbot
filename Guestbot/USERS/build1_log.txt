@@ -5,6 +5,7 @@ Reading concept ~negative_response
 *** Warning- line 2 of a_main.top: "lame" is not a known word. Is it misspelled?
 *** Warning- line 2 of a_main.top: "sucks" is not a known word. Is it misspelled?
 *** Warning- line 2 of a_main.top: "crappy" is not a known word. Is it misspelled?
+*** Warning- line 2 of a_main.top: "boo" is not a known word. Is it misspelled?
 Reading concept ~yes
 *** Warning- line 3 of a_main.top: "totes" is not a known word. Is it misspelled?
 Reading concept ~no
@@ -26,6 +27,36 @@ Reading topic ~dumpy_game
 Reading concept ~eat_dirt
 Reading topic ~eat_dirt_game
 
+----Reading file fishing.top
+*** Error- line 1 of fishing.top: CONCEPT-2 Illegal characters in concept name ~
+   in fishing.top at 1: concept: ~ ()
+    Reading topic ~
+*** Error- line 3 of fishing.top: TOPIC-2 Illegal characters in topic name ~
+   in fishing.top at 3: topic: ~ ()
+    *** Error- line 6 of fishing.top: Bad topic flag u: for topic ~
+   in fishing.top at 6: u: (_it) ^mark(~ _0)  ^repeat() ^keep()
+    *** Error- line 7 of fishing.top: Bad topic flag u: for topic ~
+   in fishing.top at 7: u: (_"the game") ^mark(~ _0) ^repeat() ^keep()
+    *** Error- line 8 of fishing.top: Bad topic flag u: for topic ~
+   in fishing.top at 8: u: (_"this game") ^mark(~ _0) ^repeat() ^keep()
+    *** Error- line 14 of fishing.top: Bad topic flag u: for topic ~
+   in fishing.top at 14: u: (who * ) 
+    *** Error- line 18 of fishing.top: Bad topic flag u: for topic ~
+   in fishing.top at 18: u: (what *) 
+    *** Error- line 22 of fishing.top: Bad topic flag u: for topic ~
+   in fishing.top at 22: u: (where *) 
+    *** Error- line 26 of fishing.top: Bad topic flag u: for topic ~
+   in fishing.top at 26: u: (when *)
+    *** Error- line 30 of fishing.top: Bad topic flag u: for topic ~
+   in fishing.top at 30: u: (why *)
+    *** Error- line 34 of fishing.top: Bad topic flag u: for topic ~
+   in fishing.top at 34: u: ([who what where when why] * ~) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+    *** Error- line 42 of fishing.top: Bad topic flag u: for topic ~
+   in fishing.top at 42: u: () ^keep() ^repeat()
+    *** Error- line 50 of fishing.top: Bad topic flag t: for topic ~
+   in fishing.top at 50: t: ^keep() ^repeat()
+    *** Warning- line 52 of fishing.top: No data in topic ~
+
 ----Reading file game_game_videogame.top
 Reading concept ~ggvg
 Reading topic ~ggvg_game
@@ -43,6 +74,10 @@ Reading concept ~kungfu
 *** Warning- line 1 of kungfu.top: "kungfu" is not a known word. Is it misspelled?
 Reading topic ~kungfuvolleybal
 *** Warning- line 33 of kungfu.top: kung is unknown as a word in pattern
+
+----Reading file oculus.top
+Reading concept ~oculus
+Reading topic ~oculus_rift
 
 ----Reading file pyramidwarfs.top
 Reading concept ~pyramidwarfs
@@ -81,9 +116,19 @@ Reading topic ~weirdworm_game
 ----Reading file z_catchall.top
 Reading topic ~catchall
 
-WARNING SUMMARY: 
-14 spelling warnings and 0 more serious warnings
-    
-
-Finished compile
-
+ ERROR SUMMARY: 
+  line 1 of fishing.top: CONCEPT-2 Illegal characters in concept name ~
+  line 3 of fishing.top: TOPIC-2 Illegal characters in topic name ~
+  line 6 of fishing.top: Bad topic flag u: for topic ~
+  line 7 of fishing.top: Bad topic flag u: for topic ~
+  line 8 of fishing.top: Bad topic flag u: for topic ~
+  line 14 of fishing.top: Bad topic flag u: for topic ~
+  line 18 of fishing.top: Bad topic flag u: for topic ~
+  line 22 of fishing.top: Bad topic flag u: for topic ~
+  line 26 of fishing.top: Bad topic flag u: for topic ~
+  line 30 of fishing.top: Bad topic flag u: for topic ~
+  line 34 of fishing.top: Bad topic flag u: for topic ~
+  line 42 of fishing.top: Bad topic flag u: for topic ~
+  line 50 of fishing.top: Bad topic flag t: for topic ~
+r
+13 errors - press Enter to quit. Then fix and try again.

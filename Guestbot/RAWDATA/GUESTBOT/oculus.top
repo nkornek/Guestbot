@@ -1,0 +1,54 @@
+concept: ~oculus ("oculus" rift)
+
+topic: ~oculus_rift (~oculus)
+
+#! Possible related pronouns
+u: (_it) ^mark(~oculus _0)  ^repeat() ^keep()
+
+#! ----------------------------------------------------------------
+#! Games: 
+#! ----------------------------------------------------------------
+
+u: (who * ~oculus) The Oculus Rift was invented by a man named Palmer Luckey. You could say that it was his... "Luckey" break!
+	a: (~positive_response) I am glad that you enjoyed that pun.
+	a: (~negative_response) angerangerangerIs this Allison?
+		b: (~yes) Aha! I knew it. Only you would be so bold!
+		b: (~no) The two of you would probably get along. She does not appreciate puns either.
+
+u: (what * ~oculus) It is a virtual reality headset, just like we have always wanted.
+	a: (~positive_response) I am glad that you agree.
+	a: (~negative_response) angerangerangerPerhaps if you had an imagination you could see its potential.
+
+u: (where * ~oculus) The Rift was developed in California, where all technology comes from.
+	a: (~positive_response) I believe that is correct.
+	a: (~negative_response) angerangerangerNo, no, no, that fact is certainly correct.
+
+u: (when * ~oculus) The Rift was initially invented in 2012 and a developer kit was funded through kickstarter. They will soon be releasing an official retail version.
+	a: (~positive_response) We are all very excited to give the final version a try.
+	a: (~negative_response) angerangerangerPish posh!
+
+u: (why * ~oculus) To allow people to experience virtual reality, of course!
+	a: (~positive_response) I already live in a virtual reality.
+	a: (~negative_response) angerangerangerIf you existed in virtual reality I would turn you off.
+
+u: (how * ~oculus) It uses individual lenses to focus your eyes on seperate images on the screen, creating the 3D effect.
+	a: (~positive_response) Yes, it is quite ingenious.
+	a: (~negative_response) angerangerangerAs if you could do better.
+
+u: ([who what where when why how] * ~oculus) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
+	a: (~negative_response) angerangerangerI am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+
+#! ----------------------------------------------------------------
+#! Entry point of conversation
+#! ----------------------------------------------------------------
+
+u: (~oculus) What would you like to know about the Oculus Rift? ^keep() ^repeat()
+
+
+
+#! ----------------------------------------------------------------
+#! Topic-related gambits
+#! ----------------------------------------------------------------
+
+t: I can teach you a lot about the Oculus Rift. It might be useful if you ever find yourself trapped in a virtual reality. ^keep() ^repeat()

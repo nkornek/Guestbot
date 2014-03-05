@@ -1,2 +1,0 @@
-﻿#`end variables
-( jarvis defaultbot defaultbot )

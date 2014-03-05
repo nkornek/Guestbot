@@ -1,37 +1,37 @@
-concept: ~ ()
+concept: ~fishinggame (fishing water)
 
-topic: ~ ()
+topic: ~fishinggame_top (~fishinggame)
 
 #! Possible related pronouns
-u: (_it) ^mark(~ _0)  ^repeat() ^keep()
-u: (_"the game") ^mark(~ _0) ^repeat() ^keep()
-u: (_"this game") ^mark(~ _0) ^repeat() ^keep()
+u: (_it) ^mark(~fishinggame _0)  ^repeat() ^keep()
+u: (_"the game") ^mark(~fishinggame _0) ^repeat() ^keep()
+u: (_"this game") ^mark(~fishinggame _0) ^repeat() ^keep()
 
 #! ----------------------------------------------------------------
 #! Games: 
 #! ----------------------------------------------------------------
 
-u: (who * ) 
+u: (who * ~fishinggame) This mysterious game was developed by the equally mysterious being known only as "narF".
+	a: (~positive_response) His true identity is a complete mystery... except that it is not.
+	a: (~negative_response) angerangeranger
+
+u: (what * ~fishinggame) 
 	a: (~positive_response) 
 	a: (~negative_response) angerangeranger
 
-u: (what *) 
+u: (where * ~fishinggame) 
 	a: (~positive_response) 
 	a: (~negative_response) angerangeranger
 
-u: (where *) 
+u: (when * ~fishinggame)
 	a: (~positive_response) 
 	a: (~negative_response) angerangeranger
 
-u: (when *)
-	a: (~positive_response) 
-	a: (~negative_response) angerangeranger
-
-u: (why *)
+u: (why * ~fishinggame)
 	a: (~positive_response)
 	a: (~negative_response) angerangeranger
 
-u: ([who what where when why] * ~) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
+u: ([who what where when why] * ~fishinggame) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
 	a: (~negative_response) angerangerangerI am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
 

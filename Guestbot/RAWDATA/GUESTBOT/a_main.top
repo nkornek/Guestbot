@@ -1,8 +1,8 @@
 concept: ~positive_response (cool awesome fun good "yay" sweet nice ~good_quality_adjectives ~praise ~feeling_happy ~good_appearance ~positive_social)
-concept: ~negative_response (bad "lame" "sucks" boring "crappy" ~bad_quality_adjectives ~insults ~bad_appearance ~negative_social)
+concept: ~negative_response (bad "lame" "sucks" boring "crappy" "boo" ~bad_quality_adjectives ~insults ~bad_appearance ~negative_social)
 concept: ~yes (yes "yeah" "totes" totally affirmative)
 concept: ~no (no "nope" not negative)
-concept: ~ignore_games (~bizarro ~ggvg ~dumpy "teponaztli" ~eat_dirt ~royale ~qed ~pyramidgame ~weirdworm ~kungfu ~spaceteam ~haptic_jellyfish ~jarvis)
+concept: ~ignore_games (~bizarro ~ggvg ~dumpy "teponaztli" ~eat_dirt ~royale ~qed ~pyramidgame ~weirdworm ~kungfu ~spaceteam ~haptic_jellyfish ~jarvis ~oculus)
 
 topic: ~main (game)
 
