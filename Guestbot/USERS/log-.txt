@@ -369,3 +369,172 @@ Respond: user: bot:jarvis ip: (~dumpy_game) 46  what is dumpy? ==> In this game,
 Respond: user: bot:jarvis ip: (~dumpy_game) 47  what controller does it use? ==> I am afraid that I have already told you everything that I know about that subject  When:Tue Mar 04 17:31:10 2014 Why: ~dumpy_game.8.0 
 Respond: user: bot:jarvis ip: (~dumpy_game) 48  oculus rift ==> What else would you like to know about the silly elephant game?  When:Tue Mar 04 17:31:14 2014 Why: ~dumpy_game.10.0 
 Respond: user: bot:jarvis ip: (~dumpy_game) 49  how do you play it? ==> Aha! Dumpy! The silly elephant game for the Occulus Rift! So entertaining, yet so undignified! What would you like to know?  When:Tue Mar 04 17:31:22 2014 Why: ~dumpy_game.9.0 
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Mar 04 19:03:43 2014 Why: ~main.0.0 
+Command: :up mean
+
+For mean:
+ Set hierarchy:
+ Wordnet hierarchy:
+  mean~1: an average of n numbers computed by adding some function of the numbers and dividing by some function of n 
+    is norm~1  a statistic describing the location of a distribution 
+       is statistic~1z a datum that can be represented numerically 
+          is data_point~1z an item of factual information derived from measurement or research 
+             is selective_information~1z knowledge acquired through study or experience or instruction 
+                is knowledge~1z the psychological result of perception and learning and reasoning 
+                   is psychological_feature~1z a feature of the mental life of a living organism 
+                      is abstraction~1z a general concept formed by extracting common features from specific examples 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  mean~2: have in mind as a purpose 
+  mean~3: destine or designate for a certain purpose 
+  mean~4: intend to refer to 
+  mean~5: denote or connote 
+  mean~6: mean or intend to express or convey 
+  mean~7: have as a logical consequence 
+  mean~8: have a specified degree of importance 
+  mean~9: of no value or worth 
+  mean~10: so small in amount as to deserve contempt 
+  mean~11: characterized by or indicative of lack of generosity 
+  mean~12: characterized by malice 
+  mean~13: having or showing an ignoble lack of honor or morality 
+  mean~14: approximating the statistical norm or average or expected value 
+  mean~15: marked by poverty befitting a beggar 
+  mean~16: excellent 
+Command: :nice
+Command: :up nice
+
+For nice:
+ Set hierarchy:
+ Wordnet hierarchy:
+  nice~1: exhibiting courtesy and politeness 
+  nice~2: excessively fastidious and easily disgusted 
+  nice~3: pleasant or pleasing or agreeable in nature or appearance 
+  nice~4: done with delicacy and skill 
+  nice~5: socially or conventionally correct 
+Command: :up compliment
+
+For compliment:
+ Set hierarchy:
+ Wordnet hierarchy:
+  compliment~1: a remark expressing praise and admiration 
+    is praise~1  an expression of approval and commendation 
+       is approving~1 a message expressing a favorable opinion 
+          is message~2z what a communication that is about something is about 
+             is communication~1z something that is communicated by or to or between people or groups 
+                is abstraction~1z a general concept formed by extracting common features from specific examples 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  compliment~2: say something to someone that expresses praise 
+  compliment~3: express respect or esteem for 
+Command: :build 1
+Command: :reset
+Respond: user: bot:jarvis ip: (~main) 0  :reset ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Tue Mar 04 19:05:20 2014 Why: ~main.0.0 
+Respond: user: bot:jarvis ip: (~eat_dirt_game) 1  who made eat dirt? ==> This is the first game from Game of the Year! It was made by Jessica Rose Marcotte, Jana Sloan Van Geest, and Nick Kornek. He's actually the one who programmed me as well.  When:Tue Mar 04 19:05:27 2014 Why: ~eat_dirt_game.3.0 
+Respond: user: bot:jarvis ip: (~eat_dirt_game) 2  they are mean ==>  angry  Are you insulting my creator? Only I am allowed to do that.  When:Tue Mar 04 19:05:31 2014 Why: ~eat_dirt_game.3.2 
+Command: :down ~praise
+acclaim applaud approve beatify celebrate cheerlead cheer commend compliment congratulate 
+  extol exult felicitate glorify hail honor jubilate laud overpraise praise 
+  salute toast 
+Command: :up beautiful
+
+For beautiful:
+ Set hierarchy:
+ Wordnet hierarchy:
+  beautiful~1: delighting the senses or exciting intellectual or emotional admiration 
+  beautiful~2: highly enjoyable 
+Command: :up friendly
+
+For friendly:
+ Set hierarchy:
+ Wordnet hierarchy:
+  friendly~1: troops belonging to or allied with your own military forces 
+    is military_personnel~1  soldiers collectively 
+       is force_out~1 group of people willing to obey orders 
+          is constitution~1z a group of people who work together 
+             is social_group~1z people sharing some social relation 
+                is group~1z any number of entities considered as a unit 
+                   is abstraction~1z a general concept formed by extracting common features from specific examples 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  friendly~2: characteristic of or befitting a friend 
+  friendly~3: of or belonging to your own country's forces or those of an ally 
+  friendly~4: easy to understand or use 
+  friendly~5: inclined to help or support 
+Command: :fantastic
+Command: :up fantastic
+
+For fantastic:
+ Set hierarchy:
+ Wordnet hierarchy:
+  fantastic~1: ludicrously odd 
+  fantastic~2: extraordinarily good or great  
+  fantastic~3: extravagantly fanciful in design, construction, appearance 
+  fantastic~4: existing in fancy only 
+  fantastic~5: fanciful and unrealistic 
+Command: :up ugly
+
+For ugly:
+ Set hierarchy:
+ Wordnet hierarchy:
+  ugly~1: provoking horror 
+  ugly~2: displeasing to the senses 
+  ugly~3: morally reprehensible 
+  ugly~4: inclined to anger or bad feelings with overtones of menace 
+Command: :up criticize
+
+For criticize:
+ Set hierarchy:
+ Wordnet hierarchy:
+  criticize~1: find fault with 
+  criticize~2: act as a critic 
+Command: :down negative_social
+
+Command: :down ~negative_social
+accurse asperse assail backbite badmouth belittle bemock berate blame blaspheme 
+  calumniate castigate censure chasten chastise chide condemn criminate criticise criticize 
+  curse damn decry defame denigrate denounce deprecate deride disparage diss 
+  doubt excoriate fault gibe impeach imprecate incriminate indict insult lambaste 
+  lambast lampoon malign mock penalize persecute prosecute punish rebuke recall 
+  recriminate remonstrate reprehend reprimand reproach reprove repudiate revile ridicule scold 
+  scorn shame slander snipe snitch snub stigmatize stultify sully traduce 
+  trivialise trivialize upbraid victimize vilify vituperate 
+Command: :down ~positive_social
+~greet ~praise bless canonise canonize condone eulogize excuse exuberate forgive 
+  herald pardon recommend sanction thank 
+Command: :build 1
+Command: :up controller
+
+For controller:
+ Set hierarchy:
+ Wordnet hierarchy:
+  controller~1: a mechanism that controls the operation of a machine 
+    is mechanism~2  device consisting of a piece of machinery 
+       is twist~1 an instrumentality invented for a particular purpose 
+          is instrumentation~1z an artifact that is instrumental in accomplishing some end 
+             is artefact~1z a man-made object taken as a whole 
+                is unit~1z an assemblage of parts that is regarded as a single entity 
+                   is physical_object~1z a tangible and visible entity 
+                      is physical_entity~1z an entity that has physical existence 
+                         is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  controller~2: someone who maintains and audits business accounts 
+    is bourgeois~2  a capitalist who engages in industrial commercial enterprise 
+       is capitalist~1z a person who invests capital in a business 
+          is somebody~1z a human being 
+             is organism~1z a living thing that has the ability to act or function independently 
+                is living_thing~1z a living entity 
+                   is unit~1z an assemblage of parts that is regarded as a single entity 
+                      is physical_object~1z a tangible and visible entity 
+                         is physical_entity~1z an entity that has physical existence 
+                            is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+             is causal_agent~1z any entity that produces an effect or is responsible for events or results 
+                is physical_entity~1z an entity that has physical existence 
+                   is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+  controller~3: a person who directs and restrains 
+    is somebody~2  a human being 
+       is organism~1z a living thing that has the ability to act or function independently 
+          is living_thing~1z a living entity 
+             is unit~1z an assemblage of parts that is regarded as a single entity 
+                is physical_object~1z a tangible and visible entity 
+                   is physical_entity~1z an entity that has physical existence 
+                      is entity~1z that which is perceived or known or inferred to have its own distinct existence 
+       is causal_agent~1z any entity that produces an effect or is responsible for events or results 
+          is physical_entity~1z an entity that has physical existence 
+             is entity~1z that which is perceived or known or inferred to have its own distinct existence 

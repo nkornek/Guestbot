@@ -33,9 +33,21 @@ u: (why * ~haptic_jellyfish) The researchers are trying to create a fully tangib
 	a: (~positive_response) Perhaps one day we will have a fully tangible version of myself.
 	a: (~negative_response) *angry*  Progress is important, you know.
 
+u: (what * ["novint" falcon]) The Falcon is an innovative controller designed to deliver haptic feedback.
+	a: (~positive_response) It is quite cool.
+	a: (~negative_response) *angry* You must dislike advanced technologies!
+
 u: ([who what where when why] * ~haptic_jellyfish) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
 	a: (~negative_response) *angry*  I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+
+#! ----------------------------------------------------------------
+#! Easter eggs
+#! ----------------------------------------------------------------
+
+?: (how * jellyfish * [informative inform]) Well, you see... you know what? I really did not know where I was going with that line, and I apologize for it.
+	a: (~positive_response) Thank you for being so accepting.
+	a: (~negative_response) *angry* You do not have to rub it in!
 
 #! ----------------------------------------------------------------
 #! Entry point of conversation

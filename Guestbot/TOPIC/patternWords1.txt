@@ -3,6 +3,7 @@ totes
 nope
 teponaztli
 ""
+concordia
 royale
 how_many
 What
@@ -14,6 +15,7 @@ this_game
 composting
 the_controller
 this_controller
+novint
 kungfu
 kung
 fu
@@ -23,8 +25,10 @@ breakdancing
 the_machine
 this_machine
 spaceteam
+take_over_world
 would_you_like
 get_better
+nick_kornek
 see_you
 thanks~2
 oh

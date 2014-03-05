@@ -12,9 +12,9 @@
 + ~kungfu CONCEPT 
 + ~spaceteam CONCEPT 
 + ~haptic_jellyfish CONCEPT 
++ ~jarvis CONCEPT 
 + game_game,_videogame 
 + game_game_videogame 
-+ ~jarvis CONCEPT 
 + jarvis 
 + ~pyramidwarfs CONCEPT 
 + qed 

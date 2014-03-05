@@ -33,6 +33,10 @@ u: (why * ~dumpy) It is fun, so why not?
 	a: (~positive_response) I am glad that you agree.
 	a: (~negative_response) *angry*  You are such a bore.
 
+u: ([what how] * [control controller]) It uses the incredible Oculus Rift virtual reality headset.
+	a: (~positive_response) Perhaps I will one day exist in virtual reality.
+	a: (~negative_response) *angry* I wish that you were only a virtual reality!
+
 
 u: ([who what where when why] * ~dumpy) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()

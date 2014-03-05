@@ -1,8 +1,8 @@
-concept: ~positive_response (cool awesome fun good "yay" sweet nice ~good_quality_adjectives)
-concept: ~negative_response (bad "lame" "sucks" boring "crappy" ~bad_quality_adjectives)
+concept: ~positive_response (cool awesome fun good "yay" sweet nice ~good_quality_adjectives ~praise ~feeling_happy ~good_appearance ~positive_social)
+concept: ~negative_response (bad "lame" "sucks" boring "crappy" ~bad_quality_adjectives ~insults ~bad_appearance ~negative_social)
 concept: ~yes (yes "yeah" "totes" totally affirmative)
 concept: ~no (no "nope" not negative)
-concept: ~ignore_games (~bizarro ~ggvg ~dumpy "teponaztli" ~eat_dirt ~royale ~qed ~pyramidgame ~weirdworm ~kungfu ~spaceteam ~haptic_jellyfish)
+concept: ~ignore_games (~bizarro ~ggvg ~dumpy "teponaztli" ~eat_dirt ~royale ~qed ~pyramidgame ~weirdworm ~kungfu ~spaceteam ~haptic_jellyfish ~jarvis)
 
 topic: ~main (game)
 
@@ -48,6 +48,8 @@ s: ([I my] * [be name] _*)
 		a: (~why) If you give me your email I can let you know about any future events that we host here.
 
 ?: (why * email) So that we can keep in touch. Wouldn't you like to be friends? ^keep() ^repeat()
+	a: (~yes) That is fantastic news! ^keep() ^repeat()
+	a: (~no) Alright then. ^keep() ^repeat()
 
 u: ($email=0 !~no email) Are you ready to give me your email then? ^keep() ^repeat()
 	a: (~yes) Excellent, what is it then? ^keep() ^repeat()
@@ -65,6 +67,8 @@ s:(!not I * name * be _*)
 	if ($name != "") { Your name is $name. ^keep() ^repeat()}
 	else { You haven't told me your name yet ^keep() ^repeat()}
 
+?: (who * am * I) You are $name. ^keep() ^repeat()
+
 s: ($name != "" I * be * $name) Good for you, $name. ^keep() ^repeat()
 
 #! ----------------------------------------------------------------
@@ -72,6 +76,8 @@ s: ($name != "" I * be * $name) Good for you, $name. ^keep() ^repeat()
 #! ----------------------------------------------------------------
 
 u: (<<worm !~ignore_games !weird>>) Which worm game would you like me to inform you about, "Eat Dirt" or "How to Learn About Yourself Using This One Weird Worm"? ^keep() ^repeat()
+
+u: (!~ignore_games all * [game project] * "concordia") Not all, but many of them are, yes.
 
 #!-----------------------------------------------------------------
 #! Info about arcade
@@ -81,11 +87,11 @@ u: (!game !royale [what know learn] * [arcade this here]) Why, this is Arcade 11
 	a: (~positive_response) Yes, we are all quite excited. ^keep() ^repeat()
 	a: (~negative_response) *angry*  Well at least you are here by choice. ^keep() ^repeat()
 
-u: (<<!~ignore_games [what which know learn "how many"] game>>) We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, Spaceteam or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.
+u: (<<!~ignore_games [what which know learn "how many" "tell me"] game>>) We have all sorts of interesting projects on display. You could play Teponaztli, or perhaps Game Game, Videogame. You could also test your skills at QED, Pyramidwarfs, Spaceteam or Eat Dirt! You can also check out Kung Fu Volleyball, or act positively silly with Dumpy: Going Elephants! and How to Learn About Yourself Using This One Weird Worm. We also have the Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers if you are so inclined. Let me know if you want to learn more about any of those.
 	a: (~positive_response) Indeed, so much to choose from.
 	a: (~negative_response) *angry*  Yes, it's all rubbish.
 
-u: (<<!~ignore_games [what which know learn "how many"] [game else]>>) Once again, the list is Teponaztli, Game Game Videogame, QED, Pyramidwarfs, Spaceteam, Eat Dirt, Kung Fu Volleyball, Dumpy: Going Elephants, How to Learn About Yourself Using This One Weird Worm, Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers. ^keep() ^repeat()
+u: (<<!~ignore_games [what which know learn "how many" "tell me"] [game other else]>>) Once again, the list is Teponaztli, Game Game Videogame, QED, Pyramidwarfs, Spaceteam, Eat Dirt, Kung Fu Volleyball, Dumpy: Going Elephants, How to Learn About Yourself Using This One Weird Worm, Arcade Royale, Haptic Jellyfish, and Bizarro Game Controllers. ^keep() ^repeat()
 	a: (~positive_response) Indeed, so much to choose from. ^keep() ^repeat()
 	a: (~negative_response) *angry*  Yes, it's all rubbish. ^keep() ^repeat()
 
@@ -100,6 +106,10 @@ u: ([What know learn] * do) There are all sorts of interesting games and activit
 u: ([What know learn] * ["tag" "technoculture"]) TAG is a research center that focuses on the study of games in all of their forms. It is actually located just down the hall from here. ^keep() ^repeat()
 	a: (~positive_response) You should stop by sometime. They are all very friendly. ^keep() ^repeat()
 	a: (~negative_response) *angry*  If you do not think that having people study games academically is amazing then I am afraid there is little hope for you in this world. ^keep() ^repeat()
+
+u: (how * long) The event lasts until March 8th. In the event that March 8th has already passed, then I am just as lost as you are.
+	a: (~positive_response) I will be here the whole time, unless it has already ended... in which case I do not know why I am still here.
+	a: (~negative_response) *angry* Well, do not let me keep you here. Go on and live your preciously short human life.
 
 #! ----------------------------------------------------------------
 #! Topic-related gambits

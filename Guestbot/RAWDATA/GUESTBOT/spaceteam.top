@@ -33,6 +33,14 @@ u: (why * ~spaceteam) Well, if you find yourself having too many friends you can
 	a: (~positive_response) I have 99 problems however "too many friends" does not count itself amongst them.
 	a: (~negative_response) *angry*  I would wager that you do not have many friends.
 
+u: (<<~spaceteam mobile>>) Yes, it is avaiable for free on iOS and Android. You need only the requisite number of friends to play it with.
+	a: (~positive_response) I am certain that someone like you must have a great many friends.
+	a: (~negative_response) *angry* You probably would not have enough friends anyways.
+
+u: (<<how many players>>) Spaceteam requires between 2 and 4 players who have no issues with shouting at each other.
+	a: (~positive_response) I wish that I could play with you, however I have no thumbs with which to push the buttons.
+	a: (~negative_response) *angry* If you cannot enjoy a good game of shouting then I would suggest you turn around now.
+
 u: ([who what where when why] * ~spaceteam) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
 	a: (~negative_response) *angry*  I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()

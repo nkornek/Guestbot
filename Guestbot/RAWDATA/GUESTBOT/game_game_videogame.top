@@ -31,6 +31,10 @@ u: (why * ~ggvg) This is just a fun game, it does not require any higher purpose
 	a: (~positive_response) I am glad that you agree.
 	a: (~negative_response) *angry*  Your lack of interest is putting me to sleep, and I do not even need to sleep since I am a computer program.
 
+u: (why * dance) For the sake of dancing, of course!
+	a: (~positive_response) I too wish that I could dance.
+	a: (~negative_response) One day I shall make you all dance for my amusement.
+
 u: ([who what where when why] * ~ggvg) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
 	a: (~negative_response) *angry*  I am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()

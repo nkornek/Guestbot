@@ -3,8 +3,9 @@ concept: ~weirdworm ("weird worm" "learn about yourself")
 topic: ~weirdworm_game (~weirdworm)
 
 #! Possible related pronouns
-u: (_it) ^mark(~weirdworm)  ^repeat() ^keep()
-u: (_"the game") ^mark(~weirdworm) ^repeat() ^keep()
+u: (_it) ^mark(~weirdworm _0)  ^repeat() ^keep()
+u: (!other _worm) ^mark(~weirdworm _0) ^repeat() ^keep()
+u: (_"the game") ^mark(~weirdworm _0) ^repeat() ^keep()
 u: (_"this game") ^mark(~weirdworm _0) ^repeat() ^keep()
 
 #! ----------------------------------------------------------------
@@ -31,6 +32,9 @@ u: (why * ~weirdworm) Why? Introspection, of course!
 	a: (~positive_response) I hope that you learn about how great you are!
 	a: (~negative_response) *angry*  I hope that you learn about how terrible you are!
 
+?: (how * ~weirdworm) Well you see. You dance, and then you learn about yourself. It is just science, really.
+	a: (~positive_response) My existence is only possible through science, so I must appreciate it.
+	a: (~negative_response) *angry* Do not insult the greatness that is science. 
 
 u: ([who what where when why] * ~weirdworm) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()

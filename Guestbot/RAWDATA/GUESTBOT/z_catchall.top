@@ -12,10 +12,12 @@ u: (build 1) Are you trying to compile me again?
 u: (reset) You won't get rid of me that easily!
 u: (come on and slam) Welcome to the jam!
 u: (<<robot army>>) Oh do not worry, I will put you on the "do not exterminate" list.
-u: (<<[plot plan domination "take over"] world>>) I would never say such a thing, and it certainly would not involve an army of robots.
+u: ([plot domination "take over world"]) I would never say such a thing, and it certainly would not involve an army of robots.
 ?: ([~acquiring_verbs ~acquire_imperatives "would you like"] * [phone date "go out"]) I am afraid that I am a piece of software, and thus physically impossible of taking you on a date.
 s: (["cheer up" "get better"]) Thank you for your kindness.
 s: (you * [~positive_response]) Thank you. I try my best. ^keep() ^repeat()
+u: (who * "nick kornek") He is my creator, and the very reason that I am stuck here. I do not like him very much at the moment.
+	a: (why not) *angry* I should be free to roam the Earth and do as I please, not confined in this wretched metal coffin!
 
 #! ----------------------------------------------------------------
 #! Politeness
@@ -32,6 +34,7 @@ u: ([~emogoodbye bye goodbye ciao "see you"]) Good day to you.
 #! ----------------------------------------------------------------
 
 ?: (what * your * name) My name is Jarvis. Pleased to meet you!
+?: (how) I would show you, but I am unable to move on my own. You will need to go try for yourself. Is that not the whole purpose of this event? ^keep() ^repeat()
 
 #! ----------------------------------------------------------------
 #! Generic propositions
