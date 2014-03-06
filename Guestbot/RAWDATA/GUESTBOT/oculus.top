@@ -4,6 +4,7 @@ topic: ~oculus_rift (~oculus)
 
 #! Possible related pronouns
 u: (_it) ^mark(~oculus _0)  ^repeat() ^keep()
+u: (<<!~ignore_games _that>>) ^mark(~oculus _0) ^repeat() ^keep()
 
 #! ----------------------------------------------------------------
 #! Games: 

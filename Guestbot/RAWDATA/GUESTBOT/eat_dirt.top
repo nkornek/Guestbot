@@ -4,6 +4,7 @@ topic: ~eat_dirt_game (~eat_dirt)
 
 #! Possible related pronouns
 u: (_it) ^mark(~eat_dirt _0)  ^repeat() ^keep()
+u: (<<!~ignore_games _that>>) ^mark(~eat_dirt _0) ^repeat() ^keep()
 u: (_"the game") ^mark(~eat_dirt _0) ^repeat() ^keep()
 u: (_"this game") ^mark(~eat_dirt _0) ^repeat() ^keep()
 

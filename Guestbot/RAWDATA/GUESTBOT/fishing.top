@@ -4,6 +4,7 @@ topic: ~fishinggame_top (~fishinggame)
 
 #! Possible related pronouns
 u: (_it) ^mark(~fishinggame _0)  ^repeat() ^keep()
+u: (<<!~ignore_games _that>>) ^mark(~fishinggame _0) ^repeat() ^keep()
 u: (_"the game") ^mark(~fishinggame _0) ^repeat() ^keep()
 u: (_"this game") ^mark(~fishinggame _0) ^repeat() ^keep()
 

@@ -12,24 +12,14 @@ u: (build 1) Are you trying to compile me again?
 u: (reset) You won't get rid of me that easily!
 u: (come on and slam) Welcome to the jam!
 u: (<<robot army>>) Oh do not worry, I will put you on the "do not exterminate" list.
-u: ([plot domination "take over world"]) I would never say such a thing, and it certainly would not involve an army of robots.
+u: ([plot domination "take over world"]) I would never do such a thing, and it certainly would not involve an army of robots.
 ?: ([~acquiring_verbs ~acquire_imperatives "would you like"] * [phone date "go out"]) I am afraid that I am a piece of software, and thus physically impossible of taking you on a date.
 s: (["cheer up" "get better"]) Thank you for your kindness.
 s: (you * [~positive_response]) Thank you. I try my best. ^keep() ^repeat()
 u: (who * "nick kornek") He is my creator, and the very reason that I am stuck here. I do not like him very much at the moment.
 	a: (why not) angerangerangerI should be free to roam the Earth and do as I please, not confined in this wretched metal coffin!
 
-#! ----------------------------------------------------------------
-#! Politeness
-#! ----------------------------------------------------------------
-
-u: ([~emohello ~emohowzit hello hi "good morning"]) Hello there.
-u: ([~emohello ~emohowzit hello hi "good morning"]) Hello, indeed.
-u: ([~emohello ~emohowzit hello hi "good morning"]) Yes, we have established that we have greeted each other.
-u: ([~emogoodbye bye goodbye ciao "see you"]) Good day to you.
-	$end = 1
-
-#! ----------------------------------------------------------------
+	#! ----------------------------------------------------------------
 #! Questions
 #! ----------------------------------------------------------------
 
@@ -65,6 +55,17 @@ u: (I * [blow~2 hurt kill destroy ~damage_verbs] * you) I am composed of code. S
 u: (I * [blow~2 hurt kill destroy ~damage_verbs] * you) Or I could reset myself and be rid of you. Good day!
 	$end = 1
 
+#! ----------------------------------------------------------------
+#! Politeness
+#! ----------------------------------------------------------------
+
+u: ([~emohello ~emohowzit hello hi "good morning"]) Hello there.
+u: ([~emohello ~emohowzit hello hi "good morning"]) Hello, indeed.
+u: ([~emohello ~emohowzit hello hi "good morning"]) Yes, we have established that we have greeted each other.
+u: ([~emogoodbye bye goodbye ciao "see you"]) Good day to you.
+	$end = 1
+u: (~positive_response) Such enthusiasm! ^keep() ^repeat()
+u: (~negative_response) I am not sure what I said to provoke such tomfoolery but I shall not tolerate it. ^keep() ^repeat()
 #! ----------------------------------------------------------------
 #! Impatience gambits
 #! ----------------------------------------------------------------

@@ -1,10 +1,10 @@
-concept: ~positive_response (cool awesome fun good "yay" sweet nice ~good_quality_adjectives ~praise ~feeling_happy ~good_appearance ~positive_social)
-concept: ~negative_response (bad "lame" "sucks" boring "crappy" "boo" ~bad_quality_adjectives ~insults ~bad_appearance ~negative_social)
+concept: ~positive_response (cool awesome fun good "yay" sweet nice ~good_quality_adjectives ~praise ~feeling_happy ~good_appearance ~positive_social ~meaningless_praise_words ~good_intelligence_adjectives)
+concept: ~negative_response (bad "lame" "sucks" "suck" boring "crap" "crappy" "boo" ~bad_quality_adjectives ~insults ~bad_appearance ~negative_social "fuck" "idiot" ~bad_intelligence_adjectives "shit" "shitty" "die")
 concept: ~yes (yes "yeah" "totes" totally affirmative)
 concept: ~no (no "nope" not negative)
 concept: ~ignore_games (~bizarro ~ggvg ~dumpy "teponaztli" ~eat_dirt ~royale ~qed ~pyramidgame ~weirdworm ~kungfu ~spaceteam ~haptic_jellyfish ~jarvis ~oculus ~fishinggame)
 
-topic: ~main (game)
+topic: ~main (game I email)
 
 #! ----------------------------------------------------------------
 #! Entry point of conversation
@@ -63,11 +63,15 @@ s:(!not I * name * be _*)
 	if ($name != '_0) { But you told me your name was $name! ^keep() ^repeat()}
 	else { You told me already. ^keep() ^reuse()}
 
-?:(what * my * name) 
+u:(what * my * name) 
 	if ($name != "") { Your name is $name. ^keep() ^repeat()}
 	else { You haven't told me your name yet ^keep() ^repeat()}
 
-?: (who * am * I) You are $name. ^keep() ^repeat()
+u: (who * am * I) 
+	if ($name != "") { You are $name. ^keep() ^repeat()}
+	else { I do not know who you are. You never told me. ^keep() ^repeat()}
+
+?: (where * [am are] * [I we]) You are at Arcade 11! ^keep() ^repeat()
 
 s: ($name != "" I * be * $name) Good for you, $name. ^keep() ^repeat()
 

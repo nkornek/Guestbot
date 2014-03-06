@@ -1843,4 +1843,23 @@ Bad topic flag u: for topic ~   in fishing.top at 30: u: (why *)
 Bad topic flag u: for topic ~   in fishing.top at 34: u: ([who what where when why] * ~) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 Bad topic flag u: for topic ~   in fishing.top at 42: u: () ^keep() ^repeat()
 Bad topic flag u: for topic ~   in fishing.top at 50: t: ^keep() ^repeat()
-Bad topic flag t: for topic ~
+Bad topic flag t: for topic ~   in a_main.top at 70: ?: ($name!="" who * am * I) You are $name. ^keep() ^repeat()
+PATTERN-64 Illegal comparison $name="" or failed to close prior rule starting at ( !様様様様様様様様様様様様様様様様様様様様様input:3 Thu Mar 06 02:26:53 2014 Missing topic index for ~main
+ caller: callee:jarvis in sentence: who am I? at 
+Missing topic index for ~main
+input:3 Thu Mar 06 02:26:53 2014 Missing topic index for ~jarvis_topic
+ caller: callee:jarvis in sentence: who am I? at 
+Missing topic index for ~jarvis_topic
+input:3 Thu Mar 06 02:26:53 2014 Missing topic index for ~kungfuvolleybal
+ caller: callee:jarvis in sentence: who am I? at 
+Missing topic index for ~kungfuvolleybal
+   in a_main.top at 72:  else (who * am * I) { I do not know who you are. You never told me. ^keep() ^repeat()}
+IF-2 Missing (for IF test - whoinput:3 Thu Mar 06 02:27:35 2014 Missing topic index for ~main
+ caller: callee:jarvis in sentence: who am I? at 
+Missing topic index for ~main
+input:3 Thu Mar 06 02:27:35 2014 Missing topic index for ~jarvis_topic
+ caller: callee:jarvis in sentence: who am I? at 
+Missing topic index for ~jarvis_topic
+input:3 Thu Mar 06 02:27:35 2014 Missing topic index for ~kungfuvolleybal
+ caller: callee:jarvis in sentence: who am I? at 
+Missing topic index for ~kungfuvolleybal

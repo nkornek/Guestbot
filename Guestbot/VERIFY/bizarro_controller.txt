@@ -1,10 +1,10 @@
  ~bizarro_controller.0.0 #! Possible related pronouns
- ~bizarro_controller.3.0 #! ----------------------------------------------------------------
- ~bizarro_controller.3.0 #! Games: Bizarro Game Controllers
- ~bizarro_controller.3.0 #! ----------------------------------------------------------------
- ~bizarro_controller.9.0 #! ----------------------------------------------------------------
- ~bizarro_controller.9.0 #! Entry point of conversation
- ~bizarro_controller.9.0 #! ----------------------------------------------------------------
+ ~bizarro_controller.4.0 #! ----------------------------------------------------------------
+ ~bizarro_controller.4.0 #! Games: Bizarro Game Controllers
+ ~bizarro_controller.4.0 #! ----------------------------------------------------------------
  ~bizarro_controller.10.0 #! ----------------------------------------------------------------
- ~bizarro_controller.10.0 #! Topic-related gambits
+ ~bizarro_controller.10.0 #! Entry point of conversation
  ~bizarro_controller.10.0 #! ----------------------------------------------------------------
+ ~bizarro_controller.11.0 #! ----------------------------------------------------------------
+ ~bizarro_controller.11.0 #! Topic-related gambits
+ ~bizarro_controller.11.0 #! ----------------------------------------------------------------

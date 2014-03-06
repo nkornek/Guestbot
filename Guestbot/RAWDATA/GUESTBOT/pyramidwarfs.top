@@ -4,6 +4,7 @@ topic: ~pyramidgame (~pyramidwarfs)
 
 #! Possible related pronouns
 u: (_it) ^mark(~pyramidwarfs _0)  ^repeat() ^keep()
+u: (<<!~ignore_games _that>>) ^mark(~pyramidwarfs _0) ^repeat() ^keep()
 u: (_"the game") ^mark(~pyramidwarfs _0) ^repeat() ^keep()
 u: (_"this game") ^mark(~pyramidwarfs _0) ^repeat() ^keep()
 

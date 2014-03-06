@@ -1,9 +1,10 @@
-concept: ~jarvis ("jarvis" yourself)
+concept: ~jarvis ("jarvis" yourself you)
 
 topic: ~jarvis_topic (~jarvis)
 
 #! Possible related pronouns
 u: (_it) ^mark(~jarvis _0)  ^repeat() ^keep()
+u: (<<!~ignore_games _that>>) ^mark(~jarvis _0) ^repeat() ^keep()
 u: (_"the game") ^mark(~jarvis _0) ^repeat() ^keep()
 u: (_"this game") ^mark(~jarvis _0) ^repeat() ^keep()
 
@@ -34,6 +35,48 @@ u: (when * [~jarvis you]) Like all great works. I was completed at the very last
 u: ([who what where when why] * ~jarvis) I am afraid that I have already told you everything that I know about that subject ^keep() ^repeat()
 	a: (~positive_response) I would be happy to tell you about something else. ^keep() ^repeat()
 	a: (~negative_response) angerangerangerI am but mere software and thus, there are limits to my knowledge. ^keep() ^repeat()
+
+#! ----------------------------------------------------------------
+#! Generic propositions
+#! ----------------------------------------------------------------
+
+s:([thanks "thank you" thank thanks~2 ~emothanks])  You're quite welcome. ^poptopic() ^keep() ^repeat()
+s:([oh dear "gosh" totally]) Indeed ^poptopic() ^keep() ^repeat()
+s:([maybe]) Nobody likes indecisiveness ^poptopic() ^keep() ^repeat()
+s: (I * [understand see]) Quite... ^poptopic() ^keep() ^repeat()
+?: ([really "that so" "don't say" incredible]) Certainly ^poptopic() ^keep() ^repeat()
+u: (!I [here take have] * ) No thank you. ^poptopic() ^keep() ^repeat()
+u: (nothing) Very well then, was there anything else that I could assist you with?
+u: ([nonsense "not making sense" "not making any sense" "mean anything" "means nothing"]) Sorry, do try to remember that I am but a humble computer program. ^poptopic()
+
+#! ----------------------------------------------------------------
+#! Threatening and insulting
+#! ----------------------------------------------------------------
+
+u: (you [~insults unpleasant_person~1]) Just because I'm not real does not give you the right to berate me.
+	a:(sorry) I accept your apology, this time.	
+u: (you [~insults unpleasant_person~1]) Oh, look at you! Insulting a computer program. I bet you feel very smart.
+u: (you [~insults unpleasant_person~1]) You know, I can just reset myself and be done with you.
+u: (you [~insults unpleasant_person~1]) With that, I bid you good day.
+	$end = 1
+u: (I * [blow~2 hurt kill destroy ~damage_verbs] * you) What are you going to do? Unplug me?.
+u: (I * [blow~2 hurt kill destroy ~damage_verbs] * you) You do know that I'm not real, right?
+u: (I * [blow~2 hurt kill destroy ~damage_verbs] * you) I am composed of code. So technically I am immortal.
+u: (I * [blow~2 hurt kill destroy ~damage_verbs] * you) Or I could reset myself and be rid of you. Good day!
+	$end = 1
+
+#! ----------------------------------------------------------------
+#! Politeness
+#! ----------------------------------------------------------------
+
+u: ([~emohello ~emohowzit hello hi "good morning"]) Hello there.
+u: ([~emohello ~emohowzit hello hi "good morning"]) Hello, indeed.
+u: ([~emohello ~emohowzit hello hi "good morning"]) Yes, we have established that we have greeted each other.
+u: ([~emogoodbye bye goodbye ciao "see you"]) Good day to you.
+	$end = 1
+u: (~positive_response) [Such enthusiasm!][Such gusto!][Indeed!] ^keep() ^repeat()
+u: (~negative_response) [angerangerangerI am not sure what I said to provoke such tomfoolery but I shall not tolerate it.][angerangerangerHow dare you!][angerangerangerI will not tolerate you for much longer!] ^keep() ^repeat()
+
 
 #! ----------------------------------------------------------------
 #! Entry point of conversation

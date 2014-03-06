@@ -4,6 +4,7 @@ topic: ~arcade_royale (~royale)
 
 #! Possible related pronouns
 u: (_it) ^mark(~royale _0)  ^repeat() ^keep()
+u: (<<!~ignore_games _that>>) ^mark(~royale _0) ^repeat() ^keep()
 u: (_"the machine") ^mark(~royale _0) ^repeat() ^keep()
 u: (_"this machine") ^mark(~royale _0) ^repeat() ^keep()
 

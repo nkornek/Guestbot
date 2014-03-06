@@ -1,2 +1,0 @@
-﻿Start: user:_ bot:jarvis ip: rand:2580 (~main) 0 ==> Good day to you. May I know the name of whomever it is that I have the pleasure of serving?  When:Wed Feb 26 16:04:42 2014 Version:3.53 Build0:1390424187 Build1:1393363269 Why: ~main.0.0 
-Command: :build 1

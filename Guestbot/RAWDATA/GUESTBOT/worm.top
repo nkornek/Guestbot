@@ -4,6 +4,7 @@ topic: ~weirdworm_game (~weirdworm)
 
 #! Possible related pronouns
 u: (_it) ^mark(~weirdworm _0)  ^repeat() ^keep()
+u: (<<!~ignore_games _that>>) ^mark(~weirdworm _0) ^repeat() ^keep()
 u: (!other _worm) ^mark(~weirdworm _0) ^repeat() ^keep()
 u: (_"the game") ^mark(~weirdworm _0) ^repeat() ^keep()
 u: (_"this game") ^mark(~weirdworm _0) ^repeat() ^keep()
